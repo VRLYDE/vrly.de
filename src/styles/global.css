@@ -1,0 +1,162 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "tailwind-scrollbar-hide";
+@theme {
+  /* Typography */
+  --font-sans: "Geist", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+  /* Colors*/
+  /* Yellow*/
+  --color-yellow-50: oklch(99.07% 0.024 111.97);
+  --color-yellow-100: oklch(98.18% 0.039 110.21);
+  --color-yellow-200: oklch(96.75% 0.078 110.89);
+  --color-yellow-300: oklch(95.15% 0.114 111.6);
+  --color-yellow-400: oklch(93.62% 0.15 112.23);
+  --color-yellow-500: oklch(92.5% 0.175 113.21); /* Default */
+  --color-yellow-600: oklch(90.5% 0.2 114.06);
+  --color-yellow-700: oklch(75.09% 0.167 114.4);
+  --color-yellow-800: oklch(55.82% 0.122 113.71);
+  --color-yellow-900: oklch(34.85% 0.074 113.86);
+  --color-yellow-950: oklch(21.84% 0.044 111.54);
+  /* Blue */
+  --color-blue-50: oklch(97.68% 0.012 231.65);
+  --color-blue-100: oklch(95.28% 0.023 240.08);
+  --color-blue-200: oklch(89.83% 0.052 239.56);
+  --color-blue-300: oklch(85.31% 0.076 240.46);
+  --color-blue-400: oklch(80.15% 0.102 240.58);
+  --color-blue-500: oklch(75.42% 0.127 242.68);
+  --color-blue-600: oklch(67.33% 0.169 247.02);
+  --color-blue-700: oklch(56.41% 0.152 248.83);
+  --color-blue-800: oklch(41.77% 0.11 248.31);
+  --color-blue-900: oklch(27.21% 0.066 245.96);
+  --color-blue-950: oklch(18.6% 0.039 237.79);
+  /*teal*/
+  --color-teal-50: oklch(98.4% 0.014 174.18);
+  --color-teal-50: oklch(98.31% 0.011 182.88);
+  --color-teal-100: oklch(96.83% 0.023 179.96);
+  --color-teal-200: oklch(93.35% 0.047 179.87);
+  --color-teal-300: oklch(90.44% 0.068 178.78);
+  --color-teal-400: oklch(87.19% 0.091 177.31);
+  --color-teal-500: oklch(84.58% 0.11 176.27); /* Default */
+  --color-teal-600: oklch(79.61% 0.139 173.04);
+  --color-teal-700: oklch(67.52% 0.124 171.99);
+  --color-teal-800: oklch(49.87% 0.089 173.04);
+  --color-teal-900: oklch(32.13% 0.054 174.01);
+  --color-teal-950: oklch(21.37% 0.033 174.2);
+  /* Base*/
+  --color-base-50: oklch(0.985 0.002 247.839);
+  --color-base-100: oklch(0.967 0.003 264.542);
+  --color-base-200: oklch(0.928 0.006 264.531);
+  --color-base-300: oklch(0.872 0.01 258.338);
+  --color-base-400: oklch(0.707 0.022 261.325);
+  --color-base-500: oklch(0.551 0.027 264.364);
+  --color-base-600: oklch(0.446 0.03 256.802);
+  --color-base-700: oklch(0.373 0.034 259.733);
+  --color-base-800: oklch(0.278 0.033 256.848); /* Default */
+  --color-base-900: oklch(0.21 0.034 264.665);
+  --color-base-950: oklch(0.13 0.028 261.692);
+  --background-image-stripes: repeating-linear-gradient(
+    125deg,
+    transparent,
+    transparent 6px,
+    #e8e8e8 6px,
+    #e8e8e8 7px
+  );
+  /* Shadows */
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-2xl:
+    0px 6.6px 4.7px 0px rgba(26, 43, 59, 0.07),
+    0px 16.7px 11.8px 0px rgba(26, 43, 59, 0.1),
+    0px 34px 24.1px 0px rgba(26, 43, 59, 0.13),
+    0px 70px 49.6px 0px rgba(26, 43, 59, 0.16),
+    0px 192px 136px 0px rgba(26, 43, 59, 0.23);
+  --shadow-button-before: 0px 2px 0.4px 0px rgba(255, 255, 255, 0.16) inset;
+  --shadow-bottom:
+    rgba(0, 0, 0, 0.09) 0px 1.34368px 0.537473px -0.625px,
+    rgba(0, 0, 0, 0.086) 0px 3.18477px 1.27391px -1.25px,
+    rgba(0, 0, 0, 0.083) 0px 5.80935px 2.32374px -1.875px,
+    rgba(0, 0, 0, 0.08) 0px 9.65803px 3.86321px -2.5px,
+    rgba(0, 0, 0, 0.07) 0px 15.5969px 6.23877px -3.125px,
+    rgba(0, 0, 0, 0.061) 0px 25.5306px 10.2122px -3.75px,
+    rgba(0, 0, 0, 0.04) 0px 43.962px 17.5848px -4.375px,
+    rgba(0, 0, 0, 0) 0px 80px 32px -5px;
+  /* Keyframes */
+  --animate-quickMarquee: marquee 10s linear infinite;
+  --animate-marquee: marquee 24s linear infinite;
+  --animate-slowMarquee: marquee 48s linear infinite;
+  --animate-rightMarquee: rightMarquee 24s linear infinite;
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes rightMarquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}
+:root {
+  /* Shiki code style */
+  /* base Tokens */
+  --astro-code-foreground: var(--color-base-200);
+  --astro-code-background: var(--color-base-800);
+  --astro-code-token-comment: var(--color-base-500);
+  --astro-code-token-highlight: var(--color-base-600);
+  --astro-code-token-line-number: var(--color-base-400);
+  /* Yellow Tokens */
+  --astro-code-token-string: var(--color-yellow-500);
+  --astro-code-token-number: var(--color-yellow-400);
+  --astro-code-token-notice: var(--color-yellow-600);
+  --astro-code-token-builtin: var(--color-yellow-500);
+  --astro-code-token-boolean: var(--color-yellow-600);
+  --astro-code-token-deleted: var(--color-yellow-500);
+  --astro-code-token-constant: var(--color-yellow-400);
+  --astro-code-token-property: var(--color-yellow-400);
+  --astro-code-token-attr-value: var(--color-yellow-400);
+  /* Blue Tokens */
+  --astro-code-token-tag: var(--color-blue-500);
+  --astro-code-token-cdata: var(--color-blue-300);
+  --astro-code-token-focus: var(--color-blue-300);
+  --astro-code-token-regex: var(--color-blue-400);
+  --astro-code-token-entity: var(--color-blue-400);
+  --astro-code-token-prolog: var(--color-blue-300);
+  --astro-code-token-changed: var(--color-blue-500);
+  --astro-code-token-keyword: var(--color-blue-500);
+  --astro-code-token-doctype: var(--color-blue-500);
+  --astro-code-token-function: var(--color-blue-500);
+  --astro-code-token-variable: var(--color-blue-300);
+  --astro-code-token-operator: var(--color-blue-400);
+  --astro-code-token-attr-name: var(--color-blue-400);
+  --astro-code-token-namespace: var(--color-blue-300);
+  --astro-code-token-class-name: var(--color-blue-500);
+  --astro-code-token-bold: inherit;
+  --astro-code-token-: ;
+  --astro-code-token-underline: underline;
+}
+code {
+  counter-reset: step;
+  counter-increment: step 0;
+}
+code .line::before {
+  content: counter(step);
+  counter-increment: step;
+  width: 1rem;
+  margin-right: 1.5rem;
+  display: inline-block;
+  text-align: right;
+  color: #ffffff55;
+}

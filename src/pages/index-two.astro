@@ -1,0 +1,28 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Sections
+import Hero2 from "@/components/headers/Hero2.astro";
+import LogoCloud from "@/components/assets/LogoCloud.astro";
+import Feature6 from "@/components/features/Feature6.astro";
+import Feature7 from "@/components/features/Feature7.astro";
+import Feature8 from "@/components/features/Feature8.astro";
+import Testimonial2 from "@/components/testimonials/Testimonial2.astro";
+import Pricing2 from "@/components/pricing/Pricing2.astro";
+---
+<BaseLayout>
+  <Hero2 />
+  <section >
+    <Wrapper class="border-t border-base-200 overflow-hidden">
+      <LogoCloud
+        class="py-6 grid grid-cols-2 lg:-mx-8 sm:grid-cols-3 md:grid-cols-6"
+      />
+    </Wrapper>
+  </section>
+  <Feature6 />
+  <Feature7 />
+  <Feature8 />
+  <Testimonial2 />
+  <Pricing2 />
+</BaseLayout>

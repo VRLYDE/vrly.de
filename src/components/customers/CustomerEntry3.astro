@@ -1,0 +1,95 @@
+---
+// Assets
+import { Image } from "astro:assets";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+// Icons
+import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
+// Content
+const { customer, avatar, url, testimonial } = {
+  url: "/customers/" + Astro.props.post.slug,
+  avatar: Astro.props.post.data.avatar.url,
+  customer: Astro.props.post.data.customer,
+  testimonial: Astro.props.post.data.testimonial,
+};
+---
+
+<style>
+  .keen-slider__slide {
+    overflow: visible;
+  }
+</style>
+<article
+  class="relative flex flex-col isolate keen-slider__slide group w-full h-full group"
+>
+  <a
+    href={url}
+    title={customer}
+    aria-label={customer}
+    class="absolute inset-0 z-10"></a>
+
+  <div>
+    <Image
+      width="1000"
+      height="1000"
+      alt={customer}
+      src={avatar}
+      class="object-cover object-center shadow-bottom rounded-2xl"
+    />
+    <div class="w-full lg:col-span-2 flex mt-2">
+      <figure>
+        <div class="flex items-center justify-between">
+          <Text
+            tag="h3"
+            variant="textBase"
+            class="text-base-800 text-balance font-medium">{customer}</Text
+          >
+          <Text
+            tag="p"
+            variant="textSM"
+            class="flex items-center gap-2 font-medium text-base-800"
+          >
+            Read case study
+            <ChevronRight
+              size="sm"
+              class="duration-300 easy-out-in group-hover:translate-x-2"
+            />
+          </Text>
+        </div>
+        <blockquote>
+          <Text tag="h3" variant="textBase" class="mt-4 text-base-600">
+            "{testimonial}"
+          </Text>
+        </blockquote>
+      </figure>
+    </div>
+  </div>
+</article>
+<script type="module">
+  import KeenSlider from "https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/+esm";
+  const keenSlider = new KeenSlider(
+    "#keen-slider",
+    {
+      loop: true,
+      slides: {
+        origin: "center",
+        perView: 1.25,
+        spacing: 16,
+      },
+      breakpoints: {
+        "(min-width: 1024px)": {
+          slides: {
+            origin: "center",
+            perView: 3.3,
+            spacing: 32,
+          },
+        },
+      },
+    },
+    []
+  );
+  const keenSliderPrevious = document.getElementById("keen-slider-previous");
+  const keenSliderNext = document.getElementById("keen-slider-next");
+  keenSliderPrevious.addEventListener("click", () => keenSlider.prev());
+  keenSliderNext.addEventListener("click", () => keenSlider.next());
+</script>

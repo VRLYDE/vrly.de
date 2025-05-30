@@ -1,0 +1,37 @@
+---
+// Assets
+import { Image } from "astro:assets";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+const { name, role, avatar, url } = {
+  url: "/team/" + Astro.props.post.slug,
+  role: Astro.props.post.data.role,
+  avatar: Astro.props.post.data.avatar.url,
+  name: Astro.props.post.data.name,
+};
+---
+
+<div class="relative overflow-hidden">
+  <a class="absolute inset-0 z-10" href={url} title={name}> </a>
+  <div class="relative">
+    <Image
+      alt={name}
+      src={avatar}
+      width="1000"
+      height="1000"
+      class="object-cover object-center aspect-12/9 rounded-xl"
+    />
+    <div class="mt-2">
+      <Text tag="h3" variant="textBase" class="mt-2 font-medium text-base-900"
+        >{name}</Text
+      >
+      <Text
+        tag="p"
+        variant="textSM"
+        class="mt-2 text-base-600 text-balance line-clamp-2"
+      >
+        {role}
+      </Text>
+    </div>
+  </div>
+</div>

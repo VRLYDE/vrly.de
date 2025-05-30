@@ -1,0 +1,65 @@
+---
+// Assets
+import { Image } from "astro:assets";
+import Dashboard from "@/images/assets/dashboard.jpg";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import Plus from "@/components/fundations/icons/Plus.astro";
+---
+
+<section>
+  <Wrapper variant="standard" class="pt-12 border-t overflow-hidden">
+    <div class="max-w-xl mx-auto text-center">
+      <Text
+        class="span"
+        variant="textXS"
+        data-aos="fade-down"
+        data-aos-duration="1000"
+        class="flex items-center font-medium uppercase text-base-600 gap-2 justify-center"
+      >
+        <Plus size="sm" class="text-yellow-600" />
+        Built for modern builders
+      </Text>
+      <Text
+        tag="h3"
+        variant="displayMD"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        class="mt-8 font-semibold tracking-tight text-base-800"
+      >
+        Banking without barriers
+      </Text>
+      <Text
+        tag="p"
+        variant="textBase"
+        data-aos="fade-up"
+        data-aos-duration="1500"
+        class="mt-2 text-base text-base-500 md:text-balance"
+      >
+        Instantly open accounts, connect directly to payment networks, and build
+        with flexible, future-ready Plus—no outdated systems holding you back.
+      </Text>
+    </div>
+
+    <div class="relative pt-16" data-aos="fade-up" data-aos-duration="1000">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <Image
+          src={Dashboard}
+          alt="Dashboard"
+          class="mb-[-12%] rounded-xl outline shadow-2xl outline-base-900/10 pt-4"
+          width="2432"
+          height="1442"
+        >
+          <div class="relative" aria-hidden="true">
+            <div
+              class="absolute -inset-x-20 bottom-0 bg-linear-to-t from-white pt-[7%]"
+            >
+            </div>
+          </div>
+        </Image>
+      </div>
+    </div>
+  </Wrapper>
+</section>

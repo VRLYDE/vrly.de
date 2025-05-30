@@ -1,0 +1,93 @@
+---
+// Assets
+import { Image } from "astro:assets";
+import LimeStripe from "@/images/assets/LimeStripe.png";
+import VisualAsset1 from "@/components/assets/VisualAsset1.astro";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Link from "@/components/fundations/elements/Link.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
+---
+
+<section>
+  <Wrapper
+    variant="standard"
+    class="relative overflow-hidden py-32 flex flex-col items-center justify-center h-dvh"
+  >
+    <Image
+      src={LimeStripe}
+      alt="Lime Stripe"
+      class="absolute inset-0 size-full scale-150"
+    />
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
+      <div
+        class="absolute hidden lg:inset-0 lg:left-1/2 lg:flex items-center justify-center overflow-hidden lg:border-l lg:border-base-200"
+      >
+        <div
+          class="bg-stripes overflow-hidden size-full
+      flex items-center justify-center relative pointer-events-none"
+        >
+          <VisualAsset1
+            class="max-w-sm w-full rounded-2xl shadow-2xl p-8 relative lg:scale-130 bg-white"
+          />
+        </div>
+      </div>
+      <div class="relative">
+        <Text
+          tag="h1"
+          variant="displayXL"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="font-semibold tracking-tighter text-base-800 lg:text-balance"
+        >
+          Powerful financial APIs for tech innovators
+        </Text>
+        <Text
+          tag="p"
+          variant="textLG"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+          class="max-w-lg mt-4 font-medium text-base-800 md:text-balance"
+        >
+          Seamless, scalable infrastructure for managing funds store, transfer,
+          and reconcile money with ease.
+        </Text>
+        <div
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          class="flex items-center mt-12 gap-2"
+        >
+          <Link
+            size="base"
+            variant="default"
+            href="/forms/sign-up"
+            gap="xs"
+            class="group"
+          >
+            Get started
+            <ChevronRight
+              size="sm"
+              class="duration-300 easy-out-in group-hover:translate-x-2"
+            />
+          </Link>
+          <Link
+            size="base"
+            variant="muted"
+            href="/forms/contact"
+            gap="xs"
+            class="group"
+          >
+            Contact sales
+            <ChevronRight
+              size="sm"
+              class="duration-300 easy-out-in group-hover:translate-x-2"
+            />
+          </Link>
+        </div>
+      </div>
+    </div>
+  </Wrapper>
+</section>

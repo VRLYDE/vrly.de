@@ -1,0 +1,63 @@
+---
+// Icons
+import InfoCircle from "@/components/fundations/icons/InfoCircle.astro";
+import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Link from "@/components/fundations/elements/Link.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+---
+
+<section>
+  <Wrapper variant="standard" class="py-12 lg:py-24">
+    <div class="items-end grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
+      <div>
+        <Text
+          class="span"
+          variant="textXS"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+          class="flex items-center font-medium uppercase text-base-600 gap-2"
+        >
+          <InfoCircle size="sm" class="text-yellow-600" />
+          Submit a ticket
+        </Text>
+        <Text
+          tag="h3"
+          variant="displayMD"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="mt-8 font-semibold tracking-tight text-base-800 lg:text-balance"
+        >
+          Are you looking for personalized assistance?
+        </Text>
+        <Text
+          tag="p"
+          variant="textBase"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+          class="mt-2 text-base text-base-500"
+        >
+          If you need personalized assistance, we're here to help. Our support
+          team is ready to assist you with any questions or concerns you may
+          have. Submit a ticket and we'll get back to you as soon as possible.
+        </Text>
+      </div>
+      <div class="flex lg:ml-auto">
+        <Link
+          size="base"
+          variant="default"
+          href="/forms/contact"
+          gap="xs"
+          class="group"
+        >
+          Submit a ticket
+          <ChevronRight
+            size="sm"
+            class="duration-300 easy-out-in group-hover:translate-x-2"
+          />
+        </Link>
+      </div>
+    </div>
+  </Wrapper>
+</section>

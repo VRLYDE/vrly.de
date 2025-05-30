@@ -1,0 +1,18 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+
+import CustomerEntry2 from "@/components/customers/CustomerEntry2.astro";
+// Content
+import { getCollection } from "astro:content";
+const allCustomers = await getCollection("customers");
+---
+
+<section>
+  <Wrapper variant="standard" class="py-4 border-t">
+    <div data-aos="fade-up" data-aos-duration="2500">
+      {allCustomers.slice(1, 2).map((post) => <CustomerEntry2 post={post} />)}
+    </div>
+  </Wrapper>
+</section>

@@ -1,0 +1,177 @@
+---
+// Widgets
+import Chat from "@/components/widgets/Chat.astro";
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Button from "@/components/fundations/elements/Button.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import Mail from "@/components/fundations/icons/Mail.astro";
+import Brain from "@/components/fundations/icons/Brain.astro";
+import Clock from "@/components/fundations/icons/Clock.astro";
+import InfoCircle from "@/components/fundations/icons/InfoCircle.astro";
+---
+<BaseLayout>
+  <section class="overflow-hidden relative">
+  <Chat class="fixed bottom-5 right-5" />
+  <Wrapper variant="standard" class="py-12 lg:py-32 relative lg:h-dvh">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+      <div class="lg:text-balance text-center lg:text-left">
+        <Text
+          class="span"
+          variant="textXS"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+          class="flex items-center font-medium uppercase text-base-600 gap-2"
+        >
+          <Mail size="sm" class="text-yellow-600" />
+          Contact us
+        </Text>
+        <Text
+          variant="displayXL"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="font-semibold tracking-tighter text-base-800 lg:text-balance mt-8"
+        >
+          Contact Us
+        </Text>
+        <Text
+          tag="p"
+          variant="textBase"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+          class="mt-4 font-medium text-base-500 md:text-balance"
+        >
+          Have any questions or need assistance? We're here to help! Fill out
+          the form below with your details and inquiry, and our team will get
+          back to you as soon as possible.
+          <br />
+          <br />
+          Whether you need support, have a specific request, or just want to learn
+          more, we’re happy to assist.
+        </Text>
+        <div
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          class="flex flex-col mt-12 gap-2"
+        >
+          <Text
+            tag="p"
+            variant="muted"
+            href="/helpcenter/knowledge-base"
+            class="text-base-600 hover:text-base-800 duration-300 flex items-center gap-2"
+          >
+            <Brain size="sm" class="text-teal-600" />
+            Knowledge Base
+          </Text>
+          <Text
+            tag="p"
+            variant="muted"
+            href="/helpcenter/knowledge-base"
+            class="text-base-600 hover:text-base-800 duration-300 flex items-center gap-2"
+          >
+            <Clock size="sm" class="text-teal-600" />
+            Changelog
+          </Text>
+
+          <button
+            id="chat-toggle"
+            class="text-base-600 hover:text-base-800 duration-300 flex items-center gap-2"
+          >
+            <InfoCircle size="sm" class="text-teal-600" />
+            Live chat 24/7</button
+          >
+        </div>
+      </div>
+      <form action="#" method="POST">
+        <div class="flex flex-col gap-y-4">
+          <div>
+            <label class="text-sm leading-normal text-base-500 font-medium">
+              Name
+            </label>
+            <div class="mt-2.5">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                required
+                placeholder="Your name"
+                class="block w-full h-10 px-4 py-2 text-sm text-teal-700 border border-transparent rounded-lg appearance-none duration-300 bg-base-100 placeholder-base-400 focus:bg-transparent focus:outline-none focus:ring-teal-500 focus:ring-offset-2 focus:ring-2 focus:ring-offset-base-200"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="text-sm leading-normal text-base-500 font-medium">
+              Work Email
+            </label>
+            <div class="mt-2.5">
+              <input
+                type="email"
+                name="work-email"
+                id="work-email"
+                required
+                placeholder="Your work email"
+                class="block w-full h-10 px-4 py-2 text-sm text-teal-700 border border-transparent rounded-lg appearance-none duration-300 bg-base-100 placeholder-base-400 focus:bg-transparent focus:outline-none focus:ring-teal-500 focus:ring-offset-2 focus:ring-2 focus:ring-offset-base-200"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="text-sm leading-normal text-base-500 font-medium">
+              Phone Number
+            </label>
+            <div class="mt-2.5">
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                required
+                placeholder="Your phone number"
+                class="block w-full h-10 px-4 py-2 text-sm text-teal-700 border border-transparent rounded-lg appearance-none duration-300 bg-base-100 placeholder-base-400 focus:bg-transparent focus:outline-none focus:ring-teal-500 focus:ring-offset-2 focus:ring-2 focus:ring-offset-base-200"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="text-sm leading-normal text-base-500 font-medium">
+              Company Site
+            </label>
+            <div class="mt-2.5">
+              <input
+                type="url"
+                name="company-site"
+                id="company-site"
+                required
+                placeholder="https://yourcompany.com"
+                class="block w-full h-10 px-4 py-2 text-sm text-teal-700 border border-transparent rounded-lg appearance-none duration-300 bg-base-100 placeholder-base-400 focus:bg-transparent focus:outline-none focus:ring-teal-500 focus:ring-offset-2 focus:ring-2 focus:ring-offset-base-200"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="text-sm leading-normal text-base-500 font-medium">
+              Message
+            </label>
+            <div class="mt-2.5">
+              <textarea
+                name="message"
+                id="message"
+                rows="5"
+                required
+                placeholder="Your message..."
+                class="block w-full px-4 py-2 text-sm text-teal-700 border border-transparent rounded-lg appearance-none duration-300 bg-base-100 placeholder-base-400 focus:bg-transparent focus:outline-none focus:ring-teal-500 focus:ring-offset-2 focus:ring-2 focus:ring-offset-base-200 resize-y"
+              ></textarea>
+            </div>
+          </div>
+
+          <Button type="submit" size="lg" variant="default" class="w-full">
+            Submit
+          </Button>
+        </div>
+      </form>
+    </div>
+  </Wrapper>
+</section>
+</BaseLayout>

@@ -1,0 +1,58 @@
+---
+import Logo from "@/components/assets/Logo.astro";
+// VisualAsset2 Component This component renders an SVG VisualAsset1 and accepts props for customization.
+// Props: - class: A string of additional classes to style the SVG.
+// - ...rest: Any other valid attributes for any element (e.g., id, style, role, aria-label, etc.).
+// Example Usage: <VisualAsset1 class="my-custom-class" /> or <VisualAsset1 id="VisualAsset1-id" style="width: 50px; height: 50px;" />
+// ADd your VisualAsset1 here and pass the   class={className} {...rest} like on the example
+const { class: className = "", ...rest } = Astro.props;
+---
+
+<div aria-hidden="true"
+  {...rest}
+  class={`relative flex flex-col items-center h-full p-8 overflow-hidden shadow outline-1 outline-base-200 bg-base-100 rounded-xl ${className}`}
+>
+  <div class="absolute inset-0 flex items-center justify-center w-full">
+    <div
+      class="relative w-full mx-auto overflow-hidden overflow-x-hidden text-xs text-base-800"
+    >
+      <div
+        class="relative flex items-center px-4 py-1 bg-teal-300 border-teal-600 border-dashed animate-marquee whitespace-nowrap w-max border-y"
+      >
+        STAT/34PQ-A24-7891#SECURE TERMINAL ACCESS#SYSTEM ONLINE
+        7856443127890654231099876 ID:NETWORK-PRIME TL93/alpha/2.5.8/active
+        NODE:CENTRAL-HUB-07 UPTIME:3278.45h PACKET_INTEGRITY:99.87%
+        ROUTING_TABLE:UPDATED ENV:PRODUCTION MEMORY:64GB/128GB CPU:32%
+        THERMAL:NOMINAL AUTH_LEVEL:ADMINISTRATOR
+      </div>
+      <div
+        class="relative flex items-center px-4 py-1 bg-yellow-300 border-yellow-600 border-dashed animate-slowMarquee whitespace-nowrap w-max border-y"
+      >
+        CONN/95BT-R38-1265#DATA STREAM ACTIVE#BUFFER STABLE
+        3321567456789023418765432 STATUS:TRANSMITTING FS47/beta/9.3.1/nominal
+        BANDWIDTH:1.28TB/s LATENCY:4.7ms ENCRYPTION:AES-256 PROTOCOL:TCP/IPV6
+        FIREWALL:ENABLED GATEWAY:192.168.0.1 DNS:PRIMARY VPN:CONNECTED
+        LOCATION:SECURE-FACILITY-12
+      </div>
+      <div
+        class="relative flex items-center px-4 py-1 bg-blue-300 border-blue-600 border-dashed animate-marquee whitespace-nowrap w-max border-y"
+      >
+        PROC/72KM-D19-6543#RUNTIME ENVIRONMENT#TASK QUEUE
+        1122334455667788990011223 MODE:PRIORITY-HIGH VX26/gamma/1.7.4/running
+        THREADS:128 PROCESS_ID:45921 SCHEDULER:REALTIME DEPENDENCIES:LOADED
+        COMPILER:V12.4.5 BUILD:STABLE-8734 CACHE:OPTIMIZED STACK:4096MB
+        HEAP:16GB ARCHITECTURE:X64 VIRTUALIZED:TRUE
+      </div>
+    </div>
+  </div>
+  <!-- Second div (in front) -->
+  <div
+    class="flex w-full items-center justify-center max-w-[50%] relative z-10 h-40 my-auto"
+  >
+    <div
+      class="flex flex-col items-center justify-center w-full h-40 px-20 font-mono text-xs font-medium bg-white rounded-lg shadow-xl outline-2 hover:scale-120 hover:bg-white/50 hover:backdrop-blur duration-300 outline-base-50 shadow-base-800/30 transition-all hover:outline-transparent"
+    >
+      <Logo class="size-12 text-base-800" />
+    </div>
+  </div>
+</div>

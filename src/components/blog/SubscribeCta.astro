@@ -1,0 +1,50 @@
+---
+// Fundations
+import Button from "@/components/fundations/elements/Button.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+---
+
+<section class="relative overflow-hidden">
+  <Wrapper variant="standard" class="relative py-12 overflow-hidden border-t">
+    <div class="grid items-end grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div class="lg:col-span-2">
+        <Text
+          tag="h1"
+          variant="display2XL"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="font-semibold tracking-tighter text-base-800 lg:text-balance"
+        >
+          Subscribe to our newsletter
+        </Text>
+        <Text
+          tag="p"
+          variant="textLG"
+          class="max-w-lg mt-4 font-medium text-base-800 md:text-balance"
+        >
+          Enjoy the latest news and updates from our team and community.
+        </Text>
+      </div>
+      <form data-aos="fade-up" data-aos-duration="2000">
+        <label for="email" class="sr-only"> Subscribe to our newsletter </label>
+        <div class="flex flex-col gap-2 mt-1">
+          <input
+            type="email"
+            id="email"
+            placeholder="email@example.com"
+            required
+            class="block w-full h-10 px-4 py-2 text-sm text-teal-700 duration-300 border border-transparent rounded-lg appearance-none bg-base-100 placeholder-base-400 focus:bg-transparent focus:outline-none focus:ring-teal-500 focus:ring-offset-2 focus:ring-2 focus:ring-offset-base-200"
+          />
+          <Button size="base" variant="default" type="submit" class="w-full">
+            Subscribe
+          </Button>
+        </div>
+        <Text tag="p" variant="textXS" class="mt-2 font-medium text-base-500">
+          By subscribing, you agree to receive our latest updates. No spam,
+          promise!
+        </Text>
+      </form>
+    </div>
+  </Wrapper>
+</section>

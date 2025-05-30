@@ -1,0 +1,63 @@
+---
+import BlogSearch from "@/components/blog/BlogSearch.astro";
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Content
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("posts");
+// Tags
+const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="pt-32">
+      <Text
+        tag="h1"
+        variant="display2XL"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        class="font-semibold tracking-tighter text-base-800 lg:text-balance"
+      >
+        All tags available
+      </Text>
+      <Text
+        tag="p"
+        variant="textLG"
+        data-aos="fade-up"
+        data-aos-duration="1500"
+        class="max-w-lg mt-4 font-medium text-base-800 md:text-balance"
+      >
+        Search around for the tags you are interested in.
+      </Text>
+    </Wrapper>
+    <section>
+      <Wrapper variant="standard" class="py-4 border-t border-base-200">
+        <BlogSearch />
+      </Wrapper>
+      <Wrapper variant="standard" class="py-4 border-t border-base-200">
+        <ul
+          role="list"
+          class="mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 xl:grid-cols-4"
+        >
+          {
+            tags.map((tag) => (
+              <li class="p-2 aspect-square bg-whit outline outline-base-200 group rounded-xl shadow flex justify-center items-center group relative hover:shadow-2xl duration-300">
+                <a href={`/blog/tags/${tag}`} class="absolute inset-0" />
+                <Text
+                  tag="p"
+                  variant="textXL"
+                  class="capitalize font-medium group-hover:text-teal-600"
+                >
+                  {tag}
+                </Text>
+              </li>
+            ))
+          }
+        </ul>
+      </Wrapper>
+    </section>
+  </section>
+</BaseLayout>

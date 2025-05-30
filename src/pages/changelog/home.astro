@@ -1,0 +1,54 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import Clock from "@/components/fundations/icons/Clock.astro";
+// Components
+import ChangelogEntries1 from "@/components/changelog/ChangelogEntries1.astro";
+
+// Content
+import { getCollection } from "astro:content";
+const allUpdatesUnsorted = await getCollection("changelog");
+// Sort the posts in descending order by publication date (newest to oldest)
+const allUpdates = allUpdatesUnsorted.sort(
+  (a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate)
+);
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="py-12 lg:pt-32">
+      <div>
+        <Text
+          class="span"
+          variant="textXS"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+          class="flex items-center font-medium uppercase gap-2 text-base-600"
+        >
+          <Clock size="sm" class="text-yellow-600" />
+          Changelog
+        </Text>
+
+        <Text
+          tag="h1"
+          variant="display2XL"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="mt-8 font-semibold tracking-tighter text-base-800 lg:text-balance"
+        >
+          Follow our journey and keep track of us.
+        </Text>
+      </div>
+    </Wrapper>
+  </section>
+  <section>
+    <Wrapper variant="standard" class="py-4 border-t">
+      <div class="flex flex-col gap-4">
+        {allUpdates.map((post) => <ChangelogEntries1 post={post} />)}
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

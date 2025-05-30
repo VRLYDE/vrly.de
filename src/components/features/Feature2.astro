@@ -1,0 +1,98 @@
+---
+// Assets
+import VisualAsset2 from "@/components/assets/VisualAsset2.astro";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import Plus from "@/components/fundations/icons/Plus.astro";
+import ApiApp from "@/components/fundations/icons/ApiApp.astro";
+import Filters from "@/components/fundations/icons/Filters.astro";
+import WaveSquare from "@/components/fundations/icons/WaveSquare.astro";
+import ArrowIteration from "@/components/fundations/icons/ArrowIteration.astro";
+// Icons
+const data = [
+  {
+    icon: "Filters",
+    category: "Full data transparency",
+  },
+  {
+    icon: "WaveSquare",
+    category: "Reduced dependencies",
+  },
+  {
+    icon: "ArrowIteration",
+    category: "Reliable infrastructure",
+  },
+  {
+    icon: "Plus",
+    category: "Faster development cycles",
+  },
+];
+---
+<section>
+  <Wrapper variant="standard" class="py-12 lg:py-24 border-t">
+    <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
+      <div>
+        <Text
+          class="span"
+          variant="textXS"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+          class="flex items-center font-medium uppercase text-base-600 gap-2"
+        >
+          <ApiApp size="sm" class="text-yellow-600" />
+          Raw, unfiltered APIs
+        </Text>
+        <Text
+          tag="h3"
+          variant="displayMD"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="mt-8 font-semibold tracking-tight text-base-800 md:text-balance"
+        >
+          Unfiltered, direct access to the Federal Reserve
+        </Text>
+        <Text
+          tag="p"
+          variant="textBase"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+          class="mt-2 text-base text-base-500"
+        >
+          Financial networks like Visa and FedACH have been refined over
+          decades, but many tech companies add layers of abstraction that limit
+          flexibility.
+          <br />
+          <br />
+          We do the opposite—giving you direct, unfiltered access to the Federal
+          Reserve, Visa, and other networks. This means greater stability, fewer
+          restrictions, and complete control over how you build.
+        </Text>
+        <ul
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          role="list"
+          class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2"
+        >
+          {
+            data.map((section) => (
+              <li class="flex items-center gap-2 text-base-800">
+                {section.icon === "Filters" && <Filters size="base" />}
+                {section.icon === "WaveSquare" && <WaveSquare size="base" />}
+                {section.icon === "ArrowIteration" && (
+                  <ArrowIteration size="base" />
+                )}
+                {section.icon === "Plus" && <Plus size="base" />}
+                <Text tag="p" variant="textSM" class="font-medium leading-6 ">
+                  {section.category}
+                </Text>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <VisualAsset2 />
+    </div>
+  </Wrapper>
+</section>

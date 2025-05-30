@@ -1,0 +1,105 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Button from "@/components/fundations/elements/Button.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Component
+import BlogSearch from "@/components/blog/BlogSearch.astro";
+import BlogEntries1 from "@/components/blog/BlogEntries1.astro";
+import SubscribeCta from "@/components/blog/SubscribeCta.astro";
+// Content
+import { getCollection } from "astro:content";
+const allPostsUnsorted = await getCollection("posts");
+// Sort the posts in descending order by publication date (newest to oldest)
+const allPosts = allPostsUnsorted.sort(
+  (a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate)
+);
+// Tags
+const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="pt-32 pb-12">
+      <div
+        class="grid items-end grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+      >
+        <div class="lg:col-span-2">
+          <Text
+            tag="h1"
+            variant="display2XL"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="font-semibold tracking-tighter text-base-800 lg:text-balance"
+          >
+            Latest news
+          </Text>
+          <Text
+            tag="p"
+            variant="textLG"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            class="max-w-lg mt-4 font-medium text-base-800 md:text-balance"
+          >
+            The lates news about our banking products, services and events.
+          </Text>
+        </div>
+        <form data-aos="fade-up" data-aos-duration="2000">
+          <label for="email" class="text-xs font-medium text-base-600">
+            Subscribe to our newsletter
+          </label>
+          <div class="flex flex-col gap-2 mt-1">
+            <input
+              type="email"
+              id="email"
+              placeholder="email@example.com"
+              required
+              class="block w-full h-10 px-4 py-2 text-sm text-teal-700 duration-300 border border-transparent rounded-lg appearance-none bg-base-100 placeholder-base-400 focus:bg-transparent focus:outline-none focus:ring-teal-500 focus:ring-offset-2 focus:ring-2 focus:ring-offset-base-200"
+            />
+            <Button size="base" variant="default" type="submit" class="w-full">
+              Subscribe
+            </Button>
+          </div>
+          <Text tag="p" variant="textXS" class="mt-2 font-medium text-base-500">
+            By subscribing, you agree to receive our latest updates. No spam,
+            promise!
+          </Text>
+        </form>
+      </div>
+    </Wrapper>
+  </section>
+  <section>
+    <Wrapper variant="standard" class="border-t">
+      <div class="flex items-center gap-2">
+        <BlogSearch />
+        <div
+          class="relative flex gap-2 h-full px-2 py-2 overflow-x-scroll scrollable-content snap-x snap-proximity scrollbar-hide"
+        >
+          {
+            tags.map((tag) => (
+              <Text
+                tag="a"
+                variant="textSM"
+                title={tag}
+                aria-label={tag}
+                href={`/blog/tags/${tag}`}
+                class="capitalize text-base-500"
+              >
+                {tag}
+              </Text>
+            ))
+          }
+        </div>
+      </div>
+    </Wrapper>
+  </section>
+  <section>
+    <Wrapper variant="standard" class="py-4 border-t">
+      <div class="flex flex-col">
+        {allPosts.map((post) => <BlogEntries1 post={post} />)}
+      </div>
+    </Wrapper>
+  </section>
+  <SubscribeCta />
+</BaseLayout>

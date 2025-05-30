@@ -1,0 +1,63 @@
+---
+// Fundations
+import Button from "@/components/fundations/elements/Button.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+// Icons
+import User from "@/components/fundations/icons/User.astro";
+// Chat Component This component renders an SVG Chat and accepts props for customization.
+// Props: - class: A string of additional classes to style the SVG.
+// - ...rest: Any other valid attributes for an <svg> element (e.g., id, style, role, aria-label, etc.).
+// Example Usage: <Chat class="my-custom-class" /> or <Chat id="Chat-id" style="width: 50px; height: 50px;" />
+// ADd your Chat here and pass the   class={className} {...rest} like on the example
+const { class: className = "", ...rest } = Astro.props;
+---
+
+<!-- Move chat bubble OUTSIDE of the card to prevent layout issues -->
+<div
+  id="chat-bubble"
+  {...rest}
+  class={`${className} opacity-0 z-50 pointer-events-none  w-auto sm:w-[350px] max-h-[90vh] overflow-y-auto bg-white bg-stripes shadow-2xl transition-opacity duration-300 outline outline-base-200 p-2 rounded-xl`}
+>
+  <div
+    class="bg-white outline outline-base-200 shadow-2xl rounded-lg overflow-hidden divide-y divide-base-200"
+  >
+    <div class="flex flex-col items-center justify-center h-32 p-6">
+      <Text tag="h3" variant="textLG" class="font-medium text-base-800"
+        >Got any questions?</Text
+      >
+      <Text tag="p" variant="textSM" class="mt-2 text-base-600"
+        >Typically replies under 1 hour</Text
+      >
+    </div>
+    <div class="flex-grow p-6">
+      <form class="relative flex flex-col justify-between h-full">
+        <div class="flex flex-col gap-2">
+          <input
+            type="text"
+            id="full_name"
+            placeholder="Your Name"
+            required
+            class="block w-full h-10 px-4 py-2 text-sm text-teal-700 border border-transparent rounded-lg appearance-none duration-300 bg-base-100 placeholder-base-400 focus:bg-transparent focus:outline-none focus:ring-teal-500 focus:ring-offset-2 focus:ring-2 focus:ring-offset-base-200"
+          />
+          <input
+            type="email"
+            id="email"
+            placeholder="you@company.com"
+            required
+            class="block w-full h-10 px-4 py-2 text-sm text-teal-700 border border-transparent rounded-lg appearance-none duration-300 bg-base-100 placeholder-base-400 focus:bg-transparent focus:outline-none focus:ring-teal-500 focus:ring-offset-2 focus:ring-2 focus:ring-offset-base-200"
+          />
+          <textarea
+            id="message"
+            placeholder="Your Message"
+            rows="4"
+            required
+            class="block w-full px-4 py-2 text-sm text-teal-700 border border-transparent rounded-lg appearance-none duration-300 bg-base-100 placeholder-base-400 focus:bg-transparent focus:outline-none focus:ring-teal-500 focus:ring-offset-2 focus:ring-2 focus:ring-offset-base-200"
+          ></textarea>
+        </div>
+        <Button type="submit" size="base" variant="default" class="w-full mt-2">
+          Submit
+        </Button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+---
+// Assets
+import { Image } from "astro:assets";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+// Icons
+import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
+// Content
+const { customer, logo, url, ctaTitle, testimonial, bgColor } = {
+  url: "/customers/" + Astro.props.post.slug,
+  logo: Astro.props.post.data.logo.url,
+  customer: Astro.props.post.data.customer,
+  ctaTitle: Astro.props.post.data.ctaTitle,
+  testimonial: Astro.props.post.data.testimonial,
+  // Pass different  background color to the cards
+  bgColor: Astro.props.post.data.bgColor || "bg-base-50",
+};
+---
+
+<div
+  data-aos="fade-up"
+  data-aos-duration="1500"
+  class="relative pt-8 overflow-hidden bg-white shadow lg:pt-12 rounded-3xl group"
+>
+  <a href={url} title={customer} aria-label={customer} class="absolute inset-0 z-10"
+  ></a>
+  <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 ">
+    <div class="p-8 pt-0 lg:p-12 lg:pt-0">
+      <Text
+        class="span"
+        variant="textXS"
+        data-aos="fade-down"
+        data-aos-duration="1000"
+        class="flex items-center font-medium uppercase text-base-600 gap-2"
+      >
+        {customer}
+      </Text>
+      <Text
+        tag="h3"
+        variant="textXL"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        class="mt-8 font-semibold tracking-tight text-base-800 md:text-balance"
+      >
+        "{testimonial}"
+      </Text>
+      <Text
+        tag="p"
+        variant="textBase"
+        data-aos="fade-up"
+        data-aos-duration="1500"
+        class="mt-8 text-base text-base-500"
+      >
+        {ctaTitle}
+      </Text>
+      <Text
+      tag="p"
+      variant="textSM"
+      class="flex items-center gap-2 mt-4 font-medium text-base-800"
+    >
+      Read {customer} case study
+      <ChevronRight
+        size="sm"
+        class="duration-300 easy-out-in group-hover:translate-x-2"
+      />
+    </Text>
+    </div>
+    <div
+      class={`${bgColor} flex h-full  size-full aspect-16/8 shrink-0 items-center justify-center rounded-t-2xl  shadow-lg lg:rounded-tr-none overflow-hidden`}
+    >
+      <Image
+        class="h-20 p-4"
+        src={logo}
+        alt={customer}
+        width={600}
+        height={600}
+      />
+    </div>
+  </div>
+</div>

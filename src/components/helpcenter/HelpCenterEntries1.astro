@@ -1,0 +1,72 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+
+// Icons
+import User from "@/components/fundations/icons/User.astro";
+import Shield from "@/components/fundations/icons/Shield.astro";
+import Settings from "@/components/fundations/icons/Settings.astro";
+import InfoCircle from "@/components/fundations/icons/InfoCircle.astro";
+import CreditCard from "@/components/fundations/icons/CreditCard.astro";
+import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
+
+// Content
+const { page, description, url, iconId } = {
+  url: "/helpcenter/" + Astro.props.post.slug,
+  page: Astro.props.post.data.page,
+  description: Astro.props.post.data.description,
+  iconId: Astro.props.post.data.iconId || "info-circle", // Default icon if not provided
+};
+
+// Map iconId values to actual icon components
+const iconMap = {
+  user: User,
+  settings: Settings,
+  shield: Shield,
+  creditCard: CreditCard,
+};
+
+// Select the correct icon component
+const IconComponent = iconMap[iconId] || InfoCircle; // Default to InfoCircle if not found
+---
+
+<div
+  class="outline outline-base-200 relative overflow-hidden  group flex h-full flex-col gap-12 lg:gap-24 bg-white rounded-xl shadow-xl p-8 justify-center transition-all  hover:bg-gray-50"
+>
+  <a class="absolute inset-0 z-10" title={page} href={url}></a>
+  <div class="relative flex flex-col justify-between h-full gap-8">
+    <div>
+      <div class="flex">
+        <div
+          class="flex p-2 bg-yellow-400 rounded-lg transition-all duration-300 text-base-800 group-hover:bg-base-800 group-hover:text-white"
+        >
+          <IconComponent size="base" />
+          <!-- Render dynamic icon here -->
+        </div>
+      </div>
+      <div>
+        <Text
+          tag="h3"
+          variant="textBase"
+          class="mt-2 font-medium leading-6 text-base-800"
+        >
+          {page}
+        </Text>
+        <Text tag="p" variant="textSM" class="text-base-500 mt-2"
+          >{description}</Text
+        >
+      </div>
+    </div>
+    <Text
+      tag="p"
+      variant="textSM"
+      class="flex items-center font-medium gap-2 text-base-800"
+    >
+      Learn more
+      <ChevronRight
+        size="sm"
+        class="duration-300 ease-out group-hover:translate-x-2"
+      />
+    </Text>
+  </div>
+</div>

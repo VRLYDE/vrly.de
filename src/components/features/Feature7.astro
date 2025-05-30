@@ -1,0 +1,163 @@
+---
+// Fundations
+import Link from "@/components/fundations/elements/Link.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import ApiApp from "@/components/fundations/icons/ApiApp.astro";
+import Check from "@/components/fundations/icons/Check.astro";
+import X from "@/components/fundations/icons/X.astro";
+
+const bankingFeatures = [
+  {
+    title: "Deposit Information",
+    description:
+      "Receive deposit timestamps and check images from the recipient bank for full transparency.",
+    icons: {
+      success: {
+        icon: "Check",
+        bgColor: "bg-teal-500",
+        textColor: "text-base-800",
+      },
+      failure: { icon: "X", bgColor: "bg-base-800", textColor: "text-white" },
+    },
+  },
+  {
+    title: "Fraud Detection",
+    description:
+      "Advanced AI-powered fraud monitoring helps prevent unauthorized transactions.",
+    icons: {
+      success: {
+        icon: "ShieldCheck",
+        bgColor: "bg-green-500",
+        textColor: "text-white",
+      },
+      failure: {
+        icon: "AlertCircle",
+        bgColor: "bg-red-500",
+        textColor: "text-white",
+      },
+    },
+  },
+  {
+    title: "Instant Transfers",
+    description:
+      "Send and receive money instantly with no hidden fees or delays.",
+    icons: {
+      success: {
+        icon: "Send",
+        bgColor: "bg-blue-500",
+        textColor: "text-white",
+      },
+      failure: {
+        icon: "Clock",
+        bgColor: "bg-gray-500",
+        textColor: "text-white",
+      },
+    },
+  },
+  {
+    title: "24/7 Customer Support",
+    description:
+      "Get help anytime with our dedicated support team, available around the clock.",
+    icons: {
+      success: {
+        icon: "Headphones",
+        bgColor: "bg-indigo-500",
+        textColor: "text-white",
+      },
+      failure: {
+        icon: "PhoneOff",
+        bgColor: "bg-gray-700",
+        textColor: "text-white",
+      },
+    },
+  },
+];
+---
+
+<section>
+  <Wrapper variant="standard" class="py-12 border-t">
+    <div class="lg:w-1/2">
+      <Text
+        class="span"
+        variant="textXS"
+        data-aos="fade-down"
+        data-aos-duration="1000"
+        class="flex items-center font-medium uppercase text-base-600 gap-2"
+      >
+        <ApiApp size="sm" class="text-yellow-600" />
+        Straightforward
+      </Text>
+      <Text
+        tag="h3"
+        variant="displayMD"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        class="mt-8 font-semibold tracking-tight text-base-800"
+      >
+        Complete Insights
+      </Text>
+      <Text
+        tag="p"
+        variant="textBase"
+        data-aos="fade-up"
+        data-aos-duration="1500"
+        class="mt-2 text-base text-base-500 md:text-balance"
+      >
+        Access detailed transaction data directly from the Check21 system for
+        full transparency.
+      </Text>
+    </div>
+    <div class="grid grid-cols-4  pb-8 mt-2">
+      <Text
+        tag="p"
+        variant="textBase"
+        class="col-span-1 col-start-3 lg:-ml-4 hidden md:block text-center font-medium text-base-800"
+      >
+        Munch
+      </Text>
+      <Text
+        tag="p"
+        variant="textBase"
+        class="col-span-1 hidden md:block text-center lg:-ml-8 font-medium text-base-800"
+      >
+        Others
+      </Text>
+    </div>
+    <div
+      class="outline divide-y outline-gray-200 divide-gray-200 shadow-xl rounded-xl overflow-hidden"
+    >
+      {
+        bankingFeatures.map((feature) => (
+          <div class="grid grid-flow-row-dense grid-cols-4 items-start px-8 py-6 gap-4">
+            <Text
+              tag="h3"
+              variant="textBase"
+              class="order-1 col-span-3 font-medium md:col-span-2 lg:col-span-1 text-base-800"
+            >
+              {feature.title}
+            </Text>
+            <Text
+              tag="p"
+              variant="textSM"
+              class="text-base-500 order-4 col-span-3 md:col-span-2 lg:order-2 lg:col-span-1"
+            >
+              {feature.description}
+            </Text>
+            <div class="order-2 justify-self-center lg:order-3 ">
+              <div class="items-center justify-center flex p-2  rounded-lg bg-teal-500 text-base-800">
+                <Check size="base" />
+              </div>
+            </div>
+            <div class="order-3 hidden md:block justify-self-center lg:order-4">
+              <div class="items-center justify-center flex p-2 rounded-lg bg-base-50 text-base-800">
+                <X size="base" />
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </Wrapper>
+</section>

@@ -1,0 +1,80 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+
+// VisualAsset1 Component This component renders an SVG VisualAsset1 and accepts props for customization.
+// Props: - class: A string of additional classes to style the SVG.
+// - ...rest: Any other valid attributes for any element (e.g., id, style, role, aria-label, etc.).
+// Example Usage: <VisualAsset1 class="my-custom-class" /> or <VisualAsset1 id="VisualAsset1-id" style="width: 50px; height: 50px;" />
+// ADd your VisualAsset1 here and pass the   class={className} {...rest} like on the example
+const { class: className = "", ...rest } = Astro.props;
+---
+
+<div aria-hidden="true" class={className} {...rest}>
+  <Text tag="p" variant="textXS" class="font-medium text-base-500"
+    >Processed</Text
+  >
+  <Text tag="p" variant="textXL" class="mt-4 font-semibold text-base-800"
+    >$275.50</Text
+  >
+  <div class="relative mt-8">
+    <div
+      class="absolute inset-0 top-0 left-0 w-full h-[0.080rem] bg-base-200 rounded-full"
+    >
+    </div>
+
+    <!-- Left Ball -->
+    <div class="absolute left-0 flex items-center -translate-y-1/2 top-1/2">
+      <div class="rounded-full bg-base-800 size-4"></div>
+    </div>
+
+    <!-- Right Ball -->
+    <div class="absolute right-0 flex items-center -translate-y-1/2 top-1/2">
+      <div class="bg-blue-600 rounded-full size-4"></div>
+    </div>
+  </div>
+
+  <div class="mt-20 grid grid-cols-2 gap-4">
+    <div>
+      <Text tag="p" variant="textXS" class="font-medium text-base-500"
+        >Source</Text
+      >
+      <Text tag="h4" variant="textSM" class="font-semibold text-base-800"
+        >Business account</Text
+      >
+      <Text tag="p" variant="textXS" class="font-medium text-base-500"
+        >Stripe • 785214369</Text
+      >
+    </div>
+    <div>
+      <Text tag="p" variant="textXS" class="font-medium text-base-500"
+        >Destination</Text
+      >
+      <Text tag="h4" variant="textSM" class="font-semibold text-base-800"
+        >Emma Martinez</Text
+      >
+      <Text tag="p" variant="textXS" class="font-medium text-base-500"
+        >Chase Bank • 321654987</Text
+      >
+    </div>
+  </div>
+  <div class="h-px my-6 bg-base-200"></div>
+  <div class="grid grid-cols-2 gap-4">
+    <div>
+      <Text tag="h4" variant="textSM" class="font-semibold text-base-800"
+        >Description</Text
+      >
+      <Text tag="p" variant="textXS" class="font-medium text-base-500"
+        >Project A-78542</Text
+      >
+    </div>
+    <div>
+      <Text tag="h4" variant="textSM" class="font-semibold text-base-800"
+        >Company name</Text
+      >
+      <Text tag="p" variant="textXS" class="font-medium text-base-500"
+        >Horizon Technologies</Text
+      >
+    </div>
+  </div>
+</div>

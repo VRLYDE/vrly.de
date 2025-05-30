@@ -1,0 +1,175 @@
+---
+// Assets
+import { Code } from "astro:components";
+import VisualAsset3 from "@/components/assets/VisualAsset3.astro";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import Plus from "@/components/fundations/icons/Plus.astro";
+import Filters from "@/components/fundations/icons/Filters.astro";
+import WaveSquare from "@/components/fundations/icons/WaveSquare.astro";
+import ArrowIteration from "@/components/fundations/icons/ArrowIteration.astro";
+// Icons
+const data = [
+  {
+    icon: "Filters",
+    category: "ACH",
+    text: "Initiate ACH transactions, process both credits and debits, verify accounts in advance, and store frequently used details.",
+  },
+  {
+    icon: "WaveSquare",
+    category: "Bank accounts",
+    text: "Create flexible account structures with unlimited unique account numbers.",
+  },
+  {
+    icon: "ArrowIteration",
+    category: "Cards",
+    text: "Generate custom cards for users, control authorizations in real-time, and set personalized limits.",
+  },
+  {
+    icon: "Plus",
+    category: "Checks",
+    text: "Send customized checks globally via API or deposit them digitally using the dashboard.",
+  },
+];
+// Timeline
+const timelineSteps = [
+  {
+    title: "Transfer initiated",
+    description: "The wheels are in motion!",
+    time: "Mar 12, 08:15 AM ",
+    datetime: "2025-03-12T08:15",
+    color: "bg-teal-200 ring-teal-500",
+  },
+  {
+    title: "Stamp of approval",
+    description: "Johnny Mnemonic gave it the nod.",
+    time: "Mar 12, 09:47 AM ",
+    datetime: "2025-03-12T09:47",
+    color: "bg-teal-200 ring-teal-500",
+  },
+  {
+    title: "Off to the Feds",
+    description: "Sent to the Federal Reserve...",
+    time: "Mar 12, 09:50 AM ",
+    datetime: "2025-03-12T09:50",
+    color: "bg-teal-200 ring-teal-500",
+  },
+  {
+    title: "Money landed",
+    description: "Settled with the recipient bank.",
+    time: "Mar 12, 3:30 PM ",
+    datetime: "2025-03-12T15:30",
+    color: "bg-teal-200 ring-teal-500",
+  },
+  {
+    title: "Final release",
+    description: "Funds will be good to go on March 14!",
+    time: "Mar 14",
+    datetime: "2025-03-14T00:00",
+    color: "bg-yellow-300 ring-yellow-500",
+  },
+];
+
+// Customers Content
+// Card
+import CustomerEntry1 from "@/components/customers/CustomerEntry1.astro";
+// Content
+import { getCollection } from "astro:content";
+const allCustomers = await getCollection("customers");
+---
+
+<section>
+  <Wrapper variant="standard" class="py-12 lg:py-24 border-t">
+    <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
+      <div class="lg:order-last">
+        <Text
+          tag="h3"
+          variant="textXL"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="font-semibold tracking-tight text-base-800 md:text-balance"
+        >
+          Transfer funds with reliability
+        </Text>
+        <Text
+          tag="p"
+          variant="textBase"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+          class="mt-2 text-base text-base-500 md:text-balance"
+        >
+          Automate ACH, wire transfers, real-time payments, and even physical
+          checks.
+        </Text>
+        <dl
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2 gap-y-8"
+        >
+          {
+            data.map((section) => (
+              <div>
+                <dt class="flex items-center gap-2 text-base-800">
+                  {section.icon === "Filters" && <Filters size="base" />}
+                  {section.icon === "WaveSquare" && <WaveSquare size="base" />}
+                  {section.icon === "ArrowIteration" && (
+                    <ArrowIteration size="base" />
+                  )}
+                  {section.icon === "Plus" && <Plus size="base" />}
+                  <Text tag="p" variant="textSM" class="font-medium leading-6 ">
+                    {section.category}
+                  </Text>
+                </dt>
+                <dd class="mt-2">
+                  <Text tag="p" variant="textSM" class=" text-base-500">
+                    {section.text}
+                  </Text>
+                </dd>
+              </div>
+            ))
+          }
+        </dl>
+
+        <div data-aos="fade-up" data-aos-duration="2500" class="mt-8">
+          {
+            allCustomers
+              .slice(0, 1)
+              .map((post) => <CustomerEntry1 post={post} />)
+          }
+        </div>
+      </div>
+      <div class="relative">
+        <Code
+          class="relative p-8 text-xs scrollbar-hide rounded-xl lg:z-10"
+          code={`await payments.transfer.create({
+    amount: 25075,
+    currency: "USD",
+    from_account: {
+      id: "acct_everbank_112233445",
+      bank: "EverBank",
+      type: "Business Checking",
+    },
+    
+    to_account: {
+      id: "acct_chase_556677889",
+      bank: "Chase",
+      type: "Savings",
+    },
+    
+    initiated_at: "2025-03-14T14:32:00Z",
+    status: "Pending",
+    });`}
+          lang="js"
+          theme="css-variables"
+        />
+        <VisualAsset3
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="hidden w-full overflow-hidden bg-white shadow-2xl lg:z-50 lg:absolute lg:top-32 lg:block lg:left-14 rounded-xl divide-y divide-base-200 outline-1 outline-base-200"
+        />
+      </div>
+    </div>
+  </Wrapper>
+</section>

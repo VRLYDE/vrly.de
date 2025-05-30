@@ -1,0 +1,164 @@
+---
+// Fundations
+import Link from "@/components/fundations/elements/Link.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import Tools from "@/components/fundations/icons/Tools.astro";
+import Plus from "@/components/fundations/icons/Plus.astro";
+import Cursor from "@/components/fundations/icons/Cursor.astro";
+import Camera from "@/components/fundations/icons/Camera.astro";
+import Filters from "@/components/fundations/icons/Filters.astro";
+import Persist from "@/components/fundations/icons/Persist.astro";
+import Stacked from "@/components/fundations/icons/Stacked.astro";
+import WaveSquare from "@/components/fundations/icons/WaveSquare.astro";
+import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
+import ArrowIteration from "@/components/fundations/icons/ArrowIteration.astro";
+const data = [
+  {
+    icon: "Filters",
+    category: "ACH",
+    text: "Initiate ACH transactions, process both credits and debits, verify accounts in advance, and store frequently used details.",
+  },
+  {
+    icon: "WaveSquare",
+    category: "Bank accounts",
+    text: "Create flexible account structures with unlimited unique account numbers.",
+  },
+  {
+    icon: "ArrowIteration",
+    category: "Cards",
+    text: "Generate custom cards for users, control authorizations in real-time, and set personalized limits.",
+  },
+  {
+    icon: "Plus",
+    category: "Checks",
+    text: "Send customized checks globally via API or deposit them digitally using the dashboard.",
+  },
+  {
+    icon: "Cursor",
+    category: "Wires",
+    text: "Execute instant wire transfers anytime during Fedwire’s operating hours.",
+  },
+  {
+    icon: "Persist",
+    category: "Real-time payments",
+    text: "Move funds to major banks within seconds instead of days.",
+  },
+  {
+    icon: "Camera",
+    category: "FedNow",
+    text: "A new Federal Reserve payment system enabling round-the-clock money transfers between participating banks.",
+  },
+  {
+    icon: "Stacked",
+    category: "Payment scheduling",
+    text: "Automate and schedule payments in advance to streamline financial operations.",
+  },
+];
+---
+
+<section>
+  <Wrapper variant="standard" class="py-12 border-t">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:items-end">
+      <div class="lg:col-span-2">
+        <Text
+          class="span"
+          variant="textXS"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+          class="flex items-center font-medium uppercase text-base-600 gap-2"
+        >
+          <Tools size="sm" class="text-yellow-600" />
+          Built for modern builders
+        </Text>
+        <Text
+          tag="h3"
+          variant="displayMD"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="mt-8 font-semibold tracking-tight text-base-800"
+        >
+          Banking without barriers
+        </Text>
+        <Text
+          tag="p"
+          variant="textBase"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+          class="mt-2 text-base text-base-500 md:text-balance"
+        >
+          Instantly open accounts, connect directly to payment networks, and
+          build with flexible, future-ready tools—no outdated systems holding
+          you back.
+        </Text>
+      </div>
+      <div
+        data-aos="fade-up"
+        data-aos-duration="2000"
+        class="flex items-center space-x-2"
+      >
+        <Link
+          size="base"
+          variant="default"
+          href="/forms/sign-up"
+          gap="xs"
+          class="group"
+        >
+          Get started
+          <ChevronRight
+            size="sm"
+            class="duration-300 easy-out-in group-hover:translate-x-2"
+          />
+        </Link>
+        <Link
+          size="base"
+          variant="muted"
+          href="/forms/contact"
+          gap="xs"
+          class="group"
+        >
+          Contact sales
+          <ChevronRight
+            size="sm"
+            class="duration-300 easy-out-in group-hover:translate-x-2"
+          />
+        </Link>
+      </div>
+    </div>
+    <dl class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        data.map((section) => (
+          <div>
+            <dt class="flex items-center gap-2">
+              <div class=" text-base-800">
+                {section.icon === "Filters" && <Filters size="base" />}
+                {section.icon === "WaveSquare" && <WaveSquare size="base" />}
+                {section.icon === "ArrowIteration" && (
+                  <ArrowIteration size="base" />
+                )}
+                {section.icon === "Plus" && <Plus size="base" />}
+                {section.icon === "Cursor" && <Cursor size="base" />}
+                {section.icon === "Persist" && <Persist size="base" />}
+                {section.icon === "Camera" && <Camera size="base" />}
+                {section.icon === "Stacked" && <Stacked size="base" />}
+              </div>
+              <Text
+                tag="h3"
+                variant="textSM"
+                class="font-medium leading-6 text-base-800"
+              >
+                {section.category}
+              </Text>
+            </dt>
+            <dd>
+              <Text tag="p" variant="textSM" class=" text-base-500 mt-2">
+                {section.text}
+              </Text>
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+  </Wrapper>
+</section>

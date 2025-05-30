@@ -1,0 +1,73 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import User from "@/components/fundations/icons/User.astro";
+import ChevronLeft from "@/components/fundations/icons/ChevronLeft.astro";
+import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
+// Components
+import CustomerEntry3 from "@/components/customers/CustomerEntry3.astro";
+// Content
+import { getCollection } from "astro:content";
+const allCustomers = await getCollection("customers");
+---
+
+<section>
+  <Wrapper variant="carousel" class="py-12 border-t">
+    <div class="px-4 text-center max-w-xl mx-auto">
+      <Text
+        class="span"
+        variant="textXS"
+        data-aos="fade-down"
+        data-aos-duration="1000"
+        class="flex items-center font-medium uppercase text-base-600 gap-2 justify-center"
+      >
+        <User size="sm" class="text-yellow-600" />
+        Testimonials
+      </Text>
+      <Text
+        tag="h3"
+        variant="displayMD"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        class="mt-8 font-semibold tracking-tight text-base-800"
+      >
+        Our customers
+      </Text>
+      <Text
+        tag="p"
+        variant="textBase"
+        data-aos="fade-up"
+        data-aos-duration="1500"
+        class="mt-2 text-base text-base-500 md:text-balance"
+      >
+        Read what our customers have to say about our services.
+      </Text>
+    </div>
+    <div class="w-full mx-auto max-w-screen mt-12">
+      <div id="keen-slider" class="keen-slider">
+        {allCustomers.map((post) => <CustomerEntry3 post={post} />)}
+      </div>
+    </div>
+  </Wrapper>
+  <section>
+    <Wrapper variant="standard" class="py-4 border-t">
+      <div class="flex gap-2 justify-center">
+        <button
+          aria-label="Previous slide"
+          id="keen-slider-previous"
+          class="flex p-2 bg-base-50 rounded-lg transition-all duration-300 text-base-800 hover:bg-base-800 hover:text-teal-500 group"
+          ><ChevronLeft size="base" />
+        </button>
+        <button
+          aria-label="Next slide"
+          id="keen-slider-next"
+          class="flex p-2 bg-base-50 rounded-lg transition-all duration-300 text-base-800 hover:bg-base-800 hover:text-teal-500 group"
+        >
+          <ChevronRight size="base" />
+        </button>
+      </div>
+    </Wrapper>
+  </section>
+</section>

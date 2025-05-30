@@ -1,0 +1,68 @@
+---
+// Assets
+import { Image } from "astro:assets";
+import LimeStripe from "@/images/assets/LimeStripe.png";
+// Icons
+import InfoCircle from "@/components/fundations/icons/InfoCircle.astro";
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+//Sections
+import HelpCenterFaq from "@/components/helpcenter/HelpCenterFaq.astro";
+import TicketCta from "@/components/helpcenter/TicketCta.astro";
+// Components
+import HelpCenterSearch from "@/components/helpcenter/HelpCenterSearch.astro";
+import HelpCenterEntries1 from "@/components/helpcenter/HelpCenterEntries1.astro";
+// Content
+import { getCollection } from "astro:content";
+// Content
+const allEntries = await getCollection("helpcenter");
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="relative py-32 lg:pb-60 overflow-hidden">
+      <Image
+        src={LimeStripe}
+        alt="Lime Stripe"
+        class="absolute inset-0 size-full pointer-events-none scale-180 rotate-x-180 top-100"
+      />
+
+      <div class="relative">
+        <Text
+          tag="span"
+          class="span"
+          variant="textXS"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+          class="flex items-center font-medium uppercase text-base-500 gap-2"
+        >
+          <InfoCircle size="sm" class="text-yellow-600" />
+          Help center
+        </Text>
+        <Text
+          tag="h1"
+          variant="display2XL"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="font-semibold tracking-tighter text-base-800 lg:text-balance mt-8"
+        >
+          Explore our Help Center for answers to your questions and assistance.
+        </Text>
+        <HelpCenterSearch />
+      </div>
+    </Wrapper>
+  </section>
+  <section>
+    <Wrapper variant="standard" class="py-4 border-t">
+      <div
+        class="items-start grid grid-cols-1 gap-2 lg:grid-cols-4 -mt-20 lg:-mt-40 z-20"
+      >
+        {allEntries.map((post) => <HelpCenterEntries1 post={post} />)}
+      </div>
+    </Wrapper>
+  </section>
+  <TicketCta />
+  <HelpCenterFaq />
+</BaseLayout>

@@ -1,0 +1,19 @@
+---
+// Foundations
+import "@/styles/global.css";
+import BaseHead from "@/components/fundations/head/BaseHead.astro";
+---
+
+<html
+  lang="en"
+  class="scroll-smooth selection:bg-base-800 selection:text-teal-500"
+>
+  <head>
+    <BaseHead />
+  </head>
+  <body class="">
+    <main class="grow">
+      <slot />
+    </main>
+  </body>
+</html>

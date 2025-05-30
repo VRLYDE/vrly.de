@@ -1,0 +1,61 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import FileDots from "@/components/fundations/icons/FileDots.astro";
+// Content
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="pb-12 pt-32">
+      <div class="max-w-xl mx-auto">
+        <Text
+          class="span"
+          variant="textXS"
+          class="flex items-center font-medium uppercase text-base-600 gap-2"
+        >
+          <FileDots size="sm" class="text-yellow-600" />
+          <span>
+            <time
+              datetime={new Date(frontmatter.pubDate).toLocaleDateString(
+                "en-US",
+                {
+                  year: "numeric",
+                  month: "long",
+                }
+              )}
+            >
+              {
+                new Date(frontmatter.pubDate).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                })
+              }</time
+            ></span
+          >
+        </Text>
+
+        <Text
+          tag="h3"
+          variant="displayMD"
+          class="mt-8 font-semibold tracking-tight text-base-800"
+          >{frontmatter.page}</Text
+        >
+        <Text
+          tag="p"
+          variant="textBase"
+          class="mt-2 text-base text-base-500 md:text-balance"
+        >
+          Contact us with any questions about these agreements.</Text
+        >
+      </div>
+    </Wrapper>
+    <Wrapper variant="standard" class="py-12 border-t border-base-200">
+      <Wrapper variant="prose" class="max-w-xl mx-auto"><slot /></Wrapper>
+    </Wrapper>
+  </section>
+</BaseLayout>

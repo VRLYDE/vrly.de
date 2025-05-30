@@ -1,0 +1,34 @@
+
+<script type="module">
+   document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(() => {
+    const chatBubble = document.getElementById("chat-bubble");
+    const chatToggle = document.getElementById("chat-toggle");
+
+    if (!chatBubble || !chatToggle) {
+      console.error("Chat elements not found!");
+      return;
+    }
+
+    chatToggle.addEventListener("click", function () {
+      console.log("Chat toggle clicked!"); // Debugging line
+      chatBubble.classList.toggle("opacity-0");
+      chatBubble.classList.toggle("pointer-events-none");
+    });
+
+    // Prevent chat bubble from closing when clicking inside it
+    chatBubble.addEventListener("click", function (event) {
+      event.stopPropagation(); // Stops the click from reaching the document listener
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!chatBubble.contains(event.target) && !chatToggle.contains(event.target)) {
+        chatBubble.classList.add("opacity-0");
+        chatBubble.classList.add("pointer-events-none");
+      }
+    });
+  }, 500); // Delays execution slightly to ensure elements exist
+});
+
+
+  </script>

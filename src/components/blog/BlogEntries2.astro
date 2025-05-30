@@ -1,0 +1,62 @@
+---
+import { Image } from "astro:assets";
+import Text from "@/components/fundations/elements/Text.astro";
+// Icons
+import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
+
+// Content
+const { url, title, description, pubDate, image } = {
+  url: "/blog/posts/" + Astro.props.post.slug,
+  title: Astro.props.post.data.title,
+  description: Astro.props.post.data.description,
+  image: Astro.props.post.data.image.url,
+  pubDate: new Date(Astro.props.post.data.pubDate).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "2-digit",
+  }),
+};
+---
+
+<div
+  class="relative overflow-hidden group  flex h-full justify-between flex-col gap-12 lg:gap-24 bg-white group group transition-all md:min-h-[150px] cursor-pointer hover:bg-shadow-2xl shadow rounded-(--card-radius) p-(--card-padding) group [--card-padding:--spacing(2)] [--card-radius:var(--radius-2xl)] hover:shadow-2xl duration-500 outline outline-base-200"
+>
+  <a href={url} title={title} class="absolute inset-0 z-10"></a>
+  <div>
+    <Image
+      src={image}
+      alt={title}
+      width="1000"
+      height="1000"
+      class="object-cover object-center aspect-12/9 rounded-[calc(var(--card-radius)-var(--card-padding))]"
+    />
+    <div class="mt-2 px-4">
+      <Text tag="p" variant="textXS" class="uppercase text-base-400">
+        {pubDate}
+      </Text>
+      <Text tag="h3" variant="textBase" class="mt-2 font-medium text-base-900">
+        {title}
+      </Text>
+      <Text
+        tag="p"
+        variant="textSM"
+        class="mt-2 text-base-600 text-balance line-clamp-2"
+      >
+        {description}
+      </Text>
+    </div>
+  </div>
+  <div class="px-4 pb-2">
+    <Text
+      tag="p"
+      variant="textSM"
+      class="flex items-center font-medium gap-2 text-base-800"
+    >
+      Read further
+      <ChevronRight
+        size="sm"
+        class="duration-300 easy-out-in group-hover:translate-x-2"
+      />
+    </Text>
+  </div>
+</div>

@@ -1,0 +1,193 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Link from "@/components/fundations/elements/Link.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import Tool from "@/components/fundations/icons/Tool.astro";
+import User from "@/components/fundations/icons/User.astro";
+import ApiApp from "@/components/fundations/icons/ApiApp.astro";
+import CreditCard from "@/components/fundations/icons/CreditCard.astro";
+import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
+const pricingData = [
+  {
+    color: "bg-teal-500",
+    category: "ACH Processing",
+    icon: "ApiApp",
+    buttonVariant: "default",
+    details: [
+      {
+        label: "Same-day ACH transfers",
+        price: "$1.50",
+        unit: "/ transaction",
+      },
+      {
+        label: "Next-day ACH transfers",
+        price: "$0.40",
+        unit: "/ transaction",
+      },
+      { label: "ACH return processing", price: "$4.00", unit: "/ transaction" },
+      {
+        label: "Unauthorized return handling",
+        price: "$12.00",
+        unit: "/ transaction",
+      },
+      {
+        label: "Late return request processing",
+        price: "$20.00",
+        unit: "/ transaction",
+      },
+    ],
+  },
+  {
+    color: "bg-yellow-500",
+    category: "Wire Processing",
+    icon: "Tool",
+    buttonVariant: "muted",
+    details: [
+      {
+        label: "Wire transfer initiation",
+        price: "$12.00",
+        unit: "/ transaction",
+      },
+      {
+        label: "Wire drawdown request",
+        price: "$12.00",
+        unit: "/ transaction",
+      },
+      {
+        label: "International wire transfers",
+        price: "$15.00",
+        unit: "/ transaction",
+      },
+      {
+        label: "Wire transfer tracking",
+        price: "$5.00",
+        unit: "/ transaction",
+      },
+      { label: "Wire recall processing", price: "$25.00", unit: "/ request" },
+    ],
+  },
+  {
+    color: "bg-blue-500",
+    category: "Check Issuing",
+    icon: "User",
+    buttonVariant: "accent",
+    details: [
+      {
+        label: "Check printing & mailing (Sbianco fulfilled)",
+        price: "$2.50",
+        unit: "/ check",
+      },
+      { label: "Bulk check issuing", price: "$2.00", unit: "/ check" },
+      { label: "Certified check processing", price: "$10.00", unit: "/ check" },
+      { label: "Stop payment request", price: "$20.00", unit: "/ check" },
+    ],
+  },
+];
+---
+
+<section>
+  <Wrapper variant="standard" class="py-12 border-t">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-end">
+      <div class="lg:col-span-2">
+        <Text
+          class="span"
+          variant="textXS"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+          class="flex items-center font-medium uppercase text-base-600 gap-2"
+        >
+          <CreditCard size="sm" class="text-teal-600" />
+          Pricing
+        </Text>
+        <Text
+          tag="h1"
+          variant="displayXL"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="mt-8 font-semibold tracking-tight text-base-800 md:text-balance"
+        >
+          Fees
+        </Text>
+        <Text
+          tag="p"
+          variant="textBase"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+          class="mt-2 text-base text-base-500 lg:text-balance max-w-lg"
+        >
+          For fintech platforms handling customer transactions or businesses
+          with substantial balances, we provide tailored pricing. Reach out to
+          us for more information.
+        </Text>
+      </div>
+      <div class="flex lg:ml-auto">
+        <Link
+          size="base"
+          variant="default"
+          href="/forms/contact"
+          gap="xs"
+          class="group w-auto"
+        >
+          Contact sales
+          <ChevronRight
+            size="sm"
+            class="duration-300 easy-out-in group-hover:translate-x-2"
+          />
+        </Link>
+      </div>
+    </div>
+    <ul role="list" class="grid grid-cols-1 lg:grid-cols-3 gap-2 mt-8">
+      {
+        pricingData.map((section) => (
+          <div class="outline outline-base-200 p-8 rounded-2xl shadow-xl">
+            <div class="flex items-center gap-2 ">
+              <div class="flex">
+                <div
+                  class={`${section.color} flex p-2 rounded-lg transition-all duration-300 text-base-800 group-hover:bg-base-800 group-hover:text-white`}
+                >
+                  {section.icon === "User" && <User size="base" />}
+                  {section.icon === "Tool" && <Tool size="base" />}
+                  {section.icon === "ApiApp" && <ApiApp size="base" />}
+                </div>
+              </div>
+              <Text
+                tag="h3"
+                variant="textBase"
+                class="font-semibold text-base-800"
+              >
+                {section.category}
+              </Text>
+            </div>
+            <ul class="flex flex-col divide-y divide-base-200 0">
+              {section.details.map((detail, i) => (
+                <li class="flex flex-col  gap-4 py-4 text-base-500">
+                  <Text tag="p" variant="textSM" class="font-medium">
+                    {detail.label}
+                  </Text>
+                  <div class="flex items-baseline gap-1">
+                    <Text
+                      tag="p"
+                      variant="textSM"
+                      class="font-semibold text-base-800"
+                    >
+                      {detail.price}
+                    </Text>
+                    <Text
+                      tag="p"
+                      variant="textXS"
+                      class="capitalize text-base-500"
+                    >
+                      {detail.unit}
+                    </Text>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </ul>
+  </Wrapper>
+</section>

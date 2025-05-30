@@ -1,0 +1,99 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import User from "@/components/fundations/icons/User.astro";
+import ApiApp from "@/components/fundations/icons/ApiApp.astro";
+import Settings from "@/components/fundations/icons/Settings.astro";
+import Tools from "@/components/fundations/icons/Tools.astro";
+import Search from "@/components/fundations/icons/Search.astro";
+// Icons
+const data = [
+  {
+    icon: "User",
+    category: "Manage risk profiles",
+    text: "Decide which risk profiles align with your business.",
+  },
+  {
+    icon: "Settings",
+    category: "Custom onboarding",
+    text: "Set identity requirements that match your customers' needs.",
+  },
+  {
+    icon: "Search",
+    category: "In-house  monitoring",
+    text: "Oversee transactions with your own system.",
+  },
+  {
+    icon: "Tools",
+    category: "Streamlined tools",
+    text: "Optimize workflows to make compliance reporting effortless.",
+  },
+];
+---
+
+<section>
+  <Wrapper variant="standard" class="py-12  border-t">
+    <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
+      <div>
+        <Text
+          class="span"
+          variant="textXS"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+          class="flex items-center gap-2 font-medium uppercase text-base-600"
+        >
+          <ApiApp size="sm" class="text-yellow-600" />
+          Tailored Compliance
+        </Text>
+        <Text
+          tag="h3"
+          variant="displayMD"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="mt-8 font-semibold tracking-tight text-base-800 md:text-balance"
+        >
+          Take control of your customer relationships
+        </Text>
+        <Text
+          tag="p"
+          variant="textBase"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+          class="mt-2 text-base text-base-500"
+        >
+          You understand your customers better than any platform ever could.
+          Instead of a generic approach, we collaborate with you to build a
+          compliance program that fits your business.
+        </Text>
+      </div>
+      <dl
+        data-aos="fade-up"
+        data-aos-duration="2000"
+        class="grid grid-cols-1 gap-2 mt-8 sm:grid-cols-2 gap-y-8"
+      >
+        {
+          data.map((section) => (
+            <div>
+              <dt class="flex items-center gap-2 text-base-800">
+                {section.icon === "Settings" && <Settings size="base" />}
+                {section.icon === "Tools" && <Tools size="base" />}
+                {section.icon === "Search" && <Search size="base" />}
+                {section.icon === "User" && <User size="base" />}
+                <Text tag="p" variant="textSM" class="font-medium leading-6 ">
+                  {section.category}
+                </Text>
+              </dt>
+              <dd class="mt-2">
+                <Text tag="p" variant="textSM" class=" text-base-500">
+                  {section.text}
+                </Text>
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </Wrapper>
+</section>

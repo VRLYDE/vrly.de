@@ -1,0 +1,52 @@
+---
+// Assets
+import { Image } from "astro:assets";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+// Icons
+import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
+const { customer, logo, url, partnership, bgColor } = {
+  url: "/customers/" + Astro.props.post.slug,
+  logo: Astro.props.post.data.logo.url,
+  customer: Astro.props.post.data.customer,
+  partnership: Astro.props.post.data.partnership,
+  // Pass different  background color to the cards
+  bgColor: Astro.props.post.data.bgColor || "bg-base-50",
+};
+---
+<div
+  class="relative  flex items-center space-x-4 bg-white shadow transition-all duration-500  hover:shadow-2xl rounded-(--card-radius) p-(--card-padding) group [--card-padding:--spacing(2)]  [--card-radius:var(--radius-2xl)]"
+>
+  <a href={url} title={customer} aria-label={customer} class="absolute inset-0"
+  ></a>
+  <div
+    class={`${bgColor} flex h-full aspect-square max-w-32 shrink-0 items-center justify-center rounded-[calc(var(--card-radius)-var(--card-padding))] px-5  sm:px-6`}
+  >
+    <Image src={logo} alt={customer} width={300} height={300} class="size-full" />
+  </div>
+  <div class="flex flex-col justify-between h-full ">
+    <div>
+      <Text
+        tag="h3"
+        variant="textBase"
+        class="font-medium leading-6 text-base-800"
+      >
+        {customer}
+      </Text>
+      <Text tag="p" variant="textSM" class="text-base-500">
+        {partnership}
+      </Text>
+    </div>
+    <Text
+      tag="p"
+      variant="textSM"
+      class="flex items-center gap-2 mt-4 font-medium text-base-800"
+    >
+      Learn more
+      <ChevronRight
+        size="sm"
+        class="duration-300 easy-out-in group-hover:translate-x-2"
+      />
+    </Text>
+  </div>
+</div>

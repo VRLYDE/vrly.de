@@ -1,0 +1,53 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import UsersGroup from "@/components/fundations/icons/UsersGroup.astro";
+// Components
+import TeamEntries1 from "@/components/team/TeamEntries1.astro";
+// Content
+import { getCollection } from "astro:content";
+const allTeam = await getCollection("team");
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="relative py-12 lg:pt-32 overflow-hidden">
+      
+
+      <div class="relative">
+        <Text
+          class="span"
+          variant="textXS"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+          class="flex items-center font-medium uppercase gap-2 text-base-600"
+        >
+          <UsersGroup size="sm" class="text-yellow-600" />
+          Team
+        </Text>
+        <Text
+          tag="h1"
+          variant="display2XL"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="mt-8 font-semibold tracking-tighter text-base-800 lg:text-balance"
+        >
+          We are a super talented
+          <span class="md:block text-base-400"> and creative team </span>
+        </Text>
+      </div>
+    </Wrapper>
+  </section>
+  <section>
+    <Wrapper variant="standard" class="py-4 border-t">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-12"
+      >
+        {allTeam.map((post) => <TeamEntries1 post={post} />)}
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

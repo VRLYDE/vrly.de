@@ -1,0 +1,25 @@
+---
+// Assets
+import { Image } from "astro:assets";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Link from "@/components/fundations/elements/Link.astro";
+// Icons
+import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
+// Content
+const { integration, description, url, logo, bgColor } = {
+  url: "/integrations/" + Astro.props.post.slug,
+  integration: Astro.props.post.data.integration,
+  description: Astro.props.post.data.description,
+  logo: Astro.props.post.data.logo.url,
+  // Pass different  background color to the cards
+  bgColor: Astro.props.post.data.bgColor || "bg-base-50",
+};
+---
+
+<div
+  class="outline outline-base-200 aspect-square relative flex size-full items-center justify-center flex-col rounded-2xl shadow p-4 bg-white hover:shadow-2xl duration-500"
+>
+  <a class="absolute inset-0 z-10" href={url} title={integration}></a>
+  <Image src={logo} alt={integration} width={300} height={300} class="w-40" />
+</div>

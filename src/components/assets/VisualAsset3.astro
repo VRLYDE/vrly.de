@@ -1,0 +1,84 @@
+---
+// VisualAsset2 Component This component renders an SVG VisualAsset1 and accepts props for customization.
+// Props: - class: A string of additional classes to style the SVG.
+// - ...rest: Any other valid attributes for any element (e.g., id, style, role, aria-label, etc.).
+// Example Usage: <VisualAsset1 class="my-custom-class" /> or <VisualAsset1 id="VisualAsset1-id" style="width: 50px; height: 50px;" />
+// ADd your VisualAsset1 here and pass the   class={className} {...rest} like on the example
+const { class: className = "", ...rest } = Astro.props;
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+
+// Timeline
+const timelineSteps = [
+  {
+    title: "Transfer initiated",
+    description: "The wheels are in motion!",
+    time: "Mar 12, 08:15 AM ",
+    datetime: "2025-03-12T08:15",
+    color: "bg-teal-200 ring-teal-500",
+  },
+  {
+    title: "Stamp of approval",
+    description: "Johnny Mnemonic gave it the nod.",
+    time: "Mar 12, 09:47 AM ",
+    datetime: "2025-03-12T09:47",
+    color: "bg-teal-200 ring-teal-500",
+  },
+  {
+    title: "Off to the Feds",
+    description: "Sent to the Federal Reserve...",
+    time: "Mar 12, 09:50 AM ",
+    datetime: "2025-03-12T09:50",
+    color: "bg-teal-200 ring-teal-500",
+  },
+  {
+    title: "Money landed",
+    description: "Settled with the recipient bank.",
+    time: "Mar 12, 3:30 PM ",
+    datetime: "2025-03-12T15:30",
+    color: "bg-teal-200 ring-teal-500",
+  },
+  {
+    title: "Final release",
+    description: "Funds will be good to go on March 14!",
+    time: "Mar 14",
+    datetime: "2025-03-14T00:00",
+    color: "bg-yellow-300 ring-yellow-500",
+  },
+];
+---
+
+<div aria-hidden="true" class={className} {...rest}>
+  <div class="px-8 py-4">
+    <Text tag="p" variant="textXS" class="font-medium text-base-500"
+      >ACH Transfer</Text
+    >
+    <Text tag="p" variant="textXL" class="mt-4 font-semibold text-base-800"
+      >$275.50</Text
+    >
+  </div>
+  <ul role="list" class="p-8 space-y-3 pb-14">
+    {
+      timelineSteps.map((step, index) => (
+        <li class="relative flex gap-x-2">
+          <div class="absolute top-0 left-0 flex justify-center w-6 -bottom-6">
+            <div class="w-px bg-base-300" />
+          </div>
+          <div class="relative flex items-center justify-center flex-none bg-white size-6 rounded-full">
+            <div class={`size-1.5 rounded-full ${step.color} ring`} />
+          </div>
+          <Text tag="p" variant="textXS" class="flex-auto py-0.5 text-base-500">
+            <span class="font-medium text-base-800">{step.title}</span>{" "}
+            {step.description}
+          </Text>
+          <time
+            datetime={step.datetime}
+            class="flex-none py-0.5 text-[0.60rem] text-base-500"
+          >
+            {step.time}
+          </time>
+        </li>
+      ))
+    }
+  </ul>
+</div>

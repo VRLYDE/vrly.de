@@ -1,0 +1,44 @@
+---
+// Logocloud This component renders a component and accepts props for customization.
+// Props: - class: A string of additional classes to style the component.
+// - ...rest: Any other valid attributes for an div element (e.g., id, style, role, aria-label, etc.).
+// Example Usage: <Logocloud class="my-custom-class" /> or <Logocloud id="Logocloud-id" style="width: 50px; height: 50px;" />
+const { class: className = "", ...rest } = Astro.props;
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+// Images
+import { Image } from "astro:assets";
+// import the brands
+import logocloud from "@/images/brands/1.svg";
+import logo2 from "@/images/brands/2.svg";
+import logo3 from "@/images/brands/3.svg";
+import logo4 from "@/images/brands/4.svg";
+import logo5 from "@/images/brands/5.svg";
+import logo6 from "@/images/brands/6.svg";
+const brands = [
+  { src: logocloud, alt: "b1 Logo" },
+  { src: logo2, alt: "b2 Logo" },
+  { src: logo3, alt: "b3 Logo" },
+  { src: logo4, alt: "b4 Logo" },
+  { src: logo5, alt: "b5 Logo" },
+  { src: logo6, alt: "b6 Logo" },
+];
+---
+
+<div class={className} {...rest}>
+  <div
+    class="items-center relative animate-quickMarquee flex gap-4 whitespace-nowrap"
+  >
+    {
+      brands.map((logo) => (
+        <Image
+          width={2000}
+          height={100}
+          class=" max-h-10"
+          src={logo.src}
+          alt={logo.alt}
+        />
+      ))
+    }
+  </div>
+</div>

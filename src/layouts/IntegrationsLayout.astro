@@ -1,0 +1,260 @@
+---
+// Assets
+import { Image } from "astro:assets";
+// Fundations
+import BaseLayout from "./BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Button from "@/components/fundations/elements/Button.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import Plus from "@/components/fundations/icons/Plus.astro";
+// Content
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout>
+  <!-- Modal -->
+  <div
+    id="modal"
+    style="display: none"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    class="fixed inset-0 z-50 overflow-y-auto"
+  >
+    <!-- Overlay -->
+    <div id="modal-overlay" class="fixed inset-0 bg-base-50/5 backdrop-blur">
+    </div>
+    <!-- Panel -->
+    <Wrapper
+      variant="modal"
+      class="relative flex flex-cll min-h-screen items-center justify-center"
+    >
+      <div
+        id="modal-content"
+        class="relative w-full overflow-y-auto bg-white outline outline-base-200 p-5 rounded-2xl max-w-lg shadow-bottom"
+      >
+        <div class="h-full">
+          <div class="relative flex flex-col h-full justify-between">
+            <div>
+              <div
+                class={`${frontmatter.bgColor} overflow-hidden flex flex-col items-center justify-center  aspect-12/6 size-full rounded-xl`}
+              >
+                <Image
+                  class="inline-block max-w-32 lg:max-w-62"
+                  width={300}
+                  height={300}
+                  src={frontmatter.logo.url}
+                  alt={frontmatter.logo.alt}
+                />
+              </div>
+              <Text
+                tag="h3"
+                variant="textBase"
+                class="text-base-800 font-medium mt-4"
+                id="modal-title"
+              >
+                Connect {frontmatter.integration} to Munch
+              </Text>
+              <Text tag="p" variant="textSM" class="mt-2 text-base-500">
+                Give priority to tasks and projects based on the requirements of
+                your customers, and establish a closer feedback loop with them.
+              </Text>
+            </div>
+            <Text
+              tag="p"
+              variant="textBase"
+              class="text-base-800 text-left font-medium mt-8"
+            >
+              Munch would like to
+            </Text>
+            <ul
+              role="list"
+              class="text-left list-none text-base-500 mt-2 text-xs"
+            >
+              {
+                frontmatter.permissions.map((permission) => (
+                  <li class="flex items-center gap-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-check"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M5 12l5 5l10 -10" />
+                    </svg>
+                    {permission}
+                  </li>
+                ))
+              }
+            </ul>
+            <p class="text-base-500 text-left text-xs mt-4">
+              *We prioritize your privacy, as stated in our
+              <a
+                class="text-base-500 hover:text-base-800"
+                href="/infopages/privacy">Privacy Policy</a
+              >. By clicking "Allow access," you grant Untitled permission to
+              access your information.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-12 ml-auto">
+              <Button
+                size="base"
+                variant="muted"
+                type="button"
+                id="close-modal"
+              >
+                Cancel
+              </Button>
+              <Button size="base" variant="accent" type="submit">
+                Allow access
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Wrapper>
+  </div>
+  <section>
+    <Wrapper variant="standard" class="pt-32 pb-12">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-end">
+        <div class="lg:col-span-2">
+          <Text
+            class="span"
+            variant="textXS"
+            data-aos="fade-down"
+            data-aos-duration="1000"
+            class="flex items-center font-medium uppercase text-base-500 gap-2"
+          >
+            <Plus size="sm" class="text-yellow-600" />
+            Integrations
+          </Text>
+          <Text
+            tag="h1"
+            variant="displayXL"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="font-semibold tracking-tighter text-base-800 lg:text-balance mt-8"
+          >
+            {frontmatter.integration}
+          </Text>
+          <Text
+            tag="p"
+            variant="textBase"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            class="mt-4 font-medium text-base-600 md:text-balance"
+          >
+            {frontmatter.description}
+          </Text>
+        </div>
+        <div class="mt-4 flex lg:ml-auto">
+          <Button size="base" variant="default" id="open-modal">
+            Connect {frontmatter.integration}
+          </Button>
+        </div>
+      </div>
+    </Wrapper>
+  </section>
+
+  <section>
+    <Wrapper variant="standard" class="border-t pt-12">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        <Wrapper variant="prose" class="lg:col-span-2"><slot /></Wrapper>
+        <dl class="flex flex-col gap-4">
+          {
+            frontmatter.details.map((detail) => (
+              <div>
+                <dt>
+                  <Text
+                    tag="h4"
+                    variant="textBase"
+                    class="text-base-800 font-medium"
+                  >
+                    {detail.title}
+                  </Text>
+                </dt>
+                <dd>
+                  <Text
+                    tag="p"
+                    variant="textSM"
+                    class="text-base-500 capitalize lg:text-balance"
+                  >
+                    {detail.url ? (
+                      <a
+                        class="text-base-500 hover:text-base-500 duration-300 "
+                        href={detail.url}
+                      >
+                        {detail.value}
+                      </a>
+                    ) : (
+                      detail.value
+                    )}
+                  </Text>
+                </dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+    </Wrapper>
+  </section>
+  <script type="module">
+    //
+    // Modal Component Script
+    //
+    // This script handles the functionality of a modal dialog with the following features:
+    // Opens/closes modal with animation
+    // Prevents background scrolling when modal is open
+    // Closes on outside click, escape key, or close button
+    // Handles scrollbar width to prevent layout shift
+    document.addEventListener("DOMContentLoaded", () => {
+      // Store all modal-related DOM elements in a single object for better organization
+      const modal = {
+        element: document.getElementById("modal"), // Main modal container
+        openButton: document.getElementById("open-modal"), // Button to open modal
+        closeButton: document.getElementById("close-modal"), // Button to close modal
+        content: document.getElementById("modal-content"), // Modal content container
+      };
+      // Toggles the modal visibility and handles body scroll
+      // @param {boolean} show - True to show modal, false to hide
+      const toggleModal = (show) => {
+        // Calculate scrollbar width to prevent layout shift when body scroll is disabled
+        const scrollbarWidth =
+          window.innerWidth - document.documentElement.clientWidth;
+        // Toggle body scroll and compensate for scrollbar removal
+        document.body.style.overflow = show ? "hidden" : "";
+        document.body.style.paddingRight = show ? `${scrollbarWidth}px` : "";
+        // Show/hide modal
+        modal.element.style.display = show ? "block" : "none";
+      };
+      // Event Listeners
+      // Opens modal when trigger button is clicked
+      modal.openButton.addEventListener("click", () => toggleModal(true));
+      // Closes modal when close button is clicked
+      modal.closeButton.addEventListener("click", () => toggleModal(false));
+      // Handles clicks on the modal backdrop
+      // Closes modal when clicking outside the modal content area
+      modal.element.addEventListener("click", (event) => {
+        // Check if click occurred outside modal content
+        // contains() checks if the clicked element is inside the modal content
+        if (!modal.content.contains(event.target)) {
+          toggleModal(false);
+        }
+      });
+      // Global keyboard event handler
+      // Closes modal when Escape key is pressed and modal is visible
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && modal.element.style.display === "block") {
+          toggleModal(false);
+        }
+      });
+    });
+  </script>
+</BaseLayout>

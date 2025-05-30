@@ -1,0 +1,395 @@
+---
+// Assets
+import { Code } from "astro:components";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import ApiApp from "@/components/fundations/icons/ApiApp.astro";
+import Check from "@/components/fundations/icons/Check.astro";
+
+const tips1 = [
+  "Accounts and account numbers are separate.",
+  "Accounts are available to use immediately.",
+  "Funds are insured by the FDIC.",
+];
+const tips2 = [
+  "Transactions are processed securely.",
+  "Instant notifications for every transaction.",
+  "Easily manage multiple accounts from one dashboard.",
+];
+
+const tips3 = [
+  "No hidden fees or maintenance charges.",
+  "Easily integrate with third-party financial tools.",
+  "24/7 customer support for all account-related queries.",
+];
+const tips4 = [
+  "Virtual and physical cards are available.",
+  "Set spending limits for better control.",
+  "Instantly freeze or unfreeze your card if needed.",
+];
+
+const tips5 = [
+  "Mobile check deposits are processed quickly.",
+  "Ensure the check is properly endorsed before depositing.",
+  "Funds may take 1-2 business days to become available.",
+];
+---
+
+<section>
+  <Wrapper variant="standard" class="py-4 border-t">
+    <div
+      class="relative flex p-8 overflow-hidden shadow bg-linear-180 from-base-50 via-base-100 to-base-300 rounded-2xl lg:p-20 "
+    >
+      <div class="relative grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
+        <div>
+          <div>
+            <Text
+              class="span"
+              variant="textXS"
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              class="flex items-center font-medium uppercase text-base-500 gap-2"
+            >
+              <ApiApp size="sm" class="text-yellow-700" />
+              Tailored Compliance
+            </Text>
+            <Text
+              tag="h3"
+              variant="displayMD"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              class="mt-8 font-semibold tracking-tight text-base-800 md:text-balance"
+            >
+              Take control of your customer relationships
+            </Text>
+            <Text
+              tag="p"
+              variant="textBase"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              class="mt-2 text-base text-base-600 lg:text-balance"
+            >
+              Automate ACH, wire transfers, real-time payments, and even
+              physical checks.
+            </Text>
+          </div>
+          <div class="flex flex-col mt-8 gap-2">
+            <button
+              class="flex items-center w-full h-10 px-4 py-3 text-sm font-semibold text-left tab duration-300 ease-in-out transition-all focus:outline-offset-2 focus:outline-offset-white focus:outline-2 focus:outline-teal-300 text-base-500 bg-transaparent hover:bg-base-100 outline outline-teal-600 rounded-md hover:text-base-900"
+              >Process an ACH transaction</button
+            >
+            <button
+              class="flex items-center w-full h-10 px-4 py-3 text-sm font-semibold text-left tab duration-300 ease-in-out transition-all focus:outline-offset-2 focus:outline-offset-white focus:outline-2 focus:outline-teal-300 text-base-500 bg-transaparent hover:bg-base-100 outline outline-teal-600 rounded-md hover:text-base-900"
+              >Open a bank account</button
+            >
+            <button
+              class="flex items-center w-full h-10 px-4 py-3 text-sm font-semibold text-left tab duration-300 ease-in-out transition-all focus:outline-offset-2 focus:outline-offset-white focus:outline-2 focus:outline-teal-300 text-base-500 bg-transaparent hover:bg-base-100 outline outline-teal-600 rounded-md hover:text-base-900"
+              >Generate a distinct account number</button
+            >
+            <button
+              class="flex items-center w-full h-10 px-4 py-3 text-sm font-semibold text-left tab duration-300 ease-in-out transition-all focus:outline-offset-2 focus:outline-offset-white focus:outline-2 focus:outline-teal-300 text-base-500 bg-transaparent hover:bg-base-100 outline outline-teal-600 rounded-md hover:text-base-900"
+              >Create a Card</button
+            >
+            <button
+              class="flex items-center w-full h-10 px-4 py-3 text-sm font-semibold text-left tab duration-300 ease-in-out transition-all focus:outline-offset-2 focus:outline-offset-white focus:outline-2 focus:outline-teal-300 text-base-500 bg-transaparent hover:bg-base-100 outline outline-teal-600 rounded-md hover:text-base-900"
+              >Deposit a check</button
+            >
+          </div>
+        </div>
+        <div>
+          <div class="tab-content">
+            <div>
+              <Code
+                class="relative h-full p-8 text-xs shadow-2xl scrollbar-hide rounded-xl"
+                code={`await payments.transfer.create({
+        amount: 50000,
+        currency: "USD",
+        from_account: {
+            id: "acct_bank_123456",
+            bank: "Bank of America",
+            type: "Checking",
+        },
+        to_account: {
+            id: "acct_wells_789012",
+            bank: "Wells Fargo",
+            type: "Savings",
+        },
+        initiated_at: new Date().toISOString(),
+        status: "Processing",
+    });
+    `}
+                lang="js"
+                theme="css-variables"
+              />
+              <div class="p-4">
+                <Text
+                  tag="p"
+                  variant="textSM"
+                  class="mt-2 text-base font-medium text-base-600 lg:text-balance"
+                >
+                  Programmatically open unlimited bank accounts of any type.
+                </Text>
+                <ul role="list" class="flex flex-col mt-1 gap-1">
+                  {
+                    tips2.map((text, index) => (
+                      <li class="flex items-center font-medium gap-2 text-base-600">
+                        <Check size="sm" class="text-base-900" />
+                        <Text tag="p" variant="textSM" class="leading-6">
+                          {text}
+                        </Text>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="hidden h-full tab-content">
+            <div>
+              <Code
+                class="relative h-full p-8 text-xs shadow-2xl scrollbar-hide rounded-xl"
+                code={`fetch("https://api.payments.com/ach-transfer", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer your_api_key",
+    },
+    body: JSON.stringify({
+        amount: 75000,
+        currency: "USD",
+        fromAccount: "acct_123456",
+        toAccount: "acct_789012",
+        memo: "Monthly rent payment",
+    }),
+})
+.then(response => response.json())
+.then(data => console.log("Transfer successful:", data))
+.catch(error => console.error("Error initiating transfer:", error));`}
+                lang="js"
+                theme="css-variables"
+              />
+              <div class="p-4">
+                <Text
+                  tag="p"
+                  variant="textSM"
+                  class="mt-2 text-base font-medium text-base-600 lg:text-balance"
+                >
+                  Cards can be used immediately upon creation.
+                </Text>
+                <ul role="list" class="flex flex-col mt-1 gap-1">
+                  {
+                    tips3.map((text, index) => (
+                      <li class="flex items-center font-medium gap-2 text-base-600">
+                        <Check size="sm" class="text-base-900" />
+                        <Text tag="p" variant="textSM" class="leading-6">
+                          {text}
+                        </Text>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="hidden h-full tab-content">
+            <div>
+              <Code
+                class="relative h-full p-8 text-xs shadow-2xl scrollbar-hide rounded-xl"
+                code={`fetch("https://api.payments.com/ach-transfer", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer your_api_key",
+    },
+    body: JSON.stringify({
+        amount: 75000,
+        fromAccount: "acct_123456",
+        toAccount: "acct_789012",
+        memo: "Placeholder transaction",
+    }),
+})
+.then(data => {
+    console.log("Transfer completed:", data);
+    return data;
+})`}
+                lang="js"
+                theme="css-variables"
+              />
+              <div class="p-4">
+                <Text
+                  tag="p"
+                  variant="textSM"
+                  class="mt-2 text-base font-medium text-base-600 lg:text-balance"
+                >
+                  Cards become usable instantly upon creation.
+                </Text>
+                <ul role="list" class="flex flex-col mt-1 gap-1">
+                  {
+                    tips4.map((text, index) => (
+                      <li class="flex items-center font-medium gap-2 text-base-600">
+                        <Check size="sm" class="text-base-900" />
+                        <Text tag="p" variant="textSM" class="leading-6">
+                          {text}
+                        </Text>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="hidden h-full tab-content">
+            <div>
+              <Code
+                class="relative h-full p-8 text-xs shadow-2xl scrollbar-hide rounded-xl"
+                code={`fetch("https://api.payments.com/create-card", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer your_api_key",
+    },
+    body: JSON.stringify({
+        userId: "user_987654",
+        cardType: "Debit",
+        currency: "USD",
+        limit: 5000,
+    }),
+})
+.then(response => response.json())
+.then(data => {
+    console.log("Card created successfully:", data);
+    return data;
+})
+.catch(error => {
+    console.error("Error creating card:", error);
+});`}
+                lang="js"
+                theme="css-variables"
+              />
+              <div class="p-4">
+                <Text
+                  tag="p"
+                  variant="textSM"
+                  class="mt-2 text-base font-medium text-base-600 lg:text-balance"
+                >
+                  Our streamlined API allows direct file uploads.
+                </Text>
+                <ul role="list" class="flex flex-col mt-1 gap-1">
+                  {
+                    tips5.map((text, index) => (
+                      <li class="flex items-center font-medium gap-2 text-base-600">
+                        <Check size="sm" class="text-base-900" />
+                        <Text tag="p" variant="textSM" class="leading-6">
+                          {text}
+                        </Text>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="hidden h-full tab-content">
+            <div>
+              <Code
+                class="relative h-full p-8 text-xs shadow-2xl scrollbar-hide rounded-xl"
+                code={`fetch("https://api.payments.com/deposit-check", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer your_api_key",
+    },
+    body: JSON.stringify({
+        accountId: "acct_112233",
+        amount: 25000,
+        currency: "USD",
+        checkNumber: "CHK789654",
+    }),
+})
+.then(response => response.json())
+.then(data => {
+    console.log("Check deposit successful:", data);
+})
+.catch(error => {
+    console.error("Error depositing check:", error);
+});
+`}
+                lang="js"
+                theme="css-variables"
+              />
+              <div class="p-4">
+                <Text
+                  tag="p"
+                  variant="textSM"
+                  class="mt-2 text-base font-medium text-base-600 lg:text-balance"
+                >
+                  Automatically generate ACH debits.
+                </Text>
+                <ul role="list" class="flex flex-col mt-1 gap-1">
+                  {
+                    tips1.map((text, index) => (
+                      <li class="flex items-center font-medium gap-2 text-base-600">
+                        <Check size="sm" class="text-base-900" />
+                        <Text tag="p" variant="textSM" class="leading-6">
+                          {text}
+                        </Text>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Wrapper>
+</section>
+<script type="module">
+  document.addEventListener("DOMContentLoaded", function () {
+    // Select all tab buttons
+    const tabs = document.querySelectorAll(".tab");
+    // Select all tab content sections
+    const contents = document.querySelectorAll(".tab-content");
+    // Function to update the tab styles
+    function updateTabStyles(activeTab) {
+      tabs.forEach((tab) => {
+        if (tab === activeTab) {
+          tab.classList.add(
+            "bg-teal-500",
+            "text-teal-950",
+            "outline",
+            "outline-teal-600"
+          );
+          tab.classList.remove("bg-transaparent", "text-base-500");
+        } else {
+          tab.classList.add("bg-transaparent", "text-base-500");
+          tab.classList.remove(
+            "bg-teal-500",
+            "text-teal-950",
+            "outline",
+            "outline-teal-600"
+          );
+        }
+      });
+    }
+    // Loop through each tab button and add a click event listener
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => {
+        // Update tab styles
+        updateTabStyles(tab);
+        // Hide all content sections
+        contents.forEach((c) => c.classList.add("hidden"));
+        // Show the corresponding content section
+        contents[index].classList.remove("hidden");
+      });
+    });
+    // Initialize the first tab as active
+    if (tabs.length > 0) {
+      updateTabStyles(tabs[0]);
+      contents[0].classList.remove("hidden");
+    }
+  });
+</script>
