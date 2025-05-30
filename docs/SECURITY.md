@@ -5,7 +5,7 @@
 We use technical and organizational measures to ensure the security and confidentiality of the personal data we process. These include, among others:
 
 - **Access restrictions:** Only authorized team members have access to the data according to the V-Code classification.
-- **Encryption:** We use end-to-end SSL encryption as standard for the transmission of sensitive data.
+- **Encryption:** We use **TLS 1.2+** as standard for the transmission of sensitive data.
 - **Server security:** We use strong firewalls and regularly monitor our servers for security breaches.
 - **Security audits:** We carry out regular security audits to check the effectiveness of our security measures.
 
