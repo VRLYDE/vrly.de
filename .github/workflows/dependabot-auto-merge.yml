@@ -20,4 +20,4 @@ jobs:
         if: ${{contains(steps.dependabot-metadata.outputs.dependency-names, 'rails') && steps.dependabot-metadata.outputs.update-type == 'version-update:semver-patch'}}
         run: gh pr merge --auto --merge "${{github.event.pull_request.html_url}}"
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.PAT_FOR_ACTIONS}}
