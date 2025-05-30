@@ -1,6 +1,8 @@
 name: Dependabot auto-merge
 
-on: pull_request
+on:
+  pull_request_target:
+    types: ["opened", "synchronize"]
 
 permissions:
   pull-requests: write
@@ -9,7 +11,7 @@ permissions:
 jobs:
   dependabot:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'VRLYDE/spaziobianco'
+    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'VRLYDE/vrly.de'
     steps:
       - name: Dependabot metadata
         id: dependabot-metadata
@@ -18,4 +20,4 @@ jobs:
         if: ${{contains(steps.dependabot-metadata.outputs.dependency-names, 'rails') && steps.dependabot-metadata.outputs.update-type == 'version-update:semver-patch'}}
         run: gh pr merge --auto --merge "${{github.event.pull_request.html_url}}"
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.PAT_FOR_ACTIONS}}
