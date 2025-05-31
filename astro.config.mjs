@@ -86,6 +86,8 @@ export default defineConfig({
           purpose: "maskable",
         },
       ],
+      prefer_related_applications: false,
+      related_applications: [],
       shortcuts: [
         {
           name: "Praxis-Anfragen-Autopilot",
