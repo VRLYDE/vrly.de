@@ -14,7 +14,7 @@ Deutschland
 ## Kontakt
 
 Telefon: +49 511 93678551  
-E-Mail: legal@vrly.de
+E-Mail: <legal@vrly.de>
 
 ## Rechtsform
 
