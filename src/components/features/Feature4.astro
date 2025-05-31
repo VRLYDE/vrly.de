@@ -8,33 +8,50 @@ import ApiApp from "@/components/fundations/icons/ApiApp.astro";
 import Settings from "@/components/fundations/icons/Settings.astro";
 import Tools from "@/components/fundations/icons/Tools.astro";
 import Search from "@/components/fundations/icons/Search.astro";
-// Icons
-const data = [
+import ArrowRight from "@/components/fundations/icons/ArrowRight.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  steps?: {
+    title: string;
+    description: string;
+  }[];
+}
+
+const {
+  title = "Unser Prozess",
+  description = "So einfach ist der Weg zu mehr Effizienz in Ihrer Praxis:",
+  steps = []
+} = Astro.props;
+
+// Default steps if none are provided
+const defaultSteps = [
   {
     icon: "User",
-    category: "Manage risk profiles",
-    text: "Decide which risk profiles align with your business.",
+    category: "Analyse & Konzeption",
+    text: "Gemeinsame Aufnahme Ihres aktuellen Anfrageprozesses und Identifikation Ihrer spezifischen Bedürfnisse.",
   },
   {
     icon: "Settings",
-    category: "Custom onboarding",
-    text: "Set identity requirements that match your customers' needs.",
+    category: "Technische Umsetzung",
+    text: "Einrichtung eines zentralen, sicheren Anfragekanals mit automatisierter Eingangsbestätigung und intelligenter Vorkategorisierung.",
   },
   {
     icon: "Search",
-    category: "In-house  monitoring",
-    text: "Oversee transactions with your own system.",
+    category: "Einweisung & Übergabe",
+    text: "Kurze, prägnante Schulung in der Nutzung des neuen Workflows und Übergabe einer einfachen Dokumentation.",
   },
   {
     icon: "Tools",
-    category: "Streamlined tools",
-    text: "Optimize workflows to make compliance reporting effortless.",
+    category: "Laufende Unterstützung",
+    text: "Bei Bedarf stehen wir Ihnen mit Rat und Tat zur Seite und optimieren Ihren Workflow kontinuierlich.",
   },
 ];
 ---
 
 <section>
-  <Wrapper variant="standard" class="py-12  border-t">
+  <Wrapper variant="standard" class="py-12 border-t">
     <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
       <div>
         <Text
@@ -42,58 +59,79 @@ const data = [
           variant="textXS"
           data-aos="fade-down"
           data-aos-duration="1000"
-          class="flex items-center gap-2 font-medium uppercase text-base-600"
+          class="flex items-center gap-2 font-medium uppercase text-vrly-slate-400"
         >
-          <ApiApp size="sm" class="text-yellow-600" />
-          Tailored Compliance
+          <ApiApp size="sm" class="text-vrly-blue-600" />
+          Schnell & Effizient
         </Text>
         <Text
           tag="h3"
           variant="displayMD"
           data-aos="fade-up"
           data-aos-duration="1000"
-          class="mt-8 font-semibold tracking-tight text-base-800 md:text-balance"
+          class="mt-8 font-semibold tracking-tight text-vrly-slate-500 md:text-balance"
         >
-          Take control of your customer relationships
+          {title}
         </Text>
         <Text
           tag="p"
           variant="textBase"
           data-aos="fade-up"
           data-aos-duration="1500"
-          class="mt-2 text-base text-base-500"
+          class="mt-2 text-base text-vrly-slate-400"
         >
-          You understand your customers better than any platform ever could.
-          Instead of a generic approach, we collaborate with you to build a
-          compliance program that fits your business.
+          {description}
         </Text>
       </div>
-      <dl
-        data-aos="fade-up"
-        data-aos-duration="2000"
-        class="grid grid-cols-1 gap-2 mt-8 sm:grid-cols-2 gap-y-8"
-      >
-        {
-          data.map((section) => (
-            <div>
-              <dt class="flex items-center gap-2 text-base-800">
-                {section.icon === "Settings" && <Settings size="base" />}
-                {section.icon === "Tools" && <Tools size="base" />}
-                {section.icon === "Search" && <Search size="base" />}
-                {section.icon === "User" && <User size="base" />}
-                <Text tag="p" variant="textSM" class="font-medium leading-6 ">
-                  {section.category}
-                </Text>
-              </dt>
-              <dd class="mt-2">
-                <Text tag="p" variant="textSM" class=" text-base-500">
-                  {section.text}
-                </Text>
-              </dd>
-            </div>
-          ))
-        }
-      </dl>
+      
+      {steps && steps.length > 0 ? (
+        <div class="mt-8 relative">
+          <div class="absolute top-0 bottom-0 left-8 w-0.5 bg-vrly-blue-100"></div>
+          <div class="space-y-8">
+            {steps.map((step, index) => (
+              <div class="relative pl-14">
+                <div class="absolute left-0 flex items-center justify-center w-16 h-16">
+                  <div class="flex items-center justify-center w-8 h-8 bg-vrly-blue-500 rounded-full text-white font-bold text-sm">
+                    {index + 1}
+                  </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg border border-vrly-neutral-200 shadow-sm">
+                  <h4 class="text-base font-semibold text-vrly-slate-500 mb-2">{step.title}</h4>
+                  <p class="text-sm text-vrly-slate-400">{step.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <dl
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          class="grid grid-cols-1 gap-2 mt-8 gap-y-8"
+        >
+          {
+            defaultSteps.map((section, index) => (
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 flex items-start justify-center w-8 h-8 bg-vrly-blue-500 rounded-full text-white font-bold text-sm mt-1">
+                  {index + 1}
+                </div>
+                <div>
+                  <dt class="flex items-center gap-2 text-vrly-slate-500">
+                    <Text tag="p" variant="textSM" class="font-semibold leading-6">
+                      {section.category}
+                    </Text>
+                  </dt>
+                  <dd class="mt-1">
+                    <Text tag="p" variant="textSM" class="text-vrly-slate-400">
+                      {section.text}
+                    </Text>
+                  </dd>
+                </div>
+              </div>
+            ))
+          }
+        </dl>
+      )}
     </div>
   </Wrapper>
 </section>
