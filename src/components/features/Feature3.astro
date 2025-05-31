@@ -10,7 +10,7 @@ import Plus from "@/components/fundations/icons/Plus.astro";
 import Filters from "@/components/fundations/icons/Filters.astro";
 import WaveSquare from "@/components/fundations/icons/WaveSquare.astro";
 import ArrowIteration from "@/components/fundations/icons/ArrowIteration.astro";
-import CheckCircle from "@/components/fundations/icons/CheckCircle.astro";
+import CircleCheck from "@/components/fundations/icons/CircleCheck.astro";
 
 interface Props {
   title?: string;
@@ -140,7 +140,7 @@ const allCustomers = await getCollection("customers");
               defaultItems.map((section) => (
                 <div>
                   <dt class="flex items-center gap-2 text-vrly-slate-500">
-                    <CheckCircle size="base" class="text-vrly-green-600" />
+                    <CircleCheck size="base" class="text-vrly-green-600" />
                     <Text tag="p" variant="textSM" class="font-medium leading-6">
                       {section.category}
                     </Text>
@@ -178,7 +178,7 @@ const allCustomers = await getCollection("customers");
               <p class="text-sm text-vrly-slate-500">Spezialisierung</p>
             </div>
             <div class="col-span-1 text-center">
-              <CheckCircle size="base" class="inline text-vrly-green-600" />
+              <CircleCheck size="base" class="inline text-vrly-green-600" />
               <span class="text-xs text-vrly-green-600 ml-1">Psychotherapie</span>
             </div>
             <div class="col-span-1 text-center">
@@ -191,7 +191,7 @@ const allCustomers = await getCollection("customers");
               <p class="text-sm text-vrly-slate-500">DSGVO-Expertise</p>
             </div>
             <div class="col-span-1 text-center">
-              <CheckCircle size="base" class="inline text-vrly-green-600" />
+              <CircleCheck size="base" class="inline text-vrly-green-600" />
               <span class="text-xs text-vrly-green-600 ml-1">§203 StGB</span>
             </div>
             <div class="col-span-1 text-center">
@@ -204,7 +204,7 @@ const allCustomers = await getCollection("customers");
               <p class="text-sm text-vrly-slate-500">Automatisierung</p>
             </div>
             <div class="col-span-1 text-center">
-              <CheckCircle size="base" class="inline text-vrly-green-600" />
+              <CircleCheck size="base" class="inline text-vrly-green-600" />
               <span class="text-xs text-vrly-green-600 ml-1">KI-gestützt</span>
             </div>
             <div class="col-span-1 text-center">
@@ -217,7 +217,7 @@ const allCustomers = await getCollection("customers");
               <p class="text-sm text-vrly-slate-500">Praxisverständnis</p>
             </div>
             <div class="col-span-1 text-center">
-              <CheckCircle size="base" class="inline text-vrly-green-600" />
+              <CircleCheck size="base" class="inline text-vrly-green-600" />
               <span class="text-xs text-vrly-green-600 ml-1">Tiefgreifend</span>
             </div>
             <div class="col-span-1 text-center">
