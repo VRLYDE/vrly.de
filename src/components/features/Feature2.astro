@@ -10,23 +10,39 @@ import ApiApp from "@/components/fundations/icons/ApiApp.astro";
 import Filters from "@/components/fundations/icons/Filters.astro";
 import WaveSquare from "@/components/fundations/icons/WaveSquare.astro";
 import ArrowIteration from "@/components/fundations/icons/ArrowIteration.astro";
-// Icons
-const data = [
+
+interface Props {
+  title?: string;
+  description?: string;
+  items?: {
+    title: string;
+    description: string;
+  }[];
+}
+
+const {
+  title = "Unsere Kernleistungen",
+  description = "Von der intelligenten Patientenanfragen-Verwaltung bis zur DSGVO-konformen Automatisierung – wir entwickeln maßgeschneiderte Lösungen, die Ihnen Zeit zurückgeben und Ihre Praxis zukunftssicher machen.",
+  items = []
+} = Astro.props;
+
+// Default features if no items are provided
+const defaultFeatures = [
   {
     icon: "Filters",
-    category: "Full data transparency",
+    category: "DSGVO-Compliance",
   },
   {
     icon: "WaveSquare",
-    category: "Reduced dependencies",
+    category: "Zeitersparnis",
   },
   {
     icon: "ArrowIteration",
-    category: "Reliable infrastructure",
+    category: "Prozessoptimierung",
   },
   {
     icon: "Plus",
-    category: "Faster development cycles",
+    category: "Automatisierung",
   },
 ];
 ---
@@ -39,60 +55,96 @@ const data = [
           variant="textXS"
           data-aos="fade-down"
           data-aos-duration="1000"
-          class="flex items-center font-medium uppercase text-base-600 gap-2"
+          class="flex items-center font-medium uppercase text-vrly-slate-400 gap-2"
         >
-          <ApiApp size="sm" class="text-yellow-600" />
-          Raw, unfiltered APIs
+          <ApiApp size="sm" class="text-vrly-teal-600" />
+          Exklusiv für Psychotherapeut:Innen
         </Text>
         <Text
           tag="h3"
           variant="displayMD"
           data-aos="fade-up"
           data-aos-duration="1000"
-          class="mt-8 font-semibold tracking-tight text-base-800 md:text-balance"
+          class="mt-8 font-semibold tracking-tight text-vrly-slate-500 md:text-balance"
         >
-          Unfiltered, direct access to the Federal Reserve
+          {title}
         </Text>
         <Text
           tag="p"
           variant="textBase"
           data-aos="fade-up"
           data-aos-duration="1500"
-          class="mt-2 text-base text-base-500"
+          class="mt-2 text-base text-vrly-slate-400"
         >
-          Financial networks like Visa and FedACH have been refined over
-          decades, but many tech companies add layers of abstraction that limit
-          flexibility.
-          <br />
-          <br />
-          We do the opposite—giving you direct, unfiltered access to the Federal
-          Reserve, Visa, and other networks. This means greater stability, fewer
-          restrictions, and complete control over how you build.
+          {description}
         </Text>
-        <ul
-          data-aos="fade-up"
-          data-aos-duration="2000"
-          role="list"
-          class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2"
-        >
-          {
-            data.map((section) => (
-              <li class="flex items-center gap-2 text-base-800">
-                {section.icon === "Filters" && <Filters size="base" />}
-                {section.icon === "WaveSquare" && <WaveSquare size="base" />}
-                {section.icon === "ArrowIteration" && (
-                  <ArrowIteration size="base" />
-                )}
-                {section.icon === "Plus" && <Plus size="base" />}
-                <Text tag="p" variant="textSM" class="font-medium leading-6 ">
-                  {section.category}
-                </Text>
-              </li>
-            ))
-          }
-        </ul>
+        
+        {items && items.length > 0 ? (
+          <div class="mt-8 space-y-6">
+            {items.map((item) => (
+              <div class="bg-white p-5 rounded-lg shadow-sm border border-vrly-neutral-200">
+                <h4 class="text-base font-semibold text-vrly-slate-500 mb-2">{item.title}</h4>
+                <p class="text-sm text-vrly-slate-400">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <ul
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            role="list"
+            class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2"
+          >
+            {
+              defaultFeatures.map((section) => (
+                <li class="flex items-center gap-2 text-vrly-slate-500">
+                  {section.icon === "Filters" && <Filters size="base" class="text-vrly-blue-600" />}
+                  {section.icon === "WaveSquare" && <WaveSquare size="base" class="text-vrly-green-600" />}
+                  {section.icon === "ArrowIteration" && (
+                    <ArrowIteration size="base" class="text-vrly-teal-600" />
+                  )}
+                  {section.icon === "Plus" && <Plus size="base" class="text-vrly-blue-600" />}
+                  <Text tag="p" variant="textSM" class="font-medium leading-6">
+                    {section.category}
+                  </Text>
+                </li>
+              ))
+            }
+          </ul>
+        )}
       </div>
-      <VisualAsset2 />
+      <div class="bg-vrly-slate-50 p-6 rounded-lg border border-vrly-neutral-200 shadow-lg">
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-vrly-slate-500 mb-4">VRLY Praxis-Anfragen-Autopilot</h3>
+          
+          <div class="space-y-4">
+            <div class="border-l-4 border-vrly-green-500 pl-3 py-1">
+              <h4 class="text-sm font-medium text-vrly-slate-500">Zeitersparnis</h4>
+              <p class="text-xs text-vrly-slate-400">2-5 Stunden pro Woche weniger für Administration</p>
+            </div>
+            
+            <div class="border-l-4 border-vrly-blue-500 pl-3 py-1">
+              <h4 class="text-sm font-medium text-vrly-slate-500">DSGVO-Konformität</h4>
+              <p class="text-xs text-vrly-slate-400">Alle Prozesse entsprechen den Datenschutzanforderungen</p>
+            </div>
+            
+            <div class="border-l-4 border-vrly-teal-500 pl-3 py-1">
+              <h4 class="text-sm font-medium text-vrly-slate-500">Intelligente Kategorisierung</h4>
+              <p class="text-xs text-vrly-slate-400">Automatische Priorisierung und Zuordnung von Anfragen</p>
+            </div>
+            
+            <div class="mt-6 pt-4 border-t border-vrly-neutral-200">
+              <div class="flex justify-between items-center">
+                <div class="text-sm text-vrly-slate-500">
+                  <span class="font-medium">Einmaliger Preis:</span>
+                </div>
+                <div class="text-vrly-blue-600 font-bold">799€</div>
+              </div>
+              <p class="text-xs text-vrly-slate-400 mt-1">zzgl. MwSt. für die ersten 3 Pionier-Praxen</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </Wrapper>
 </section>

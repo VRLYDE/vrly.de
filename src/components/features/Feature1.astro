@@ -15,6 +15,21 @@ import WaveSquare from "@/components/fundations/icons/WaveSquare.astro";
 import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
 import ArrowIteration from "@/components/fundations/icons/ArrowIteration.astro";
 
+interface Props {
+  title?: string;
+  description?: string;
+  items?: {
+    title: string;
+    description: string;
+  }[];
+}
+
+const {
+  title = "KI-Automatisierung für Ihre Praxis",
+  description = "Von der intelligenten Patientenanfragen-Verwaltung bis zur DSGVO-konformen Automatisierung – wir entwickeln maßgeschneiderte Lösungen, die Ihnen Zeit zurückgeben und Ihre Praxis zukunftssicher machen.",
+  items = []
+} = Astro.props;
+
 const data = [
   {
     icon: "Filters",
@@ -78,7 +93,7 @@ const data = [
         data-aos-duration="1000"
         class="mt-8 font-semibold tracking-tight text-vrly-slate-500"
       >
-        KI-Automatisierung für Ihre Praxis
+        {title}
       </Text>
       <Text
         tag="p"
@@ -87,8 +102,7 @@ const data = [
         data-aos-duration="1500"
         class="mt-2 text-base text-vrly-slate-400 md:text-balance"
       >
-        Von der intelligenten Patientenanfragen-Verwaltung bis zur DSGVO-konformen Automatisierung – 
-        wir entwickeln maßgeschneiderte Lösungen, die Ihnen Zeit zurückgeben und Ihre Praxis zukunftssicher machen.
+        {description}
       </Text>
       <div
         data-aos="fade-up"
@@ -123,49 +137,56 @@ const data = [
         </Link>
       </div>
     </div>
-    <ul
-    class="mt-12 overflow-hidden shadow-xl grid gap-px bg-vrly-neutral-200 outline outline-vrly-neutral-200 rounded-xl sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4"
-  >
-    {
-      data.map((section) => (
-        <li class="group flex h-full justify-between flex-col gap-12 lg:gap-24 bg-white px-5 relative pt-6 pb-[30px] transition-all md:min-h-[180px] cursor-pointer hover:bg-vrly-neutral-100">
-          <a class="absolute inset-0" href="/leistungen" aria-label={`Mehr über ${section.category} erfahren`} />
-  
-          <div>
-            <div class="flex">
-              <div class="flex p-2 bg-vrly-green-500 rounded-lg transition-all duration-300 text-white group-hover:bg-vrly-blue-500">
-                {section.icon === "Filters" && <Filters size="base" />}
-                {section.icon === "WaveSquare" && <WaveSquare size="base" />}
-                {section.icon === "ArrowIteration" && <ArrowIteration size="base" />}
-                {section.icon === "Plus" && <Plus size="base" />}
-                {section.icon === "Cursor" && <Cursor size="base" />}
-                {section.icon === "Persist" && <Persist size="base" />}
-                {section.icon === "Camera" && <Camera size="base" />}
-                {section.icon === "Stacked" && <Stacked size="base" />}
+    
+    {items && items.length > 0 ? (
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {items.map((item) => (
+          <div class="bg-white p-6 rounded-xl shadow-md border border-vrly-neutral-200 hover:shadow-lg transition-shadow">
+            <h3 class="text-lg font-semibold text-vrly-slate-500 mb-3">{item.title}</h3>
+            <p class="text-vrly-slate-400">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    ) : (
+      <ul class="mt-12 overflow-hidden shadow-xl grid gap-px bg-vrly-neutral-200 outline outline-vrly-neutral-200 rounded-xl sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+        {data.map((section) => (
+          <li class="group flex h-full justify-between flex-col gap-12 lg:gap-24 bg-white px-5 relative pt-6 pb-[30px] transition-all md:min-h-[180px] cursor-pointer hover:bg-vrly-neutral-100">
+            <a class="absolute inset-0" href="/leistungen" aria-label={`Mehr über ${section.category} erfahren`} />
+    
+            <div>
+              <div class="flex">
+                <div class="flex p-2 bg-vrly-green-500 rounded-lg transition-all duration-300 text-white group-hover:bg-vrly-blue-500">
+                  {section.icon === "Filters" && <Filters size="base" />}
+                  {section.icon === "WaveSquare" && <WaveSquare size="base" />}
+                  {section.icon === "ArrowIteration" && <ArrowIteration size="base" />}
+                  {section.icon === "Plus" && <Plus size="base" />}
+                  {section.icon === "Cursor" && <Cursor size="base" />}
+                  {section.icon === "Persist" && <Persist size="base" />}
+                  {section.icon === "Camera" && <Camera size="base" />}
+                  {section.icon === "Stacked" && <Stacked size="base" />}
+                </div>
+              </div>
+    
+              <div class="mt-4">
+                <h3 class="font-semibold leading-6 text-vrly-slate-500 mb-2">{section.category}</h3>
+                <p class="text-sm text-vrly-slate-400 leading-relaxed">{section.text}</p>
               </div>
             </div>
-  
-            <div class="mt-4">
-              <h3 class="font-semibold leading-6 text-vrly-slate-500 mb-2">{section.category}</h3>
-              <p class="text-sm text-vrly-slate-400 leading-relaxed">{section.text}</p>
-            </div>
-          </div>
-  
-          <Text
-            tag="p"
-            variant="textSM"
-            class="flex items-center font-medium gap-2 text-vrly-blue-600 group-hover:text-vrly-blue-700"
-          >
-            Mehr erfahren
-            <ChevronRight
-              size="sm"
-              class="duration-300 ease-out group-hover:translate-x-2"
-            />
-          </Text>
-        </li>
-      ))
-    }
-  </ul>
-  
+    
+            <Text
+              tag="p"
+              variant="textSM"
+              class="flex items-center font-medium gap-2 text-vrly-blue-600 group-hover:text-vrly-blue-700"
+            >
+              Mehr erfahren
+              <ChevronRight
+                size="sm"
+                class="duration-300 ease-out group-hover:translate-x-2"
+              />
+            </Text>
+          </li>
+        ))}
+      </ul>
+    )}
   </Wrapper>
 </section>

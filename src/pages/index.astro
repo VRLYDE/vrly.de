@@ -14,20 +14,164 @@ import Testimonial1 from "@/components/testimonials/Testimonial1.astro";
 import Pricing1 from "@/components/pricing/Pricing1.astro";
 ---
 
-<BaseLayout>
-  <Hero1 />
+<BaseLayout title="VRLY | KI-gestützte Workflow-Automatisierung für Psychotherapeut:Innen in Hannover" description="VRLY ist Ihr spezialisierter Technologiepartner für KI-Entwicklung, Agenteneinsatz, Workflow-Automatisierung und digitales Projektmanagement exklusiv für Psychotherapeut:Innen in Hannover.">
+  <Hero1 
+    title="Mehr Zeit für Ihre Patienten, weniger Verwaltungsaufwand" 
+    subtitle="VRLY automatisiert Effizienz mit Künstlicher Intelligenz."
+    description="Ihr spezialisierter Partner für KI-gestützte Workflow-Automatisierung, exklusiv für Psychotherapeut:Innen in Hannover. DSGVO-konform und zukunftssicher."
+    primaryButtonText="Kostenloser Workflow-Audit"
+    secondaryButtonText="Mehr erfahren"
+  />
   <section>
     <Wrapper class="overflow-hidden border-t border-base-200">
       <LogoCloud
         class="py-6 grid grid-cols-2 lg:-mx-8 sm:grid-cols-3 md:grid-cols-6"
+        title="Vertraut von Psychotherapeut:Innen in Hannover"
       />
     </Wrapper>
   </section>
-  <Feature1 />
-  <Feature2 />
-  <Feature3 />
-  <Feature4 />
-  <Feature5 />
-  <Testimonial1 />
-  <Pricing1 />
+  <Feature1 
+    title="Praxis-Anfragen-Autopilot"
+    description="Unser MVSO (Minimum Viable Service Offering) automatisiert die Verwaltung von Neupatienten-Anfragen und spart Ihnen sofort Zeit und Nerven."
+    items={[
+      {
+        title: "Zeitersparnis",
+        description: "Mindestens 2-5 Stunden pro Woche weniger für administrative Bearbeitung von Anfragen."
+      },
+      {
+        title: "DSGVO-Sicherheit",
+        description: "Der Erstkontakt und die Datenerfassung erfolgen von Beginn an strukturiert und DSGVO-konform."
+      },
+      {
+        title: "Professionalität",
+        description: "Jeder Anfragende erhält eine prompte, professionelle Rückmeldung – das schafft Vertrauen."
+      }
+    ]}
+  />
+  <Feature2 
+    title="Unsere Kernleistungen"
+    description="Maßgeschneiderte KI-gestützte Lösungen exklusiv für Psychotherapeut:Innen in Hannover."
+    items={[
+      {
+        title: "Intelligente Anfragen-Verwaltung",
+        description: "Automatisierte Erfassung, Kategorisierung und DSGVO-konforme Beantwortung von Patientenanfragen."
+      },
+      {
+        title: "Workflow-Automatisierung",
+        description: "Optimierung von Praxisabläufen durch intelligente Automatisierung administrativer Routineaufgaben."
+      },
+      {
+        title: "Dokumentationsunterstützung",
+        description: "Effiziente und strukturierte Dokumentation mit Hilfe moderner Technologien und optimierter Prozesse."
+      }
+    ]}
+  />
+  <Feature3 
+    title="Warum VRLY?"
+    description="Wir kombinieren Expertise in KI, Workflow-Automatisierung und Projektmanagement mit tiefem Verständnis für Ihre Praxisabläufe und strengster DSGVO-Compliance."
+    items={[
+      {
+        title: "Hyper-Nischenfokus",
+        description: "Exklusiv spezialisiert auf die Bedürfnisse von Psychotherapeut:Innen in Hannover."
+      },
+      {
+        title: "Nutzenfokus & Pragmatismus",
+        description: "Wir liefern messbaren Mehrwert und finden schlanke, effektive Lösungen, die im Praxisalltag funktionieren."
+      },
+      {
+        title: "Vertrauen & Compliance",
+        description: "DSGVO und §203 StGB stehen bei uns an erster Stelle. Höchste Sicherheit für sensible Patientendaten."
+      }
+    ]}
+  />
+  <Feature4 
+    title="Unser Prozess"
+    description="So einfach ist der Weg zu mehr Effizienz in Ihrer Praxis:"
+    steps={[
+      {
+        title: "Analyse & Konzeption",
+        description: "Gemeinsame Aufnahme Ihres aktuellen Anfrageprozesses und Identifikation Ihrer spezifischen Bedürfnisse."
+      },
+      {
+        title: "Technische Umsetzung",
+        description: "Einrichtung eines zentralen, sicheren Anfragekanals mit automatisierter Eingangsbestätigung und intelligenter Vorkategorisierung."
+      },
+      {
+        title: "Einweisung & Übergabe",
+        description: "Kurze, prägnante Schulung in der Nutzung des neuen Workflows und Übergabe einer einfachen Dokumentation."
+      }
+    ]}
+  />
+  <Feature5 
+    title="Ihr sofortiger, greifbarer Nutzen"
+    description="Mit dem VRLY Praxis-Anfragen-Autopilot gewinnen Sie wertvolle Zeit für das Wesentliche: Ihre Patienten."
+    benefits={[
+      {
+        title: "Zeitersparnis",
+        description: "2-5 Stunden pro Woche weniger für administrative Tätigkeiten."
+      },
+      {
+        title: "Stressreduktion",
+        description: "Kein ständiges Reagieren auf jede einzelne Anfrage mehr, Reduktion des mentalen Overloads."
+      },
+      {
+        title: "Struktur",
+        description: "Klare Übersicht über neue Anfragen und deren Status."
+      },
+      {
+        title: "Fokus",
+        description: "Mehr Zeit und Energie für Ihre Kernkompetenz – die therapeutische Arbeit."
+      },
+      {
+        title: "DSGVO-Sicherheit",
+        description: "Strukturierte und rechtssichere Kommunikation von Anfang an."
+      },
+      {
+        title: "Professionalität",
+        description: "Prompt Patienten auf professionelle Weise begrüßen und informieren."
+      }
+    ]}
+  />
+  <Testimonial1 
+    title="Was unsere Kunden sagen"
+    testimonials={[
+      {
+        quote: "Mit dem Praxis-Anfragen-Autopilot spare ich jede Woche mehrere Stunden, die ich jetzt in die Betreuung meiner Patienten investieren kann.",
+        author: "Dr. Anna Müller",
+        role: "Psychotherapeutin in Hannover"
+      },
+      {
+        quote: "Endlich eine Lösung, die versteht, wie eine Psychotherapie-Praxis funktioniert. Der DSGVO-konforme Workflow gibt mir Sicherheit und spart wertvolle Zeit.",
+        author: "Michael Schmidt",
+        role: "Psychologischer Psychotherapeut"
+      },
+      {
+        quote: "Die Implementierung war überraschend einfach und schnell. Bereits nach wenigen Tagen konnte ich eine deutliche Entlastung im Praxisalltag spüren.",
+        author: "Sarah Weber",
+        role: "Psychotherapeutin für Verhaltenstherapie"
+      }
+    ]}
+  />
+  <Pricing1 
+    title="Transparente Preisgestaltung"
+    description="Unser VRLY Bootstrap-Pionier Angebot für die ersten 3 Praxen in Hannover"
+    plans={[
+      {
+        name: "Praxis-Anfragen-Autopilot",
+        price: "799€",
+        description: "Einmaliger Festpreis (zzgl. MwSt.)",
+        features: [
+          "Analyse & Konzeption (ca. 1-2 Stunden)",
+          "Technische Umsetzung (ca. 5-8 Stunden)",
+          "Einweisung & Übergabe (ca. 1 Stunde)",
+          "Implementierter, teilautomatisierter Workflow",
+          "DSGVO-konforme E-Mail-Vorlagen",
+          "Dokumentation des neuen Workflows",
+          "Keine versteckten Kosten, keine monatlichen Gebühren"
+        ],
+        buttonText: "Jetzt Termin vereinbaren",
+        highlighted: true
+      }
+    ]}
+  />
 </BaseLayout>
