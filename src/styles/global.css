@@ -1,67 +1,164 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @plugin "tailwind-scrollbar-hide";
+
+/* VRLY Brand Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 @theme {
-  /* Typography */
-  --font-sans: "Geist", sans-serif;
+  /* Typography - VRLY Brand Fonts */
+  --font-sans: "Open Sans", sans-serif; /* Body text */
+  --font-heading: "Nunito Sans", sans-serif; /* Headings */
   --font-mono: "Geist Mono", monospace;
-  /* Colors*/
-  /* Yellow*/
-  --color-yellow-50: oklch(99.07% 0.024 111.97);
-  --color-yellow-100: oklch(98.18% 0.039 110.21);
-  --color-yellow-200: oklch(96.75% 0.078 110.89);
-  --color-yellow-300: oklch(95.15% 0.114 111.6);
-  --color-yellow-400: oklch(93.62% 0.15 112.23);
-  --color-yellow-500: oklch(92.5% 0.175 113.21); /* Default */
-  --color-yellow-600: oklch(90.5% 0.2 114.06);
-  --color-yellow-700: oklch(75.09% 0.167 114.4);
-  --color-yellow-800: oklch(55.82% 0.122 113.71);
-  --color-yellow-900: oklch(34.85% 0.074 113.86);
-  --color-yellow-950: oklch(21.84% 0.044 111.54);
-  /* Blue */
-  --color-blue-50: oklch(97.68% 0.012 231.65);
-  --color-blue-100: oklch(95.28% 0.023 240.08);
-  --color-blue-200: oklch(89.83% 0.052 239.56);
-  --color-blue-300: oklch(85.31% 0.076 240.46);
-  --color-blue-400: oklch(80.15% 0.102 240.58);
-  --color-blue-500: oklch(75.42% 0.127 242.68);
-  --color-blue-600: oklch(67.33% 0.169 247.02);
-  --color-blue-700: oklch(56.41% 0.152 248.83);
-  --color-blue-800: oklch(41.77% 0.11 248.31);
-  --color-blue-900: oklch(27.21% 0.066 245.96);
-  --color-blue-950: oklch(18.6% 0.039 237.79);
-  /*teal*/
-  --color-teal-50: oklch(98.4% 0.014 174.18);
-  --color-teal-50: oklch(98.31% 0.011 182.88);
-  --color-teal-100: oklch(96.83% 0.023 179.96);
-  --color-teal-200: oklch(93.35% 0.047 179.87);
-  --color-teal-300: oklch(90.44% 0.068 178.78);
-  --color-teal-400: oklch(87.19% 0.091 177.31);
-  --color-teal-500: oklch(84.58% 0.11 176.27); /* Default */
-  --color-teal-600: oklch(79.61% 0.139 173.04);
-  --color-teal-700: oklch(67.52% 0.124 171.99);
-  --color-teal-800: oklch(49.87% 0.089 173.04);
-  --color-teal-900: oklch(32.13% 0.054 174.01);
-  --color-teal-950: oklch(21.37% 0.033 174.2);
-  /* Base*/
-  --color-base-50: oklch(0.985 0.002 247.839);
-  --color-base-100: oklch(0.967 0.003 264.542);
-  --color-base-200: oklch(0.928 0.006 264.531);
-  --color-base-300: oklch(0.872 0.01 258.338);
-  --color-base-400: oklch(0.707 0.022 261.325);
-  --color-base-500: oklch(0.551 0.027 264.364);
-  --color-base-600: oklch(0.446 0.03 256.802);
-  --color-base-700: oklch(0.373 0.034 259.733);
-  --color-base-800: oklch(0.278 0.033 256.848); /* Default */
-  --color-base-900: oklch(0.21 0.034 264.665);
-  --color-base-950: oklch(0.13 0.028 261.692);
+  
+  /* VRLY Brand Colors */
+  /* VRLY Blue (Trust, Technology) - Primary Brand Color */
+  --color-vrly-blue-50: #D4E6F1; /* Tint 5 */
+  --color-vrly-blue-100: #BED3F5; /* Tint 4 */
+  --color-vrly-blue-200: #A5C3F2; /* Tint 3 */
+  --color-vrly-blue-300: #77A9EB; /* Tint 2 */
+  --color-vrly-blue-400: #4A8FE3; /* Tint 1 */
+  --color-vrly-blue-500: #1D76DB; /* Base */
+  --color-vrly-blue-600: #175EA9; /* Shade 1 */
+  --color-vrly-blue-700: #12477E; /* Shade 2 */
+  --color-vrly-blue-800: #0C3052; /* Shade 3 */
+  --color-vrly-blue-900: #0A2743; /* Shade 4 */
+  --color-vrly-blue-950: #071E34; /* Shade 5 */
+  
+  /* VRLY Slate (Professionalität, Text) */
+  --color-vrly-slate-50: #E2E5ED; /* Tint 5 */
+  --color-vrly-slate-100: #CED4E1; /* Tint 4 */
+  --color-vrly-slate-200: #B8C0D2; /* Tint 3 */
+  --color-vrly-slate-300: #8C97AC; /* Tint 2 */
+  --color-vrly-slate-400: #5F6B7F; /* Tint 1 */
+  --color-vrly-slate-500: #333F52; /* Base */
+  --color-vrly-slate-600: #2A3445; /* Shade 1 */
+  --color-vrly-slate-700: #202938; /* Shade 2 */
+  --color-vrly-slate-800: #171E2B; /* Shade 3 */
+  --color-vrly-slate-900: #121721; /* Shade 4 */
+  --color-vrly-slate-950: #0F131A; /* Shade 5 */
+  
+  /* VRLY Green (Effizienz, Erfolg, KI) */
+  --color-vrly-green-50: #D9F2E3; /* Tint 5 */
+  --color-vrly-green-100: #C6EFD6; /* Tint 4 */
+  --color-vrly-green-200: #B2E9C6; /* Tint 3 */
+  --color-vrly-green-300: #85E0AA; /* Tint 2 */
+  --color-vrly-green-400: #58D68D; /* Tint 1 */
+  --color-vrly-green-500: #2ECC71; /* Base */
+  --color-vrly-green-600: #25A25A; /* Shade 1 */
+  --color-vrly-green-700: #1E8449; /* Shade 2 */
+  --color-vrly-green-800: #176638; /* Shade 3 */
+  --color-vrly-green-900: #12552E; /* Shade 4 */
+  --color-vrly-green-950: #0E4524; /* Shade 5 */
+  
+  /* VRLY Teal (Klarheit, Unterstützung) */
+  --color-vrly-teal-50: #D0F2EA; /* Tint 5 */
+  --color-vrly-teal-100: #B9EBE0; /* Tint 4 */
+  --color-vrly-teal-200: #A2E4D8; /* Tint 3 */
+  --color-vrly-teal-300: #75D7C4; /* Tint 2 */
+  --color-vrly-teal-400: #48C9B0; /* Tint 1 */
+  --color-vrly-teal-500: #1ABC9C; /* Base */
+  --color-vrly-teal-600: #168F79; /* Shade 1 */
+  --color-vrly-teal-700: #11705F; /* Shade 2 */
+  --color-vrly-teal-800: #0B5144; /* Shade 3 */
+  --color-vrly-teal-900: #094238; /* Shade 4 */
+  --color-vrly-teal-950: #07332C; /* Shade 5 */
+  
+  /* VRLY Neutral Grayscale */
+  --color-vrly-neutral-0: #FFFFFF;
+  --color-vrly-neutral-100: #F0F4F8; /* VRLY Light Gray */
+  --color-vrly-neutral-200: #E1E8EE;
+  --color-vrly-neutral-300: #D2DCE3;
+  --color-vrly-neutral-400: #AEB6BF;
+  --color-vrly-neutral-500: #8C97AC;
+  --color-vrly-neutral-600: #5F6B7F;
+  --color-vrly-neutral-700: #333F52; /* VRLY Slate */
+  --color-vrly-neutral-800: #2A3445;
+  --color-vrly-neutral-900: #171E2B;
+  --color-vrly-neutral-950: #0F131A;
+  
+  /* VRLY Functional Colors */
+  /* Success Colors */
+  --color-vrly-success-subtle: #D9F2E3;
+  --color-vrly-success-standard: #1E8449;
+  --color-vrly-success-strong: #0E4524;
+  
+  /* Warning Colors */
+  --color-vrly-warning-subtle: #FDEBD0;
+  --color-vrly-warning-standard: #F39C12;
+  --color-vrly-warning-strong: #A05C03;
+  
+  /* Error Colors */
+  --color-vrly-error-subtle: #F5B7B1;
+  --color-vrly-error-standard: #C0392B;
+  --color-vrly-error-strong: #922B21;
+  
+  /* Info Colors */
+  --color-vrly-info-subtle: #D6EAF8;
+  --color-vrly-info-standard: #3498DB;
+  --color-vrly-info-strong: #1A5276;
+
+  /* Legacy color mappings for template compatibility */
+  /* Map existing template colors to VRLY brand colors */
+  --color-blue-50: var(--color-vrly-blue-50);
+  --color-blue-100: var(--color-vrly-blue-100);
+  --color-blue-200: var(--color-vrly-blue-200);
+  --color-blue-300: var(--color-vrly-blue-300);
+  --color-blue-400: var(--color-vrly-blue-400);
+  --color-blue-500: var(--color-vrly-blue-500);
+  --color-blue-600: var(--color-vrly-blue-600);
+  --color-blue-700: var(--color-vrly-blue-700);
+  --color-blue-800: var(--color-vrly-blue-800);
+  --color-blue-900: var(--color-vrly-blue-900);
+  --color-blue-950: var(--color-vrly-blue-950);
+
+  /* Map teal colors */
+  --color-teal-50: var(--color-vrly-teal-50);
+  --color-teal-100: var(--color-vrly-teal-100);
+  --color-teal-200: var(--color-vrly-teal-200);
+  --color-teal-300: var(--color-vrly-teal-300);
+  --color-teal-400: var(--color-vrly-teal-400);
+  --color-teal-500: var(--color-vrly-teal-500);
+  --color-teal-600: var(--color-vrly-teal-600);
+  --color-teal-700: var(--color-vrly-teal-700);
+  --color-teal-800: var(--color-vrly-teal-800);
+  --color-teal-900: var(--color-vrly-teal-900);
+  --color-teal-950: var(--color-vrly-teal-950);
+
+  /* Map base colors to VRLY neutral/slate */
+  --color-base-50: var(--color-vrly-neutral-100);
+  --color-base-100: var(--color-vrly-neutral-200);
+  --color-base-200: var(--color-vrly-neutral-300);
+  --color-base-300: var(--color-vrly-neutral-400);
+  --color-base-400: var(--color-vrly-neutral-500);
+  --color-base-500: var(--color-vrly-neutral-600);
+  --color-base-600: var(--color-vrly-slate-400);
+  --color-base-700: var(--color-vrly-slate-600);
+  --color-base-800: var(--color-vrly-slate-500); /* Main text color */
+  --color-base-900: var(--color-vrly-slate-800);
+  --color-base-950: var(--color-vrly-slate-950);
+
+  /* Map yellow to VRLY green for accent colors */
+  --color-yellow-50: var(--color-vrly-green-50);
+  --color-yellow-100: var(--color-vrly-green-100);
+  --color-yellow-200: var(--color-vrly-green-200);
+  --color-yellow-300: var(--color-vrly-green-300);
+  --color-yellow-400: var(--color-vrly-green-400);
+  --color-yellow-500: var(--color-vrly-green-500);
+  --color-yellow-600: var(--color-vrly-green-600);
+  --color-yellow-700: var(--color-vrly-green-700);
+  --color-yellow-800: var(--color-vrly-green-800);
+  --color-yellow-900: var(--color-vrly-green-900);
+  --color-yellow-950: var(--color-vrly-green-950);
+
   --background-image-stripes: repeating-linear-gradient(
     125deg,
     transparent,
     transparent 6px,
-    #e8e8e8 6px,
-    #e8e8e8 7px
+    #f0f4f8 6px,
+    #f0f4f8 7px
   );
+  
   /* Shadows */
   --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
@@ -109,44 +206,56 @@
     }
   }
 }
+
 :root {
-  /* Shiki code style */
+  /* Shiki code style - Updated for VRLY colors */
   /* base Tokens */
-  --astro-code-foreground: var(--color-base-200);
-  --astro-code-background: var(--color-base-800);
-  --astro-code-token-comment: var(--color-base-500);
-  --astro-code-token-highlight: var(--color-base-600);
-  --astro-code-token-line-number: var(--color-base-400);
-  /* Yellow Tokens */
-  --astro-code-token-string: var(--color-yellow-500);
-  --astro-code-token-number: var(--color-yellow-400);
-  --astro-code-token-notice: var(--color-yellow-600);
-  --astro-code-token-builtin: var(--color-yellow-500);
-  --astro-code-token-boolean: var(--color-yellow-600);
-  --astro-code-token-deleted: var(--color-yellow-500);
-  --astro-code-token-constant: var(--color-yellow-400);
-  --astro-code-token-property: var(--color-yellow-400);
-  --astro-code-token-attr-value: var(--color-yellow-400);
-  /* Blue Tokens */
-  --astro-code-token-tag: var(--color-blue-500);
-  --astro-code-token-cdata: var(--color-blue-300);
-  --astro-code-token-focus: var(--color-blue-300);
-  --astro-code-token-regex: var(--color-blue-400);
-  --astro-code-token-entity: var(--color-blue-400);
-  --astro-code-token-prolog: var(--color-blue-300);
-  --astro-code-token-changed: var(--color-blue-500);
-  --astro-code-token-keyword: var(--color-blue-500);
-  --astro-code-token-doctype: var(--color-blue-500);
-  --astro-code-token-function: var(--color-blue-500);
-  --astro-code-token-variable: var(--color-blue-300);
-  --astro-code-token-operator: var(--color-blue-400);
-  --astro-code-token-attr-name: var(--color-blue-400);
-  --astro-code-token-namespace: var(--color-blue-300);
-  --astro-code-token-class-name: var(--color-blue-500);
+  --astro-code-foreground: var(--color-vrly-neutral-200);
+  --astro-code-background: var(--color-vrly-slate-500);
+  --astro-code-token-comment: var(--color-vrly-neutral-500);
+  --astro-code-token-highlight: var(--color-vrly-neutral-600);
+  --astro-code-token-line-number: var(--color-vrly-neutral-400);
+  /* VRLY Green Tokens */
+  --astro-code-token-string: var(--color-vrly-green-500);
+  --astro-code-token-number: var(--color-vrly-green-400);
+  --astro-code-token-notice: var(--color-vrly-green-600);
+  --astro-code-token-builtin: var(--color-vrly-green-500);
+  --astro-code-token-boolean: var(--color-vrly-green-600);
+  --astro-code-token-deleted: var(--color-vrly-green-500);
+  --astro-code-token-constant: var(--color-vrly-green-400);
+  --astro-code-token-property: var(--color-vrly-green-400);
+  --astro-code-token-attr-value: var(--color-vrly-green-400);
+  /* VRLY Blue Tokens */
+  --astro-code-token-tag: var(--color-vrly-blue-500);
+  --astro-code-token-cdata: var(--color-vrly-blue-300);
+  --astro-code-token-focus: var(--color-vrly-blue-300);
+  --astro-code-token-regex: var(--color-vrly-blue-400);
+  --astro-code-token-entity: var(--color-vrly-blue-400);
+  --astro-code-token-prolog: var(--color-vrly-blue-300);
+  --astro-code-token-changed: var(--color-vrly-blue-500);
+  --astro-code-token-keyword: var(--color-vrly-blue-500);
+  --astro-code-token-doctype: var(--color-vrly-blue-500);
+  --astro-code-token-function: var(--color-vrly-blue-500);
+  --astro-code-token-variable: var(--color-vrly-blue-300);
+  --astro-code-token-operator: var(--color-vrly-blue-400);
+  --astro-code-token-attr-name: var(--color-vrly-blue-400);
+  --astro-code-token-namespace: var(--color-vrly-blue-300);
+  --astro-code-token-class-name: var(--color-vrly-blue-500);
   --astro-code-token-bold: inherit;
   --astro-code-token-: ;
   --astro-code-token-underline: underline;
 }
+
+/* Typography hierarchy with VRLY fonts */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
 code {
   counter-reset: step;
   counter-increment: step 0;

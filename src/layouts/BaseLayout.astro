@@ -13,15 +13,15 @@ import Navigation from "@/components/global/Navigation.astro";
 const { hideNav = false, hideFooter = false } = Astro.props;
 ---
 <html
-  lang="en"
-  class="scroll-smooth selection:bg-base-800 selection:text-teal-500"
+  lang="de"
+  class="scroll-smooth selection:bg-vrly-blue-500 selection:text-white"
 >
   <head>
     <BaseHead />
   </head>
   <body class="relative flex flex-col min-h-screen bg-white">
     <div
-      class="bg-stripes max-w-7xl mx-auto border-x border-base-200 px-2 md:px-0 w-full lg:overflow-hidden"
+      class="bg-stripes max-w-7xl mx-auto border-x border-vrly-neutral-200 px-2 md:px-0 w-full lg:overflow-hidden"
     >
       {!hideNav && <Navigation />}
       <main class="grow">

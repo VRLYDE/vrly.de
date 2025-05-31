@@ -1,23 +1,28 @@
 ---
-// Assetss
+// Assets
 import { Image } from "astro:assets";
 import LimeStripe from "@/images/assets/LimeStripe.png";
 // Fundations
 import Logo from "@/components/assets/Logo.astro";
 import Link from "@/components/fundations/elements/Link.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+
 const navigationLinks = [
   {
-    title: "Overview",
-    href: "/system/overview",
+    title: "Leistungen",
+    href: "/leistungen",
   },
   {
-    title: "Sign up",
-    href: "/forms/sign-up",
+    title: "Über uns",
+    href: "/ueber-uns",
   },
   {
     title: "Blog",
-    href: "/blog/home",
+    href: "/blog",
+  },
+  {
+    title: "Kontakt",
+    href: "/kontakt",
   },
 ];
 ---
@@ -29,14 +34,14 @@ const navigationLinks = [
       class="relative flex flex-col md:items-center md:justify-between md:flex-row"
     >
       <div class="flex flex-row items-center justify-between">
-        <a href="/">
-          <span class="sr-only">Go to homepage</span>
-          <Logo class="h-4 text-base-800" />
+        <a href="/" class="text-vrly-blue-500 hover:text-vrly-blue-600 transition-colors">
+          <span class="sr-only">Zur VRLY Startseite</span>
+          <Logo class="h-8 text-vrly-blue-500" />
         </a>
 
         <button
           id="menu-toggle"
-          class="inline-flex items-center justify-center p-2 text-base-600 hover:text-base-800 focus:outline-none focus:text-base-500 md:hidden"
+          class="inline-flex items-center justify-center p-2 text-vrly-slate-400 hover:text-vrly-slate-500 focus:outline-none focus:text-vrly-slate-600 md:hidden"
         >
           <svg
             class="size-6"
@@ -66,18 +71,18 @@ const navigationLinks = [
         class="fixed inset-0 bg-white bg-stripes md:bg-none md:bg-transparent flex flex-col py-24 lg:p-0 h-full justify-between md:p-0 transform transition-all duration-300 ease-in-out opacity-0 -translate-y-4 pointer-events-none md:relative md:inset-auto md:opacity-100 md:pointer-events-auto md:translate-y-0"
       >
         <div
-          class="absolute inset-0 pointer-events-none bg-white border-x border-base-200 mx-2 md:hidden"
+          class="absolute inset-0 pointer-events-none bg-white border-x border-vrly-neutral-200 mx-2 md:hidden"
         >
         </div>
         <Image
           src={LimeStripe}
-          alt="Lime Stripe"
+          alt="Hintergrund Streifen"
           class="absolute inset-0 size-full pointer-events-none scale-180 top-100 md:hidden"
         />
         <button
           id="menu-close"
-          class="absolute top-4 right-4 md:hidden focus:outline-none text-base-800"
-          aria-label="Close menu"
+          class="absolute top-4 right-4 md:hidden focus:outline-none text-vrly-slate-500"
+          aria-label="Menü schließen"
         >
           <svg
             class="size-4"
@@ -93,17 +98,17 @@ const navigationLinks = [
           </svg>
         </button>
         <div
-          class="list-none md:ml-auto w-full flex flex-col h-full justify-between items-start px-8 md:px-0 md:flex-row md:items-center md:justify-center md:text-left gap-2 md:gap-4 relative"
+          class="list-none md:ml-auto w-full flex flex-col h-full justify-between items-start px-8 md:px-0 md:flex-row md:items-center md:justify-center md:text-left gap-2 md:gap-6 relative"
         >
           <a href="/" class="md:hidden">
-            <Logo class="h-4 text-base-800" />
+            <Logo class="h-6 text-vrly-blue-500" />
           </a>
-          <div class="flex flex-col gap-4 md:flex-row">
+          <div class="flex flex-col gap-4 md:flex-row md:gap-6">
             {
               navigationLinks.map((link, index) => (
                 <a
                   href={link.href}
-                  class="hover:text-base-600 text-base-800 tracking-tighter md:tracking-normal font-semibold md:font-medium text-6xl  md:text-base"
+                  class="hover:text-vrly-blue-600 text-vrly-slate-500 tracking-tighter md:tracking-normal font-semibold md:font-medium text-6xl md:text-base transition-colors duration-200"
                 >
                   {link.title}
                 </a>
@@ -111,12 +116,12 @@ const navigationLinks = [
             }
           </div>
           <Link
-            href="https://buy.polar.sh/polar_cl_i_IYoyQu3ahT_zZQ1CN1uaDgu7ZBdBGVpLThHkMDt0s"
+            href="/kontakt"
             size="sm"
-            variant="accent"
-            class="w-full md:w-auto"
+            variant="default"
+            class="w-full md:w-auto bg-vrly-blue-500 hover:bg-vrly-blue-600 text-white border-0"
           >
-            Buy Spazio Bianco
+            Jetzt kostenlos beraten lassen
           </Link>
         </div>
       </nav>
@@ -130,9 +135,10 @@ const navigationLinks = [
     const menuIcon = document.getElementById("menu-icon");
     const closeIcon = document.getElementById("close-icon");
     const navigationMenu = document.getElementById("navigation-menu");
+    
     // Toggle mobile menu
     function toggleMenu(open) {
-      console.log(`Toggling menu. Open: ${open}`); // Debug log to check the state of the toggle
+      console.log(`Toggling menu. Open: ${open}`);
       navigationMenu.classList.toggle("opacity-100", open);
       navigationMenu.classList.toggle("translate-y-0", open);
       navigationMenu.classList.toggle("pointer-events-auto", open);

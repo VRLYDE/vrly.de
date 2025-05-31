@@ -19,7 +19,7 @@ import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
   >
     <Image
       src={LimeStripe}
-      alt="Lime Stripe"
+      alt="VRLY Hintergrund"
       class="absolute inset-0 size-full pointer-events-none scale-180 rotate-x-170 top-100"
     />
 
@@ -29,33 +29,51 @@ import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
         variant="display2XL"
         data-aos="fade-up"
         data-aos-duration="1000"
-        class="font-semibold tracking-tighter text-base-800 lg:text-balance"
+        class="font-semibold tracking-tighter text-vrly-slate-500 lg:text-balance"
       >
-        Powerful financial APIs for tech innovators
+        KI-gestützte Automatisierung für Psychotherapeuten in Hannover
       </Text>
       <Text
         tag="p"
         variant="textLG"
         data-aos="fade-up"
         data-aos-duration="1500"
-        class="max-w-lg mt-4 font-medium text-base-800 md:text-balance"
+        class="max-w-2xl mt-6 font-medium text-vrly-slate-400 md:text-balance"
       >
-        Seamless, scalable infrastructure for managing funds store, transfer,
-        and reconcile money with ease.
+        Reduzieren Sie administrative Lasten durch intelligente Technologie und optimierte Workflows. 
+        Gewinnen Sie wertvolle Zeit für Ihre Patienten – DSGVO-konform und zukunftssicher.
       </Text>
+      
+      <!-- Value proposition badges -->
+      <div 
+        data-aos="fade-up"
+        data-aos-duration="1800"
+        class="flex flex-wrap gap-3 mt-8"
+      >
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-vrly-green-50 text-vrly-green-700 border border-vrly-green-200">
+          ✓ 2-5 Stunden Zeitersparnis pro Woche
+        </span>
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-vrly-blue-50 text-vrly-blue-700 border border-vrly-blue-200">
+          ✓ DSGVO-konforme Automatisierung
+        </span>
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-vrly-teal-50 text-vrly-teal-700 border border-vrly-teal-200">
+          ✓ Spezialisiert auf Psychotherapie
+        </span>
+      </div>
+
       <div
         data-aos="fade-up"
         data-aos-duration="2000"
-        class="flex items-center mt-12 gap-2"
+        class="flex flex-col sm:flex-row items-start sm:items-center mt-12 gap-4"
       >
         <Link
           size="base"
           variant="default"
-          href="/forms/sign-up"
+          href="/kontakt"
           gap="xs"
-          class="group"
+          class="group bg-vrly-blue-500 hover:bg-vrly-blue-600 text-white border-0 px-6 py-3"
         >
-          Get started
+          Kostenlosen Workflow-Audit vereinbaren
           <ChevronRight
             size="sm"
             class="duration-300 easy-out-in group-hover:translate-x-2"
@@ -64,11 +82,11 @@ import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
         <Link
           size="base"
           variant="muted"
-          href="/forms/contact"
+          href="/leistungen"
           gap="xs"
-          class="group"
+          class="group text-vrly-slate-500 hover:text-vrly-blue-600"
         >
-          Contact sales
+          Praxis-Anfragen-Autopilot entdecken
           <ChevronRight
             size="sm"
             class="duration-300 easy-out-in group-hover:translate-x-2"
@@ -87,30 +105,89 @@ import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
         data-aos="fade-up"
         data-aos-duration="2000"
         class="z-40 h-full p-8 text-xs scrollbar-hide rounded-xl shadow-2xl"
-        code={`await payments.transfer.create({
-amount: 25075,
-currency: "USD",
-from_account: {
-  id: "acct_everbank_112233445",
-  bank: "EverBank",
-  type: "Business Checking",
-},
-to_account: {
-  id: "acct_chase_556677889",
-  bank: "Chase",
-  type: "Savings",
-},
-initiated_at: "2025-03-14T14:32:00Z",
-status: "Pending",
-});`}
+        code={`// VRLY Praxis-Anfragen-Autopilot
+const automaticPatientInquiry = {
+  eingangEmail: "neue-anfrage@praxis-hannover.de",
+  patient: {
+    name: "Max Mustermann",
+    versicherung: "TK",
+    anliegen: "Depressive Verstimmung",
+    terminwunsch: "nächste 2 Wochen"
+  },
+  
+  // Automatische DSGVO-konforme Verarbeitung
+  verarbeitung: {
+    kategorisierung: "Erstanfrage - Depression",
+    priorität: "hoch",
+    antwortTemplate: "erstberatung_depression.md",
+    datenschutz: "DSGVO-konform",
+    dokumentation: "automatisch"
+  },
+  
+  // Benachrichtigung an Therapeut
+  benachrichtigung: {
+    an: "therapeut@praxis.de",
+    betreff: "Neue priorisierte Patientenanfrage",
+    zusammenfassung: "Erstanfrage Depression - TK versichert"
+  }
+};
+
+// Zeitersparnis: 15 Min → 2 Min pro Anfrage`}
         lang="js"
         theme="css-variables"
       />
-      <VisualAsset1
+      <div
         data-aos="fade-up"
         data-aos-duration="2500"
-        class="z-40 h-full p-8 overflow-hidden bg-white rounded-xl outline-1 outline-base-200 shadow-2xl"
-      />
+        class="z-40 h-full p-8 overflow-hidden bg-white rounded-xl outline-1 outline-vrly-neutral-200 shadow-2xl"
+      >
+        <!-- VRLY Dashboard Mockup -->
+        <div class="space-y-6">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold text-vrly-slate-500">VRLY Dashboard</h3>
+            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-vrly-green-100 text-vrly-green-700">
+              Live
+            </span>
+          </div>
+          
+          <!-- Stats Cards -->
+          <div class="grid grid-cols-2 gap-4">
+            <div class="p-4 bg-vrly-blue-50 rounded-lg border border-vrly-blue-200">
+              <div class="text-2xl font-bold text-vrly-blue-700">23</div>
+              <div class="text-sm text-vrly-blue-600">Anfragen heute</div>
+            </div>
+            <div class="p-4 bg-vrly-green-50 rounded-lg border border-vrly-green-200">
+              <div class="text-2xl font-bold text-vrly-green-700">4.2h</div>
+              <div class="text-sm text-vrly-green-600">Zeit gespart</div>
+            </div>
+          </div>
+          
+          <!-- Recent Activities -->
+          <div class="space-y-3">
+            <div class="flex items-center justify-between p-3 bg-vrly-neutral-100 rounded-lg">
+              <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-vrly-green-500 rounded-full"></div>
+                <span class="text-sm text-vrly-slate-500">Anfrage automatisch kategorisiert</span>
+              </div>
+              <span class="text-xs text-vrly-slate-400">vor 2 Min</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-vrly-neutral-100 rounded-lg">
+              <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-vrly-blue-500 rounded-full"></div>
+                <span class="text-sm text-vrly-slate-500">DSGVO-konforme Antwort versendet</span>
+              </div>
+              <span class="text-xs text-vrly-slate-400">vor 5 Min</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-vrly-neutral-100 rounded-lg">
+              <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-vrly-teal-500 rounded-full"></div>
+                <span class="text-sm text-vrly-slate-500">Warteliste automatisch aktualisiert</span>
+              </div>
+              <span class="text-xs text-vrly-slate-400">vor 8 Min</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </Wrapper>
 </section>
