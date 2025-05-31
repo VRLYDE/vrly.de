@@ -3,13 +3,17 @@ page: Datenschutzerklärung
 pubDate: 2025-06-01
 ---
 
-Die Verarbeitung personenbezogener Daten im Gesundheitswesen und bei der Bereitstellung von KI-gestützten Automatisierungslösungen für psychotherapeutische Praxen unterliegt höchsten Datenschutzstandards. VRLY ist sich der besonderen Sensibilität der verarbeiteten Daten bewusst und verpflichtet sich zur strikten Einhaltung aller datenschutzrechtlichen Bestimmungen, insbesondere der Datenschutz-Grundverordnung (DSGVO), des Bundesdatenschutzgesetzes (BDSG-neu) sowie der berufsspezifischen Schweigepflicht nach §203 StGB. Diese Datenschutzerklärung informiert Sie umfassend über Art, Umfang und Zweck der Verarbeitung personenbezogener Daten durch VRLY und Ihre diesbezüglichen Rechte als betroffene Person.
+## I. Einleitung und Geltungsbereich
 
-## 1. Verantwortlicher und Kontakt
+Diese Datenschutzerklärung informiert Sie als betroffene Person (Psychotherapeuten als Klienten von Phichayut Sakwiset, deren Patienten, Webseitenbesucher, Bewerber) über Art, Umfang und Zweck der Erhebung und Verwendung Ihrer personenbezogenen Daten durch Phichayut Sakwiset (nachfolgend „VRLY" oder „wir"). VRLY verpflichtet sich dem Schutz Ihrer personenbezogenen Daten und der Einhaltung der geltenden Datenschutzgesetze. Dies umfasst insbesondere die Datenschutz-Grundverordnung (DSGVO), das Bundesdatenschutzgesetz (BDSG-neu), das Niedersächsische Datenschutzgesetz (NDSG) sowie die Bestimmungen des § 203 Strafgesetzbuch (StGB) zur Wahrung der ärztlichen Schweigepflicht und des Patientengeheimnisses.  
 
-### 1.1 Verantwortlicher im Sinne der DSGVO
+Die Verarbeitung von Gesundheitsdaten, insbesondere im Kontext psychotherapeutischer Behandlungen, unterliegt höchsten Vertraulichkeitsanforderungen. VRLY ist sich dieser besonderen Verantwortung bewusst. Psychotherapeuten, die unsere Dienste nutzen, sind als primär für die Daten ihrer Patienten Verantwortliche ebenfalls an § 203 StGB gebunden. VRLY agiert in diesem Zusammenhang als „mitwirkende Person" im Sinne des § 203 StGB, wodurch sich die Schweigepflicht auch auf unser Unternehmen und unsere Mitarbeiter erstreckt. Diese Datenschutzerklärung legt dar, wie wir diesen Verpflichtungen nachkommen.  
 
-Verantwortlicher für die Datenverarbeitung auf dieser Website und im Rahmen der VRLY-Dienstleistungen ist:
+Diese Datenschutzerklärung gilt für alle von VRLY angebotenen Dienstleistungen, die Verarbeitung von Daten im Rahmen unserer Webseite sowie für sonstige Interaktionen mit unserem Unternehmen.
+
+## II. Name und Kontaktdaten des Verantwortlichen
+
+Verantwortlich für die Datenverarbeitung im Sinne der Datenschutz-Grundverordnung und anderer nationaler Datenschutzgesetze der Mitgliedsstaaten sowie sonstiger datenschutzrechtlicher Bestimmungen ist:
 
 **Phichayut Sakwiset**  
 VRLY  
@@ -17,527 +21,304 @@ Schwarzer Bär 1
 30449 Hannover  
 Deutschland
 
+**Kontaktdaten:**  
 Telefon: +49 511 93678551  
 E-Mail: <legal@vrly.de>  
 Website: [https://vrly.de](/)
 
-### 1.2 Datenschutzbeauftragter
+Die Bereitstellung dieser Informationen ist eine zwingende Anforderung gemäß Art. 13 Abs. 1 lit. a und Art. 14 Abs. 1 lit. a DSGVO. Es ist von grundlegender Bedeutung, dass betroffene Personen klar identifizieren können, wer für die Verarbeitung ihrer Daten verantwortlich ist, um ihre Rechte wirksam ausüben zu können. VRLY agiert in verschiedenen Kontexten sowohl als Verantwortlicher (z.B. für Daten von Psychotherapeuten als unsere Klienten, Webseitendaten) als auch als Auftragsverarbeiter (für Patientendaten im Auftrag von Psychotherapeuten). Diese Datenschutzerklärung wird die unterschiedlichen Rollen und Verantwortlichkeiten im Detail erläutern, um Klarheit für alle betroffenen Personen zu schaffen.  
 
-Aufgrund der Unternehmensgröße und des Verarbeitungsumfangs ist VRLY derzeit nicht zur Bestellung eines Datenschutzbeauftragten verpflichtet. Bei datenschutzrechtlichen Fragen wenden Sie sich bitte direkt an die oben genannten Kontaktdaten des Verantwortlichen.
+## III. Kontaktdaten des Datenschutzbeauftragten
 
-### 1.3 Zuständige Aufsichtsbehörde
+VRLY hat einen Datenschutzbeauftragten benannt. Die Notwendigkeit hierfür ergibt sich primär aus Art. 37 Abs. 1 lit. c DSGVO, da die Kerntätigkeit von VRLY die umfangreiche Verarbeitung besonderer Kategorien personenbezogener Daten (Gesundheitsdaten gemäß Art. 9 DSGVO) umfasst. Die Leitlinien des Landesbeauftragten für den Datenschutz (LfD) Niedersachsen bestätigen, dass im Gesundheitssektor die Verarbeitung von Gesundheitsdaten eine Kerntätigkeit darstellt und bei Dienstleistern, die für mehrere Praxen tätig sind, von einer umfangreichen Verarbeitung auszugehen ist. Die Benennung eines Datenschutzbeauftragten unterstreicht das Engagement von VRLY für den Datenschutz und stellt eine fachkundige Anlaufstelle für datenschutzrechtliche Fragen sicher.  
 
-Die für VRLY zuständige Datenschutz-Aufsichtsbehörde ist:
+Sie erreichen unseren Datenschutzbeauftragten unter:
 
+E-Mail: <dsb@vrly.de>
+
+Der Datenschutzbeauftragte steht Ihnen als Ansprechpartner für alle Fragen im Zusammenhang mit der Verarbeitung Ihrer personenbezogenen Daten und der Wahrnehmung Ihrer Rechte zur Verfügung. Er überwacht zudem die Einhaltung der komplexen datenschutzrechtlichen Vorgaben, insbesondere im Hinblick auf die DSGVO, das BDSG-neu, das NDSG und § 203 StGB.  
+
+## IV. Begriffsbestimmungen
+
+Um ein einheitliches Verständnis dieser Datenschutzerklärung zu gewährleisten, werden die folgenden datenschutzrechtlichen Begriffe gemäß Art. 4 DSGVO und anderen relevanten Vorschriften definiert:
+
+- **Personenbezogene Daten:** Alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person (im Folgenden "betroffene Person") beziehen; als identifizierbar wird eine natürliche Person angesehen, die direkt oder indirekt, insbesondere mittels Zuordnung zu einer Kennung wie einem Namen, zu einer Kennnummer, zu Standortdaten, zu einer Online-Kennung oder zu einem oder mehreren besonderen Merkmalen identifiziert werden kann, die Ausdruck der physischen, physiologischen, genetischen, psychischen, wirtschaftlichen, kulturellen oder sozialen Identität dieser natürlichen Person sind (Art. 4 Nr. 1 DSGVO).
+- **Gesundheitsdaten:** Personenbezogene Daten, die sich auf die körperliche oder geistige Gesundheit einer natürlichen Person, einschließlich der Erbringung von Gesundheitsdienstleistungen, beziehen und aus denen Informationen über deren Gesundheitszustand hervorgehen (Art. 4 Nr. 15 DSGVO). 14 Diese Datenkategorie ist besonders schutzwürdig.
+- **Verarbeitung:** Jeder mit oder ohne Hilfe automatisierter Verfahren ausgeführte Vorgang oder jede solche Vorgangsreihe im Zusammenhang mit personenbezogenen Daten wie das Erheben, das Erfassen, die Organisation, das Ordnen, die Speicherung, die Anpassung oder Veränderung, das Auslesen, das Abfragen, die Verwendung, die Offenlegung durch Übermittlung, Verbreitung oder eine andere Form der Bereitstellung, den Abgleich oder die Verknüpfung, die Einschränkung, das Löschen oder die Vernichtung (Art. 4 Nr. 2 DSGVO). Ergänzende Bestimmungen finden sich im [Niedersächsisches Datenschutzgesetz (NDSG)](https://www.lfd.niedersachsen.de/download/132258/Niedersaechsisches_Datenschutzgesetz_NDSG_vom_16._Mai_2018_Nds._GVBl._S._66_.pdf).
+- **Verantwortlicher:** Die natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet (Art. 4 Nr. 7 DSGVO).
+- **Auftragsverarbeiter:** Eine natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet (Art. 4 Nr. 8 DSGVO).
+- **Betroffene Person:** Die identifizierte oder identifizierbare natürliche Person, auf die sich die personenbezogenen Daten beziehen.
+- **Einwilligung:** Jede freiwillig für den bestimmten Fall, in informierter Weise und unmissverständlich abgegebene Willensbekundung in Form einer Erklärung oder einer sonstigen eindeutigen bestätigenden Handlung, mit der die betroffene Person zu verstehen gibt, dass sie mit der Verarbeitung der sie betreffenden personenbezogenen Daten einverstanden ist (Art. 4 Nr. 11 DSGVO).
+- **Pseudonymisierung:** Bedeutet die Verarbeitung personenbezogener Daten in einer Weise, dass die personenbezogenen Daten ohne Hinzuziehung zusätzlicher Informationen nicht mehr einer spezifischen betroffenen Person zugeordnet werden können, sofern diese zusätzlichen Informationen gesondert aufbewahrt werden und technischen und organisatorischen Maßnahmen unterliegen, die gewährleisten, dass die personenbezogenen Daten nicht einer identifizierten oder identifizierbaren natürlichen Person zugewiesen werden (Art. 4 Nr. 5 DSGVO). Ergänzende Bestimmungen finden sich im NDSG.
+- **§ 203 StGB (Verletzung von Privatgeheimnissen):** Diese strafrechtliche Norm schützt Geheimnisse, die bestimmten Berufsgruppen, darunter Ärzten und Psychotherapeuten, in Ausübung ihres Berufs anvertraut oder bekannt geworden sind. Die unbefugte Offenbarung solcher Geheimnisse ist strafbar. Dies schließt auch Personen ein, die bei diesen Berufsgruppen zur Vorbereitung auf den Beruf oder sonst tätig sind ("mitwirkende Personen"). Die Definition von Gesundheitsdaten und die Erläuterung des § 203 StGB verdeutlichen die hohe Sensibilität der verarbeiteten Daten und das spezifische rechtliche Umfeld, in dem VRLY agiert. Die klare Unterscheidung zwischen Verantwortlichem und Auftragsverarbeiter ist für das Verständnis der Rollenverteilung, insbesondere im Hintext der Verarbeitung von Patientendaten, unerlässlich.
+
+## V. Zwecke der Datenverarbeitung und Rechtsgrundlagen
+
+Nachfolgend informieren wir Sie detailliert darüber, welche Ihrer personenbezogenen Daten wir zu welchen Zwecken und auf welcher Rechtsgrundlage verarbeiten.
+
+### A. Verarbeitung von Daten der Psychotherapeuten (Klienten von VRLY)
+
+Wenn Sie als Psychotherapeut unsere Dienste in Anspruch nehmen, verarbeiten wir Ihre personenbezogenen Daten wie folgt:
+
+- **Datenkategorien:**
+  - Stammdaten: Name, Praxisanschrift, E-Mail-Adresse, Telefonnummer.
+  - Vertragsdaten: Vertragsunterlagen, gebuchte Leistungen, Laufzeiten.
+  - Abrechnungsdaten: Bankverbindungen, Rechnungsdaten, Zahlungsinformationen.
+  - Kommunikationsdaten: Inhalt von E-Mails, Telefonnotizen, Supportanfragen.
+  - Login-Daten: Benutzername und (verschlüsseltes) Passwort für den Zugang zu unseren Diensten.
+- **Zwecke der Verarbeitung:**
+  - Anbahnung, Abschluss, Durchführung und Beendigung des Vertragsverhältnisses über die Nutzung unserer Dienste.
+  - Kommunikation im Rahmen des Vertragsverhältnisses, einschließlich Support und Bereitstellung von Serviceinformationen und Updates.
+  - Rechnungsstellung und Abwicklung des Zahlungsverkehrs.
+  - Gewährleistung der Sicherheit und Funktionsfähigkeit unserer Dienste.
+  - Verbesserung und Weiterentwicklung unserer Dienste (ggf. auf Basis anonymisierter oder aggregierter Daten).
+- **Rechtsgrundlagen der Verarbeitung:**
+  - **Art. 6 Abs. 1 lit. b DSGVO:** Die Verarbeitung ist für die Erfüllung eines Vertrags, dessen Vertragspartei Sie sind, oder zur Durchführung vorvertraglicher Maßnahmen erforderlich, die auf Ihre Anfrage erfolgen. Dies ist die primäre Rechtsgrundlage für die Bereitstellung unserer Kerndienstleistungen.
+  - **Art. 6 Abs. 1 lit. f DSGVO:** Die Verarbeitung ist zur Wahrung unserer berechtigten Interessen oder der eines Dritten erforderlich, sofern nicht Ihre Interessen oder Grundrechte und Grundfreiheiten, die den Schutz personenbezogener Daten erfordern, überwiegen. Unsere berechtigten Interessen können beispielsweise in der Direktwerbung für ähnliche eigene Produkte oder Dienstleistungen (unter Beachtung Ihres Widerspruchsrechts), der Gewährleistung der IT-Sicherheit unserer Systeme oder der Verbesserung unserer Dienste liegen.
+  - **Art. 6 Abs. 1 lit. c DSGVO:** Die Verarbeitung ist zur Erfüllung einer rechtlichen Verpflichtung erforderlich, der wir unterliegen. Dies betrifft beispielsweise handels- oder steuerrechtliche Aufbewahrungspflichten.
+  - **Art. 6 Abs. 1 lit. a DSGVO:** Ihre Einwilligung, sofern wir diese für bestimmte Verarbeitungszwecke einholen, die nicht von anderen Rechtsgrundlagen gedeckt sind (z.B. für bestimmte Marketingmaßnahmen, die über unser berechtigtes Interesse hinausgehen).
+
+### B. Verarbeitung von Patientendaten im Auftrag der Psychotherapeuten
+
+VRLY stellt Psychotherapeuten eine technologische Plattform und Dienstleistungen zur Verfügung, die auch die Verarbeitung von Patientendaten umfassen können. In diesem Kontext ist Folgendes von entscheidender Bedeutung:
+
+- **Rolle von VRLY:** VRLY handelt hierbei ausschließlich als **Auftragsverarbeiter** im Sinne des Art. 28 DSGVO. Der jeweilige Psychotherapeut, der unsere Dienste zur Behandlung seiner Patienten nutzt, ist und bleibt der **Verantwortliche** für die Verarbeitung der Patientendaten. VRLY verarbeitet diese Daten ausschließlich auf Grundlage der dokumentierten Weisungen des jeweiligen Psychotherapeuten, die im Rahmen eines Auftragsverarbeitungsvertrags (AVV) festgelegt sind.
+- **Datenkategorien (im Auftrag verarbeitet):** Die konkret verarbeiteten Patientendaten hängen von der Nutzung unserer Dienste durch den jeweiligen Psychotherapeuten ab. Dies können insbesondere sein:
+  - Identifikationsdaten der Patienten: z.B. Name, Geburtsdatum, Kontaktdaten, Versichertennummer. Wo immer möglich und vom Psychotherapeuten angewiesen, werden diese Daten innerhalb der VRLY-Systeme pseudonymisiert.
+  - Gesundheitsdaten: Daten, die im Rahmen der psychotherapeutischen Behandlung anfallen, wie z.B. Anamnesen, Diagnosen, Therapiepläne, Sitzungsprotokolle, Verlaufsdokumentationen, Testergebnisse, Kommunikationsinhalte zwischen Patient und Therapeut (sofern über die Plattform abgewickelt).
+  - Termindaten.
+  - Abrechnungsrelevante Daten (sofern unsere Dienste hierfür genutzt werden).
+- **Zwecke der Verarbeitung (gemäß Weisung des Psychotherapeuten):**
+  - Bereitstellung der VRLY-Software oder -Plattform für das Patientenmanagement, die Dokumentation, die Kommunikation, die Terminplanung und andere therapeutische oder administrative Prozesse, wie vom Psychotherapeuten genutzt.
+  - Sichere Speicherung und Sicherung (Backup) der Patientendaten.
+  - Ermöglichung der Kommunikation zwischen Patient und Psychotherapeut (sofern über unsere Plattform).
+- **Rechtsgrundlagen der Verarbeitung (primär für den Psychotherapeuten als Verantwortlichen, durch VRLY als Auftragsverarbeiter ermöglicht):**
+  - Die Verarbeitung von Gesundheitsdaten durch den Psychotherapeuten stützt sich in der Regel auf **Art. 9 Abs. 2 lit. h DSGVO** (Verarbeitung ist für Zwecke der Gesundheitsvorsorge, der medizinischen Diagnostik, der Versorgung oder Behandlung im Gesundheits- oder Sozialbereich oder für die Verwaltung von Systemen und Diensten im Gesundheits- oder Sozialbereich erforderlich) in Verbindung mit **§ 22 Abs. 1 Nr. 1 lit. b BDSG-neu** und unter strikter Einhaltung der ärztlichen Schweigepflicht gemäß **§ 203 StGB**. Dies bildet die zentrale Rechtsgrundlage für die Verarbeitung von Patientengesundheitsdaten im therapeutischen Kontext.
+  - Die Verarbeitung dieser Daten durch VRLY als Auftragsverarbeiter erfolgt auf Grundlage des **Auftragsverarbeitungsvertrags (AVV) gemäß Art. 28 DSGVO**, der zwischen VRLY und dem jeweiligen Psychotherapeuten geschlossen wird. Dieser AVV muss zwingend auch die Anforderungen des **§ 203 Abs. 3 S. 2 StGB** berücksichtigen, um die Wahrung des Patientengeheimnisses durch VRLY und etwaige Unterauftragsverarbeiter sicherzustellen.
+  - **Art. 9 Abs. 2 lit. a DSGVO:** Die ausdrückliche Einwilligung des Patienten, die vom Psychotherapeuten eingeholt wird, kann eine Rechtsgrundlage darstellen, insbesondere für Verarbeitungen, die über den direkten Behandlungszusammenhang hinausgehen oder für die der Psychotherapeut die Einwilligung als primäre Rechtsgrundlage wählt. VRLY würde dann entsprechend den Weisungen des Psychotherapeuten auf Basis dieser Einwilligung tätig.
+  - **Art. 6 Abs. 1 lit. c DSGVO** in Verbindung mit **§ 630f BGB:** Die rechtliche Verpflichtung des Psychotherapeuten zur Führung und Aufbewahrung von Patientenakten, deren Erfüllung VRLY durch seine Speicher- und Dokumentationsdienste unterstützt.
+
+Die klare Trennung der Verantwortlichkeiten ist hierbei entscheidend: Der Psychotherapeut legt die Zwecke und Mittel der Verarbeitung von Patientendaten fest und ist für die Einhaltung der datenschutzrechtlichen Informationspflichten gegenüber seinen Patienten sowie für das Vorliegen einer gültigen Rechtsgrundlage verantwortlich. VRLY ist an die Weisungen des Psychotherapeuten gebunden und stellt die technischen und organisatorischen Maßnahmen zur Sicherheit der Daten im Rahmen der Auftragsverarbeitung bereit.
+
+### C. Verarbeitung von Daten beim Besuch unserer Webseite und Nutzung unserer Online-Dienste
+
+- **Server-Logfiles:**
+  - Datenkategorien: IP-Adresse (ggf. anonymisiert), Browsertyp und -version, verwendetes Betriebssystem, Referrer URL (die zuvor besuchte Seite), Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage, übertragene Datenmenge.
+  - Zwecke: Gewährleistung eines reibungslosen Verbindungsaufbaus und einer komfortablen Nutzung der Webseite, Auswertung der Systemsicherheit und -stabilität, Fehleranalyse, administrative Zwecke.
+  - Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse folgt aus den oben genannten Zwecken zur Datenerhebung. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.
+- **Cookies:**
+  - Wir setzen auf unserer Webseite Cookies ein. Hierbei handelt es sich um kleine Textdateien, die Ihr Browser automatisch erstellt und die auf Ihrem Endgerät (Laptop, Tablet, Smartphone o.ä.) gespeichert werden, wenn Sie unsere Seite besuchen.
+  - **Technisch notwendige Cookies:** Diese Cookies sind für den Betrieb der Webseite und die Bereitstellung grundlegender Funktionen unerlässlich (z.B. Session-Management, Warenkorbfunktionen, Login-Status).
+    - Zwecke: Sicherstellung der technischen Funktionsfähigkeit und Benutzerfreundlichkeit der Webseite.
+    - Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (unser berechtigtes Interesse an der Bereitstellung einer funktionsfähigen Webseite) oder § 25 Abs. 2 TTDSG (Telekommunikation-Telemedien-Datenschutz-Gesetz), sofern der Cookie unbedingt erforderlich ist, um einen vom Nutzer ausdrücklich gewünschten Telemediendienst zur Verfügung zu stellen.
+  - **Analyse- und Marketing-Cookies:** Diese Cookies ermöglichen es uns, die Nutzung unserer Webseite zu analysieren, die Reichweite zu messen oder Marketingmaßnahmen zu optimieren (z.B. durch den Einsatz von Google Analytics, PostHog, sofern auf unserer eigenen Webseite genutzt).
+    - Zwecke: Statistische Auswertung des Nutzerverhaltens zur Optimierung unseres Angebots und unserer Marketingmaßnahmen.
+    - Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Ihre ausdrückliche Einwilligung, die Sie über unseren Cookie-Banner erteilen) und § 25 Abs. 1 TTDSG. Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie die Cookie-Einstellungen auf unserer Webseite anpassen.
+- **Kontaktformular und E-Mail-Kontakt:**
+  - Wenn Sie uns per Kontaktformular oder E-Mail Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular bzw. Ihrer E-Mail inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.
+  - Datenkategorien: Name, E-Mail-Adresse, Betreff, Inhalt Ihrer Nachricht sowie ggf. weitere von Ihnen freiwillig gemachte Angaben.
+  - Zwecke: Beantwortung Ihrer Anfragen und Anliegen.
+  - Rechtsgrundlage: Die Verarbeitung der in das Kontaktformular eingegebenen Daten oder per E-Mail übersandten Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), sofern diese abgefragt wurde.
+
+### D. Verarbeitung von Bewerberdaten
+
+Wenn Sie sich bei VRLY bewerben, verarbeiten wir Ihre personenbezogenen Daten wie folgt:
+
+- Datenkategorien: Ihre Bewerbungsunterlagen (Anschreiben, Lebenslauf, Zeugnisse, Qualifikationsnachweise), Kontaktdaten, Angaben zu Ihrem beruflichen Werdegang und Ihren Qualifikationen.
+- Zwecke: Durchführung des Bewerbungsverfahrens und Entscheidung über die Begründung eines Beschäftigungsverhältnisses.
+- Rechtsgrundlage: **§ 26 Abs. 1 BDSG-neu** (Datenverarbeitung für Zwecke des Beschäftigungsverhältnisses). 40 Sofern besondere Kategorien personenbezogener Daten (z.B. Gesundheitsdaten bei Schwerbehinderung) verarbeitet werden, erfolgt dies auf Grundlage von § 26 Abs. 3 BDSG-neu.
+- Für eine längere Speicherung Ihrer Bewerberdaten in einem Talentpool holen wir Ihre gesonderte Einwilligung gemäß § 26 Abs. 2 BDSG-neu ein.
+
+### E. Verarbeitung zu sonstigen Zwecken
+
+- **Erfüllung rechtlicher Verpflichtungen:**
+  - Zwecke: Einhaltung gesetzlicher Anforderungen, z.B. aus dem Handels-, Steuer-, oder Sozialrecht.
+  - Rechtsgrundlage: Art. 6 Abs. 1 lit. c DSGVO.
+- **Schutz lebenswichtiger Interessen:**
+  - Zwecke: In seltenen Ausnahmefällen kann die Verarbeitung erforderlich sein, um lebenswichtige Interessen der betroffenen Person oder einer anderen natürlichen Person zu schützen.
+  - Rechtsgrundlage: Art. 6 Abs. 1 lit. d DSGVO, Art. 9 Abs. 2 lit. c DSGVO.
+- **Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen:**
+  - Zwecke: Sofern erforderlich, um Rechtsansprüche geltend zu machen, auszuüben oder zu verteidigen.
+  - Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO, Art. 9 Abs. 2 lit. f DSGVO.
+
+## VI. Empfänger oder Kategorien von Empfängern der personenbezogenen Daten
+
+Eine Weitergabe Ihrer personenbezogenen Daten an Dritte erfolgt grundsätzlich nur, wenn dies zur Vertragserfüllung erforderlich ist, wir gesetzlich dazu verpflichtet sind, Sie eingewilligt haben oder dies auf Basis unserer berechtigten Interessen zulässig ist.
+
+- **Interner Zugriff:** Innerhalb von VRLY erhalten nur diejenigen Mitarbeiter Zugriff auf Ihre Daten, die diesen zur Erfüllung unserer vertraglichen und gesetzlichen Pflichten sowie der genannten Zwecke benötigen (Need-to-know-Prinzip, Prinzip der geringsten Rechte). Diese Mitarbeiter sind zur Vertraulichkeit und, soweit relevant, auf die Einhaltung des § 203 StGB verpflichtet.
+- **Auftragsverarbeiter / Drittanbieter:** VRLY setzt für spezifische technische und geschäftliche Funktionen externe Dienstleister ein (Auftragsverarbeiter). Diese Auftragsverarbeiter werden von uns sorgfältig ausgewählt und sind vertraglich gemäß Art. 28 DSGVO gebunden. Sofern Gesundheitsdaten verarbeitet werden, stellen wir sicher, dass die Auftragsverarbeiter auch die Anforderungen des § 203 StGB einhalten. Die Weitergabe von Patientendaten an Unterauftragsverarbeiter durch VRLY erfordert höchste Sorgfalt und strenge vertragliche Regelungen, um die Kette der Schweigepflicht gemäß § 203 StGB nicht zu unterbrechen. Dies bedeutet, dass nicht nur ein Standard-AVV nach Art. 28 DSGVO ausreichend ist, sondern dieser spezifische Klauseln zur Einhaltung der berufsständischen Schweigepflicht enthalten muss oder durch entsprechende Zertifizierungen des Dienstleisters ergänzt wird.
+
+Nachfolgend eine Übersicht der von uns eingesetzten Kategorien von Dienstleistern und spezifischen Anbietern:
+
+| Dienstleister (Service Provider) & Sitz (Location)                     | Zweck der Verarbeitung (Purpose)                                                                                                                   | Verarbeitete Datenkategorien (Data Categories Processed)                                                                                                                                                                                                                                                                                                                                            | Rechtsgrundlage für Einbindung (Legal Basis for Engagement)                                                                                                                                                                                                                                                                                                                                          | Link zur Datenschutzerklärung/AVV (Link to Privacy Policy/DPA) | Datenübermittlung Drittland & Schutzmaßnahmen (Third Country Transfer & Safeguards)                                                                                                                                                                                                            |
+| :--------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Hosting-Dienstleister (z.B. Google Cloud Platform)**                 |                                                                                                                                                    |                                                                                                                                                                                                                                                                                                                                                                                                     |                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                |                                                                                                                                                                                                                                                                                                |
+| Google Cloud EMEA Ltd., Dublin, Ireland / Google Ireland Ltd.          | Sicheres Hosting der VRLY-Plattform und zugehöriger Datenbanken, einschließlich der im Auftrag von Psychotherapeuten verarbeiteten Patientendaten. | Alle von der VRLY-Plattform verarbeiteten Daten, potenziell auch sensible Gesundheitsdaten (verschlüsselt bei Speicherung und Übertragung), Daten von Psychotherapeuten, Anwendungsprotokolle.                                                                                                                                                                                                      | Art. 28 DSGVO (Auftragsverarbeitungsvertrag - Google Cloud Data Processing Addendum (CDPA)). Es werden explizite vertragliche Klauseln zur Gewährleistung der Einhaltung der Anforderungen des § 203 StGB oder äquivalente Sicherheits- und Vertraulichkeitsmaßnahmen vereinbart. Datenlokalisierungsoptionen innerhalb der EU (z.B. Frankfurt, Niederlande) werden genutzt und vertraglich fixiert. | Google Cloud Privacy Notice, CDPA                              | Ja (USA für Support/globale Infrastruktur). Übermittlung basiert auf Angemessenheitsbeschluss (EU-U.S. Data Privacy Framework, sofern Google zertifiziert ist und dies aufrechterhält), Standardvertragsklauseln (SCCs) und ggf. ergänzenden Maßnahmen. VRLY nutzt bevorzugt EU-Rechenzentren. |
+| **Kommunikations- und Kollaborationsdienste (z.B. Google Workspace)**  |                                                                                                                                                    |                                                                                                                                                                                                                                                                                                                                                                                                     |                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                |                                                                                                                                                                                                                                                                                                |
+| Google Ireland Ltd.                                                    | E-Mail-Kommunikation, Dokumentenmanagement, interne Kollaboration für VRLY-Mitarbeiter und Kommunikation mit Psychotherapeuten (Klienten).         | Kontaktdaten, E-Mail-Inhalte, Dokumente von Psychotherapeuten (als VRLY-Klienten) und VRLY-Mitarbeitern. _Es wird sorgfältig darauf geachtet, dass keine Patientendaten über diese Systeme verarbeitet werden, es sei denn, dies ist im Rahmen einer sicheren, verschlüsselten Kommunikation mit einem Psychotherapeuten und auf dessen explizite Weisung ausnahmsweise erforderlich und zulässig._ | Art. 28 DSGVO (Auftragsverarbeitungsvertrag - Google Workspace Cloud Data Processing Addendum (CDPA)). 44                                                                                                                                                                                                                                                                                            | Google Workspace Privacy, CDPA                                 | Ja (USA). Übermittlung basiert auf Angemessenheitsbeschluss (EU-U.S. Data Privacy Framework, sofern Google zertifiziert ist), SCCs und ggf. ergänzenden Maßnahmen.                                                                                                                             |
+| **Webseiten-Analyse (für vrly.de)**                                    |                                                                                                                                                    |                                                                                                                                                                                                                                                                                                                                                                                                     |                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                |                                                                                                                                                                                                                                                                                                |
+| Google Ireland Ltd. (für Google Analytics)                             | Analyse der Nutzung der VRLY-Webseite (nicht der Plattform für Psychotherapeuten).                                                                 | IP-Adresse (anonymisiert durch anonymizeIp), Browserdaten, Nutzungsmuster.                                                                                                                                                                                                                                                                                                                          | Art. 6 Abs. 1 lit. a DSGVO (Einwilligung über Cookie-Banner) + Art. 28 DSGVO AVV.                                                                                                                                                                                                                                                                                                                    | Google Analytics Terms, Google Privacy Policy, DPA mit Google  | Ja (USA). Übermittlung basiert auf Angemessenheitsbeschluss (EU-U.S. Data Privacy Framework, sofern Google zertifiziert ist), SCCs und ggf. ergänzenden Maßnahmen.                                                                                                                             |
+| PostHog Inc., USA (für PostHog, falls genutzt)                         | Webseiten-/Produktnutzungsanalyse zur Verbesserung der VRLY-eigenen Angebote (nicht zur Analyse von Patientendaten).                               | Nutzungsdaten, IP-Adresse (konfigurierbar zur Bereinigung).                                                                                                                                                                                                                                                                                                                                         | Art. 6 Abs. 1 lit. a DSGVO (Einwilligung, falls Nutzer getrackt werden) oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse für aggregierte, anonymisierte Analysen ohne Cookies oder mit minimalen personenbezogenen Daten) + Art. 28 DSGVO AVV. EU-Hosting-Option wird genutzt.                                                                                                                | PostHog Privacy Policy, DPA verfügbar.                         | Ja (USA). Übermittlung basiert auf Angemessenheitsbeschluss (EU-U.S. Data Privacy Framework, sofern PostHog zertifiziert ist), SCCs. EU-Cloud-Option wird genutzt.                                                                                                                             |
+| **Content Delivery Network (CDN) / Sicherheit (z.B. Cloudflare)**      |                                                                                                                                                    |                                                                                                                                                                                                                                                                                                                                                                                                     |                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                |                                                                                                                                                                                                                                                                                                |
+| Cloudflare, Inc., USA                                                  | Optimierung der Webseiten-Performance, Sicherheit (z.B. DDoS-Schutz) für die VRLY-Webseite oder -Plattform.                                        | IP-Adressen, Verkehrsdaten. Cloudflare agiert als Reverse-Proxy und kann potenziell den gesamten Datenverkehr einsehen.                                                                                                                                                                                                                                                                             | Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an sicherer und performanter Bereitstellung). Wenn Cloudflare als Auftragsverarbeiter für Plattformdaten agiert, dann Art. 28 DSGVO AVV.                                                                                                                                                                                                          | Cloudflare Privacy Policy, DPA.                                | Ja (USA). Übermittlung basiert auf Angemessenheitsbeschluss (EU-U.S. Data Privacy Framework, sofern Cloudflare zertifiziert ist), SCCs und ggf. ergänzenden Maßnahmen.                                                                                                                         |
+| **Projektmanagement-Tools (für interne VRLY-Nutzung)**                 |                                                                                                                                                    |                                                                                                                                                                                                                                                                                                                                                                                                     |                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                |                                                                                                                                                                                                                                                                                                |
+| Mango Technologies, Inc. (ClickUp), USA                                | Internes Projektmanagement für VRLY.                                                                                                               | Aufgabendetails, Mitarbeiterkommentare, Projektdateien (keine Patientendaten).                                                                                                                                                                                                                                                                                                                      | Art. 28 DSGVO AVV.                                                                                                                                                                                                                                                                                                                                                                                   | ClickUp Privacy Policy, DPA 57                                 | Ja (USA). Übermittlung basiert auf Angemessenheitsbeschluss (EU-U.S. Data Privacy Framework, sofern ClickUp zertifiziert ist), SCCs und ggf. ergänzenden Maßnahmen.                                                                                                                            |
+| GitHub, Inc. (Microsoft), USA                                          | Softwareentwicklung, Versionskontrolle, internes Issue-Tracking.                                                                                   | Code, Entwicklerkommentare, Fehlerberichte (keine Patientendaten). 32                                                                                                                                                                                                                                                                                                                               | Art. 28 DSGVO AVV (GitHub DPA).                                                                                                                                                                                                                                                                                                                                                                      | GitHub Privacy Statement, DPA.                                 | Ja (USA). Übermittlung basiert auf Angemessenheitsbeschluss (EU-U.S. Data Privacy Framework, sofern GitHub/Microsoft zertifiziert ist), SCCs und ggf. ergänzenden Maßnahmen.                                                                                                                   |
+| **Passwort-Management (für interne VRLY-Nutzung)**                     |                                                                                                                                                    |                                                                                                                                                                                                                                                                                                                                                                                                     |                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                |                                                                                                                                                                                                                                                                                                |
+| AgileBits Inc. (1Password), Kanada/USA                                 | Sichere Speicherung der internen Passwörter von VRLY.                                                                                              | Verschlüsselte VRLY-Unternehmenspasswörter (keine Patientendaten).                                                                                                                                                                                                                                                                                                                                  | Art. 28 DSGVO AVV.                                                                                                                                                                                                                                                                                                                                                                                   | 1Password Privacy Policy 62, DPA                               | Ja (Kanada/USA). Kanada hat einen Angemessenheitsbeschluss der EU. Für USA: EU-U.S. DPF (sofern zertifiziert), SCCs.                                                                                                                                                                           |
+| **Zahlungsabwicklungsdienste (für VRLY-Klienten - Psychotherapeuten)** |                                                                                                                                                    |                                                                                                                                                                                                                                                                                                                                                                                                     |                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                |                                                                                                                                                                                                                                                                                                |
+| Stripe Payments Europe, Ltd., Ireland / Stripe, Inc., USA              | Abwicklung von Abonnementzahlungen von Psychotherapeuten.                                                                                          | Kontakt- und Zahlungsdaten von Psychotherapeuten (Kreditkarteninformationen, Bankdaten).                                                                                                                                                                                                                                                                                                            | Stripe agiert oft als separater Verantwortlicher oder gemeinsam Verantwortlicher für die Zahlungsabwicklung. Dies bedarf einer genauen Prüfung der Stripe-Bedingungen. Falls Auftragsverarbeiter, dann Art. 28 DSGVO AVV.                                                                                                                                                                            | Stripe Privacy Policy, DPA 65                                  | Ja (USA). Übermittlung basiert auf Angemessenheitsbeschluss (EU-U.S. Data Privacy Framework, sofern Stripe zertifiziert ist), SCCs und ggf. ergänzenden Maßnahmen.                                                                                                                             |
+| **Automatisierungsdienste (für interne VRLY-Workflows)**               |                                                                                                                                                    |                                                                                                                                                                                                                                                                                                                                                                                                     |                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                |                                                                                                                                                                                                                                                                                                |
+| Celonis Inc. (Make.com), USA/Deutschland                               | Automatisierung interner Geschäftsprozesse von VRLY.                                                                                               | Daten, die für die automatisierten Aufgaben relevant sind (keine Patientendaten).                                                                                                                                                                                                                                                                                                                   | Art. 28 DSGVO AVV.                                                                                                                                                                                                                                                                                                                                                                                   | Make.com Privacy Notice, DPA.                                  | Ja (USA). Übermittlung basiert auf Angemessenheitsbeschluss (EU-U.S. Data Privacy Framework, sofern Celonis/Make zertifiziert ist), SCCs und ggf. ergänzenden Maßnahmen.                                                                                                                       |
+
+Die vorstehende Tabelle dient der Transparenz und wird regelmäßig überprüft und aktualisiert. Psychotherapeuten als unsere Klienten haben das Recht, über die von uns eingesetzten Unterauftragsverarbeiter informiert zu werden, insbesondere wenn diese Patientendaten verarbeiten.
+
+- **Weitere Empfänger:**
+  - **Steuerberater, Wirtschaftsprüfer, Rechtsberater:** Zur Erfüllung gesetzlicher Pflichten und zur Wahrnehmung oder Verteidigung von Rechtsansprüchen. Diese agieren in der Regel als eigene Verantwortliche und unterliegen ihrerseits berufsständischen Schweigepflichten. Die Weitergabe erfolgt auf Grundlage von Art. 6 Abs. 1 lit. c oder f DSGVO.
+  - **Banken und Zahlungsdienstleister:** Zur Abwicklung des Zahlungsverkehrs.
+  - **Behörden und staatliche Stellen:** Sofern eine gesetzliche Verpflichtung zur Auskunft oder Weitergabe besteht (z.B. Finanzbehörden, Strafverfolgungsbehörden aufgrund eines richterlichen Beschlusses). Die Weitergabe erfolgt auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO.
+  - **Versicherungen:** Im Falle von Haftungsansprüchen. Die Weitergabe erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.
+
+## VII. Datenübermittlung in Drittländer
+
+Eine Übermittlung von personenbezogenen Daten an Stellen in Staaten außerhalb der Europäischen Union oder des Europäischen Wirtschaftsraums (sogenannte Drittländer) findet nur statt, soweit hierfür ein angemessenes Datenschutzniveau sichergestellt ist. Dies kann durch einen Angemessenheitsbeschluss der Europäischen Kommission (Art. 45 DSGVO), durch geeignete Garantien wie Standardvertragsklauseln (Art. 46 DSGVO) oder verbindliche interne Datenschutzvorschriften (Art. 47 DSGVO) erfolgen.
+
+Für einige der in Abschnitt VI genannten Dienstleister, insbesondere solche mit Sitz in den USA (z.B. Google, Cloudflare, PostHog, ClickUp, GitHub, Stripe, Make.com), kann eine Datenübermittlung in die USA stattfinden. VRLY trifft folgende Maßnahmen, um ein angemessenes Datenschutzniveau bei solchen Übermittlungen zu gewährleisten:
+
+- **Angemessenheitsbeschluss (EU-U.S. Data Privacy Framework - DPF):** Soweit der US-Dienstleister unter dem EU-U.S. DPF (oder entsprechenden Rahmenwerken für die Schweiz und das Vereinigte Königreich) zertifiziert ist, stützen wir die Übermittlung auf diesen Angemessenheitsbeschluss. VRLY überprüft regelmäßig die Gültigkeit der Zertifizierungen.
+- **Standardvertragsklauseln (Standard Contractual Clauses - SCCs):** Sofern kein Angemessenheitsbeschluss vorliegt, die DPF-Zertifizierung des Anbieters abläuft oder als zusätzliche Sicherheit, schließt VRLY mit den Dienstleistern die von der Europäischen Kommission genehmigten Standardvertragsklauseln ab.
+- **Ergänzende Maßnahmen:** In Übereinstimmung mit den Anforderungen des Europäischen Gerichtshofs (EuGH) und der europäischen Datenschutzbehörden führt VRLY eine Bewertung der Rechtslage im Drittland durch (Transfer Impact Assessment - TIA) und ergreift gegebenenfalls ergänzende technische, organisatorische und vertragliche Maßnahmen, um sicherzustellen, dass die SCCs einen im Wesentlichen gleichwertigen Schutz bieten. Dies kann insbesondere Verschlüsselungstechniken umfassen, bei denen VRLY oder der verantwortliche Psychotherapeut die Schlüssel kontrolliert, sowie Transparenzverpflichtungen der Anbieter.
+- **Datenlokalisierung:** Für die Verarbeitung von Patientendaten im Auftrag von Psychotherapeuten bevorzugt VRLY Dienstleister und Konfigurationen, die eine Speicherung und Verarbeitung der Daten innerhalb der EU/des EWR ermöglichen (z.B. Nutzung von EU-Rechenzentren von Cloud-Anbietern).
+
+Informationen darüber, wo Sie eine Kopie der geeigneten Garantien erhalten können oder wo diese verfügbar sind, stellen wir Ihnen auf Anfrage zur Verfügung (Art. 13 Abs. 1 lit. f DSGVO).
+
+Die Übermittlung von Gesundheitsdaten, die dem § 203 StGB unterliegen, in ein Drittland erfordert eine besonders sorgfältige Prüfung und Absicherung. VRLY stellt sicher, dass solche Übermittlungen nur erfolgen, wenn dies für die Leistungserbringung unerlässlich ist und die getroffenen Schutzmaßnahmen (einschließlich robuster Verschlüsselung und strenger vertraglicher Vereinbarungen) geeignet sind, eine unbefugte Offenbarung im Sinne des § 203 StGB zu verhindern. Die LfD Niedersachsen als zuständige Aufsichtsbehörde hat hier einen besonderen Prüfungsfokus.
+
+## VIII. Speicherdauer der Daten
+
+Wir speichern Ihre personenbezogenen Daten nur so lange, wie es zur Erreichung der Zwecke, für die sie erhoben wurden, erforderlich ist oder wie es die gesetzlichen Aufbewahrungsfristen vorsehen (Grundsatz der Speicherbegrenzung, Art. 5 Abs. 1 lit. e DSGVO).
+
+Die Kriterien für die Festlegung der Speicherdauer umfassen:
+
+- Den Zweck der jeweiligen Datenverarbeitung.
+- Gesetzliche Aufbewahrungspflichten (z.B. aus Handelsrecht, Steuerrecht, Berufsrecht).
+- Vertragliche Verpflichtungen.
+- Die Dauer einer erteilten Einwilligung (sofern die Verarbeitung auf Einwilligung beruht).
+- Verjährungsfristen für mögliche Rechtsansprüche.
+
+**Spezifische Speicherfristen:**
+
+- **Patientendaten (im Auftrag von Psychotherapeuten verarbeitet):**
+  - Die Aufbewahrungsdauer für Patientendaten wird vom jeweiligen Psychotherapeuten als Verantwortlichem festgelegt, basierend auf berufsrechtlichen und gesetzlichen Vorgaben.
+  - Gemäß § 630f Abs. 3 Bürgerliches Gesetzbuch (BGB) sind Behandlungsdokumentationen in der Regel für die Dauer von **zehn Jahren** nach Abschluss der Behandlung aufzubewahren.
+  - In bestimmten Fällen können längere Aufbewahrungsfristen gelten (z.B. 30 Jahre für Röntgenaufzeichnungen gemäß § 28 Abs. 3 Röntgenverordnung a.F. bzw. nun § 85 Strahlenschutzgesetz i.V.m. § 40 Strahlenschutzverordnung, oder wenn berechtigte Interessen des Patienten dies erfordern).
+  - VRLY speichert die Patientendaten gemäß den Weisungen des Psychotherapeuten und wird diese nach Beendigung des Auftragsverarbeitungsvertrags löschen oder zurückgeben, es sei denn, VRLY unterliegt eigenen zwingenden gesetzlichen Aufbewahrungspflichten für diese spezifischen Daten (was für die eigentlichen Patientenakten unwahrscheinlich ist, eher für Dokumentationen des AVV selbst). Die Systeme von VRLY sind so gestaltet, dass sie Psychotherapeuten bei der Einhaltung dieser Fristen unterstützen.
+- **Daten der Psychotherapeuten (Klienten von VRLY):**
+  - Vertragsbezogene Daten: Für die Dauer des Vertragsverhältnisses und danach gemäß den gesetzlichen Aufbewahrungsfristen, z.B. 6 Jahre gemäß § 257 Abs. 1 Nr. 2, 3 HGB für Handelsbriefe oder 10 Jahre gemäß § 257 Abs. 1 Nr. 1, 4 HGB für Buchungsbelege und § 147 AO für steuerlich relevante Unterlagen.
+  - Kommunikationsdaten: Werden so lange gespeichert, wie es für die Geschäftsbeziehung oder zu Beweiszwecken erforderlich ist, und danach gelöscht.
+- **Server-Logfiles (VRLY Webseite):** In der Regel für einen kurzen Zeitraum von z.B. 7 bis 14 Tagen zur Gewährleistung der Sicherheit und zur Fehleranalyse, danach erfolgt eine Anonymisierung oder Löschung.
+- **Cookies (VRLY Webseite):** Session-Cookies werden nach Ende Ihrer Sitzung automatisch gelöscht. Permanente Cookies verbleiben für eine festgelegte Dauer auf Ihrem Endgerät, die in den Cookie-Informationen bzw. im Cookie-Banner detailliert ist.
+- **Bewerberdaten:**
+  - Bei Ablehnung einer Bewerbung: In der Regel bis zu sechs Monate nach Abschluss des Bewerbungsverfahrens, um mögliche Ansprüche nach dem Allgemeinen Gleichbehandlungsgesetz (AGG) abwehren zu können.
+  - Bei Einstellung: Die Daten werden in die Personalakte überführt und unterliegen den für Beschäftigtendaten geltenden Aufbewahrungsfristen.
+  - Aufnahme in einen Talentpool: Nur mit Ihrer ausdrücklichen Einwilligung und für einen darin festgelegten Zeitraum (z.B. ein bis zwei Jahre).
+
+**Löschkonzept:** VRLY verfügt über interne Richtlinien und Verfahren zur regelmäßigen Überprüfung der Notwendigkeit der Datenspeicherung sowie zur Löschung oder Anonymisierung von Daten, deren Speicherzweck entfallen ist oder deren Aufbewahrungsfrist abgelaufen ist. Dieses dokumentierte Löschkonzept ist Teil unserer Rechenschaftspflicht gemäß Art. 5 Abs. 2 DSGVO.
+
+## IX. Rechte der betroffenen Person
+
+Ihnen stehen als von der Datenverarbeitung betroffene Person nach der DSGVO verschiedene Rechte zu, die Sie uns gegenüber geltend machen können:
+
+- **Auskunftsrecht (Art. 15 DSGVO):** Sie haben das Recht, eine Bestätigung darüber zu verlangen, ob Sie betreffende personenbezogene Daten verarbeitet werden; ist dies der Fall, so haben Sie ein Recht auf Auskunft über diese personenbezogenen Daten und auf die in Art. 15 DSGVO im Einzelnen aufgeführten Informationen (z.B. Verarbeitungszwecke, Kategorien der Daten, Empfänger, Speicherdauer).
+- **Recht auf Berichtigung (Art. 16 DSGVO):** Sie haben das Recht, unverzüglich die Berichtigung Sie betreffender unrichtiger personenbezogener Daten zu verlangen. Unter Berücksichtigung der Zwecke der Verarbeitung haben Sie das Recht, die Vervollständigung unvollständiger personenbezogener Daten – auch mittels einer ergänzenden Erklärung – zu verlangen.
+- **Recht auf Löschung / "Recht auf Vergessenwerden" (Art. 17 DSGVO):** Sie haben das Recht, zu verlangen, dass Sie betreffende personenbezogene Daten unverzüglich gelöscht werden, sofern einer der in Art. 17 DSGVO genannten Gründe zutrifft (z.B. wenn die Daten für die Zwecke, für die sie erhoben wurden, nicht mehr notwendig sind, Sie Ihre Einwilligung widerrufen haben oder die Daten unrechtmäßig verarbeitet wurden). Dieses Recht besteht nicht, soweit die Verarbeitung aus bestimmten Gründen erforderlich ist (z.B. zur Erfüllung einer rechtlichen Verpflichtung oder zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen).
+- **Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO):** Sie haben das Recht, die Einschränkung der Verarbeitung zu verlangen, wenn eine der in Art. 18 DSGVO genannten Voraussetzungen gegeben ist (z.B. wenn Sie die Richtigkeit der Daten bestreiten oder die Verarbeitung unrechtmäßig ist und Sie die Löschung ablehnen).
+- **Mitteilungspflicht (Art. 19 DSGVO):** Wir sind verpflichtet, allen Empfängern, denen personenbezogene Daten offengelegt wurden, jede Berichtigung oder Löschung der personenbezogenen Daten oder eine Einschränkung der Verarbeitung nach Art. 16, Art. 17 Abs. 1 und Art. 18 DSGVO mitzuteilen, es sei denn, dies erweist sich als unmöglich oder ist mit einem unverhältnismäßigen Aufwand verbunden. Wir unterrichten Sie über diese Empfänger, wenn Sie dies verlangen.
+- **Recht auf Datenübertragbarkeit (Art. 20 DSGVO):** Sie haben das Recht, die Sie betreffenden personenbezogenen Daten, die Sie uns bereitgestellt haben, in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten, und Sie haben das Recht, diese Daten einem anderen Verantwortlichen ohne Behinderung durch uns zu übermitteln, sofern die Verarbeitung auf einer Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO oder Art. 9 Abs. 2 lit. a DSGVO oder auf einem Vertrag gemäß Art. 6 Abs. 1 lit. b DSGVO beruht und die Verarbeitung mithilfe automatisierter Verfahren erfolgt. _Hinweis zu Patientendaten:_ Das Recht auf Datenübertragbarkeit findet auf klassische Behandlungsverhältnisse, deren Datenverarbeitung primär auf Art. 9 Abs. 2 lit. h DSGVO beruht, möglicherweise keine Anwendung, da Art. 9 Abs. 2 lit. h DSGVO nicht in Art. 20 Abs. 1 lit. a DSGVO als Grundlage genannt wird. 35 Dies berührt nicht Ihr Recht auf Auskunft und Erhalt einer Kopie Ihrer Patientenakte gemäß Art. 15 DSGVO und § 630g BGB.
+- **Widerspruchsrecht (Art. 21 DSGVO):**
+  - Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Sie betreffender personenbezogener Daten, die aufgrund von Art. 6 Abs. 1 lit. e (öffentliches Interesse) oder lit. f (berechtigte Interessen) DSGVO erfolgt, Widerspruch einzulegen; dies gilt auch für ein auf diese Bestimmungen gestütztes Profiling. Wir verarbeiten die personenbezogenen Daten dann nicht mehr, es sei denn, wir können zwingende schutzwürdige Gründe für die Verarbeitung nachweisen, die Ihre Interessen, Rechte und Freiheiten überwiegen, oder die Verarbeitung dient der Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen.
+  - Werden personenbezogene Daten verarbeitet, um Direktwerbung zu betreiben, so haben Sie das Recht, jederzeit Widerspruch gegen die Verarbeitung Sie betreffender personenbezogener Daten zum Zwecke derartiger Werbung einzulegen; dies gilt auch für das Profiling, soweit es mit solcher Direktwerbung in Verbindung steht. Widersprechen Sie der Verarbeitung für Zwecke der Direktwerbung, so werden die personenbezogenen Daten nicht mehr für diese Zwecke verarbeitet.
+- **Recht, nicht einer ausschließlich auf einer automatisierten Verarbeitung – einschließlich Profiling – beruhenden Entscheidung unterworfen zu werden (Art. 22 DSGVO):** Sie haben das Recht, nicht einer ausschließlich auf einer automatisierten Verarbeitung – einschließlich Profiling – beruhenden Entscheidung unterworfen zu werden, die Ihnen gegenüber rechtliche Wirkung entfaltet oder Sie in ähnlicher Weise erheblich beeinträchtigt, sofern nicht eine der in Art. 22 Abs. 2 DSGVO genannten Ausnahmen greift.
+- **Recht auf Widerruf der Einwilligung (Art. 7 Abs. 3 DSGVO):** Sofern die Verarbeitung auf Ihrer Einwilligung beruht, haben Sie das Recht, Ihre Einwilligung jederzeit zu widerrufen. Durch den Widerruf der Einwilligung wird die Rechtmäßigkeit der aufgrund der Einwilligung bis zum Widerruf erfolgten Verarbeitung nicht berührt.
+- **Recht auf Beschwerde bei einer Aufsichtsbehörde (Art. 77 DSGVO):** Unbeschadet eines anderweitigen verwaltungsrechtlichen oder gerichtlichen Rechtsbehelfs steht Ihnen das Recht auf Beschwerde bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat Ihres Aufenthaltsorts, Ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes, zu, wenn Sie der Ansicht sind, dass die Verarbeitung der Sie betreffenden personenbezogenen Daten gegen die DSGVO verstößt.
+
+Die für VRLY zuständige Aufsichtsbehörde ist:  
 Die Landesbeauftragte für den Datenschutz Niedersachsen  
 Prinzenstraße 5  
 30159 Hannover  
-Telefon: 0511 120-4500  
-E-Mail: <poststelle@lfd.niedersachsen.de>
+Telefon: +49 511 120 4500  
+Fax: +49 511 120 4599  
+E-Mail: <poststelle@lfd.niedersachsen.de>  
+Webseite: <https://www.lfd.niedersachsen.de>
 
-## 2. Arten der verarbeiteten Daten
+**Hinweis zur Ausübung Ihrer Rechte:** Zur Geltendmachung Ihrer Rechte wenden Sie sich bitte an uns unter den in Abschnitt II genannten Kontaktdaten oder an unseren Datenschutzbeauftragten (Abschnitt III). Um sicherzustellen, dass personenbezogene Daten nicht an unberechtigte Dritte herausgegeben werden, können wir bei der Ausübung Ihrer Rechte einen Nachweis Ihrer Identität verlangen.
 
-### 2.1 Daten von Website-Besuchern
+**Besonderer Hinweis für Patientendaten:** Wenn Sie Patient eines Psychotherapeuten sind, der unsere Dienste nutzt, und Ihre Rechte bezüglich Ihrer Behandlungsdaten (z.B. Auskunft über Ihre Patientenakte, Berichtigung oder Löschung) geltend machen möchten, wenden Sie sich bitte primär an Ihren behandelnden Psychotherapeuten. Dieser ist der Verantwortliche für Ihre Patientendaten. VRLY wird Ihren Psychotherapeuten im Rahmen des Auftragsverarbeitungsvertrags bei der Erfüllung Ihrer Anfragen unterstützen. Diese klare Zuweisung der Zuständigkeiten ist notwendig, um Ihre Rechte effektiv zu wahren und gleichzeitig die Vertraulichkeit Ihrer sensiblen Gesundheitsdaten zu schützen.
 
-Bei der Nutzung unserer Website verarbeiten wir folgende Kategorien personenbezogener Daten:
+## X. Pflicht zur Bereitstellung der Daten
 
-- **Zugriffsdaten:** IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seiten, Referrer-URL, verwendeter Browser und Betriebssystem, übertragene Datenmenge
-- **Kontaktdaten:** Bei Kontaktaufnahme über Formulare oder E-Mail erfasste Angaben wie Name, E-Mail-Adresse, Telefonnummer, Nachrichteninhalt
-- **Newsletter-Daten:** E-Mail-Adresse, Anmeldezeitpunkt, Bestätigungsstatus, Öffnungs- und Klickverhalten
-- **Analysedaten:** Aggregierte und pseudonymisierte Nutzungsstatistiken zur Website-Optimierung
+Nach Art. 13 Abs. 2 lit. e DSGVO informieren wir Sie darüber, ob die Bereitstellung Ihrer personenbezogenen Daten gesetzlich oder vertraglich vorgeschrieben oder für einen Vertragsabschluss erforderlich ist, ob Sie verpflichtet sind, die personenbezogenen Daten bereitzustellen, und welche möglichen Folgen die Nichtbereitstellung hätte.
 
-### 2.2 Daten von Geschäftskunden (Psychotherapeuten)
+- **Für Psychotherapeuten (Klienten von VRLY):** Die Bereitstellung bestimmter personenbezogener Daten (z.B. Kontaktdaten, Praxisdaten, Abrechnungsinformationen) ist für den Abschluss und die Durchführung des Vertragsverhältnisses mit VRLY erforderlich. Ohne diese Daten können wir unsere Dienstleistungen möglicherweise nicht oder nicht vollständig erbringen.
+- **Für Patienten (deren Daten im Auftrag von Psychotherapeuten verarbeitet werden):** Ihre Verpflichtung zur Bereitstellung von Gesundheitsdaten ergibt sich primär aus dem Behandlungsvertrag mit Ihrem Psychotherapeuten. Die Bereitstellung notwendiger Gesundheitsdaten ist Voraussetzung für eine sorgfältige Behandlung durch Ihren Psychotherapeuten. VRLY selbst erhebt keine Daten direkt von Patienten oder fordert diese zur Bereitstellung auf; die Datenverarbeitung durch VRLY erfolgt ausschließlich im Auftrag und auf Weisung Ihres Psychotherapeuten. Die Nichtbereitstellung von Daten gegenüber Ihrem Therapeuten kann dessen Fähigkeit zur adäquaten Behandlung beeinträchtigen.
+- **Für Webseitenbesucher:** Die Bereitstellung personenbezogener Daten bei der Nutzung unserer Webseite (z.B. im Kontaktformular) ist grundsätzlich freiwillig. Die Erfassung von Server-Logfiles erfolgt aus technischen Gründen automatisch. Die Verweigerung der Zustimmung zu technisch nicht notwendigen Cookies kann die Funktionalität unserer Webseite einschränken.
+- **Für Bewerber:** Die Bereitstellung Ihrer Bewerbungsdaten ist erforderlich, um am Bewerbungsverfahren teilnehmen zu können. Ohne diese Daten können wir Ihre Bewerbung nicht berücksichtigen.
 
-Im Rahmen unserer Dienstleistungen für psychotherapeutische Praxen verarbeiten wir:
+Die klare Kommunikation über die Notwendigkeit der Datenbereitstellung dient der Transparenz und hilft, Missverständnisse bezüglich der Datenverarbeitung durch VRLY und der Rolle des Psychotherapeuten als primärem Ansprechpartner für seine Patienten zu vermeiden.
 
-- **Stammdaten:** Praxisname, Ansprechpartner, Kontaktdaten (Adresse, Telefon, E-Mail), Steuernummer, Bankverbindung
-- **Vertragsdaten:** Leistungsvereinbarungen, Abrechnungsinformationen, Kommunikation im Zusammenhang mit der Vertragserfüllung
-- **Technische Daten:** Zugangsdaten für bereitgestellte Systeme, Konfigurationsdaten, Protokolldateien
-- **Workflow-Daten:** Daten zur Prozessanalyse und -optimierung in den Praxisabläufen
+## XI. Automatisierte Entscheidungsfindung und Profiling
 
-### 2.3 Indirekt verarbeitete Daten im Rahmen der Automatisierungsdienste
+VRLY setzt keine automatisierte Entscheidungsfindung im Einzelfall ein, die Ihnen gegenüber rechtliche Wirkung entfaltet oder Sie in ähnlicher Weise erheblich beeinträchtigt (Art. 22 DSGVO). Dies gilt insbesondere für die Verarbeitung von Patientendaten im Auftrag von Psychotherapeuten; unsere Dienste sind darauf ausgelegt, Psychotherapeuten bei ihrer Arbeit zu unterstützen, ersetzen aber nicht deren professionelle Einschätzung und Entscheidung.
 
-Bei der Bereitstellung unseres "Praxis-Anfragen-Autopilots" und anderer Automatisierungslösungen können wir als Auftragsverarbeiter im Auftrag unserer Kunden folgende Daten verarbeiten:
+Soweit wir Daten auf unserer Webseite analysieren (z.B. mittels Analyse-Cookies), geschieht dies in der Regel auf aggregierter oder pseudonymisierter Basis zu statistischen Zwecken und zur Verbesserung unseres Angebots und führt nicht zu automatisierten Entscheidungen im Sinne des Art. 22 DSGVO, die Sie individuell betreffen. Sollte in Ausnahmefällen Profiling stattfinden, das unter Art. 22 DSGVO fällt, werden wir Sie hierüber gesondert informieren und Ihre Einwilligung einholen oder eine andere Rechtsgrundlage darlegen, sowie aussagekräftige Informationen über die involvierte Logik sowie die Tragweite und die angestrebten Auswirkungen einer derartigen Verarbeitung für Sie bereitstellen.
 
-- **Patientenanfragen:** Anfragen von Hilfesuchenden an psychotherapeutische Praxen, einschließlich Namen, Kontaktdaten und Beschreibungen der Anliegen
-- **Administrative Praxisdaten:** Termine, Abrechnungsinformationen, Korrespondenz (jedoch keine Therapieinhalte oder Krankenakten)
-- **Automatisierte Kommunikation:** Standardisierte Antworten und Bestätigungen
+Angesichts der Sensibilität von Gesundheitsdaten und des spezifischen Kontexts der psychotherapeutischen Behandlung ist der Einsatz von automatisierten Entscheidungsverfahren, die Patienten direkt betreffen, mit erheblichen Risiken verbunden und wird von VRLY vermieden. Jegliche Analyse- oder Unterstützungsfunktionen unserer Software sind als rein assistierend zu verstehen, wobei die finale Entscheidung und Verantwortung stets beim behandelnden Psychotherapeuten verbleibt.
 
-**Wichtiger Hinweis:** VRLY verarbeitet niemals direkt Therapieinhalte, Diagnosen oder andere Gesundheitsdaten im Sinne des Art. 9 DSGVO. Sollten dennoch versehentlich besondere Kategorien personenbezogener Daten übermittelt werden, werden diese unverzüglich gelöscht und der Kunde informiert.
+## XII. Datensicherheit / Technische und Organisatorische Maßnahmen (TOMs)
 
-## 3. Zwecke der Verarbeitung
+VRLY trifft umfangreiche technische und organisatorische Maßnahmen (TOMs) gemäß Art. 32 DSGVO, um ein dem Risiko angemessenes Schutzniveau für die verarbeiteten personenbezogenen Daten zu gewährleisten. Dies gilt insbesondere für die im Auftrag von Psychotherapeuten verarbeiteten sensiblen Gesundheitsdaten, die dem besonderen Schutz des Patientengeheimnisses gemäß § 203 StGB unterliegen.
 
-### 3.1 Website-Betrieb und -Optimierung
+Unsere Sicherheitsmaßnahmen werden kontinuierlich an den aktuellen Stand der Technik angepasst und umfassen unter anderem:
 
-- Bereitstellung und Funktionsfähigkeit der Website
-- Analyse der Website-Nutzung zur Verbesserung des Angebots
-- Sicherheitsmaßnahmen und Schutz vor Missbrauch
-- Technische Administration und Wartung
+- **Vertraulichkeit:** Maßnahmen zur Sicherstellung, dass nur befugte Personen Zugriff auf personenbezogene Daten haben. Dazu gehören:
+  - Zugangskontrollen zu unseren Systemen und Daten (z.B. rollenbasierte Berechtigungskonzepte).
+  - Authentifizierungsmechanismen (z.B. Einsatz starker Passwörter, Zwei-Faktor-Authentifizierung wo angemessen).
+  - Verschlüsselung von personenbezogenen Daten während der Übertragung (z.B. SSL/TLS) und bei der Speicherung (at rest).
+- **Integrität:** Maßnahmen zur Sicherstellung, dass personenbezogene Daten nicht unbefugt verändert, gelöscht oder zerstört werden können. Dazu gehören:
+  - Protokollierung relevanter Systemaktivitäten und Zugriffe.
+  - Maßnahmen zur Verhinderung unbefugter Modifikationen.
+- **Verfügbarkeit:** Maßnahmen zur Sicherstellung, dass personenbezogene Daten bei Bedarf zur Verfügung stehen und vor zufälliger Zerstörung oder Verlust geschützt sind. Dazu gehören:
+  - Regelmäßige Datensicherungen (Backups).
+  - Wiederherstellungskonzepte.
+  - Redundante Systemauslegung wo erforderlich.
+- **Pseudonymisierung und Verschlüsselung:** Wo immer es dem Schutzzweck dient und technisch umsetzbar ist, werden personenbezogene Daten pseudonymisiert oder verschlüsselt, insbesondere im Umgang mit Gesundheitsdaten.
+- **Verfahren zur regelmäßigen Überprüfung, Bewertung und Evaluierung:** Wir überprüfen die Wirksamkeit unserer technischen und organisatorischen Maßnahmen regelmäßig und passen diese bei Bedarf an.
+- **Einhaltung von § 203 StGB:** Unsere TOMs und die Auswahl unserer Auftragsverarbeiter (insbesondere Hosting-Dienstleister für Patientendaten) sind maßgeblich von der Notwendigkeit geleitet, die berufsständische Schweigepflicht gemäß § 203 StGB zu wahren. Dies beinhaltet strenge interne Zugriffsregelungen und die Verpflichtung unserer Mitarbeiter auf das Datengeheimnis und die besonderen Anforderungen des Patientengeheimnisses. Es wird sichergestellt, dass VRLY-Mitarbeiter nur dann Zugriff auf identifizierbare Patientendaten erhalten, wenn dies zur Erbringung der vertraglich vereinbarten Dienstleistung (z.B. im Supportfall auf Anforderung des Psychotherapeuten) zwingend erforderlich und vertraglich sowie gesetzlich zulässig ist.
+- **Schulung der Mitarbeiter:** Unsere Mitarbeiter werden regelmäßig im Datenschutz und zur Einhaltung der Schweigepflicht geschult.
 
-### 3.2 Geschäftstätigkeit und Kundenbetreuung
+Wir weisen darauf hin, dass auch die Psychotherapeuten als Verantwortliche für die Patientendaten verpflichtet sind, in ihren eigenen Praxen angemessene technische und organisatorische Maßnahmen zum Schutz der Daten zu treffen (z.B. sichere Passwortvergabe für den Zugang zu unseren Diensten, Schutz der Endgeräte, physische Sicherheit der Praxisräume). Die Bestimmungen des NDSG, insbesondere § 34 und § 35 NDSG zu technischen und organisatorischen Maßnahmen und zur Protokollierung 94, fließen ebenfalls in unsere Sicherheitsüberlegungen ein, um den hohen Erwartungen der Aufsichtsbehörde in Niedersachsen gerecht zu werden.
 
-- Durchführung von Beratungsgesprächen und Vertragsverhandlungen
-- Erbringung der vereinbarten Dienstleistungen (KI-Automatisierung, Workflow-Optimierung)
-- Rechnungsstellung und Zahlungsabwicklung
-- Kundenbetreuung und Support
-- Dokumentation und Qualitätssicherung
+## XIII. Besondere Hinweise für die Nutzung von Software und Diensten durch Psychotherapeuten
 
-### 3.3 Automatisierungsdienste für Psychotherapie-Praxen
+Die Nutzung unserer Software und Dienste durch Psychotherapeuten zur Verarbeitung von Patientendaten erfordert ein klares Verständnis der jeweiligen Rollen und Verantwortlichkeiten im Datenschutz:
 
-- **Praxis-Anfragen-Autopilot:** Automatisierte Erfassung, Kategorisierung und Beantwortung von Patientenanfragen
-- **Workflow-Automatisierung:** Optimierung administrativer Abläufe in psychotherapeutischen Praxen
-- **DSGVO-konforme Prozessgestaltung:** Sicherstellung rechtkonformer Datenverarbeitung in den Kundenpraxen
-- **Effizienzsteigerung:** Reduktion administrativer Belastung für Therapeuten
+- **Rolle des Psychotherapeuten als Verantwortlicher:** Für alle Patientendaten, die mittels der von VRLY bereitgestellten Dienste verarbeitet werden, ist und bleibt der jeweilige Psychotherapeut der Verantwortliche im Sinne der DSGVO. VRLY agiert in diesem Verhältnis ausschließlich als Auftragsverarbeiter gemäß Art. 28 DSGVO und den Weisungen des Psychotherapeuten.
+- **Pflichten des Psychotherapeuten:**
+  - Der Psychotherapeut trägt die Verantwortung für die Rechtmäßigkeit der Verarbeitung der Daten seiner Patienten. Dies beinhaltet insbesondere die Sicherstellung einer gültigen Rechtsgrundlage für die Verarbeitung (z.B. Behandlungsvertrag, Einwilligung des Patienten).
+  - Der Psychotherapeut ist verpflichtet, seine Patienten umfassend über die Datenverarbeitung im Rahmen der Nutzung unserer Dienste zu informieren (Informationspflichten gemäß Art. 13 und 14 DSGVO). Hierbei kann er auf diese Datenschutzerklärung von VRLY verweisen oder relevante Teile in seine eigene Patienteninformation integrieren.
+  - Der Psychotherapeut muss sicherstellen, dass ein gültiger Auftragsverarbeitungsvertrag (AVV) mit VRLY besteht, der den Anforderungen des Art. 28 DSGVO und des § 203 StGB genügt.
+  - Die Verwaltung von Patienteneinwilligungen, sofern diese für bestimmte Verarbeitungen erforderlich sind, obliegt dem Psychotherapeuten.
+- **Empfehlungen für Psychotherapeuten:**
+  - Prüfen Sie die von VRLY beschriebenen technischen und organisatorischen Maßnahmen (TOMs) und stellen Sie sicher, dass diese Ihrer eigenen Risikobewertung und Ihren Anforderungen entsprechen.
+  - Implementieren Sie angemessene Sicherheitsmaßnahmen in Ihrer eigenen Praxis (z.B. Verwendung sicherer Passwörter für den Zugang zu VRLY-Diensten, Schutz Ihrer Endgeräte vor unbefugtem Zugriff, physische Sicherheit Ihrer Praxisräume).
+  - Erteilen Sie VRLY klare und dokumentierte Weisungen bezüglich der Verarbeitung von Patientendaten.
 
-### 3.4 Marketing und Geschäftsentwicklung
+Durch die klare Definition dieser Verantwortlichkeiten unterstützt VRLY seine Klienten bei der Einhaltung ihrer datenschutzrechtlichen Pflichten und trägt zu einem datenschutzkonformen Gesamtsystem bei. Dies dient nicht nur der Risikominimierung für VRLY, sondern positioniert uns auch als kompetenten und verantwortungsbewussten Partner im sensiblen Gesundheitsbereich.
 
-- Information über neue Dienstleistungen und Angebote
-- Teilnahme an Fachveranstaltungen und Netzwerk-Events
-- Content-Marketing zur Aufklärung über Automatisierungsmöglichkeiten
-- Marktforschung und Bedarfsanalyse
+## XIV. Änderungen dieser Datenschutzerklärung
 
-## 4. Rechtsgrundlagen der Verarbeitung
+VRLY behält sich das Recht vor, diese Datenschutzerklärung jederzeit anzupassen, um sie an geänderte Rechtslagen oder bei Änderungen unserer Dienste sowie der Datenverarbeitung anzupassen. Über wesentliche Änderungen werden wir Sie (insbesondere unsere Klienten) in geeigneter Weise informieren.
 
-### 4.1 Rechtsgrundlagen nach Art. 6 DSGVO
+Es gilt stets die aktuelle Fassung der Datenschutzerklärung, die auf unserer Webseite unter abrufbar ist.
 
-Die Verarbeitung personenbezogener Daten erfolgt auf Grundlage folgender Rechtsgrundlagen:
-
-**Art. 6 Abs. 1 lit. a DSGVO (Einwilligung):**
-
-- Newsletter-Abonnements
-- Verwendung nicht notwendiger Cookies und Tracking-Tools
-- Besondere Analysefunktionen
-
-**Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung):**
-
-- Durchführung von Dienstleistungsverträgen mit Psychotherapie-Praxen
-- Bereitstellung der Automatisierungsdienste
-- Abrechnung und Zahlungsabwicklung
-
-**Art. 6 Abs. 1 lit. c DSGVO (rechtliche Verpflichtung):**
-
-- Aufbewahrung steuerrechtlich relevanter Unterlagen
-- Einhaltung handelsrechtlicher Dokumentationspflichten
-- Erfüllung aufsichtsrechtlicher Anforderungen
-
-**Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse):**
-
-- Website-Sicherheit und Schutz vor Cyberangriffen
-- Direktmarketing bei bestehenden Geschäftsbeziehungen
-- Geltendmachung rechtlicher Ansprüche
-- Betriebliche Analysezwecke zur Geschäftsoptimierung
-
-### 4.2 Besondere Kategorien personenbezogener Daten (Art. 9 DSGVO)
-
-Sollten bei der Automatisierung von Patientenanfragen versehentlich Gesundheitsdaten verarbeitet werden, erfolgt dies ausschließlich auf Grundlage von:
-
-**Art. 9 Abs. 2 lit. h DSGVO** in Verbindung mit **§ 22 Abs. 1 Nr. 1 lit. b BDSG:** Verarbeitung zu Zwecken der Gesundheitsvorsorge oder Arbeitsmedizin durch Angehörige eines Gesundheitsberufs, der nach dem Recht der Mitgliedstaaten oder den Regeln nationaler zuständiger Stellen einer Schweigepflicht unterliegt.
-
-## 5. Empfänger und Kategorien von Empfängern
-
-### 5.1 Interne Empfänger
-
-Innerhalb von VRLY haben nur berechtigte Personen Zugang zu personenbezogenen Daten, soweit dies zur Erfüllung ihrer Aufgaben erforderlich ist. Alle Mitarbeiter sind auf die Vertraulichkeit verpflichtet und regelmäßig in datenschutzrechtlichen Bestimmungen geschult.
-
-### 5.2 Externe Auftragsverarbeiter
-
-VRLY nutzt folgende externe Dienstleister als Auftragsverarbeiter:
-
-**IT-Infrastruktur und Cloud-Services:**
-
-- **Google Workspace (EU):** E-Mail, Dokumentenverwaltung, Kalender (Datenverarbeitung ausschließlich in EU-Rechenzentren)
-- **Google Cloud Platform (EU):** Hosting und Datenverarbeitung (EU-Standorte)
-- **Cloudflare (EU):** Content Delivery Network, Sicherheitsdienste, DDoS-Schutz (EU-Datenverarbeitung)
-- **GitHub:** Entwicklungsumgebung und Versionskontrolle (Microsoft Corporation)
-
-**Analyse und Marketing:**
-
-- **Google Analytics:** Website-Analyse mit IP-Anonymisierung und EU-Datenverarbeitung
-- **Google Search Console:** Suchmaschinenoptimierung
-- **Google My Business:** Lokale Geschäftspräsenz
-- **PostHog (EU):** Produktanalyse mit EU-Datenverarbeitung
-
-**Geschäftsprozesse:**
-
-- **ClickUp:** Projektmanagement und Aufgabenverwaltung
-- **Stripe (EU):** Zahlungsabwicklung mit EU-Datenverarbeitung
-- **Make.com (EU):** Workflow-Automatisierung mit EU-Datenverarbeitung
-- **1Password (EU):** Passwort-Management mit EU-Datenverarbeitung
-
-Mit allen Auftragsverarbeitern wurden Auftragsverarbeitungsverträge (AVV) nach Art. 28 DSGVO abgeschlossen, die die rechtskonforme Datenverarbeitung gewährleisten.
-
-### 5.3 Weitere Empfänger
-
-**Behörden und Strafverfolgungsorgane:** Ausschließlich bei rechtlicher Verpflichtung oder im Rahmen zulässiger Auskunftsersuchen
-
-**Steuerberater und Wirtschaftsprüfer:** Zur Erfüllung steuerrechtlicher und handelsrechtlicher Pflichten
-
-**Rechtsanwälte:** Bei rechtlichen Auseinandersetzungen zur Wahrung berechtigter Interessen
-
-## 6. Übermittlung in Drittländer
-
-### 6.1 Grundsatz der EU-Datenverarbeitung
-
-VRLY verpflichtet sich, personenbezogene Daten grundsätzlich nur innerhalb der Europäischen Union und des Europäischen Wirtschaftsraums zu verarbeiten. Alle Hauptdienstleister sind entsprechend konfiguriert.
-
-### 6.2 Ausnahmen bei Drittlandübermittlungen
-
-In folgenden Fällen können Daten in Drittländer übermittelt werden:
-
-**GitHub (Microsoft Corporation, USA):**
-
-- Rechtsgrundlage: EU-US Data Privacy Framework und Standardvertragsklauseln nach Art. 46 DSGVO
-- Zweck: Entwicklungsumgebung und Code-Verwaltung
-- Schutzmaßnahmen: Verschlüsselung, Zugriffsbeschränkungen, regelmäßige Überprüfung
-
-**Google-Dienste (bei US-Serverzugriff):**
-
-- Rechtsgrundlage: EU-US Data Privacy Framework und Standardvertragsklauseln
-- Schutzmaßnahmen: Bevorzugte EU-Datenverarbeitung, verschlüsselte Übertragung
-
-### 6.3 Ausschluss bestimmter Drittlandübermittlungen
-
-Gesundheitsbezogene oder besonders sensible Daten werden niemals in Drittländer übermittelt. Bei der Verarbeitung von Patientenanfragen erfolgt ausschließlich eine EU-basierte Datenverarbeitung.
-
-## 7. Speicherdauer
-
-### 7.1 Allgemeine Grundsätze
-
-Personenbezogene Daten werden nur so lange gespeichert, wie es für die Erfüllung der Verarbeitungszwecke erforderlich ist oder gesetzliche Aufbewahrungsfristen bestehen.
-
-### 7.2 Spezifische Speicherfristen
-
-**Website-Daten:**
-
-- Server-Logs: 7 Tage (Sicherheitszwecke)
-- Analytics-Daten: 14 Monate (Google Analytics Standardeinstellung)
-- Kontaktformular-Anfragen: 3 Jahre oder bis zur vollständigen Bearbeitung
-
-**Geschäftskunden-Daten:**
-
-- Vertragsdaten: 10 Jahre nach Vertragsende (handelsrechtliche Aufbewahrungspflicht nach § 257 HGB)
-- Rechnungsunterlagen: 10 Jahre (steuerrechtliche Aufbewahrungspflicht nach § 147 AO)
-- Korrespondenz: 6 Jahre nach letztem Kontakt
-
-**Automatisierungsdienste:**
-
-- Technische Logs: 30 Tage
-- Workflow-Konfigurationen: Dauer der Geschäftsbeziehung plus 2 Jahre
-- Patientenanfragen (als Auftragsverarbeiter): Entsprechend den Weisungen des Kunden, längstens jedoch 5 Jahre
-
-**Marketing-Daten:**
-
-- Newsletter-Anmeldungen: Bis zum Widerruf
-- Analysedaten: 25 Monate (pseudonymisiert)
-
-### 7.3 Vorzeitige Löschung
-
-Personenbezogene Daten werden vorzeitig gelöscht, wenn:
-
-- Der Verarbeitungszweck entfällt
-- Die Einwilligung widerrufen wird und keine andere Rechtsgrundlage vorliegt
-- Die Daten unrechtmäßig verarbeitet wurden
-- Eine Löschungspflicht nach EU-Recht oder deutschem Recht besteht
-- Die Löschung zur Erfüllung einer rechtlichen Verpflichtung erforderlich ist
-
-## 8. Betroffenenrechte
-
-### 8.1 Auskunftsrecht (Art. 15 DSGVO)
-
-Sie haben das Recht, jederzeit von uns eine Bestätigung darüber zu verlangen, ob Sie betreffende personenbezogene Daten verarbeitet werden. Ist dies der Fall, haben Sie ein Recht auf Auskunft über diese personenbezogenen Daten und folgende Informationen:
-
-- Die Verarbeitungszwecke
-- Die Kategorien personenbezogener Daten
-- Die Empfänger oder Kategorien von Empfängern
-- Die geplante Speicherdauer
-- Das Bestehen von Berichtigungs-, Löschungs-, Einschränkungs- oder Widerspruchsrechten
-- Das Bestehen eines Beschwerderechts bei einer Aufsichtsbehörde
-- Informationen über die Herkunft der Daten
-- Das Bestehen einer automatisierten Entscheidungsfindung einschließlich Profiling
-
-### 8.2 Recht auf Berichtigung (Art. 16 DSGVO)
-
-Sie haben das Recht, unverzüglich die Berichtigung Sie betreffender unrichtiger personenbezogener Daten zu verlangen. Unter Berücksichtigung der Zwecke der Verarbeitung haben Sie das Recht, die Vervollständigung unvollständiger personenbezogener Daten zu verlangen.
-
-### 8.3 Recht auf Löschung („Recht auf Vergessenwerden", Art. 17 DSGVO)
-
-Sie haben das Recht, von uns zu verlangen, dass Sie betreffende personenbezogene Daten unverzüglich gelöscht werden, sofern einer der folgenden Gründe zutrifft:
-
-- Die personenbezogenen Daten sind für die Zwecke, für die sie erhoben wurden, nicht mehr notwendig
-- Sie widerrufen Ihre Einwilligung und es fehlt an einer anderweitigen Rechtsgrundlage
-- Sie legen Widerspruch gegen die Verarbeitung ein und es liegen keine vorrangigen berechtigten Gründe vor
-- Die personenbezogenen Daten wurden unrechtmäßig verarbeitet
-- Die Löschung ist zur Erfüllung einer rechtlichen Verpflichtung erforderlich
-
-### 8.4 Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)
-
-Sie haben das Recht, von uns die Einschränkung der Verarbeitung zu verlangen, wenn eine der folgenden Voraussetzungen gegeben ist:
-
-- Die Richtigkeit der personenbezogenen Daten wird bestritten
-- Die Verarbeitung ist unrechtmäßig, aber Sie lehnen die Löschung ab
-- Wir benötigen die Daten nicht mehr, Sie jedoch zur Geltendmachung von Rechtsansprüchen
-- Sie haben Widerspruch eingelegt und es steht noch nicht fest, ob unsere Interessen überwiegen
-
-### 8.5 Recht auf Datenübertragbarkeit (Art. 20 DSGVO)
-
-Sie haben das Recht, die Sie betreffenden personenbezogenen Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten und diese Daten einem anderen Verantwortlichen zu übermitteln, sofern:
-
-- Die Verarbeitung auf einer Einwilligung oder einem Vertrag beruht
-- Die Verarbeitung mithilfe automatisierter Verfahren erfolgt
-
-### 8.6 Widerrufsrecht bei Einwilligungen
-
-Soweit die Verarbeitung auf Ihrer Einwilligung beruht, haben Sie das Recht, diese jederzeit zu widerrufen. Die Rechtmäßigkeit der aufgrund der Einwilligung bis zum Widerruf erfolgten Verarbeitung wird dadurch nicht berührt.
-
-### 8.7 Beschwerderecht bei einer Aufsichtsbehörde
-
-Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über unsere Verarbeitung personenbezogener Daten zu beschweren.
-
-### 8.8 Ausübung der Rechte
-
-Zur Ausübung Ihrer Rechte wenden Sie sich bitte an:
-
-E-Mail: <legal@vrly.de>  
-Telefon: +49 511 93678551
-
-Wir werden Ihrem Anliegen innerhalb eines Monats nachkommen. In komplexen Fällen kann diese Frist um zwei weitere Monate verlängert werden, worüber wir Sie informieren würden.
-
-## 9. Widerspruchsrecht
-
-### 9.1 Widerspruchsrecht bei berechtigten Interessen (Art. 21 Abs. 1 DSGVO)
-
-Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Sie betreffender personenbezogener Daten, die aufgrund von Art. 6 Abs. 1 lit. e oder f DSGVO erfolgt, Widerspruch einzulegen.
-
-Wir verarbeiten die personenbezogenen Daten dann nicht mehr, es sei denn, wir können zwingende schutzwürdige Gründe für die Verarbeitung nachweisen, die Ihre Interessen, Rechte und Freiheiten überwiegen, oder die Verarbeitung dient der Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen.
-
-### 9.2 Widerspruchsrecht bei Direktwerbung (Art. 21 Abs. 2 DSGVO)
-
-Sofern wir Ihre personenbezogenen Daten verarbeiten, um Direktwerbung zu betreiben, haben Sie das Recht, jederzeit Widerspruch gegen die Verarbeitung einzulegen. Wenn Sie der Verarbeitung für Zwecke der Direktwerbung widersprechen, so werden wir Ihre personenbezogenen Daten nicht mehr für diese Zwecke verarbeiten.
-
-### 9.3 Ausübung des Widerspruchsrechts
-
-Den Widerspruch können Sie formlos unter den oben genannten Kontaktdaten erklären.
-
-## 10. Datensicherheit und technische Maßnahmen
-
-### 10.1 Technische Sicherheitsmaßnahmen
-
-VRLY implementiert umfassende technische Sicherheitsmaßnahmen zum Schutz personenbezogener Daten:
-
-**Verschlüsselung:**
-
-- TLS 1.3 für alle Datenübertragungen
-- End-to-End-Verschlüsselung für sensible Datenverarbeitung
-- AES-256-Verschlüsselung für Datenspeicherung
-
-**Zugriffskontrolle:**
-
-- Multi-Faktor-Authentifizierung für alle Systemzugänge
-- Rollenbasierte Zugriffsbeschränkungen
-- Regelmäßige Überprüfung und Aktualisierung von Berechtigungen
-- Sichere Passwort-Management-Systeme (1Password)
-
-**Infrastruktursicherheit:**
-
-- Einsatz von Cloudflare für DDoS-Schutz und Web Application Firewall
-- Regelmäßige Sicherheitsupdates und Patches
-- Monitoring und Logging aller Systemzugriffe
-- Backup-Strategien mit verschlüsselter Speicherung
-
-**Netzwerksicherheit:**
-
-- Segregierte Netzwerkarchitekturen
-- Intrusion Detection Systeme
-- Regelmäßige Penetrationstests und Vulnerability Assessments
-
-### 10.2 Organisatorische Sicherheitsmaßnahmen
-
-**Mitarbeiterschulung und -verpflichtung:**
-
-- Regelmäßige Datenschutzschulungen für alle Mitarbeiter
-- Schriftliche Verpflichtung auf das Datengeheimnis nach § 203 StGB
-- Sensibilisierung für spezielle Anforderungen im Gesundheitswesen
-
-**Prozesssicherheit:**
-
-- Dokumentierte Verfahren für alle Datenverarbeitungsprozesse
-- Incident Response Verfahren bei Datenpannen
-- Regelmäßige interne Audits und Kontrollen
-- Change Management Prozesse für Systemänderungen
-
-**Auftragskontrolle:**
-
-- Sorgfältige Auswahl und Überwachung von Auftragsverarbeitern
-- Regelmäßige Überprüfung der Sicherheitsstandards bei Dienstleistern
-- Vertragliche Verpflichtung aller Partner auf höchste Sicherheitsstandards
-
-### 10.3 Besondere Sicherheitsmaßnahmen für Gesundheitsdaten
-
-Aufgrund der besonderen Sensibilität von Gesundheitsdaten implementiert VRLY zusätzliche Schutzmaßnahmen:
-
-- **Datenminimierung:** Verarbeitung nur der unbedingt erforderlichen Daten
-- **Pseudonymisierung:** Wo technisch möglich, Trennung identifizierender Merkmale
-- **Physische Sicherheit:** Sichere Verwahrung aller Datenträger und Zugangsbeschränkungen
-- **Löschkonzepte:** Sichere und nachweisbare Datenlöschung nach Ablauf der Speicherfristen
-
-### 10.4 Meldung von Datenschutzverletzungen
-
-Im Falle einer Datenschutzverletzung werden die gesetzlichen Meldepflichten strikt eingehalten:
-
-- Meldung an die Aufsichtsbehörde binnen 72 Stunden (Art. 33 DSGVO)
-- Information betroffener Personen bei hohem Risiko (Art. 34 DSGVO)
-- Umfassende Dokumentation aller Vorfälle und Gegenmaßnahmen
-
-## 11. Auftragsverarbeitung
-
-### 11.1 VRLY als Auftragsverarbeiter
-
-Bei der Bereitstellung von Automatisierungsdiensten für psychotherapeutische Praxen tritt VRLY häufig als Auftragsverarbeiter im Sinne des Art. 28 DSGVO auf. In diesen Fällen:
-
-- Verarbeitet VRLY personenbezogene Daten ausschließlich im Auftrag und nach dokumentierten Weisungen des Kunden
-- Werden umfassende Auftragsverarbeitungsverträge (AVV) nach Art. 28 DSGVO abgeschlossen
-- Erfolgt die Verarbeitung ausschließlich zu den vertraglich vereinbarten Zwecken
-- Werden zusätzliche Sicherheitsmaßnahmen für die Verarbeitung von Gesundheitsdaten implementiert
-
-### 11.2 Inhalt der Auftragsverarbeitungsverträge
-
-Die AVV mit unseren Kunden umfassen mindestens:
-
-- Gegenstand und Dauer der Verarbeitung
-- Art und Zweck der Verarbeitung
-- Kategorien betroffener Personen und personenbezogener Daten
-- Rechte und Pflichten des Verantwortlichen
-- Weisungen zur Datenverarbeitung
-- Vertraulichkeit der Verarbeitung
-- Sicherheit der Verarbeitung
-- Inanspruchnahme von Unterauftragsverarbeitern
-- Unterstützung des Verantwortlichen bei der Erfüllung seiner Pflichten
-- Löschung oder Rückgabe der Daten nach Ende der Erbringung
-- Prüfungs- und Kontrollrechte
-- Nachweis der Einhaltung der Datenschutzbestimmungen
-
-### 11.3 Unterauftragsverarbeiter
-
-Die Einschaltung von Unterauftragsverarbeitern erfolgt nur:
-
-- Nach vorheriger schriftlicher Genehmigung des Kunden
-- Mit entsprechenden vertraglichen Garantien
-- Unter unserer vollständigen Haftung für die Einhaltung der Datenschutzbestimmungen
-
-### 11.4 Besonderheiten bei Gesundheitsdaten
-
-Bei der Verarbeitung von Gesundheitsdaten als Auftragsverarbeiter:
-
-- Erfolgt eine besondere Risikoanalyse vor Vertragsabschluss
-- Werden verstärkte technische und organisatorische Maßnahmen implementiert
-- Wird eine Datenschutz-Folgenabschätzung durchgeführt
-- Erfolgt regelmäßige Überprüfung und Anpassung der Schutzmaßnahmen
-
-## 12. Besondere Bestimmungen für Gesundheitsdaten
-
-### 12.1 Schweigepflicht und berufliche Vertraulichkeit
-
-VRLY ist sich der besonderen Bedeutung der ärztlichen Schweigepflicht nach § 203 StGB bewusst. Obwohl VRLY selbst nicht direkt der Schweigepflicht unterliegt, verpflichten wir uns zur Einhaltung gleichwertiger Vertraulichkeitsstandards:
-
-- Alle Mitarbeiter werden auf die besonderen Anforderungen im Gesundheitswesen geschult
-- Es gelten verstärkte Verschwiegenheitspflichten über das gesetzliche Maß hinaus
-- Der Zugang zu gesundheitsbezogenen Daten ist streng reglementiert und dokumentiert
-- Regelmäßige Überprüfung der Einhaltung berufsspezifischer Vertraulichkeitsstandards
-
-### 12.2 Datenminimierung bei Gesundheitsdaten
-
-Bei der Automatisierung von Praxisprozessen wird das Prinzip der Datenminimierung besonders streng angewendet:
-
-- **Technische Trennung:** Gesundheitsdaten werden von anderen Kategorien personenbezogener Daten getrennt verarbeitet
-- **Bedarfsorientierte Verarbeitung:** Nur die für den spezifischen Automatisierungszweck unbedingt erforderlichen Daten werden verarbeitet
-- **Pseudonymisierung:** Wo technisch möglich, erfolgt eine Pseudonymisierung von Patientendaten
-- **Automatische Löschung:** Gesundheitsbezogene Daten werden automatisch nach Zweckerfüllung gelöscht
-
-### 12.3 Rechtsgrundlagen für die Verarbeitung von Gesundheitsdaten
-
-Die Verarbeitung von Gesundheitsdaten erfolgt ausschließlich auf Grundlage von:
-
-**Art. 9 Abs. 2 lit. h DSGVO i.V.m. § 22 BDSG:** Verarbeitung zu Zwecken der Gesundheitsvorsorge oder der Arbeitsmedizin durch Angehörige von Gesundheitsberufen, die einer Schweigepflicht unterliegen
-
-**Art. 9 Abs. 2 lit. j DSGVO:** Verarbeitung zu im öffentlichen Interesse liegenden Archivzwecken, zu wissenschaftlichen oder historischen Forschungszwecken oder zu statistischen Zwecken
-
-**Ausdrückliche Einwilligung der betroffenen Person (Art. 9 Abs. 2 lit. a DSGVO):** Nur in Ausnahmefällen und nach besonderer Aufklärung
-
-### 12.4 Technische Schutzmaßnahmen für Gesundheitsdaten
-
-Für die Verarbeitung von Gesundheitsdaten gelten verstärkte technische Schutzmaßnahmen:
-
-**Verschlüsselung:**
-
-- End-to-End-Verschlüsselung für alle gesundheitsbezogenen Datenübertragungen
-- Verschlüsselung ruhender Daten mit AES-256-Standard
-- Sichere Schlüsselverwaltung mit Hardware Security Modules (HSM)
-
-**Zugriffskontrolle:**
-
-- Strenge Authentifizierung mit biometrischen Elementen
-- Rollenbasierte Zugriffskontrolle mit Prinzip der minimalen Berechtigung
-- Vollständige Protokollierung aller Zugriffe mit Audit-Trails
-- Vier-Augen-Prinzip bei kritischen Operationen
-
-**Datenintegrität:**
-
-- Digitale Signaturen für kritische Gesundheitsdaten
-- Regelmäßige Integritätsprüfungen
-- Versionsmanagement mit lückenloser Nachverfolgbarkeit
-
-### 12.5 Organisatorische Schutzmaßnahmen für Gesundheitsdaten
-
-**Mitarbeiterqualifikation:**
-
-- Besondere Schulungen zu medizinischer Schweigepflicht und Datenschutz im Gesundheitswesen
-- Regelmäßige Zertifizierung in Gesundheitsdatenschutz
-- Verpflichtung auf erweiterte Verschwiegenheit
-
-**Prozesssicherheit:**
-
-- Getrennte Arbeitsplätze für die Bearbeitung von Gesundheitsdaten
-- Clear-Desk-Policy für alle gesundheitsbezogenen Tätigkeiten
-- Sichere Vernichtung aller physischen Datenträger
-
-**Qualitätssicherung:**
-
-- Regelmäßige externe Audits durch Datenschutzexperten im Gesundheitswesen
-- Zertifizierung nach relevanten Gesundheitsdatenschutz-Standards
-- Kontinuierliche Weiterentwicklung der Schutzmaßnahmen
-
-### 12.6 Notfallmanagement bei Gesundheitsdaten
-
-**Incident Response:**
-
-- Spezialisierte Reaktionspläne für Vorfälle mit Gesundheitsdaten
-- Sofortige Meldung an Kunden bei potentieller Betroffenheit von Patientendaten
-- Koordination mit Standesorganisationen bei schwerwiegenden Vorfällen
-
-**Business Continuity:**
-
-- Redundante Backup-Systeme mit höchsten Sicherheitsstandards
-- Disaster Recovery Pläne mit speziellem Fokus auf Gesundheitsdaten
-- Regelmäßige Tests der Notfallverfahren
-
-## 13. Änderungen der Datenschutzerklärung
-
-### 13.1 Anpassungen und Aktualisierungen
-
-Diese Datenschutzerklärung hat den Stand vom 31. Mai 2025. Durch die Weiterentwicklung unserer Dienstleistungen, Änderungen der Rechtslage oder neue technische Möglichkeiten kann eine Anpassung dieser Datenschutzerklärung erforderlich werden.
-
-### 13.2 Information über Änderungen
-
-Wesentliche Änderungen dieser Datenschutzerklärung werden wir Ihnen mitteilen:
-
-- **Website-Besucher:** Durch deutlichen Hinweis auf der Website und E-Mail-Information bei vorhandener Einwilligung
-- **Geschäftskunden:** Durch direkte schriftliche Benachrichtigung per E-Mail
-- **Betroffene bei Auftragsverarbeitung:** Information über unsere Kunden gemäß den vertraglichen Vereinbarungen
-
-### 13.3 Aktuelle Version
-
-Die jeweils aktuelle Version dieser Datenschutzerklärung ist stets auf unserer Website unter [https://vrly.de/infopages/datenschutz](/infopages/datenschutz) abrufbar. Wir empfehlen, diese regelmäßig zu überprüfen, um über den aktuellen Stand der Datenverarbeitung informiert zu bleiben.
-
-### 13.4 Übergangsregelungen
-
-Bei wesentlichen Änderungen, die zusätzliche Verarbeitungen oder neue Zwecke betreffen, werden wir Ihre erneute Einwilligung einholen, soweit dies rechtlich erforderlich ist. Bestehende Einwilligungen bleiben bis zu einem eventuellen Widerruf wirksam.
+**Stand dieser Datenschutzerklärung:** 1. Juni 2025\*\*
