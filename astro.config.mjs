@@ -3,6 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import cloudflare from "@astrojs/cloudflare";
+import webmanifest from "astro-webmanifest";
 
 // https://astro.build/config
 export default defineConfig({
@@ -35,5 +36,5 @@ export default defineConfig({
     drafts: true,
   },
 
-  integrations: [sitemap(), mdx()],
+  integrations: [sitemap(), mdx(), webmanifest()],
 });
