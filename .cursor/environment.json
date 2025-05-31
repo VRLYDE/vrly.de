@@ -1,3 +1,7 @@
 {
-  "agentCanUpdateSnapshot": true
+  "snapshot": "snapshot-20250531-d9719b1f-bec7-431e-91d4-8f8fe5c6b3c0",
+  "agentCanUpdateSnapshot": true,
+  "install": "curl -fsSL https://bun.sh/install | bash && source ~/.bashrc && bun install",
+  "start": "bun run dev",
+  "terminals": []
 }
