@@ -16,7 +16,7 @@ export default defineConfig({
 
   server: { port: 1312 },
 
-  site: "https://spaziobianco.vrly.workers.dev",
+  site: "https://vrly.de",
 
   vite: {
     plugins: [tailwindcss()],
