@@ -10,14 +10,7 @@ import LogoSvg from '@/assets/logo.svg';
 const { class: className = "", variant = "full", ...rest } = Astro.props;
 ---
 
-{variant === "full" ? (
-  <LogoSvg
-    class={className}
-    {...rest}
-  />
-) : (
-  <LogoSvg
-    class={className}
-    {...rest}
-  />
-)}
+<LogoSvg
+  class={className}
+  {...rest}
+/>
