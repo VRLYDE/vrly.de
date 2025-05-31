@@ -13,13 +13,13 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.5.3",
-    "@astrojs/mdx": "^4.2.6",
+    "@astrojs/mdx": "4.3.0",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.4.0",
     "@astrolib/seo": "^1.0.0-beta.8",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.7",
-    "astro": "^5.7.13",
+    "astro": "5.8.1",
     "tailwind-scrollbar-hide": "^2.0.0",
     "tailwindcss": "^4.1.7"
   },
