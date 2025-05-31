@@ -10,29 +10,47 @@ import Plus from "@/components/fundations/icons/Plus.astro";
 import Filters from "@/components/fundations/icons/Filters.astro";
 import WaveSquare from "@/components/fundations/icons/WaveSquare.astro";
 import ArrowIteration from "@/components/fundations/icons/ArrowIteration.astro";
-// Icons
-const data = [
+import CheckCircle from "@/components/fundations/icons/CheckCircle.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  items?: {
+    title: string;
+    description: string;
+  }[];
+}
+
+const {
+  title = "Warum VRLY?",
+  description = "Wir kombinieren Expertise in KI, Workflow-Automatisierung und Projektmanagement mit tiefem Verständnis für Ihre Praxisabläufe und strengster DSGVO-Compliance.",
+  items = []
+} = Astro.props;
+
+// Default features if no items are provided
+const defaultItems = [
   {
     icon: "Filters",
-    category: "ACH",
-    text: "Initiate ACH transactions, process both credits and debits, verify accounts in advance, and store frequently used details.",
+    category: "Hyper-Nischenfokus",
+    text: "Exklusiv spezialisiert auf die Bedürfnisse von Psychotherapeut:Innen in Hannover.",
   },
   {
     icon: "WaveSquare",
-    category: "Bank accounts",
-    text: "Create flexible account structures with unlimited unique account numbers.",
+    category: "Nutzenfokus & Pragmatismus",
+    text: "Wir liefern messbaren Mehrwert und finden schlanke, effektive Lösungen, die im Praxisalltag funktionieren.",
   },
   {
     icon: "ArrowIteration",
-    category: "Cards",
-    text: "Generate custom cards for users, control authorizations in real-time, and set personalized limits.",
+    category: "Vertrauen & Compliance",
+    text: "DSGVO und §203 StGB stehen bei uns an erster Stelle. Höchste Sicherheit für sensible Patientendaten.",
   },
   {
     icon: "Plus",
-    category: "Checks",
-    text: "Send customized checks globally via API or deposit them digitally using the dashboard.",
+    category: "Partnerschaftlichkeit",
+    text: "Wir arbeiten auf Augenhöhe, hören zu und bauen langfristige, vertrauensvolle Beziehungen auf.",
   },
 ];
+
 // Timeline
 const timelineSteps = [
   {
@@ -89,86 +107,124 @@ const allCustomers = await getCollection("customers");
           variant="textXL"
           data-aos="fade-up"
           data-aos-duration="1000"
-          class="font-semibold tracking-tight text-base-800 md:text-balance"
+          class="font-semibold tracking-tight text-vrly-slate-500 md:text-balance"
         >
-          Transfer funds with reliability
+          {title}
         </Text>
         <Text
           tag="p"
           variant="textBase"
           data-aos="fade-up"
           data-aos-duration="1500"
-          class="mt-2 text-base text-base-500 md:text-balance"
+          class="mt-2 text-base text-vrly-slate-400 md:text-balance"
         >
-          Automate ACH, wire transfers, real-time payments, and even physical
-          checks.
+          {description}
         </Text>
-        <dl
-          data-aos="fade-up"
-          data-aos-duration="2000"
-          class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2 gap-y-8"
-        >
-          {
-            data.map((section) => (
-              <div>
-                <dt class="flex items-center gap-2 text-base-800">
-                  {section.icon === "Filters" && <Filters size="base" />}
-                  {section.icon === "WaveSquare" && <WaveSquare size="base" />}
-                  {section.icon === "ArrowIteration" && (
-                    <ArrowIteration size="base" />
-                  )}
-                  {section.icon === "Plus" && <Plus size="base" />}
-                  <Text tag="p" variant="textSM" class="font-medium leading-6 ">
-                    {section.category}
-                  </Text>
-                </dt>
-                <dd class="mt-2">
-                  <Text tag="p" variant="textSM" class=" text-base-500">
-                    {section.text}
-                  </Text>
-                </dd>
+        
+        {items && items.length > 0 ? (
+          <div class="mt-8 space-y-6">
+            {items.map((item) => (
+              <div class="bg-white p-5 rounded-lg shadow-sm border border-vrly-neutral-200">
+                <h4 class="text-base font-semibold text-vrly-slate-500 mb-2">{item.title}</h4>
+                <p class="text-sm text-vrly-slate-400">{item.description}</p>
               </div>
-            ))
-          }
-        </dl>
-
-        <div data-aos="fade-up" data-aos-duration="2500" class="mt-8">
-          {
-            allCustomers
-              .slice(0, 1)
-              .map((post) => <CustomerEntry1 post={post} />)
-          }
-        </div>
+            ))}
+          </div>
+        ) : (
+          <dl
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            class="mt-8 grid grid-cols-1 gap-y-8"
+          >
+            {
+              defaultItems.map((section) => (
+                <div>
+                  <dt class="flex items-center gap-2 text-vrly-slate-500">
+                    <CheckCircle size="base" class="text-vrly-green-600" />
+                    <Text tag="p" variant="textSM" class="font-medium leading-6">
+                      {section.category}
+                    </Text>
+                  </dt>
+                  <dd class="mt-2 ml-7">
+                    <Text tag="p" variant="textSM" class="text-vrly-slate-400">
+                      {section.text}
+                    </Text>
+                  </dd>
+                </div>
+              ))
+            }
+          </dl>
+        )}
       </div>
-      <div class="relative">
-        <Code
-          class="relative p-8 text-xs scrollbar-hide rounded-xl lg:z-10"
-          code={`await payments.transfer.create({
-    amount: 25075,
-    currency: "USD",
-    from_account: {
-      id: "acct_everbank_112233445",
-      bank: "EverBank",
-      type: "Business Checking",
-    },
-    
-    to_account: {
-      id: "acct_chase_556677889",
-      bank: "Chase",
-      type: "Savings",
-    },
-    
-    initiated_at: "2025-03-14T14:32:00Z",
-    status: "Pending",
-    });`}
-          lang="js"
-          theme="css-variables"
-        />
-        <VisualAsset3
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          class="hidden w-full overflow-hidden bg-white shadow-2xl lg:z-50 lg:absolute lg:top-32 lg:block lg:left-14 rounded-xl divide-y divide-base-200 outline-1 outline-base-200"
-        />
+      
+      <div class="relative bg-white shadow-lg rounded-xl p-6 border border-vrly-neutral-200">
+        <div class="mb-4 pb-4 border-b border-vrly-neutral-200">
+          <h3 class="text-lg font-semibold text-vrly-slate-500">VRLY vs. generische IT-Dienstleister</h3>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="grid grid-cols-3 gap-2">
+            <div class="col-span-1"></div>
+            <div class="col-span-1 text-center bg-vrly-blue-50 p-2 rounded-lg">
+              <p class="text-sm font-medium text-vrly-blue-600">VRLY</p>
+            </div>
+            <div class="col-span-1 text-center bg-vrly-slate-50 p-2 rounded-lg">
+              <p class="text-sm font-medium text-vrly-slate-400">Generisch</p>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-3 gap-2 items-center">
+            <div class="col-span-1">
+              <p class="text-sm text-vrly-slate-500">Spezialisierung</p>
+            </div>
+            <div class="col-span-1 text-center">
+              <CheckCircle size="base" class="inline text-vrly-green-600" />
+              <span class="text-xs text-vrly-green-600 ml-1">Psychotherapie</span>
+            </div>
+            <div class="col-span-1 text-center">
+              <span class="text-xs text-vrly-slate-400">Alle Branchen</span>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-3 gap-2 items-center">
+            <div class="col-span-1">
+              <p class="text-sm text-vrly-slate-500">DSGVO-Expertise</p>
+            </div>
+            <div class="col-span-1 text-center">
+              <CheckCircle size="base" class="inline text-vrly-green-600" />
+              <span class="text-xs text-vrly-green-600 ml-1">§203 StGB</span>
+            </div>
+            <div class="col-span-1 text-center">
+              <span class="text-xs text-vrly-slate-400">Generisch</span>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-3 gap-2 items-center">
+            <div class="col-span-1">
+              <p class="text-sm text-vrly-slate-500">Automatisierung</p>
+            </div>
+            <div class="col-span-1 text-center">
+              <CheckCircle size="base" class="inline text-vrly-green-600" />
+              <span class="text-xs text-vrly-green-600 ml-1">KI-gestützt</span>
+            </div>
+            <div class="col-span-1 text-center">
+              <span class="text-xs text-vrly-slate-400">Minimal</span>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-3 gap-2 items-center">
+            <div class="col-span-1">
+              <p class="text-sm text-vrly-slate-500">Praxisverständnis</p>
+            </div>
+            <div class="col-span-1 text-center">
+              <CheckCircle size="base" class="inline text-vrly-green-600" />
+              <span class="text-xs text-vrly-green-600 ml-1">Tiefgreifend</span>
+            </div>
+            <div class="col-span-1 text-center">
+              <span class="text-xs text-vrly-slate-400">Oberflächlich</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </Wrapper>
