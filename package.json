@@ -20,6 +20,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.7",
     "astro": "5.8.1",
+    "astro-webmanifest": "^1.0.0",
     "tailwind-scrollbar-hide": "^2.0.0",
     "tailwindcss": "^4.1.7"
   },

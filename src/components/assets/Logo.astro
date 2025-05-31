@@ -5,61 +5,12 @@
 // - class: A string of additional classes to style the SVG.
 // - variant: 'full' (default) shows "VRLY" text, 'mark' shows just the icon
 // - ...rest: Any other valid attributes for an <svg> element
+import LogoSvg from '@/assets/logo.svg';
+
 const { class: className = "", variant = "full", ...rest } = Astro.props;
 ---
 
-{variant === "full" ? (
-  <!-- Full VRLY Logo with Text -->
-  <svg
-    class={className}
-    {...rest}
-    viewBox="0 0 200 48"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <!-- VRLY Icon - Abstract representation of automation/workflow -->
-    <g id="vrly-icon">
-      <rect x="2" y="14" width="4" height="20" rx="2" fill="currentColor" opacity="0.9"/>
-      <rect x="8" y="10" width="4" height="28" rx="2" fill="currentColor"/>
-      <rect x="14" y="16" width="4" height="16" rx="2" fill="currentColor" opacity="0.8"/>
-      <rect x="20" y="8" width="4" height="32" rx="2" fill="currentColor" opacity="0.9"/>
-      <!-- Connection lines representing automation flow -->
-      <path d="M26 16 L32 16 M32 24 L38 24 M38 20 L42 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-      <!-- AI/automation indicator dots -->
-      <circle cx="44" cy="16" r="2" fill="currentColor" opacity="0.8"/>
-      <circle cx="48" cy="24" r="2" fill="currentColor" opacity="0.6"/>
-    </g>
-    
-    <!-- VRLY Text -->
-    <g id="vrly-text" transform="translate(60, 0)">
-      <text x="0" y="32" font-family="Nunito Sans, sans-serif" font-weight="700" font-size="28" fill="currentColor" letter-spacing="-0.02em">
-        VRLY
-      </text>
-      <text x="0" y="44" font-family="Open Sans, sans-serif" font-weight="400" font-size="8" fill="currentColor" opacity="0.7" letter-spacing="0.08em">
-        AUTOMATISIERT EFFIZIENZ
-      </text>
-    </g>
-  </svg>
-) : (
-  <!-- Icon Only Version -->
-  <svg
-    class={className}
-    {...rest}
-    viewBox="0 0 50 48"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <!-- VRLY Icon - Abstract representation of automation/workflow -->
-    <g id="vrly-icon-only">
-      <rect x="2" y="14" width="4" height="20" rx="2" fill="currentColor" opacity="0.9"/>
-      <rect x="8" y="10" width="4" height="28" rx="2" fill="currentColor"/>
-      <rect x="14" y="16" width="4" height="16" rx="2" fill="currentColor" opacity="0.8"/>
-      <rect x="20" y="8" width="4" height="32" rx="2" fill="currentColor" opacity="0.9"/>
-      <!-- Connection lines representing automation flow -->
-      <path d="M26 16 L32 16 M32 24 L38 24 M38 20 L42 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-      <!-- AI/automation indicator dots -->
-      <circle cx="44" cy="16" r="2" fill="currentColor" opacity="0.8"/>
-      <circle cx="48" cy="24" r="2" fill="currentColor" opacity="0.6"/>
-    </g>
-  </svg>
-)}
+<LogoSvg
+  class={className}
+  {...rest}
+/>
