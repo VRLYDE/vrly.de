@@ -9,7 +9,8 @@
     "astro": "astro",
     "deploy": "bun run build && bun x wrangler deploy",
     "cf-typegen": "wrangler types && prettier --write worker-configuration.d.ts",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "check": "astro check"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
