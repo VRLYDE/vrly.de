@@ -8,7 +8,6 @@ import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 
 import ChevronLeft from "@/components/fundations/icons/ChevronLeft.astro";
-import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
 
 export const prerender = true;
 ---
@@ -21,7 +20,7 @@ export const prerender = true;
     >
       <Image
         src={LimeStripe}
-        alt="Lime Stripe"
+        alt="VRLY Hintergrund Stripe"
         class="absolute inset-0 size-full pointer-events-none"
       />
 
@@ -31,20 +30,21 @@ export const prerender = true;
           variant="display2XL"
           data-aos="fade-up"
           data-aos-duration="1000"
-          class="font-semibold tracking-tighter text-base-800 lg:text-balance"
+          class="font-semibold tracking-tighter text-vrly-slate-500 lg:text-balance"
         >
-          Erro 404
+          Seite nicht gefunden (404)
         </Text>
         <Text
           tag="p"
           variant="textLG"
           data-aos="fade-up"
           data-aos-duration="1500"
-          class="mt-4 font-medium text-base-800 md:text-balance"
+          class="mt-4 font-medium text-vrly-slate-500 md:text-balance"
         >
-          Sorry, but the page you were looking for could not be found. You can
-          return to our front page, or drop us a line if you can't find what
-          you're looking for.
+          Entschuldigung, aber die gesuchte Seite konnte nicht gefunden werden. 
+          Sie können zu unserer Startseite zurückkehren oder uns kontaktieren, 
+          falls Sie nicht finden, wonach Sie suchen. Wir helfen Ihnen gerne dabei, 
+          die passende Lösung für Ihre Praxis zu finden.
         </Text>
         <div
           data-aos="fade-up"
@@ -54,7 +54,7 @@ export const prerender = true;
           <Link
             size="base"
             variant="default"
-            href="/forms/sign-up"
+            href="/"
             gap="xs"
             class="group w-full"
           >
@@ -62,20 +62,7 @@ export const prerender = true;
               size="sm"
               class="duration-300 easy-out-in group-hover:translate-x-2"
             />
-            Go to front page
-          </Link>
-          <Link
-            size="base"
-            variant="muted"
-            href="/forms/contact"
-            gap="xs"
-            class="group w-full"
-          >
-            See all pages
-            <ChevronRight
-              size="sm"
-              class="duration-300 easy-out-in group-hover:translate-x-2"
-            />
+            Zur Startseite
           </Link>
         </div>
       </div>
