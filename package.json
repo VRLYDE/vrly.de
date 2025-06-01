@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "bun run cf-typegen && astro build",
+    "build": "astro check && bun run cf-typegen && astro build",
     "preview": "bun run build && wrangler dev",
     "astro": "astro",
-    "deploy": "astro check && bun run build && bun x wrangler deploy",
+    "deploy": "bun run build && bun x wrangler deploy",
     "cf-typegen": "wrangler types && prettier --write worker-configuration.d.ts",
     "format": "prettier --write .",
     "check": "astro check"

@@ -1,6 +1,9 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "vrly-de",
+  "vars": {
+    "POSTHOG_API_HOST": "https://eu.i.posthog.com",
+  },
   "main": "./dist/_worker.js/index.js",
   "compatibility_date": "2025-05-30",
   "compatibility_flags": ["nodejs_compat"],

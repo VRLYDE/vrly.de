@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import Fuse from "@/components/fundations/scripts/Fuse.astro";
+import Fuse from "@/components/scripts/Fuse.astro";
 const posts = await Promise.all(
   (await getCollection("posts")).map(async (post) => ({
     title: post.data.title,
