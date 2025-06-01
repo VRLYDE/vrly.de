@@ -1,9 +1,9 @@
 ---
 import { getCollection } from "astro:content";
-import InfoPagesLayout from "../../layouts/InfoPagesLayout.astro";
+import RechtlichesLayout from "../../layouts/RechtlichesLayout.astro";
 export async function getStaticPaths() {
-  const infoPages = await getCollection("infopages");
-  const paths = infoPages.map((page) => {
+  const rechtliches = await getCollection("rechtliches");
+  const paths = rechtliches.map((page) => {
     return {
       params: { slug: page.slug },
       props: { page },
@@ -19,6 +19,6 @@ const { Content } = await page.render();
 export const prerender = true;
 ---
 
-<InfoPagesLayout frontmatter={page.data}>
+<RechtlichesLayout frontmatter={page.data}>
   <Content />
-</InfoPagesLayout>
+</RechtlichesLayout>
