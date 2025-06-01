@@ -169,7 +169,9 @@ const links = [
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const yearElement = document.getElementById("year");
-    const currentYear = new Date().getFullYear();
-    yearElement.textContent = `© ${currentYear} VRLY. Alle Rechte vorbehalten.`;
+    if (yearElement) {
+      const currentYear = new Date().getFullYear();
+      yearElement.textContent = `© ${currentYear} VRLY. Alle Rechte vorbehalten.`;
+    }
   });
 </script>

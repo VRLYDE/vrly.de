@@ -1,15 +1,7 @@
 ---
-// Assets
-import { Code } from "astro:components";
-import VisualAsset3 from "@/components/assets/VisualAsset3.astro";
-// Fundations
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-// Icons
-import Plus from "@/components/fundations/icons/Plus.astro";
-import Filters from "@/components/fundations/icons/Filters.astro";
-import WaveSquare from "@/components/fundations/icons/WaveSquare.astro";
-import ArrowIteration from "@/components/fundations/icons/ArrowIteration.astro";
+
 import CircleCheck from "@/components/fundations/icons/CircleCheck.astro";
 
 interface Props {
@@ -50,52 +42,6 @@ const defaultItems = [
     text: "Wir arbeiten auf Augenhöhe, hören zu und bauen langfristige, vertrauensvolle Beziehungen auf.",
   },
 ];
-
-// Timeline
-const timelineSteps = [
-  {
-    title: "Transfer initiated",
-    description: "The wheels are in motion!",
-    time: "Mar 12, 08:15 AM ",
-    datetime: "2025-03-12T08:15",
-    color: "bg-teal-200 ring-teal-500",
-  },
-  {
-    title: "Stamp of approval",
-    description: "Johnny Mnemonic gave it the nod.",
-    time: "Mar 12, 09:47 AM ",
-    datetime: "2025-03-12T09:47",
-    color: "bg-teal-200 ring-teal-500",
-  },
-  {
-    title: "Off to the Feds",
-    description: "Sent to the Federal Reserve...",
-    time: "Mar 12, 09:50 AM ",
-    datetime: "2025-03-12T09:50",
-    color: "bg-teal-200 ring-teal-500",
-  },
-  {
-    title: "Money landed",
-    description: "Settled with the recipient bank.",
-    time: "Mar 12, 3:30 PM ",
-    datetime: "2025-03-12T15:30",
-    color: "bg-teal-200 ring-teal-500",
-  },
-  {
-    title: "Final release",
-    description: "Funds will be good to go on March 14!",
-    time: "Mar 14",
-    datetime: "2025-03-14T00:00",
-    color: "bg-yellow-300 ring-yellow-500",
-  },
-];
-
-// Customers Content
-// Card
-import CustomerEntry1 from "@/components/customers/CustomerEntry1.astro";
-// Content
-import { getCollection } from "astro:content";
-const allCustomers = await getCollection("customers");
 ---
 
 <section>

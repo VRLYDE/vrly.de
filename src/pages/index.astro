@@ -1,8 +1,7 @@
 ---
-// Fundations
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-// Sections
+
 import Hero1 from "@/components/headers/Hero1.astro";
 import Feature1 from "@/components/features/Feature1.astro";
 import LogoCloud from "@/components/assets/LogoCloud.astro";
@@ -12,6 +11,8 @@ import Feature4 from "@/components/features/Feature4.astro";
 import Feature5 from "@/components/features/Feature5.astro";
 import Testimonial1 from "@/components/testimonials/Testimonial1.astro";
 import Pricing1 from "@/components/pricing/Pricing1.astro";
+
+export const prerender = true;
 ---
 
 <BaseLayout title="VRLY | KI-gestützte Workflow-Automatisierung für Psychotherapeut:Innen in Hannover" description="VRLY ist Ihr spezialisierter Technologiepartner für KI-Entwicklung, Agenteneinsatz, Workflow-Automatisierung und digitales Projektmanagement exklusiv für Psychotherapeut:Innen in Hannover.">

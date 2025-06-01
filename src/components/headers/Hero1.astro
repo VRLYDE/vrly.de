@@ -1,14 +1,10 @@
 ---
-// Assets
 import { Image } from "astro:assets";
 import LimeStripe from "@/images/assets/LimeStripe.png";
 import { Code } from "astro:components";
-import VisualAsset1 from "@/components/assets/VisualAsset1.astro";
-// Fundations
 import Link from "@/components/fundations/elements/Link.astro";
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-// Icons
 import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
 
 interface Props {
@@ -21,7 +17,6 @@ interface Props {
 
 const {
   title = "KI-gestützte Automatisierung für Psychotherapeuten in Hannover",
-  subtitle = "VRLY automatisiert Effizienz mit Künstlicher Intelligenz.",
   description = "Reduzieren Sie administrative Lasten durch intelligente Technologie und optimierte Workflows. Gewinnen Sie wertvolle Zeit für Ihre Patienten – DSGVO-konform und zukunftssicher.",
   primaryButtonText = "Kostenlosen Workflow-Audit vereinbaren",
   secondaryButtonText = "Praxis-Anfragen-Autopilot entdecken"

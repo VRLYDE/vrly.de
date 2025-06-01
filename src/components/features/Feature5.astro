@@ -1,10 +1,6 @@
 ---
-// Assets
-import { Code } from "astro:components";
-// Fundations
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-// Icons
 import ApiApp from "@/components/fundations/icons/ApiApp.astro";
 import Check from "@/components/fundations/icons/Check.astro";
 
@@ -23,7 +19,6 @@ const {
   benefits = []
 } = Astro.props;
 
-// Default benefits if none are provided
 const defaultBenefits = [
   {
     title: "Zeitersparnis",
@@ -50,7 +45,6 @@ const defaultBenefits = [
     description: "Klare Übersicht über neue Anfragen und deren Status."
   }
 ];
-
 ---
 
 <section>
