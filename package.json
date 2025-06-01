@@ -12,6 +12,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.4",
     "@astrojs/cloudflare": "^12.5.3",
     "@astrojs/mdx": "4.3.0",
     "@astrojs/rss": "^4.0.11",
@@ -22,7 +23,8 @@
     "astro": "5.8.1",
     "astro-webmanifest": "^1.0.0",
     "tailwind-scrollbar-hide": "^2.0.0",
-    "tailwindcss": "^4.1.7"
+    "tailwindcss": "^4.1.7",
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
     "prettier": "^3.5.3",
