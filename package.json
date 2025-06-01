@@ -7,7 +7,7 @@
     "build": "bun run cf-typegen && astro build",
     "preview": "bun run build && wrangler dev",
     "astro": "astro",
-    "deploy": "bun run build && bun x wrangler deploy",
+    "deploy": "astro check && bun run build && bun x wrangler deploy",
     "cf-typegen": "wrangler types && prettier --write worker-configuration.d.ts",
     "format": "prettier --write .",
     "check": "astro check"
@@ -23,6 +23,7 @@
     "@tailwindcss/vite": "^4.1.7",
     "astro": "5.8.1",
     "astro-webmanifest": "^1.0.0",
+    "fuse.js": "^7.1.0",
     "tailwind-scrollbar-hide": "^2.0.0",
     "tailwindcss": "^4.1.7",
     "typescript": "^5.8.3"

@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import Fuse from "@/components/fundations/scripts/Fuse.astro";
 const posts = await Promise.all(
   (await getCollection("posts")).map(async (post) => ({
     title: post.data.title,
@@ -11,6 +12,7 @@ const posts = await Promise.all(
 ---
 
 <div class="relative">
+  <Fuse />
   <button
     type="button"
     id="searchButton"
@@ -35,7 +37,7 @@ const posts = await Promise.all(
   >
     <div class="min-h-screen px-4 text-center">
       <div
-        class="fixed inset-0 bg-base-950/50 backdrop-blur transition-opacity"
+        class="fixed z-[-50] inset-0 bg-base-950/50 backdrop-blur transition-opacity"
         id="modalOverlay"
       >
       </div>
@@ -92,7 +94,7 @@ const posts = await Promise.all(
     // Clear the search input field on page load to prevent old values from persisting
     searchInput.value = "";
     // Initialize Fuse.js for fuzzy searching
-    const fuse = new Fuse(posts, {
+    const fuse = new window.Fuse(posts, {
       keys: ["title", "description", "content"], // Fields to search in
       threshold: 0.3, // Determines search sensitivity (lower = stricter match)
       includeMatches: true, // Includes matched text segments in results

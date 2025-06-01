@@ -105,7 +105,7 @@ const navigationLinks = [
           </a>
           <div class="flex flex-col gap-4 md:flex-row md:gap-6">
             {
-              navigationLinks.map((link, index) => (
+              navigationLinks.map((link) => (
                 <a
                   href={link.href}
                   class="hover:text-vrly-blue-600 text-vrly-slate-500 tracking-tighter md:tracking-normal font-semibold md:font-medium text-6xl md:text-base transition-colors duration-200"
@@ -137,8 +137,14 @@ const navigationLinks = [
     const navigationMenu = document.getElementById("navigation-menu");
     
     // Toggle mobile menu
-    function toggleMenu(open) {
+    function toggleMenu(open: boolean): void {
       console.log(`Toggling menu. Open: ${open}`);
+      
+      if (!navigationMenu || !menuIcon || !closeIcon) {
+        console.warn("Required DOM elements not found");
+        return;
+      }
+      
       navigationMenu.classList.toggle("opacity-100", open);
       navigationMenu.classList.toggle("translate-y-0", open);
       navigationMenu.classList.toggle("pointer-events-auto", open);
@@ -150,7 +156,12 @@ const navigationLinks = [
     }
 
     // Event Listeners
-    menuToggle.addEventListener("click", () => toggleMenu(true));
-    menuClose.addEventListener("click", () => toggleMenu(false));
+    if (menuToggle) {
+      menuToggle.addEventListener("click", () => toggleMenu(true));
+    }
+    
+    if (menuClose) {
+      menuClose.addEventListener("click", () => toggleMenu(false));
+    }
   });
 </script>

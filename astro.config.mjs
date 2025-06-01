@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, passthroughImageService } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
@@ -7,13 +7,18 @@ import webmanifest from "astro-webmanifest";
 
 // https://astro.build/config
 export default defineConfig({
+  image: {
+    service: passthroughImageService(),
+  },
+
   adapter: cloudflare({
     platformProxy: {
       enabled: true,
     },
+    imageService: "cloudflare",
   }),
 
-  output: "static",
+  output: "server",
 
   server: { port: 1312 },
 
