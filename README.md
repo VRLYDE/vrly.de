@@ -33,7 +33,7 @@ VRLY is a specialized technology partner exclusively for psychotherapists in Han
 This repository uses [Bun workspaces](https://bun.sh/docs/install/workspaces) to manage multiple packages:
 
 ```
-vrly-monorepo/
+monorepo/
 ├── packages/
 │   ├── platform/         # Core VRLY platform (Cloudflare Workers)
 │   ├── website/          # Marketing website (Astro + Cloudflare Pages)
@@ -58,8 +58,8 @@ vrly-monorepo/
 
 ```bash
 # Clone the repository
-git clone https://github.com/vrly/vrly-monorepo.git
-cd vrly-monorepo
+git clone https://github.com/VRLYDE/monorepo.git
+cd monorepo
 
 # Install dependencies
 bun install

@@ -1,5 +1,5 @@
 {
-  "name": "vrly-monorepo",
+  "name": "monorepo",
   "private": true,
   "version": "1.0.0",
   "description": "VRLY - AI-Powered Workflow Automation for Psychotherapists",
@@ -7,7 +7,7 @@
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vrly/vrly-monorepo.git"
+    "url": "https://github.com/VRLYDE/monorepo.git"
   },
   "workspaces": [
     "packages/*",
