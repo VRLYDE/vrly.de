@@ -3,7 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 import { pageSEO, seoConfig } from "@/config/seo";
 
-import Hero1 from "@/components/headers/Hero1.astro";
+import Hero from "@/components/headers/Hero.astro";
 import LogoCloud from "@/components/assets/LogoCloud.astro";
 import Feature1 from "@/components/features/Feature1.astro";
 import Feature2 from "@/components/features/Feature2.astro";
@@ -44,7 +44,7 @@ const homePageStructuredData = [
   keywords={pageSEO.home.keywords}
   jsonLd={homePageStructuredData}
 >
-  <Hero1 
+  <Hero 
     title="Mehr Zeit für Ihre Patienten, weniger Verwaltungsaufwand" 
     subtitle="VRLY automatisiert Effizienz mit Künstlicher Intelligenz."
     description="Ihr spezialisierter Partner für KI-gestützte Workflow-Automatisierung, exklusiv für Psychotherapeut:Innen in Hannover. DSGVO-konform und zukunftssicher."
