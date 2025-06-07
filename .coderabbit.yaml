@@ -66,27 +66,14 @@ reviews:
     - label: Monorepo
       instructions: Changes affecting monorepo structure or tooling.
   path_filters:
-    - paths: ["packages/platform/**"]
-      labels: ["Platform"]
-      instructions: "Focus on multi-tenancy, Workers for Platforms patterns, and scalability."
-    - paths: ["packages/website/**"]
-      labels: ["Website"]
-      instructions: "Check Astro best practices, SEO optimization, and marketing copy."
-    - paths: ["packages/clients/**"]
-      labels: ["Client Work"]
-      instructions: "Ensure client isolation, reusability, and DSGVO compliance."
-    - paths: ["packages/integrations/**"]
-      labels: ["Integration"]
-      instructions: "Verify API error handling, rate limiting, and retry logic."
-    - paths: ["packages/shared/**"]
-      labels: ["Shared", "Design System"]
-      instructions: "Check for breaking changes that might affect other packages."
-    - paths: ["packages/internal/**"]
-      labels: ["Internal", "Automation"]
-      instructions: "Focus on operational efficiency and automation opportunities."
-    - paths: ["scripts/**", ".github/**"]
-      labels: ["Automation", "DevOps"]
-      instructions: "Suggest ways to further automate repetitive tasks."
+    - "packages/platform/**"
+    - "packages/website/**"
+    - "packages/clients/**"
+    - "packages/integrations/**"
+    - "packages/shared/**"
+    - "packages/internal/**"
+    - "scripts/**"
+    - ".github/**"
   path_instructions:
     - path: "*"
       instructions: |
