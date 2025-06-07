@@ -32,7 +32,7 @@ VRLY is a specialized technology partner exclusively for psychotherapists in Han
 
 This repository uses [Bun workspaces](https://bun.sh/docs/install/workspaces) to manage multiple packages:
 
-```
+```text
 monorepo/
 ├── packages/
 │   ├── platform/         # Core VRLY platform (Cloudflare Workers)
