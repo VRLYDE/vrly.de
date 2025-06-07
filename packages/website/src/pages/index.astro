@@ -3,9 +3,9 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 import { pageSEO, seoConfig } from "@/config/seo";
 
-import Hero1 from "@/components/headers/Hero1.astro";
-import Feature1 from "@/components/features/Feature1.astro";
+import Hero from "@/components/headers/Hero.astro";
 import LogoCloud from "@/components/assets/LogoCloud.astro";
+import Feature1 from "@/components/features/Feature1.astro";
 import Feature2 from "@/components/features/Feature2.astro";
 import Feature3 from "@/components/features/Feature3.astro";
 import Feature4 from "@/components/features/Feature4.astro";
@@ -44,7 +44,7 @@ const homePageStructuredData = [
   keywords={pageSEO.home.keywords}
   jsonLd={homePageStructuredData}
 >
-  <Hero1 
+  <Hero 
     title="Mehr Zeit für Ihre Patienten, weniger Verwaltungsaufwand" 
     subtitle="VRLY automatisiert Effizienz mit Künstlicher Intelligenz."
     description="Ihr spezialisierter Partner für KI-gestützte Workflow-Automatisierung, exklusiv für Psychotherapeut:Innen in Hannover. DSGVO-konform und zukunftssicher."
@@ -54,14 +54,14 @@ const homePageStructuredData = [
   <section>
     <Wrapper class="overflow-hidden border-t border-base-200">
       <LogoCloud
-        class="py-6 grid grid-cols-2 lg:-mx-8 sm:grid-cols-3 md:grid-cols-6"
+        class="py-6 flex flex-col gap-8 lg:-mx-8"
         title="Vertraut von Psychotherapeut:Innen in Hannover"
       />
     </Wrapper>
   </section>
   <Feature1 
     title="Praxis-Anfragen-Autopilot"
-    description="Unser MVSO (Minimum Viable Service Offering) automatisiert die Verwaltung von Neupatienten-Anfragen und spart Ihnen sofort Zeit und Nerven."
+    description="Unser Praxis-Anfragen-Autopilot automatisiert die Verwaltung von Neupatienten-Anfragen und spart Ihnen sofort Zeit und Nerven."
     items={[
       {
         title: "Zeitersparnis",

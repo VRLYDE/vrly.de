@@ -1,0 +1,209 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { seoConfig } from "@/config/seo";
+
+const pageTitle = "Über Uns - VRLY Vision & Team";
+const pageDescription = "Erfahren Sie mehr über VRLY, unsere Mission, und wie wir Psychotherapeut:Innen in Hannover mit KI-gestützter Automatisierung unterstützen.";
+const keywords = [
+  ...seoConfig.site.keywords,
+  "Über VRLY",
+  "Team VRLY",
+  "Florentin Sakwiset",
+  "Mission Vision",
+  "KI Experten Hannover"
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  keywords={keywords}
+>
+
+  <main class="relative pt-32">
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-b from-vrly-neutral-100 to-white py-20 px-6">
+      <div class="mx-auto max-w-4xl text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-vrly-slate-500 mb-6">
+          Ihre Experten für intelligente Praxisautomatisierung
+        </h1>
+        <p class="text-xl text-vrly-slate-400 leading-relaxed">
+          VRLY ist Ihr spezialisierter Partner für KI-gestützte Workflow-Automatisierung – 
+          exklusiv für Psychotherapeut:Innen in Hannover.
+        </p>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-16 px-6">
+      <div class="mx-auto max-w-4xl">
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <div class="bg-white rounded-lg p-8 shadow-sm border border-vrly-neutral-200">
+            <h2 class="text-2xl font-semibold text-vrly-blue-600 mb-4">Unsere Mission</h2>
+            <p class="text-vrly-slate-500 leading-relaxed">
+              Wir unterstützen Psychotherapeut:Innen dabei, administrative Lasten durch intelligente 
+              Technologie und optimierte Workflows zu reduzieren. So schaffen wir mehr Zeit und Energie 
+              für das, was wirklich zählt: die therapeutische Arbeit mit Ihren Klienten – sicher, 
+              effizient und DSGVO-konform.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg p-8 shadow-sm border border-vrly-neutral-200">
+            <h2 class="text-2xl font-semibold text-vrly-blue-600 mb-4">Unsere Vision</h2>
+            <p class="text-vrly-slate-500 leading-relaxed">
+              VRLY wird der führende Technologiepartner für digitale Transformation und intelligente 
+              Automatisierung im psychotherapeutischen Sektor in Deutschland – basierend auf einer 
+              skalierbaren Plattform und tiefgreifender Branchenexpertise.
+            </p>
+          </div>
+        </div>
+
+        <!-- Founder Section -->
+        <div class="mb-16">
+          <h2 class="text-3xl font-bold text-vrly-slate-500 text-center mb-12">Der Mensch hinter VRLY</h2>
+          
+          <div class="bg-vrly-blue-50 rounded-xl p-8 md:p-12">
+            <div class="max-w-3xl mx-auto">
+              <h3 class="text-2xl font-semibold text-vrly-slate-500 mb-4">
+                Phichayut "Florentin" Sakwiset
+              </h3>
+              <p class="text-lg text-vrly-slate-400 mb-6">
+                Gründer & KI-Automatisierungsexperte
+              </p>
+              
+              <div class="space-y-4 text-vrly-slate-500">
+                <p>
+                  Als Experte für KI-Entwicklung, Workflow-Automatisierung und digitales Projektmanagement 
+                  bringe ich tiefgreifendes technisches Know-how mit spezifischem Verständnis für die 
+                  Herausforderungen von Psychotherapiepraxen zusammen.
+                </p>
+                <p>
+                  Meine Mission ist es, komplexe Technologie in praktische, nutzerfreundliche Lösungen 
+                  zu übersetzen, die Ihren Praxisalltag spürbar erleichtern. Dabei stehen für mich 
+                  Vertrauen, Transparenz und die strikte Einhaltung von Datenschutzrichtlinien an 
+                  oberster Stelle.
+                </p>
+                <p>
+                  Mit VRLY schaffe ich einen Ort, an dem modernste KI-Technologie auf die realen 
+                  Bedürfnisse von Therapeut:Innen trifft – persönlich, professionell und immer mit 
+                  dem Ziel, Ihnen mehr Zeit für Ihre wichtigste Aufgabe zu geben: die Betreuung 
+                  Ihrer Klienten.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Values Section -->
+        <div class="mb-16">
+          <h2 class="text-3xl font-bold text-vrly-slate-500 text-center mb-12">Unsere Werte</h2>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-lg p-6 border-l-4 border-vrly-green-500">
+              <h3 class="text-xl font-semibold text-vrly-slate-500 mb-3">
+                <span class="text-vrly-green-500 mr-2">✓</span>
+                Nutzenfokus & Effizienz
+              </h3>
+              <p class="text-vrly-slate-400">
+                Wir liefern messbaren Mehrwert durch schlanke, effektive Lösungen, die echte 
+                Probleme im Praxisalltag lösen und nachweislich Zeit sparen.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 border-l-4 border-vrly-blue-500">
+              <h3 class="text-xl font-semibold text-vrly-slate-500 mb-3">
+                <span class="text-vrly-blue-500 mr-2">🛡️</span>
+                Vertrauen & Integrität
+              </h3>
+              <p class="text-vrly-slate-400">
+                Transparente, zuverlässige Zusammenarbeit mit höchsten Standards bei Datenschutz 
+                und Compliance – insbesondere DSGVO und §203 StGB.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 border-l-4 border-vrly-teal-500">
+              <h3 class="text-xl font-semibold text-vrly-slate-500 mb-3">
+                <span class="text-vrly-teal-500 mr-2">💡</span>
+                Expertise & Innovation
+              </h3>
+              <p class="text-vrly-slate-400">
+                Tiefes technisches Know-how in KI und Automatisierung, kombiniert mit 
+                spezifischem Branchenverständnis und kontinuierlicher Weiterentwicklung.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 border-l-4 border-vrly-blue-600">
+              <h3 class="text-xl font-semibold text-vrly-slate-500 mb-3">
+                <span class="text-vrly-blue-600 mr-2">🤝</span>
+                Partnerschaftlichkeit
+              </h3>
+              <p class="text-vrly-slate-400">
+                Wir arbeiten auf Augenhöhe, hören aktiv zu und verstehen uns als Teil Ihres 
+                erweiterten Teams – für langfristige, vertrauensvolle Beziehungen.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Why VRLY -->
+        <div class="bg-vrly-neutral-100 rounded-xl p-8 md:p-12 mb-16">
+          <h2 class="text-3xl font-bold text-vrly-slate-500 text-center mb-8">Warum VRLY?</h2>
+          
+          <div class="max-w-3xl mx-auto space-y-6">
+            <div class="flex items-start">
+              <span class="text-vrly-green-500 text-2xl mr-4 flex-shrink-0">✓</span>
+              <div>
+                <h3 class="font-semibold text-vrly-slate-500 mb-2">
+                  Hyper-Spezialisierung auf Psychotherapiepraxen
+                </h3>
+                <p class="text-vrly-slate-400">
+                  Wir verstehen Ihre spezifischen Herausforderungen und sprechen Ihre Sprache – 
+                  keine generischen IT-Lösungen, sondern maßgeschneiderte Automatisierung.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <span class="text-vrly-green-500 text-2xl mr-4 flex-shrink-0">✓</span>
+              <div>
+                <h3 class="font-semibold text-vrly-slate-500 mb-2">
+                  Lokaler Partner in Hannover
+                </h3>
+                <p class="text-vrly-slate-400">
+                  Persönlicher Kontakt, kurze Wege und tiefes Verständnis für den lokalen Markt – 
+                  wir sind da, wo Sie uns brauchen.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <span class="text-vrly-green-500 text-2xl mr-4 flex-shrink-0">✓</span>
+              <div>
+                <h3 class="font-semibold text-vrly-slate-500 mb-2">
+                  Compliance als Kernkompetenz
+                </h3>
+                <p class="text-vrly-slate-400">
+                  DSGVO und §203 StGB sind für uns keine Herausforderung, sondern selbstverständlicher 
+                  Teil jeder Lösung – für Ihre Sicherheit und die Ihrer Klienten.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <span class="text-vrly-green-500 text-2xl mr-4 flex-shrink-0">✓</span>
+              <div>
+                <h3 class="font-semibold text-vrly-slate-500 mb-2">
+                  Messbare Ergebnisse
+                </h3>
+                <p class="text-vrly-slate-400">
+                  Keine leeren Versprechen – wir zeigen Ihnen konkret, wie viel Zeit Sie sparen 
+                  und wie sich Ihre Praxiseffizienz verbessert.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout> 

@@ -14,7 +14,7 @@ const { frontmatter } = Astro.props;
     <Wrapper variant="standard" class="pb-12 pt-32">
       <div class="max-w-xl mx-auto">
         <Text
-          class="span"
+          tag="span"
           variant="textXS"
           class="flex items-center font-medium uppercase text-base-600 gap-2"
         >
@@ -55,7 +55,59 @@ const { frontmatter } = Astro.props;
       </div>
     </Wrapper>
     <Wrapper variant="standard" class="py-12 border-t border-base-200">
-      <Wrapper variant="prose" class="max-w-xl mx-auto"><slot /></Wrapper>
+      <Wrapper variant="prose" class="max-w-xl mx-auto prose-table-responsive"><slot /></Wrapper>
     </Wrapper>
   </section>
 </BaseLayout>
+
+<style>
+  /* Make tables responsive with horizontal scrolling */
+  .prose-table-responsive :global(table) {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+
+  /* Ensure table cells don't wrap on mobile */
+  .prose-table-responsive :global(td),
+  .prose-table-responsive :global(th) {
+    white-space: normal;
+    min-width: 150px;
+    padding: 0.5rem;
+  }
+
+  /* Add some visual indication of scrollability */
+  .prose-table-responsive :global(table) {
+    box-shadow: inset -2px 0 0 rgba(0, 0, 0, 0.1);
+  }
+
+  /* Improve table styling */
+  .prose-table-responsive :global(table) {
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+
+  .prose-table-responsive :global(thead) {
+    background-color: var(--color-base-100, #f3f4f6);
+  }
+
+  .prose-table-responsive :global(tr) {
+    border-bottom: 1px solid var(--color-base-200, #e5e7eb);
+  }
+
+  /* Make the table container relative for potential scroll indicators */
+  .prose-table-responsive {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* On larger screens, allow tables to be their natural width */
+  @media (min-width: 1280px) {
+    .prose-table-responsive :global(table) {
+      display: table;
+      overflow-x: visible;
+    }
+  }
+</style>
