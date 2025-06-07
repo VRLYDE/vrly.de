@@ -5,15 +5,38 @@ import Text from "@/components/fundations/elements/Text.astro";
 import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
 import Clock from "@/components/fundations/icons/Clock.astro";
 
+interface PostData {
+  title: string;
+  description: string;
+  image: {
+    url: string;
+  };
+  category: string;
+  pubDate: Date;
+  readingTime?: number;
+}
+
+interface Post {
+  slug: string;
+  data: PostData;
+  body: string;
+}
+
+interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props as Props;
+
 // Content
 const { url, title, description, pubDate, image, category, readingTime } = {
-  url: "/blog/posts/" + Astro.props.post.slug,
-  title: Astro.props.post.data.title,
-  description: Astro.props.post.data.description,
-  image: Astro.props.post.data.image.url,
-  category: Astro.props.post.data.category,
-  readingTime: Astro.props.post.data.readingTime || Math.ceil(Astro.props.post.body.split(' ').length / 200), // Estimate reading time
-  pubDate: new Date(Astro.props.post.data.pubDate).toLocaleDateString("de-DE", {
+  url: "/blog/posts/" + post.slug,
+  title: post.data.title,
+  description: post.data.description,
+  image: post.data.image.url,
+  category: post.data.category,
+  readingTime: post.data.readingTime || Math.ceil(post.body.split(' ').length / 200), // Estimate reading time
+  pubDate: new Date(post.data.pubDate).toLocaleDateString("de-DE", {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -58,7 +81,7 @@ const categoryColor = categoryColors[category] || categoryColors['News'];
   <!-- Content -->
   <div class="flex-1 p-6">
     <div class="flex items-center gap-4 mb-3">
-      <time datetime={Astro.props.post.data.pubDate.toISOString()}>
+      <time datetime={post.data.pubDate.toISOString()}>
         <Text tag="span" variant="textXS" class="text-vrly-slate-400">
           {pubDate}
         </Text>
