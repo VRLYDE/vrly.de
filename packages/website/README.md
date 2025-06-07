@@ -62,8 +62,8 @@ Diese Website und unsere Services basieren auf folgenden Technologien:
 
 ```bash
 # Repository klonen
-git clone https://github.com/VRLYDE/vrly.de.git
-cd vrly.de
+git clone https://github.com/VRLYDE/monorepo.git
+cd monorepo/packages/website
 
 # Abhängigkeiten installieren
 bun install
