@@ -4,6 +4,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/fundations/elements/Text.astro";
 import Button from "@/components/fundations/elements/Button.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import { seoConfig } from "@/config/seo";
 // Component
 import BlogSearch from "@/components/blog/BlogSearch.astro";
 import BlogEntries2 from "@/components/blog/BlogEntries2.astro";
@@ -18,7 +19,7 @@ export async function getStaticPaths() {
 
   return uniqueTags.map((tag) => {
     const filteredPosts = allPosts.filter((post) =>
-      post.data.tags.includes(tag)
+      post.data.tags.includes(tag) && !post.data.draft
     );
     return {
       params: { tag },
@@ -31,9 +32,42 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 
 export const prerender = true;
+
+// Tag page SEO
+const tagCapitalized = tag.charAt(0).toUpperCase() + tag.slice(1);
+const tagPageSEO = {
+  title: `${tagCapitalized} - Artikel zu diesem Thema`,
+  description: `Alle Artikel zum Thema ${tagCapitalized}. Insights zu KI, Automatisierung und Digitalisierung für Psychotherapeut:Innen in Hannover.`,
+  keywords: [...seoConfig.site.keywords, tag, `${tag} Psychotherapie`, `${tag} Hannover`]
+};
+
+// Tag page structured data
+const tagPageStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": `${tagCapitalized} Artikel`,
+  "description": tagPageSEO.description,
+  "url": Astro.url.href,
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "VRLY Blog",
+    "url": `${seoConfig.site.url}/blog`
+  },
+  "hasPart": posts.slice(0, 10).map(post => ({
+    "@type": "BlogPosting",
+    "headline": post.data.title,
+    "description": post.data.description,
+    "datePublished": post.data.pubDate
+  }))
+};
 ---
 
-<BaseLayout>
+<BaseLayout
+  title={tagPageSEO.title}
+  description={tagPageSEO.description}
+  keywords={tagPageSEO.keywords}
+  jsonLd={tagPageStructuredData}
+>
   <section>
     <Wrapper variant="standard" class="pt-32 pb-12">
       <div
@@ -45,7 +79,7 @@ export const prerender = true;
             variant="display2XL"
             data-aos="fade-up"
             data-aos-duration="1000"
-            class="font-semibold tracking-tighter text-base-800 lg:text-balance capitalize"
+            class="font-semibold tracking-tighter text-vrly-slate-500 lg:text-balance capitalize"
           >
             {tag}
           </Text>
@@ -54,45 +88,56 @@ export const prerender = true;
             variant="textLG"
             data-aos="fade-up"
             data-aos-duration="1500"
-            class="max-w-lg mt-4 font-medium text-base-800 md:text-balance"
+            class="max-w-lg mt-4 font-medium text-vrly-slate-400 md:text-balance"
           >
-            The lates news about our banking products, services and events.
+            {posts.length} {posts.length === 1 ? 'Artikel' : 'Artikel'} zu diesem Thema. 
+            Praktische Tipps und aktuelle Entwicklungen für Ihre Praxis.
           </Text>
         </div>
         <form data-aos="fade-up" data-aos-duration="2000">
-          <label for="email" class="text-xs font-medium text-base-600">
-            Subscribe to our newsletter
+          <label for="email" class="text-xs font-medium text-vrly-slate-400">
+            Newsletter abonnieren
           </label>
           <div class="flex flex-col gap-2 mt-1">
             <input
               type="email"
               id="email"
-              placeholder="email@example.com"
+              placeholder="ihre@email.de"
               required
-              class="block w-full h-10 px-4 py-2 text-sm text-teal-700 duration-300 border border-transparent rounded-lg appearance-none bg-base-100 placeholder-base-400 focus:bg-transparent focus:outline-none focus:ring-teal-500 focus:ring-offset-2 focus:ring-2 focus:ring-offset-base-200"
+              class="block w-full h-10 px-4 py-2 text-sm text-vrly-slate-500 duration-300 border border-vrly-neutral-200 rounded-lg appearance-none bg-white placeholder-vrly-slate-300 focus:outline-none focus:ring-vrly-blue-500 focus:ring-offset-2 focus:ring-2 focus:ring-offset-white focus:border-vrly-blue-500"
             />
-            <Button size="base" variant="default" type="submit" class="w-full">
-              Subscribe
+            <Button size="base" variant="default" type="submit" class="w-full bg-vrly-blue-500 hover:bg-vrly-blue-600 text-white border-0">
+              Jetzt abonnieren
             </Button>
           </div>
-          <Text tag="p" variant="textXS" class="mt-2 font-medium text-base-500">
-            By subscribing, you agree to receive our latest updates. No spam,
-            promise!
+          <Text tag="p" variant="textXS" class="mt-2 font-medium text-vrly-slate-400">
+            Mit dem Abonnement stimmen Sie zu, unsere Updates zu erhalten.
           </Text>
         </form>
       </div>
     </Wrapper>
-    <Wrapper variant="standard" class="py-4 border-t border-base-200">
+    <Wrapper variant="standard" class="py-4 border-t border-vrly-neutral-200">
       <div>
         <BlogSearch />
       </div>
     </Wrapper>
-    <Wrapper variant="standard" class="py-4 border-t border-base-200">
+    <Wrapper variant="standard" class="py-12 border-t border-vrly-neutral-200">
       <div
-        class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 gap-y-12 lg:gap-y-24"
+        class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
       >
         {posts.map((post) => <BlogEntries2 post={post} />)}
       </div>
+      
+      {posts.length === 0 && (
+        <div class="text-center py-12">
+          <Text tag="p" variant="textLG" class="text-vrly-slate-400 mb-4">
+            Keine Artikel zu diesem Thema gefunden.
+          </Text>
+          <a href="/blog" class="text-vrly-blue-600 hover:text-vrly-blue-700 font-medium">
+            Zurück zur Übersicht
+          </a>
+        </div>
+      )}
     </Wrapper>
   </section>
 </BaseLayout>

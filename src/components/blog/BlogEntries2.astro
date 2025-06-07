@@ -3,60 +3,101 @@ import { Image } from "astro:assets";
 import Text from "@/components/fundations/elements/Text.astro";
 // Icons
 import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
+import Clock from "@/components/fundations/icons/Clock.astro";
 
 // Content
-const { url, title, description, pubDate, image } = {
+const { url, title, description, pubDate, image, category, readingTime } = {
   url: "/blog/posts/" + Astro.props.post.slug,
   title: Astro.props.post.data.title,
   description: Astro.props.post.data.description,
   image: Astro.props.post.data.image.url,
-  pubDate: new Date(Astro.props.post.data.pubDate).toLocaleDateString("en-US", {
+  category: Astro.props.post.data.category,
+  readingTime: Astro.props.post.data.readingTime || Math.ceil(Astro.props.post.body.split(' ').length / 200), // Estimate reading time
+  pubDate: new Date(Astro.props.post.data.pubDate).toLocaleDateString("de-DE", {
     year: "numeric",
     month: "long",
-    day: "2-digit",
+    day: "numeric",
   }),
 };
+
+// Category colors
+const categoryColors: Record<string, string> = {
+  'KI & Automatisierung': 'bg-vrly-blue-50 text-vrly-blue-600',
+  'DSGVO & Compliance': 'bg-vrly-green-50 text-vrly-green-600',
+  'Praxistipps': 'bg-vrly-teal-50 text-vrly-teal-600',
+  'Technologie': 'bg-purple-50 text-purple-600',
+  'Fallstudien': 'bg-orange-50 text-orange-600',
+  'News': 'bg-vrly-neutral-100 text-vrly-slate-600'
+};
+
+const categoryColor = categoryColors[category] || categoryColors['News'];
 ---
 
-<div
-  class="relative overflow-hidden group  flex h-full justify-between flex-col gap-12 lg:gap-24 bg-white group group transition-all md:min-h-[150px] cursor-pointer hover:bg-shadow-2xl shadow rounded-(--card-radius) p-(--card-padding) group [--card-padding:--spacing(2)] [--card-radius:var(--radius-2xl)] hover:shadow-2xl duration-500 outline outline-base-200"
+<article
+  class="relative overflow-hidden group flex h-full justify-between flex-col gap-4 bg-white transition-all cursor-pointer hover:shadow-xl shadow-md rounded-2xl group duration-300 border border-vrly-neutral-200 hover:border-vrly-blue-300"
 >
-  <a href={url} title={title} class="absolute inset-0 z-10"></a>
-  <div>
+  <a href={url} title={title} class="absolute inset-0 z-10" aria-label={`Artikel lesen: ${title}`}></a>
+  
+  <!-- Image -->
+  <div class="relative overflow-hidden rounded-t-2xl">
     <Image
       src={image}
       alt={title}
-      width="1000"
-      height="1000"
-      class="object-cover object-center aspect-12/9 rounded-[calc(var(--card-radius)-var(--card-padding))]"
+      width="800"
+      height="450"
+      class="object-cover object-center aspect-16/9 w-full group-hover:scale-105 transition-transform duration-500"
     />
-    <div class="mt-2 px-4">
-      <Text tag="p" variant="textXS" class="uppercase text-base-400">
-        {pubDate}
-      </Text>
-      <Text tag="h3" variant="textBase" class="mt-2 font-medium text-base-900">
-        {title}
-      </Text>
-      <Text
-        tag="p"
-        variant="textSM"
-        class="mt-2 text-base-600 text-balance line-clamp-2"
-      >
-        {description}
-      </Text>
+    <!-- Category Badge -->
+    <div class="absolute top-4 left-4">
+      <span class={`px-3 py-1 rounded-full text-xs font-medium ${categoryColor}`}>
+        {category}
+      </span>
     </div>
   </div>
-  <div class="px-4 pb-2">
+  
+  <!-- Content -->
+  <div class="flex-1 p-6">
+    <div class="flex items-center gap-4 mb-3">
+      <time datetime={Astro.props.post.data.pubDate.toISOString()}>
+        <Text tag="span" variant="textXS" class="text-vrly-slate-400">
+          {pubDate}
+        </Text>
+      </time>
+      {readingTime && (
+        <div class="flex items-center gap-1 text-vrly-slate-400">
+          <Clock size="xs" />
+          <Text tag="span" variant="textXS">
+            {readingTime} Min. Lesezeit
+          </Text>
+        </div>
+      )}
+    </div>
+    
+    <Text tag="h3" variant="textLG" class="font-semibold text-vrly-slate-500 mb-2 line-clamp-2 group-hover:text-vrly-blue-600 transition-colors">
+      {title}
+    </Text>
+    
     <Text
       tag="p"
       variant="textSM"
-      class="flex items-center font-medium gap-2 text-base-800"
+      class="text-vrly-slate-400 line-clamp-3 mb-4"
     >
-      Read further
+      {description}
+    </Text>
+  </div>
+  
+  <!-- Footer -->
+  <div class="px-6 pb-6">
+    <Text
+      tag="span"
+      variant="textSM"
+      class="flex items-center font-medium gap-2 text-vrly-blue-600 group-hover:text-vrly-blue-700"
+    >
+      Weiterlesen
       <ChevronRight
         size="sm"
-        class="duration-300 easy-out-in group-hover:translate-x-2"
+        class="duration-300 ease-out group-hover:translate-x-1"
       />
     </Text>
   </div>
-</div>
+</article>

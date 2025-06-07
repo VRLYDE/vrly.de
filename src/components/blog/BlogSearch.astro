@@ -16,8 +16,8 @@ const posts = await Promise.all(
   <button
     type="button"
     id="searchButton"
-    aria-label="Search posts"
-    class="flex items-center justify-center p-2 rounded-full bg-base-50 hovr:bg-base-100"
+    aria-label="Artikel suchen"
+    class="flex items-center justify-center p-2 rounded-full bg-vrly-neutral-100 hover:bg-vrly-neutral-200 transition-colors"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -37,20 +37,20 @@ const posts = await Promise.all(
   >
     <div class="min-h-screen px-4 text-center">
       <div
-        class="fixed z-[-50] inset-0 bg-base-950/50 backdrop-blur transition-opacity"
+        class="fixed z-[-50] inset-0 bg-vrly-slate-900/50 backdrop-blur transition-opacity"
         id="modalOverlay"
       >
       </div>
       <div
-        class="inline-block w-full max-w-2xl mb-8 mt-12 lg:mt-48 px-8 lg:px-12 bg-white bg-stripes  text-left align-middle transition-all transform"
+        class="inline-block w-full max-w-2xl mb-8 mt-12 lg:mt-48 px-8 lg:px-12 bg-white text-left align-middle transition-all transform rounded-2xl shadow-2xl"
       >
-        <div class="bg-white p-4 pb-2 border-x border-base-200 ">
+        <div class="bg-white p-6 rounded-2xl">
           <div class="hidden">
             <button
               type="button"
               id="closeSearch"
-              class="text-base-400 hover:text-base-500 cursor-pointer ml-auto"
-              aria-label="Close search"
+              class="text-vrly-slate-400 hover:text-vrly-slate-500 cursor-pointer ml-auto"
+              aria-label="Suche schließen"
             >
               <svg
                 width="15"
@@ -69,12 +69,12 @@ const posts = await Promise.all(
           <input
             type="text"
             id="searchInput"
-            placeholder="Search posts..."
-            class="block w-full h-10 px-4 py-2 text-sm text-teal-700 border border-transparent rounded-lg appearance-none duration-300 bg-base-100 placeholder-base-400 focus:bg-transparent focus:outline-none focus:ring-teal-500 focus:ring-offset-2 focus:ring-2 focus:ring-offset-base-200"
+            placeholder="Artikel durchsuchen..."
+            class="block w-full h-12 px-4 py-2 text-base text-vrly-slate-500 border border-vrly-neutral-200 rounded-lg appearance-none duration-300 bg-white placeholder-vrly-slate-300 focus:outline-none focus:ring-vrly-blue-500 focus:ring-offset-2 focus:ring-2 focus:ring-offset-white focus:border-vrly-blue-500"
           />
           <div
             id="searchResults"
-            class="max-h-200 overflow-y-auto mt-2 bg-white w-full flex flex-col rounded-xl scrollbar-hide focus:outline-none space-y-2 focus:ring-2 focus:ring-teal-500"
+            class="max-h-96 overflow-y-auto mt-4 bg-white w-full flex flex-col rounded-lg scrollbar-hide focus:outline-none space-y-2"
           >
           </div>
         </div>
@@ -128,8 +128,8 @@ const posts = await Promise.all(
       // If no results are found, display a message
       if (results.length === 0) {
         searchResults.innerHTML = `
-                <div class="px-4 py-3 text-sm text-base-500">
-                    No results found
+                <div class="px-4 py-3 text-sm text-vrly-slate-400">
+                    Keine Ergebnisse gefunden
                 </div>
             `;
         return;
@@ -139,9 +139,9 @@ const posts = await Promise.all(
         .slice(0, 5) // Limit results to top 5 matches
         .map(
           (result) => `
-                <a href="/blog/posts/${result.item.slug}"   class="block px-4 py-3 rounded-lg hover:bg-base-50 focus:outline-none focus:ring-2 focus:ring-teal-500  duration-300">   
-                  <h3 class="font-medium text-base-800">${result.item.title}</h3>   
-                  <p class="mt-2 text-xs text-base-500">${result.item.description}</p> 
+                <a href="/blog/posts/${result.item.slug}"   class="block px-4 py-3 rounded-lg hover:bg-vrly-neutral-50 focus:outline-none focus:ring-2 focus:ring-vrly-blue-500  duration-300">   
+                  <h3 class="font-medium text-vrly-slate-500">${result.item.title}</h3>   
+                  <p class="mt-2 text-xs text-vrly-slate-400">${result.item.description}</p> 
                 </a>
             `
         )
