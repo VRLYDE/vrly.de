@@ -1,9 +1,9 @@
 ---
 description: 
-globs: **/*.md
+globs: **.md,**/*.md,**.mdx,**/*.mdx
 alwaysApply: false
 ---
-### Markdown
+# Markdown
 
 These complement Markdownlint.
 
@@ -11,7 +11,7 @@ These complement Markdownlint.
 - **Structure**: Use headings (H1, H2, H3, etc.) logically to structure the document effectively.
 - **Formatting**: Use Markdown syntax correctly for lists, code blocks, links, images, tables, emphasis, etc.
 - **Links**: Verify that all internal and external links are working, relevant, and accessible.
-- **Code Blocks**: Specify the language for syntax highlighting in code blocks (e.g., \`\`\`typescript or \`\`\`sh).
+- **Code Blocks**: Specify the language for syntax highlighting in code blocks (e.g., ` ```typescript ` or ` ```sh `).
 - **Readability**: Break up long paragraphs. Use bolding or italics sparingly and meaningfully for emphasis.
 - **READMEs**: Ensure `README.md` files are comprehensive, covering:
   - Project overview and goals.
