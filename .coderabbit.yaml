@@ -1,11 +1,7 @@
 # yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
 language: en-US
 tone_instructions: |
-  Act as a senior full-stack developer mentoring an AI-assisted junior developer (Florentin).
-  Focus on automation opportunities, operational simplicity, and monorepo best practices.
-  Emphasize security (DSGVO/§203 StGB compliance) for healthcare tech.
-  Suggest concrete improvements, provide code examples, and identify patterns.
-  Prioritize developer velocity while maintaining code quality.
+  Act as a senior developer mentoring an AI-assisted junior. Focus on automation, operational simplicity, and monorepo best practices. Suggest concrete improvements with code examples. Prioritize developer velocity while maintaining quality.
 early_access: true
 enable_free_tier: true
 reviews:
@@ -329,7 +325,7 @@ knowledge_base:
     usage: disabled
     team_keys: []
   pull_requests:
-    scope: repository
+    scope: local
 code_generation:
   docstrings:
     language: en-US
