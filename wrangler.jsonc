@@ -20,4 +20,17 @@
   "observability": {
     "enabled": true,
   },
+  "env": {
+    "staging": {
+      "routes": [
+        {
+          "pattern": "staging.vrly.de",
+          "custom_domain": true,
+        },
+      ],
+      "vars": {
+        "POSTHOG_API_HOST": "https://eu.i.posthog.com",
+      },
+    },
+  },
 }
