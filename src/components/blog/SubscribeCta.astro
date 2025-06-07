@@ -5,44 +5,52 @@ import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 ---
 
-<section class="relative overflow-hidden">
-  <Wrapper variant="standard" class="relative py-12 overflow-hidden border-t">
-    <div class="grid items-end grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+<section class="relative overflow-hidden bg-vrly-blue-50">
+  <Wrapper variant="standard" class="relative py-16 overflow-hidden">
+    <div class="grid items-center grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
       <div class="lg:col-span-2">
         <Text
-          tag="h1"
-          variant="display2XL"
+          tag="h2"
+          variant="displayLG"
           data-aos="fade-up"
           data-aos-duration="1000"
-          class="font-semibold tracking-tighter text-base-800 lg:text-balance"
+          class="font-semibold tracking-tighter text-vrly-slate-500 lg:text-balance"
         >
-          Subscribe to our newsletter
+          Verpassen Sie keine Insights mehr
         </Text>
         <Text
           tag="p"
           variant="textLG"
-          class="max-w-lg mt-4 font-medium text-base-800 md:text-balance"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+          class="max-w-lg mt-4 text-vrly-slate-400 md:text-balance"
         >
-          Enjoy the latest news and updates from our team and community.
+          Erhalten Sie monatlich die neuesten Artikel zu KI, Automatisierung und Digitalisierung für Psychotherapeut:Innen direkt in Ihr Postfach.
         </Text>
       </div>
-      <form data-aos="fade-up" data-aos-duration="2000">
-        <label for="email" class="sr-only"> Subscribe to our newsletter </label>
-        <div class="flex flex-col gap-2 mt-1">
+      <form data-aos="fade-up" data-aos-duration="2000" class="w-full">
+        <label for="newsletter-email" class="sr-only">E-Mail für Newsletter</label>
+        <div class="flex flex-col gap-3">
           <input
             type="email"
-            id="email"
-            placeholder="email@example.com"
+            id="newsletter-email"
+            name="email"
+            placeholder="ihre@email.de"
             required
-            class="block w-full h-10 px-4 py-2 text-sm text-teal-700 duration-300 border border-transparent rounded-lg appearance-none bg-base-100 placeholder-base-400 focus:bg-transparent focus:outline-none focus:ring-teal-500 focus:ring-offset-2 focus:ring-2 focus:ring-offset-base-200"
+            class="block w-full h-12 px-4 py-2 text-base text-vrly-slate-500 duration-300 border border-vrly-neutral-200 rounded-lg appearance-none bg-white placeholder-vrly-slate-300 focus:outline-none focus:ring-vrly-blue-500 focus:ring-offset-2 focus:ring-2 focus:ring-offset-vrly-blue-50 focus:border-vrly-blue-500"
           />
-          <Button size="base" variant="default" type="submit" class="w-full">
-            Subscribe
+          <Button 
+            size="base" 
+            variant="default" 
+            type="submit" 
+            class="w-full bg-vrly-blue-500 hover:bg-vrly-blue-600 text-white border-0 h-12"
+          >
+            Newsletter abonnieren
           </Button>
         </div>
-        <Text tag="p" variant="textXS" class="mt-2 font-medium text-base-500">
-          By subscribing, you agree to receive our latest updates. No spam,
-          promise!
+        <Text tag="p" variant="textXS" class="mt-3 text-vrly-slate-400">
+          Mit Ihrer Anmeldung stimmen Sie zu, unseren monatlichen Newsletter zu erhalten. 
+          Sie können sich jederzeit abmelden. Wir geben Ihre Daten niemals weiter.
         </Text>
       </form>
     </div>
