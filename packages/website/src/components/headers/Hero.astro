@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-import LimeStripe from "@/images/assets/LimeStripe.png";
 import { Code } from "astro:components";
 import Link from "@/components/fundations/elements/Link.astro";
 import Text from "@/components/fundations/elements/Text.astro";
@@ -23,17 +21,16 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative overflow-hidden">
+<section class="relative overflow-hidden bg-gradient-to-br from-vrly-neutral-0 via-vrly-blue-50 to-vrly-teal-50">
+  <!-- Optimized VRLY Hero Background -->
+  <div class="absolute inset-0 bg-gradient-to-r from-vrly-blue-500/5 via-transparent to-vrly-green-500/5"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--color-vrly-blue-100)_0%,_transparent_50%)] opacity-30"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--color-vrly-teal-100)_0%,_transparent_50%)] opacity-20"></div>
+  
   <Wrapper
     variant="standard"
     class="relative z-20 py-32 lg:pb-80 overflow-hidden"
   >
-    <Image
-      src={LimeStripe}
-      alt="VRLY Hintergrund"
-      class="absolute inset-0 size-full pointer-events-none scale-180 rotate-x-170 top-100"
-    />
-
     <div class="relative">
       <Text
         tag="h1"
