@@ -5,7 +5,7 @@ tone_instructions: |
 early_access: true
 enable_free_tier: true
 reviews:
-  profile: assertive
+  profile: chill
   request_changes_workflow: true
   high_level_summary: true
   high_level_summary_placeholder: "@coderabbitai summary"
@@ -65,15 +65,6 @@ reviews:
       instructions: Workflow automation, scripts, or CI/CD improvements.
     - label: Monorepo
       instructions: Changes affecting monorepo structure or tooling.
-  path_filters:
-    - "packages/platform/**"
-    - "packages/website/**"
-    - "packages/clients/**"
-    - "packages/integrations/**"
-    - "packages/shared/**"
-    - "packages/internal/**"
-    - "scripts/**"
-    - ".github/**"
   path_instructions:
     - path: "*"
       instructions: |
