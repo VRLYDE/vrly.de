@@ -8,7 +8,7 @@
     "preview": "bun run build && wrangler dev",
     "astro": "astro",
     "deploy": "bun run build && bun x wrangler deploy --env staging",
-    "deploy:production": "bun run build && bun x wrangler deploy --env production",
+    "deploy:production": "bun run build && bun x wrangler deploy",
     "cf-typegen": "wrangler types && prettier --write worker-configuration.d.ts",
     "format": "prettier --write .",
     "check": "astro check"
