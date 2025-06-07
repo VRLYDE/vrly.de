@@ -138,9 +138,10 @@ const colorSchemes = {
       transform: translateX(-50%);
     }
   }
-
-  .animate-marquee {
-    animation: marquee 30s linear infinite;
+  @media (prefers-reduced-motion: no-preference) {
+    .animate-marquee {
+      animation: marquee 30s linear infinite;
+    }
   }
 
   /* Pause animation on hover */
