@@ -4,6 +4,8 @@ import Logo from "@/components/assets/Logo.astro";
 // Fundations
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Config
+import { EXTERNAL_LINKS } from "@/config/external-links";
 
 const links = [
   {
@@ -28,8 +30,8 @@ const links = [
   {
     title: "Support",
     links: [
-      { label: "Kontakt", href: "https://calendar.app.google/YvskWUUrNc474t6k8" },
-      { label: "Workflow-Audit", href: "https://vrly.clickup.com/forms/9015749788/f/8cp2v4w-23155/YQIH9VQBCX4ZK47G0J" },
+      { label: "Kontakt", href: EXTERNAL_LINKS.bookingCalendar },
+      { label: "Workflow-Audit", href: EXTERNAL_LINKS.workflowAudit },
     ],
   },
   {
@@ -62,14 +64,14 @@ const links = [
         <div class="space-y-2 text-sm text-vrly-slate-500">
           <div class="flex items-center gap-2">
             <span>📧</span>
-            <a href="mailto:info@vrly.de" class="hover:text-vrly-blue-600 transition-colors">
-              info@vrly.de
+            <a href={EXTERNAL_LINKS.email.link} class="hover:text-vrly-blue-600 transition-colors">
+              {EXTERNAL_LINKS.email.address}
             </a>
           </div>
           <div class="flex items-center gap-2">
             <span>📞</span>
-            <a href="tel:+4951193678551" class="hover:text-vrly-blue-600 transition-colors">
-              +49 511 936 785 51
+            <a href={EXTERNAL_LINKS.phone.link} class="hover:text-vrly-blue-600 transition-colors">
+              {EXTERNAL_LINKS.phone.display}
             </a>
           </div>
           <div class="flex items-center gap-2">
@@ -125,7 +127,7 @@ const links = [
           Vereinbaren Sie einen kostenlosen Workflow-Audit
         </Text>
         <a 
-          href="https://calendar.app.google/YvskWUUrNc474t6k8" 
+          href={EXTERNAL_LINKS.bookingCalendar} 
           class="inline-flex items-center px-4 py-2 bg-vrly-blue-500 hover:bg-vrly-blue-600 text-white text-sm font-medium rounded-lg transition-colors duration-200"
         >
           Jetzt Termin vereinbaren
