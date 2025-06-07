@@ -1,0 +1,37 @@
+# VRLY Development Environment Variables
+# Copy this file to .dev.vars and fill in your values
+# These variables are used for local development with wrangler
+
+# Cloudflare Account Credentials
+CLOUDFLARE_ACCOUNT_ID=your_account_id_here
+CLOUDFLARE_API_TOKEN=your_api_token_here
+CLOUDFLARE_ZONE_ID=your_zone_id_here
+
+# Workers AI Configuration
+WORKERS_AI_MODEL=@cf/meta/llama-2-7b-chat-int8
+
+# Security Keys
+JWT_SECRET=your_jwt_secret_here_min_32_chars
+ENCRYPTION_KEY=your_encryption_key_here_min_32_chars
+
+# Third-party Integrations
+MAKE_COM_API_KEY=your_make_com_api_key
+MAKE_COM_WEBHOOK_SECRET=your_webhook_secret
+
+# Email Configuration
+EMAIL_FROM=noreply@vrly.de
+EMAIL_REPLY_TO=support@vrly.de
+
+# Monitoring (optional)
+SENTRY_DSN=your_sentry_dsn_if_using_sentry
+POSTHOG_API_KEY=your_posthog_key_if_using_posthog
+POSTHOG_API_HOST=https://eu.i.posthog.com
+
+# Feature Flags
+ENABLE_AI_FEATURES=true
+ENABLE_ANALYTICS=true
+ENABLE_MULTI_TENANT=false
+
+# Development Settings
+LOG_LEVEL=debug
+NODE_ENV=development 

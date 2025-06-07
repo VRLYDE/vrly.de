@@ -1,0 +1,77 @@
+{
+  "name": "vrly-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "VRLY - AI-Powered Workflow Automation for Psychotherapists",
+  "author": "Phichayut 'Florentin' Sakwiset <florentin@vrly.de>",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vrly/vrly-monorepo.git"
+  },
+  "workspaces": [
+    "packages/*",
+    "packages/clients/*",
+    "packages/integrations/*"
+  ],
+  "scripts": {
+    "dev": "bun run --parallel dev:*",
+    "dev:platform": "bun --cwd packages/platform run dev",
+    "dev:website": "bun --cwd packages/website run dev",
+    "dev:admin": "bun --cwd packages/internal/admin run dev",
+    "build": "bun run build:shared && bun run --parallel build:*",
+    "build:shared": "bun --cwd packages/shared run build",
+    "build:platform": "bun --cwd packages/platform run build",
+    "build:website": "bun --cwd packages/website run build",
+    "test": "bun run --parallel test:*",
+    "test:platform": "bun --cwd packages/platform test",
+    "test:shared": "bun --cwd packages/shared test",
+    "lint": "bun run --parallel lint:*",
+    "lint:fix": "bun run --parallel lint:fix:*",
+    "type-check": "bun run --parallel type-check:*",
+    "clean": "bun run clean:dist && bun run clean:node_modules",
+    "clean:dist": "find . -name 'dist' -type d -prune -exec rm -rf '{}' +",
+    "clean:node_modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+    "deploy": "bun run scripts/deploy.ts",
+    "deploy:platform": "bun run scripts/deploy.ts platform",
+    "deploy:website": "bun run scripts/deploy.ts website",
+    "client:new": "bun run scripts/new-client.ts",
+    "automation:run": "bun run scripts/automation.ts",
+    "codegen": "bun run scripts/codegen.ts",
+    "preview": "bun run --parallel preview:*",
+    "postinstall": "bun run prepare",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0",
+    "wrangler": "^3.22.0",
+    "prettier": "^3.1.1",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/parser": "^6.17.0",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.0",
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,mdx,css,html,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "engines": {
+    "bun": ">=1.0.0",
+    "node": ">=18.0.0"
+  }
+}
