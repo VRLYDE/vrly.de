@@ -65,15 +65,6 @@ reviews:
       instructions: Workflow automation, scripts, or CI/CD improvements.
     - label: Monorepo
       instructions: Changes affecting monorepo structure or tooling.
-  path_filters:
-    - "packages/platform/**"
-    - "packages/website/**"
-    - "packages/clients/**"
-    - "packages/integrations/**"
-    - "packages/shared/**"
-    - "packages/internal/**"
-    - "scripts/**"
-    - ".github/**"
   path_instructions:
     - path: "*"
       instructions: |
