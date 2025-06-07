@@ -7,17 +7,41 @@ import AOSBody from "@/components/fundations/scripts/AOSBody.astro";
 // Components
 import Footer from "@/components/global/Footer.astro";
 import Navigation from "@/components/global/Navigation.astro";
-// Hides nav and footer on selected screens by passing
-// the hideNav and hideFooter props
-// <BaseLayout hideNav={true} hideFooter={true}>
-const { hideNav = false, hideFooter = false } = Astro.props;
+
+// Layout Props
+export interface Props {
+  hideNav?: boolean;
+  hideFooter?: boolean;
+  // SEO Props
+  title?: string;
+  description?: string;
+  canonical?: string;
+  image?: string;
+  noindex?: boolean;
+  nofollow?: boolean;
+  openGraph?: {
+    title?: string;
+    description?: string;
+    image?: string;
+    type?: string;
+  };
+  twitter?: {
+    title?: string;
+    description?: string;
+    image?: string;
+  };
+  keywords?: string[];
+  jsonLd?: object | object[];
+}
+
+const { hideNav = false, hideFooter = false, ...seoProps } = Astro.props;
 ---
 <html
   lang="de"
   class="scroll-smooth selection:bg-vrly-blue-500 selection:text-white"
 >
   <head>
-    <BaseHead />
+    <BaseHead {...seoProps} />
   </head>
   <body class="relative flex flex-col min-h-screen bg-white">
     <div

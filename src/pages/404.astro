@@ -12,7 +12,12 @@ import ChevronLeft from "@/components/fundations/icons/ChevronLeft.astro";
 export const prerender = true;
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="Seite nicht gefunden - 404"
+  description="Die gesuchte Seite konnte nicht gefunden werden. Kehren Sie zur VRLY Startseite zurück oder kontaktieren Sie uns für KI-gestützte Workflow-Automatisierung."
+  noindex={true}
+  nofollow={true}
+>
   <section class="relative overflow-hidden">
     <Wrapper
       variant="standard"

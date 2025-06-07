@@ -7,10 +7,35 @@ import Fuse from "@/components/scripts/Fuse.astro";
 import AOSHead from "@/components/fundations/scripts/AOSHead.astro";
 import KeenSlider from "@/components/fundations/scripts/KeenSlider.astro";
 import PostHog from "@/components/scripts/PostHog.astro";
+
+// SEO Props that can be passed from pages
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  image?: string;
+  noindex?: boolean;
+  nofollow?: boolean;
+  openGraph?: {
+    title?: string;
+    description?: string;
+    image?: string;
+    type?: string;
+  };
+  twitter?: {
+    title?: string;
+    description?: string;
+    image?: string;
+  };
+  keywords?: string[];
+  jsonLd?: object | object[];
+}
+
+const seoProps = Astro.props;
 ---
 
-<Seo />
 <Meta />
+<Seo {...seoProps} />
 <Fonts />
 
 <AOSHead/>

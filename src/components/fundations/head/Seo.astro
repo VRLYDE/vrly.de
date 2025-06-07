@@ -1,64 +1,112 @@
 ---
 import { AstroSeo } from "@astrolib/seo";
+import { seoConfig } from "@/config/seo";
+
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  image?: string;
+  noindex?: boolean;
+  nofollow?: boolean;
+  openGraph?: {
+    title?: string;
+    description?: string;
+    image?: string;
+    type?: string;
+  };
+  twitter?: {
+    title?: string;
+    description?: string;
+    image?: string;
+  };
+  keywords?: string[];
+  jsonLd?: object | object[];
+}
+
+const {
+  title = seoConfig.site.title,
+  description = seoConfig.site.description,
+  canonical = Astro.url.href,
+  image = seoConfig.site.url + seoConfig.site.image,
+  noindex = false,
+  nofollow = false,
+  openGraph,
+  twitter,
+  keywords = seoConfig.site.keywords,
+  jsonLd,
+} = Astro.props;
+
+// Build the full title using the template if not the home page
+const fullTitle = title === seoConfig.site.title 
+  ? title 
+  : seoConfig.site.titleTemplate.replace("%s", title);
+
+// Prepare Open Graph data
+const ogData = {
+  url: canonical,
+  title: openGraph?.title || title,
+  description: openGraph?.description || description,
+  images: [
+    {
+      url: openGraph?.image || image,
+      width: 1200,
+      height: 630,
+      alt: `${openGraph?.title || title} - VRLY`,
+      type: "image/jpeg",
+    },
+  ],
+  site_name: seoConfig.site.name,
+  type: openGraph?.type || seoConfig.openGraph.type,
+  locale: seoConfig.openGraph.locale,
+};
+
+// Prepare Twitter data  
+const twitterData = {
+  handle: seoConfig.social.twitter,
+  site: seoConfig.social.twitter,
+  cardType: "summary_large_image",
+  title: twitter?.title || openGraph?.title || title,
+  description: twitter?.description || openGraph?.description || description,
+  image: twitter?.image || openGraph?.image || image,
+};
+
+// Robots directives
+const robotsContent = `${noindex ? "noindex" : "index"}, ${nofollow ? "nofollow" : "follow"}`;
+
+// Prepare JSON-LD structured data
+const structuredData = jsonLd || seoConfig.jsonLd;
 ---
 
 <AstroSeo
-  title="Your Page Title"
-  description="A detailed description of your page content."
-  canonical="https://yoursite.com/current-page"
-  openGraph={{
-    url: "https://yoursite.com/current-page",
-    title: "Your Page Title",
-    description: "A detailed description of your page content.",
-    images: [
-      {
-        url: "https://yoursite.com/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Open Graph Image Alt",
-        type: "image/jpeg",
-      },
-    ],
-    site_name: "Your Site Name",
-    type: "website",
-    locale: "en_US",
-  }}
-  twitter={{
-    handle: "@yourhandle",
-    site: "@yoursite",
-    cardType: "summary_large_image",
-  }}
+  title={fullTitle}
+  description={description}
+  canonical={canonical}
+  openGraph={ogData}
+  twitter={twitterData}
+  noindex={noindex}
+  nofollow={nofollow}
 />
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.yourwebsite.com/" />
-<meta property="og:title" content="Your Website Title" />
-<meta
-  property="og:description"
-  content="A brief description of your website content."
-/>
-<meta
-  property="og:image"
-  content="https://www.yourwebsite.com/path/to/image.jpg"
-/>
+<!-- Additional SEO meta tags not handled by AstroSeo -->
+<meta name="robots" content={robotsContent} />
+<meta name="googlebot" content={robotsContent} />
+<meta name="author" content={seoConfig.site.author} />
+<meta name="keywords" content={keywords.join(", ")} />
+<meta name="language" content={seoConfig.site.defaultLanguage} />
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://www.yourwebsite.com/" />
-<meta property="twitter:title" content="Your Website Title" />
-<meta
-  property="twitter:description"
-  content="A brief description of your website content."
-/>
-<meta
-  property="twitter:image"
-  content="https://www.yourwebsite.com/path/to/image.jpg"
-/>
+<!-- Theme color matching VRLY Blue -->
+<meta name="theme-color" content="#1D76DB" />
 
-<!-- Canonical URL -->
-<link rel="canonical" href="https://www.yourwebsite.com/" />
+<!-- Structured Data -->
+{structuredData && (
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+)}
 
-<!-- Additional SEO -->
-<meta name="robots" content="index, follow" />
-<meta name="googlebot" content="index, follow" />
+<!-- Additional tags for better SEO -->
+<link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="alternate" type="application/rss+xml" title={`${seoConfig.site.name} RSS Feed`} href="/rss.xml" />
+
+<!-- Preconnect to external domains for performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

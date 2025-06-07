@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import { pageSEO, seoConfig } from "@/config/seo";
 
 import Hero1 from "@/components/headers/Hero1.astro";
 import Feature1 from "@/components/features/Feature1.astro";
@@ -13,9 +14,36 @@ import Testimonial1 from "@/components/testimonials/Testimonial1.astro";
 import Pricing1 from "@/components/pricing/Pricing1.astro";
 
 export const prerender = true;
+
+// Combine organization and local business structured data for the home page
+const homePageStructuredData = [
+  seoConfig.jsonLd,
+  seoConfig.localBusiness,
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://vrly.de",
+    "name": "VRLY",
+    "description": pageSEO.home.description,
+    "publisher": {
+      "@type": "Organization",
+      "name": "VRLY"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://vrly.de/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+];
 ---
 
-<BaseLayout title="VRLY | KI-gestützte Workflow-Automatisierung für Psychotherapeut:Innen in Hannover" description="VRLY ist Ihr spezialisierter Technologiepartner für KI-Entwicklung, Agenteneinsatz, Workflow-Automatisierung und digitales Projektmanagement exklusiv für Psychotherapeut:Innen in Hannover.">
+<BaseLayout 
+  title={pageSEO.home.title}
+  description={pageSEO.home.description}
+  keywords={pageSEO.home.keywords}
+  jsonLd={homePageStructuredData}
+>
   <Hero1 
     title="Mehr Zeit für Ihre Patienten, weniger Verwaltungsaufwand" 
     subtitle="VRLY automatisiert Effizienz mit Künstlicher Intelligenz."

@@ -4,6 +4,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/fundations/elements/Text.astro";
 import Button from "@/components/fundations/elements/Button.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import { pageSEO } from "@/config/seo";
 // Component
 import BlogSearch from "@/components/blog/BlogSearch.astro";
 import BlogEntries2 from "@/components/blog/BlogEntries2.astro";
@@ -19,9 +20,37 @@ const allPosts = allPostsUnsorted.sort(
 const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 
 export const prerender = true;
+
+// Blog listing structured data
+const blogListingStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "VRLY Blog",
+  "description": pageSEO.blog.description,
+  "url": Astro.url.href,
+  "publisher": {
+    "@type": "Organization",
+    "name": "VRLY"
+  },
+  "blogPost": allPosts.slice(0, 10).map(post => ({
+    "@type": "BlogPosting",
+    "headline": post.data.title,
+    "description": post.data.description,
+    "datePublished": post.data.pubDate,
+    "author": {
+      "@type": "Person",
+      "name": post.data.author
+    }
+  }))
+};
 ---
 
-<BaseLayout>
+<BaseLayout
+  title={pageSEO.blog.title}
+  description={pageSEO.blog.description}
+  keywords={pageSEO.blog.keywords}
+  jsonLd={blogListingStructuredData}
+>
   <section>
     <Wrapper variant="standard" class="pt-32 pb-12">
       <div
