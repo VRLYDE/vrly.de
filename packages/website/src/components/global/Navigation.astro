@@ -1,8 +1,4 @@
 ---
-// Assets
-import { Image } from "astro:assets";
-import LimeStripe from "@/images/assets/LimeStripe.png";
-// Fundations
 import Logo from "@/components/assets/Logo.astro";
 import Link from "@/components/fundations/elements/Link.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
@@ -68,17 +64,18 @@ const navigationLinks = [
       </div>
       <nav
         id="navigation-menu"
-        class="fixed inset-0 bg-white bg-stripes md:bg-none md:bg-transparent flex flex-col py-24 lg:p-0 h-full justify-between md:p-0 transform transition-all duration-300 ease-in-out opacity-0 -translate-y-4 pointer-events-none md:relative md:inset-auto md:opacity-100 md:pointer-events-auto md:translate-y-0"
+        class="fixed inset-0 bg-white md:bg-transparent flex flex-col py-24 lg:p-0 h-full justify-between md:p-0 transform transition-all duration-300 ease-in-out opacity-0 -translate-y-4 pointer-events-none md:relative md:inset-auto md:opacity-100 md:pointer-events-auto md:translate-y-0"
       >
+        <!-- Optimized VRLY Mobile Menu Background (mobile only) -->
+        <div class="absolute inset-0 bg-gradient-to-br from-vrly-neutral-0 via-vrly-blue-50 to-vrly-teal-50 md:hidden"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-vrly-blue-500/5 via-transparent to-vrly-green-500/5 md:hidden"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--color-vrly-blue-100)_0%,_transparent_50%)] opacity-30 md:hidden"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--color-vrly-teal-100)_0%,_transparent_50%)] opacity-20 md:hidden"></div>
+        
         <div
-          class="absolute inset-0 pointer-events-none bg-white border-x border-vrly-neutral-200 mx-2 md:hidden"
+          class="absolute inset-0 pointer-events-none bg-white/80 backdrop-blur-sm border-x border-vrly-neutral-200 mx-2 md:hidden"
         >
         </div>
-        <Image
-          src={LimeStripe}
-          alt="Hintergrund Streifen"
-          class="absolute inset-0 size-full pointer-events-none scale-180 top-100 md:hidden"
-        />
         <button
           id="menu-close"
           class="absolute top-4 right-4 md:hidden focus:outline-none text-vrly-slate-500"

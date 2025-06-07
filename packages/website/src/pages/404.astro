@@ -1,7 +1,4 @@
 ---
-import { Image } from "astro:assets";
-import LimeStripe from "@/images/assets/LimeStripe.png";
-
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Link from "@/components/fundations/elements/Link.astro";
 import Text from "@/components/fundations/elements/Text.astro";
@@ -18,17 +15,16 @@ export const prerender = true;
   noindex={true}
   nofollow={true}
 >
-  <section class="relative overflow-hidden">
+  <section class="relative overflow-hidden bg-gradient-to-br from-vrly-neutral-0 via-vrly-blue-50 to-vrly-teal-50">
+    <!-- Optimized VRLY 404 Background -->
+    <div class="absolute inset-0 bg-gradient-to-r from-vrly-blue-500/5 via-transparent to-vrly-green-500/5"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--color-vrly-blue-100)_0%,_transparent_50%)] opacity-30"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--color-vrly-teal-100)_0%,_transparent_50%)] opacity-20"></div>
+    
     <Wrapper
       variant="standard"
       class="relative py-32 overflow-hidden h-dvh flex flex-col items-center justify-center"
     >
-      <Image
-        src={LimeStripe}
-        alt="VRLY Hintergrund Stripe"
-        class="absolute inset-0 size-full pointer-events-none"
-      />
-
       <div class="relative text-center lg:w-1/2 mx-auto">
         <Text
           tag="h1"
