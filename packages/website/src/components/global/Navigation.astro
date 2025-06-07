@@ -91,17 +91,17 @@ const navigationLinks = [
           </svg>
         </button>
         <div
-          class="list-none md:ml-auto w-full flex flex-col h-full justify-between items-start px-8 md:px-0 md:flex-row md:items-center md:justify-center md:text-left gap-2 md:gap-6 relative"
+          class="list-none md:ml-auto w-full flex flex-col h-full justify-between items-end px-8 md:px-0 md:flex-row md:items-center md:justify-center md:text-left gap-2 md:gap-6 relative"
         >
           <a href="/" class="md:hidden">
             <Logo class="size-12 text-vrly-blue-500" />
           </a>
-          <div class="flex flex-col gap-4 md:flex-row md:gap-6">
+          <div class="flex flex-col text-right gap-4 md:flex-row md:gap-6">
             {
               navigationLinks.map((link) => (
                 <a
                   href={link.href}
-                  class="hover:text-vrly-blue-600 text-vrly-slate-500 tracking-tighter md:tracking-normal font-semibold md:font-medium text-6xl md:text-base transition-colors duration-200"
+                  class="hover:text-vrly-blue-600 text-vrly-slate-500 tracking-tighter md:tracking-normal font-semibold md:font-medium text-3xl md:text-base transition-colors duration-200"
                 >
                   {link.title}
                 </a>
