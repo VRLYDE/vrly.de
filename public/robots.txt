@@ -1,0 +1,29 @@
+# VRLY Robots.txt
+# https://vrly.de
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://vrly.de/sitemap-index.xml
+
+# Crawl-delay for politeness (optional)
+# Crawl-delay: 1
+
+# Disallow admin or private areas if they exist
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow search engines to access CSS and JS files
+Allow: /*.css$
+Allow: /*.js$
+
+# Block bad bots (examples)
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Crawl-delay: 10 

@@ -4,6 +4,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 import Text from "@/components/fundations/elements/Text.astro";
 import Link from "@/components/fundations/elements/Link.astro";
+import { pageSEO, serviceStructuredData } from "@/config/seo";
 // Icons
 import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
 import Filters from "@/components/fundations/icons/Filters.astro";
@@ -99,9 +100,44 @@ const supportServices = [
 ];
 
 export const prerender = true;
+
+// Service page structured data
+const servicesStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "ServiceOffer",
+  "name": "VRLY Services für Psychotherapeuten",
+  "provider": {
+    "@type": "Organization",
+    "name": "VRLY"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Hannover"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "VRLY Service-Portfolio",
+    "itemListElement": coreServices.map((service, index) => ({
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": service.title,
+        "description": service.description
+      },
+      "price": service.price,
+      "priceCurrency": "EUR",
+      "position": index + 1
+    }))
+  }
+};
 ---
 
-<BaseLayout>
+<BaseLayout 
+  title={pageSEO.leistungen.title}
+  description={pageSEO.leistungen.description}
+  keywords={pageSEO.leistungen.keywords}
+  jsonLd={[servicesStructuredData, serviceStructuredData.praxisAnfragenAutopilot]}
+>
   <!-- Hero Section -->
   <section class="relative overflow-hidden py-24 lg:py-32">
     <Wrapper variant="standard" class="relative z-10">

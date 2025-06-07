@@ -5,11 +5,59 @@ import { Image } from "astro:assets";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import { seoConfig } from "@/config/seo";
 // Content
 const { frontmatter } = Astro.props;
+
+// Blog post structured data
+const blogPostStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": frontmatter.title,
+  "description": frontmatter.description,
+  "image": frontmatter.image?.url,
+  "author": {
+    "@type": "Person",
+    "name": frontmatter.author
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "VRLY",
+    "logo": {
+      "@type": "ImageObject",
+      "url": seoConfig.site.url + "/logo.svg"
+    }
+  },
+  "datePublished": frontmatter.pubDate,
+  "dateModified": frontmatter.updatedDate || frontmatter.pubDate,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": Astro.url.href
+  }
+};
+
+// Extract keywords from tags and add blog-specific ones
+const blogKeywords = [
+  ...seoConfig.site.keywords,
+  ...frontmatter.tags || [],
+  "Psychotherapie Blog",
+  "KI Insights"
+];
 ---
 
-<BaseLayout>
+<BaseLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  image={frontmatter.image?.url}
+  keywords={blogKeywords}
+  jsonLd={blogPostStructuredData}
+  openGraph={{
+    type: "article",
+    title: frontmatter.title,
+    description: frontmatter.description,
+    image: frontmatter.image?.url
+  }}
+>
   <section>
     <Wrapper variant="standard" class="py-32">
       <Text
