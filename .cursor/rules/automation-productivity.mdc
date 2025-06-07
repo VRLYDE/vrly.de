@@ -1,0 +1,363 @@
+---
+description: Automation & Productivity Patterns
+globs: 
+alwaysApply: false
+---
+# Automation & Productivity Patterns
+
+## Script Organization
+
+```
+scripts/
+├── client-management/    # Client onboarding and management
+├── deployment/          # Deployment automation
+├── development/         # Dev environment helpers
+├── monitoring/          # Health checks and alerts
+├── data-migration/      # Database migrations
+└── business-ops/        # Billing, reporting, etc.
+```
+
+## Common Script Patterns
+
+```typescript
+#!/usr/bin/env bun
+
+// Always include help documentation
+if (process.argv.includes("--help")) {
+  console.log(`
+Usage: bun run scripts/[script-name].ts [options]
+
+Description:
+  Brief description of what this script does
+
+Options:
+  --dry-run    Preview changes without executing
+  --verbose    Show detailed output
+  --help       Show this help message
+
+Examples:
+  bun run scripts/deploy.ts --dry-run
+  bun run scripts/deploy.ts platform --verbose
+  `);
+  process.exit(0);
+}
+
+// Use commander or similar for complex CLIs
+import { Command } from "commander";
+
+const program = new Command()
+  .name("vrly-tool")
+  .description("VRLY automation tool")
+  .option("--dry-run", "preview changes without executing")
+  .option("--verbose", "show detailed output");
+```
+
+## Client Onboarding Automation
+
+```typescript
+// scripts/client-management/onboard-client.ts
+import { $ } from "bun";
+import { mkdir, writeFile } from "node:fs/promises";
+import { generateClientConfig } from "./templates";
+
+interface OnboardingOptions {
+  clientName: string;
+  clientType: "psychotherapist" | "clinic";
+  features: string[];
+}
+
+async function onboardClient(options: OnboardingOptions) {
+  console.log(`🚀 Onboarding ${options.clientName}...`);
+
+  // 1. Create client workspace
+  const clientPath = `packages/clients/${options.clientType}s/${options.clientName}`;
+  await mkdir(clientPath, { recursive: true });
+
+  // 2. Generate configuration
+  const config = generateClientConfig(options);
+  await writeFile(`${clientPath}/config.json`, JSON.stringify(config, null, 2));
+
+  // 3. Create Cloudflare resources
+  if (!options.dryRun) {
+    // Create KV namespace
+    const kvResult =
+      await $`wrangler kv:namespace create "${options.clientName}_CONFIG"`.json();
+
+    // Create D1 database
+    const dbResult =
+      await $`wrangler d1 create "${options.clientName}-db"`.json();
+
+    // Update wrangler.jsonc
+    await updateWranglerConfig(options.clientName, kvResult.id, dbResult.uuid);
+  }
+
+  // 4. Set up initial data
+  await seedClientData(options);
+
+  // 5. Generate documentation
+  await generateClientDocs(options);
+
+  console.log(`✅ Client ${options.clientName} onboarded successfully!`);
+}
+```
+
+## Deployment Automation
+
+```typescript
+// scripts/deployment/smart-deploy.ts
+async function smartDeploy() {
+  // Detect what changed
+  const changes = await detectChanges();
+
+  // Build dependency graph
+  const deploymentOrder = buildDeploymentOrder(changes);
+
+  // Deploy in correct order
+  for (const package of deploymentOrder) {
+    console.log(`📦 Deploying ${package}...`);
+
+    // Run tests first
+    const testResult = await $`bun test packages/${package}`.quiet();
+    if (testResult.exitCode !== 0) {
+      console.error(`❌ Tests failed for ${package}`);
+      process.exit(1);
+    }
+
+    // Build
+    await $`bun run --cwd packages/${package} build`;
+
+    // Deploy
+    await $`bun run --cwd packages/${package} deploy`;
+
+    // Health check
+    await verifyDeployment(package);
+  }
+}
+
+async function detectChanges(): Promise<string[]> {
+  // Use git to detect changes
+  const diff = await $`git diff --name-only HEAD~1 HEAD`.text();
+  const files = diff.trim().split("\n");
+
+  // Map files to packages
+  const packages = new Set<string>();
+  for (const file of files) {
+    if (file.startsWith("packages/")) {
+      const [, packageName] = file.split("/");
+      packages.add(packageName);
+    }
+  }
+
+  return Array.from(packages);
+}
+```
+
+## Development Environment Helpers
+
+```typescript
+// scripts/development/setup-env.ts
+async function setupDevEnvironment() {
+  console.log("🔧 Setting up VRLY development environment...");
+
+  // 1. Check prerequisites
+  await checkPrerequisites();
+
+  // 2. Install dependencies
+  await $`bun install`;
+
+  // 3. Set up local Cloudflare resources
+  await setupLocalCloudflare();
+
+  // 4. Initialize databases
+  await initializeDatabases();
+
+  // 5. Generate TypeScript types
+  await $`bun run codegen`;
+
+  // 6. Create .env from template
+  await createEnvFile();
+
+  console.log("✅ Development environment ready!");
+  console.log('Run "bun dev" to start development servers');
+}
+
+async function checkPrerequisites() {
+  const checks = [
+    { cmd: "bun --version", name: "Bun" },
+    { cmd: "wrangler --version", name: "Wrangler" },
+    { cmd: "git --version", name: "Git" },
+  ];
+
+  for (const check of checks) {
+    try {
+      await $`${check.cmd}`.quiet();
+      console.log(`✓ ${check.name} installed`);
+    } catch {
+      console.error(`✗ ${check.name} not found. Please install it first.`);
+      process.exit(1);
+    }
+  }
+}
+```
+
+## Code Generation
+
+```typescript
+// scripts/development/codegen.ts
+async function generateTypes() {
+  console.log("🔨 Generating TypeScript types...");
+
+  // 1. Generate types from D1 schema
+  await generateD1Types();
+
+  // 2. Generate API client types
+  await generateAPITypes();
+
+  // 3. Generate Zod schemas from types
+  await generateZodSchemas();
+
+  // 4. Format generated code
+  await $`bun run prettier --write "packages/*/src/types/generated/**/*.ts"`;
+}
+
+async function generateD1Types() {
+  const schema =
+    await $`wrangler d1 execute vrly-platform --command "SELECT sql FROM sqlite_master WHERE type='table'"`.json();
+
+  // Parse schema and generate TypeScript interfaces
+  for (const table of schema) {
+    const typeDef = sqlToTypeScript(table.sql);
+    await writeFile(
+      `packages/shared/src/types/generated/${table.name}.ts`,
+      typeDef
+    );
+  }
+}
+```
+
+## Monitoring & Alerts
+
+```typescript
+// scripts/monitoring/health-check.ts
+interface HealthCheckResult {
+  service: string;
+  status: "healthy" | "degraded" | "down";
+  responseTime: number;
+  details?: Record<string, any>;
+}
+
+async function runHealthChecks(): Promise<HealthCheckResult[]> {
+  const services = [
+    { name: "platform-api", url: "https://api.vrly.de/health" },
+    { name: "website", url: "https://vrly.de" },
+    { name: "admin", url: "https://admin.vrly.de/health" },
+  ];
+
+  const results = await Promise.all(
+    services.map(async (service) => {
+      const start = Date.now();
+      try {
+        const response = await fetch(service.url);
+        const responseTime = Date.now() - start;
+
+        return {
+          service: service.name,
+          status: response.ok ? "healthy" : "degraded",
+          responseTime,
+          details: { statusCode: response.status },
+        };
+      } catch (error) {
+        return {
+          service: service.name,
+          status: "down",
+          responseTime: Date.now() - start,
+          details: { error: error.message },
+        };
+      }
+    })
+  );
+
+  // Send alerts if needed
+  const unhealthy = results.filter((r) => r.status !== "healthy");
+  if (unhealthy.length > 0) {
+    await sendAlert(unhealthy);
+  }
+
+  return results;
+}
+```
+
+## Business Operations Automation
+
+```typescript
+// scripts/business-ops/generate-invoice.ts
+async function generateMonthlyInvoices() {
+  console.log("💰 Generating monthly invoices...");
+
+  // 1. Get active clients
+  const clients = await getActiveClients();
+
+  // 2. Calculate usage for each client
+  for (const client of clients) {
+    const usage = await calculateClientUsage(client.id, {
+      startDate: firstDayOfMonth(),
+      endDate: lastDayOfMonth(),
+    });
+
+    // 3. Generate invoice
+    const invoice = {
+      clientId: client.id,
+      period: getCurrentMonth(),
+      items: usage.items,
+      total: usage.total,
+      dueDate: addDays(new Date(), 14),
+    };
+
+    // 4. Store invoice
+    await storeInvoice(invoice);
+
+    // 5. Send invoice email
+    await sendInvoiceEmail(client, invoice);
+  }
+
+  console.log(`✅ Generated ${clients.length} invoices`);
+}
+```
+
+## Quick Productivity Aliases
+
+```bash
+# Add to your shell profile (.zshrc)
+alias v="cd ~/vrly-monorepo"
+alias vd="cd ~/vrly-monorepo && bun dev"
+alias vt="cd ~/vrly-monorepo && bun test"
+alias vdeploy="cd ~/vrly-monorepo && bun run deploy"
+alias vclient="cd ~/vrly-monorepo && bun run client:new"
+
+# Quick git commands
+alias gs="git status"
+alias gc="git commit -m"
+alias gp="git push"
+alias gpl="git pull"
+```
+
+## AI Context Helpers
+
+```typescript
+// scripts/development/ai-context.ts
+// Generate context for AI assistants
+async function generateAIContext(target?: string) {
+  const context = {
+    timestamp: new Date().toISOString(),
+    target: target || "full-monorepo",
+    structure: await getProjectStructure(),
+    dependencies: await getDependencies(),
+    recentChanges: await getRecentChanges(),
+    todos: await extractTodos(),
+    errors: await getRecentErrors(),
+  };
+
+  // Output as markdown for easy copying
+  console.log(formatAsMarkdown(context));
+}
+```

@@ -1,0 +1,200 @@
+---
+description: 
+globs: **.ts,tsconfig.json,**/tsconfig.json
+alwaysApply: false
+---
+# TypeScript Standards for VRLY
+
+## General TypeScript Rules
+
+- Target ES2022 with module ESNext for optimal Bun compatibility
+- Use strict mode and all strict flags enabled
+- Prefer `interface` over `type` for object shapes
+- Use `type` for unions, intersections, and utility types
+- Always use explicit return types for public APIs
+- Use `unknown` instead of `any` when type is truly unknown
+
+## Naming Conventions
+
+```typescript
+// Files: kebab-case
+patient - request - handler.ts;
+
+// Interfaces: PascalCase with "I" prefix for domain models
+interface IPatientRequest {
+  id: string;
+  tenantId: string;
+  createdAt: Date;
+}
+
+// Types: PascalCase without prefix
+type RequestStatus = "pending" | "processing" | "completed";
+
+// Classes: PascalCase
+class PatientRequestService {}
+
+// Functions/Methods: camelCase
+function processPatientRequest() {}
+
+// Constants: SCREAMING_SNAKE_CASE
+const MAX_RETRY_ATTEMPTS = 3;
+
+// Enums: PascalCase with PascalCase members
+enum TherapyType {
+  Individual = "INDIVIDUAL",
+  Group = "GROUP",
+  Family = "FAMILY",
+}
+```
+
+## Import Organization
+
+```typescript
+// 1. Node/Bun built-ins
+import { readFile } from "node:fs/promises";
+
+// 2. External dependencies
+import { z } from "zod";
+
+// 3. Internal packages (workspace)
+import { validateDSGVO } from "@vrly/shared/validators";
+
+// 4. Relative imports
+import { processRequest } from "./utils/request-processor";
+
+// 5. Type imports (always separate)
+import type { IPatientData } from "@vrly/shared/types";
+```
+
+## Error Handling Patterns
+
+```typescript
+// Use custom error classes for domain errors
+export class VRLYError extends Error {
+  constructor(
+    message: string,
+    public code: string,
+    public statusCode: number = 500,
+    public context?: Record<string, unknown>
+  ) {
+    super(message);
+    this.name = "VRLYError";
+  }
+}
+
+// Result type for operations that can fail
+type Result<T, E = Error> =
+  | { success: true; data: T }
+  | { success: false; error: E };
+
+// Use Result type for explicit error handling
+async function fetchPatientData(id: string): Promise<Result<IPatientData>> {
+  try {
+    const data = await db.getPatient(id);
+    return { success: true, data };
+  } catch (error) {
+    return { success: false, error: error as Error };
+  }
+}
+```
+
+## Zod Validation Patterns
+
+```typescript
+// Define schemas close to where they're used
+const PatientRequestSchema = z.object({
+  email: z.string().email(),
+  name: z.string().min(2).max(100),
+  message: z.string().max(1000),
+  consent: z.literal(true),
+  timestamp: z.string().datetime(),
+});
+
+// Infer types from schemas
+type PatientRequest = z.infer<typeof PatientRequestSchema>;
+
+// Validate at boundaries (API endpoints, external data)
+export async function handlePatientRequest(rawData: unknown) {
+  const result = PatientRequestSchema.safeParse(rawData);
+
+  if (!result.success) {
+    throw new VRLYError(
+      "Invalid patient request data",
+      "VALIDATION_ERROR",
+      400,
+      { errors: result.error.flatten() }
+    );
+  }
+
+  return processValidatedRequest(result.data);
+}
+```
+
+## Async/Await Best Practices
+
+```typescript
+// Always use async/await over .then()
+// ❌ Bad
+getData().then((data) => process(data));
+
+// ✅ Good
+const data = await getData();
+await process(data);
+
+// Parallel operations with Promise.all
+const [patients, appointments, documents] = await Promise.all([
+  fetchPatients(tenantId),
+  fetchAppointments(tenantId),
+  fetchDocuments(tenantId),
+]);
+
+// Use Promise.allSettled for operations that can partially fail
+const results = await Promise.allSettled([
+  sendEmail(patient1),
+  sendEmail(patient2),
+  sendEmail(patient3),
+]);
+```
+
+## Healthcare-Specific Types
+
+```typescript
+// Use branded types for sensitive identifiers
+type PatientId = string & { __brand: "PatientId" };
+type TherapistId = string & { __brand: "TherapistId" };
+type TenantId = string & { __brand: "TenantId" };
+
+// Helper functions for type safety
+function toPatientId(id: string): PatientId {
+  return id as PatientId;
+}
+
+// Use discriminated unions for state machines
+type AppointmentState =
+  | { status: "scheduled"; scheduledAt: Date }
+  | { status: "confirmed"; confirmedAt: Date }
+  | { status: "completed"; completedAt: Date; notes: string }
+  | { status: "cancelled"; cancelledAt: Date; reason: string };
+```
+
+## Performance Patterns
+
+```typescript
+// Use const assertions for literals
+const THERAPY_TYPES = ["individual", "group", "family"] as const;
+type TherapyType = (typeof THERAPY_TYPES)[number];
+
+// Prefer Maps over objects for dynamic keys
+const patientCache = new Map<PatientId, IPatientData>();
+
+// Use lazy initialization
+let _heavyResource: HeavyResource | null = null;
+function getHeavyResource(): HeavyResource {
+  if (!_heavyResource) {
+    _heavyResource = initializeHeavyResource();
+  }
+  return _heavyResource;
+}
+```
+
+[tsconfig.json](mdc:tsconfig.json)
