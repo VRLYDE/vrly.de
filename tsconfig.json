@@ -1,17 +1,46 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"],
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES2022",
     "module": "ESNext",
+    "lib": ["ES2022"],
+    "jsx": "react-jsx",
     "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
-    }
-  }
+      "@vrly/platform": ["./packages/platform/src"],
+      "@vrly/platform/*": ["./packages/platform/src/*"],
+      "@vrly/shared": ["./packages/shared/src"],
+      "@vrly/shared/*": ["./packages/shared/src/*"],
+      "@vrly/integrations/*": ["./packages/integrations/*/src"]
+    },
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "types": ["bun-types"]
+  },
+  "include": ["packages/*/src/**/*", "packages/*/tests/**/*", "scripts/**/*"],
+  "exclude": [
+    "node_modules",
+    "**/dist",
+    "**/build",
+    "**/.wrangler",
+    "**/.astro"
+  ],
+  "references": [
+    { "path": "./packages/platform" },
+    { "path": "./packages/shared" },
+    { "path": "./packages/internal" }
+  ]
 }

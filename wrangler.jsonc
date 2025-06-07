@@ -1,23 +1,151 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "vrly-de",
-  "vars": {
-    "POSTHOG_API_HOST": "https://eu.i.posthog.com",
-  },
-  "main": "./dist/_worker.js/index.js",
-  "compatibility_date": "2025-05-30",
+  "name": "vrly-platform",
+  "main": "packages/platform/src/index.ts",
+  "compatibility_date": "2024-01-01",
   "compatibility_flags": ["nodejs_compat"],
+
+  // Account and routing
+  "account_id": "${CLOUDFLARE_ACCOUNT_ID}",
   "routes": [
     {
-      "pattern": "vrly.de",
-      "custom_domain": true,
+      "pattern": "api.vrly.de/*",
+      "zone_id": "${CLOUDFLARE_ZONE_ID}",
     },
   ],
-  "assets": {
-    "binding": "ASSETS",
-    "directory": "./dist",
+
+  // Environment configurations
+  "env": {
+    "development": {
+      "name": "vrly-platform-dev",
+      "vars": {
+        "ENVIRONMENT": "development",
+      },
+    },
+    "staging": {
+      "name": "vrly-platform-staging",
+      "vars": {
+        "ENVIRONMENT": "staging",
+      },
+      "routes": [
+        {
+          "pattern": "staging-api.vrly.de/*",
+          "zone_id": "${CLOUDFLARE_ZONE_ID}",
+        },
+      ],
+    },
+    "production": {
+      "name": "vrly-platform-prod",
+      "vars": {
+        "ENVIRONMENT": "production",
+      },
+      "routes": [
+        {
+          "pattern": "api.vrly.de/*",
+          "zone_id": "${CLOUDFLARE_ZONE_ID}",
+        },
+      ],
+    },
   },
+
+  // KV Namespaces
+  "kv_namespaces": [
+    {
+      "binding": "VRLY_CONFIG",
+      "id": "your-kv-namespace-id",
+      "preview_id": "your-kv-preview-namespace-id",
+    },
+    {
+      "binding": "VRLY_SESSIONS",
+      "id": "your-sessions-namespace-id",
+      "preview_id": "your-sessions-preview-namespace-id",
+    },
+  ],
+
+  // D1 Databases
+  "d1_databases": [
+    {
+      "binding": "VRLY_DB",
+      "database_name": "vrly-platform",
+      "database_id": "your-d1-database-id",
+    },
+  ],
+
+  // R2 Buckets
+  "r2_buckets": [
+    {
+      "binding": "VRLY_STORAGE",
+      "bucket_name": "vrly-assets",
+    },
+    {
+      "binding": "VRLY_DOCUMENTS",
+      "bucket_name": "vrly-documents",
+    },
+  ],
+
+  // Vectorize Indexes (for AI/semantic search)
+  "vectorize": [
+    {
+      "binding": "VRLY_VECTORS",
+      "index_name": "vrly-embeddings",
+    },
+  ],
+
+  // AI Bindings
+  "ai": {
+    "binding": "VRLY_AI",
+  },
+
+  // Queues
+  "queues": {
+    "producers": [
+      {
+        "binding": "VRLY_QUEUE",
+        "queue": "vrly-tasks",
+      },
+    ],
+    "consumers": [
+      {
+        "queue": "vrly-tasks",
+        "max_batch_size": 10,
+        "max_batch_timeout": 30,
+        "max_retries": 3,
+        "dead_letter_queue": "vrly-dlq",
+      },
+    ],
+  },
+
+  // Analytics Engine
+  "analytics_engine_datasets": [
+    {
+      "binding": "VRLY_ANALYTICS",
+    },
+  ],
+
+  // Service bindings for multi-tenant architecture
+  // Configure in individual package wrangler.jsonc files
+
+  // Observability
   "observability": {
     "enabled": true,
   },
+
+  // Limits and performance
+  "limits": {
+    "cpu_ms": 50,
+    "memory_mb": 128,
+  },
+
+  // Build configuration
+  "build": {
+    "command": "bun run build:platform",
+    "watch_paths": ["packages/platform/src/**/*.ts"],
+  },
+
+  // Tail workers (for logging)
+  "tail_consumers": [
+    {
+      "service": "vrly-logger",
+    },
+  ],
 }

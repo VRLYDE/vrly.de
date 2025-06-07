@@ -1,35 +1,77 @@
 {
-  "name": "vrly-de",
-  "version": "0.0.1",
+  "name": "monorepo",
   "private": true,
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro check && bun run cf-typegen && astro build",
-    "preview": "bun run build && wrangler dev",
-    "astro": "astro",
-    "deploy": "bun run build && bun x wrangler deploy",
-    "cf-typegen": "wrangler types && prettier --write worker-configuration.d.ts",
-    "format": "prettier --write .",
-    "check": "astro check"
+  "version": "1.0.0",
+  "description": "VRLY - AI-Powered Workflow Automation for Psychotherapists",
+  "author": "Phichayut 'Florentin' Sakwiset <florentin@vrly.de>",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VRLYDE/monorepo.git"
   },
-  "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/cloudflare": "^12.5.3",
-    "@astrojs/mdx": "4.3.0",
-    "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.4.0",
-    "@astrolib/seo": "^1.0.0-beta.8",
-    "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.1.7",
-    "astro": "5.8.1",
-    "astro-webmanifest": "^1.0.0",
-    "fuse.js": "^7.1.0",
-    "tailwind-scrollbar-hide": "^2.0.0",
-    "tailwindcss": "^4.1.7",
-    "typescript": "^5.8.3"
+  "workspaces": [
+    "packages/*",
+    "packages/clients/*",
+    "packages/integrations/*"
+  ],
+  "scripts": {
+    "dev": "bun run --parallel dev:*",
+    "dev:platform": "bun run --cwd packages/platform dev",
+    "dev:website": "bun run --cwd packages/website dev",
+    "dev:admin": "bun run --cwd packages/internal/admin dev",
+    "build": "bun run build:shared && bun run --parallel build:*",
+    "build:shared": "bun run --cwd packages/shared build",
+    "build:platform": "bun run --cwd packages/platform build",
+    "build:website": "bun run --cwd packages/website build",
+    "test": "bun run --parallel test:*",
+    "test:platform": "bun run --cwd packages/platform test",
+    "test:shared": "bun run --cwd packages/shared test",
+    "lint": "bun run --parallel lint:*",
+    "lint:fix": "bun run --parallel lint:fix:*",
+    "type-check": "bun run --parallel type-check:*",
+    "clean": "bun run clean:dist && bun run clean:node_modules",
+    "clean:dist": "find . -name 'dist' -type d -prune -exec rm -rf '{}' +",
+    "clean:node_modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+    "deploy": "bun run scripts/deploy.ts",
+    "deploy:platform": "bun run scripts/deploy.ts platform",
+    "deploy:website": "bun run scripts/deploy.ts website",
+    "client:new": "bun run scripts/new-client.ts",
+    "automation:run": "bun run scripts/automation.ts",
+    "codegen": "bun run scripts/codegen.ts",
+    "preview": "bun run --parallel preview:*",
+    "postinstall": "bun run prepare",
+    "prepare": "husky install"
   },
   "devDependencies": {
-    "prettier": "^3.5.3",
-    "wrangler": "^4.19.1"
+    "@types/bun": "latest",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0",
+    "wrangler": "^3.22.0",
+    "prettier": "^3.1.1",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/parser": "^6.17.0",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.0",
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,mdx,css,html,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "engines": {
+    "bun": ">=1.0.0",
+    "node": ">=18.0.0"
   }
 }
