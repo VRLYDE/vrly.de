@@ -40,7 +40,6 @@
   ],
   "references": [
     { "path": "./packages/platform" },
-    { "path": "./packages/website" },
     { "path": "./packages/shared" },
     { "path": "./packages/internal" }
   ]
