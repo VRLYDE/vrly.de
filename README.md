@@ -1,134 +1,91 @@
-# Buio
+# VRLY
 
-## Template Integrations
+**KI-gestützte Workflow-Automatisierung für Psychotherapeut:Innen in Hannover**
 
-- Tailwind CSS v4
-- Astro SEO - Powered by [@astrolib/seo](https://github.com/onwidget/astrolib/tree/main/packages/seo)
-- Astro Sitemap - https://docs.astro.build/en/guides/integrations-guide/sitemap/
+![VRLY Logo](src/assets/logo.svg)
 
-## Template Structure
+## Über VRLY
 
-The template follows a typical Astro project structure. You'll find the following key directories and files:
+VRLY (ausgesprochen "vertically") ist ein spezialisierter Anbieter von KI-gestützten Workflow-Automatisierungsdiensten und DSGVO-konformen Digitalisierungslösungen exklusiv für Psychotherapeut:Innen in Hannover. Unsere Mission ist es, Psychotherapeut:Innen durch intelligente Technologie und optimierte Workflows administrative Lasten abzunehmen, damit sie mehr Zeit und Energie für ihre Kernaufgabe haben – die therapeutische Arbeit mit ihren Klienten.
+
+### Kernwerte
+
+- **Expertise & Innovation:** Tiefgreifendes technisches Know-how in KI, Automatisierung und Projektmanagement, kombiniert mit Branchenverständnis und kontinuierlicher Suche nach besseren Lösungen.
+- **Nutzenfokus & Effizienz:** Lieferung messbaren Mehrwerts durch schlanke, effektive Lösungen, die echte Probleme im Praxisalltag lösen und Zeitersparnis generieren.
+- **Vertrauen & Integrität:** Transparente, zuverlässige und partnerschaftliche Zusammenarbeit, bei der Compliance (insbesondere DSGVO und §203 StGB) an erster Stelle steht.
+
+## Dienstleistungen
+
+- **Praxis-Anfragen-Autopilot:** Automatisierte Bearbeitung von Patientenanfragen
+- Weitere DSGVO-konforme Automatisierungslösungen für Psychotherapeut:Innen
+
+## Technologie-Stack
+
+Diese Website und unsere Services basieren auf folgenden Technologien:
+
+- **Frontend:** Astro 5.x, Tailwind CSS 4.x
+- **Backend:** Cloudflare Workers, Cloudflare D1, KV, R2
+- **KI & Automatisierung:** Cloudflare AI, eigene KI-Modelle
+- **Integrationen:**
+  - Astro SEO ([@astrolib/seo](https://github.com/onwidget/astrolib/tree/main/packages/seo))
+  - Astro Sitemap
+  - Web Manifest
+  - Fuse.js für Suche
+
+## Projektstruktur
 
 ```
 /
-├── public/
+├── public/                  # Statische Assets
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── assets/              # Bilder und andere Assets
+│   │   └── logo.svg         # VRLY Logo
+│   ├── components/          # Wiederverwendbare UI-Komponenten
+│   │   ├── core/            # Basis-Komponenten (Text, Button, etc.)
+│   │   └── sections/        # Seiten-Abschnitte und Module
+│   ├── content/             # Content Collections (Blog, Services, etc.)
+│   ├── layouts/             # Layout-Komponenten
+│   ├── pages/               # Seitenrouten
+│   └── styles/              # CSS und Styling
+└── package.json             # Projektabhängigkeiten
 ```
 
-- `src/pages/`: Contains `.astro` and `.md` files. Each file becomes a route in your project based on its name.
-- `src/components/`: Ideal for placing your Astro/React/Vue/Svelte/Preact components.
-- `public/`: For static assets such as images that you want to serve directly.
+## Entwicklung
 
-## Commands
+### Voraussetzungen
 
-All commands are run from the root of the project, from a terminal:
+- [Node.js](https://nodejs.org/) (LTS-Version)
+- [Bun](https://bun.sh/) (für schnellere Entwicklung)
+- [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/install-and-update/) (für Cloudflare Workers)
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `bun install`          | Installs dependencies                            |
-| `bun run dev`          | Starts local dev server at `localhost:1312`      |
-| `bun run build`        | Build your production site to `./dist/`          |
-| `bun run preview`      | Preview your build locally, before deploying     |
-| `bun run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `bun run astro --help` | Get help using the Astro CLI                     |
-| `bun run deploy`       | Deploy your site                                 |
-| `bun run cf-typegen`   | Generate types for Cloudflare workers            |
-| `bun run format`       | Format code using Prettier                       |
+### Installation
 
-Learn more - Explore more through Astro's official [documentation](https://docs.astro.build).
+```bash
+# Repository klonen
+git clone https://github.com/VRLYDE/vrly.de.git
+cd vrly.de
 
----
-
-Updated on 27th March 2025
-
-- Change LimeStripe iframe for PNG image because of performance issues. No visuals affecrted
-
----
-
-Updated on 23th March 2025
-
-## This update includes:
-
-- Added Fuse Js Search on: Blog, Help Center, Jobs and Integrations.
-- AOS Animation on
-- Full redesign
-- Activated AOS
-
-On this version, Tailwind CSS is now V4, this means that there's no `tailwind.config.mjs` file anymore.
-From now on, all style will be added on the `css` file. You can find the styles on the `src/styles/global.css` file.
-
-- Added Image component from Astro
-  The Astro Image component is coming back to the themes
-
-- Reusable components
-  This template now includes reusable components, such as the `Text`, `Button`, `Link` and `Wrapper` components.
-
-- Text Component  
-  A versatile and reusable component for handling text across your project, ensuring consistency and easy customization.
-
-- **HTML Tags:** Easily change the HTML element (like `p`, `h1`, `span`, `a`) using the `tag` prop, with `p` being the default.
-- **Variants:** Pick from preset text styles (such as `displayXL` or `textBase`) for a consistent look.
-- **Custom Classes:** Add or adjust styles with the `class` prop.
-- **Accessibility:** Customize with additional props like `id`, `href`, `title`, and `style`.
-- **Content Slot:** Add any content inside the component, including optional left and right icons.
-  Example usage:
-
-```astro
-<Text tag="h1" variant="displayXL" class="text-center">
-  Welcome to the new version!
-</Text>
+# Abhängigkeiten installieren
+bun install
 ```
 
-- Button Component  
-  A customizable button component with options to fit your design needs:
+### Befehle
 
-- **Variants:** Choose from predefined styles like `primary` (dark background) and `secondary` (lighter background), with support for dark mode.
-- **Sizes:** Select `small` or `medium` for different button heights and padding.
-- **Gaps:** Control the spacing between content with the `gapSize` prop (either `small` or `medium`).
-- **Custom Classes:** Apply additional styles using the `class` prop.
-- **Slots:** Include icons or extra content with optional `left-icon` and `right-icon` slots.  
-  Example usage:
+| Befehl               | Beschreibung                                      |
+| :------------------- | :------------------------------------------------ |
+| `bun run dev`        | Startet lokalen Entwicklungsserver auf Port 1312  |
+| `bun run build`      | Erstellt Produktionsversion in `./dist/`          |
+| `bun run preview`    | Lokale Vorschau der Produktionsversion            |
+| `bun run deploy`     | Deployment auf Cloudflare Workers                 |
+| `bun run cf-typegen` | Generiert TypeScript-Typen für Cloudflare Workers |
+| `bun run format`     | Formatiert Code mit Prettier                      |
+| `bun run check`      | Führt TypeScript-Überprüfung durch                |
+| `bun run astro ...`  | Führt Astro CLI-Befehle aus                       |
 
-```astro
-<Button size="small" variant="primary">Primary small</Button>
+## Deployment
+
+Die Website wird automatisch auf Cloudflare Pages deployt. Für manuelle Deployments:
+
+```bash
+bun run deploy
 ```
-
-- Wrapper Component  
-  A flexible layout component that helps with consistent spacing and alignment.
-
-- **Variants:** The default `standard` variant includes responsive widths, centered content, and padding.
-- **Custom Classes:** Add or change styles with the `class` prop.
-- **Content Slot:** Easily add any child components or content inside.
-
-```astro
-<Wrapper variant="standard">
-Your content goes here
-</Wrapper>
-```
-
----
-
----
-
-Updated on 30th December 2024
-
-## This update includes:
-
-- Added Tailwind CSS v4
-  On this version, Tailwind CSS is now beta version from Tailwind CSS V4, this means that there's no `tailwind.config.mjs` file anymore. From now on, all style will be added on the `css` file. You can find the styles on the `src/styles/global.css` file.
-
-- Astro V5
-  This update includes Astro V5, which is a major update that includes several new features and improvements.
-
-- Astro SEO by @astrolib/seo
-  This update includes the integration of the Astro SEO package by @astrolib/seo, is an integration that makes managing your SEO easier in Astro projects. It is fully based on the excellent Next SEO library
-
-### [Support](https://lexingtonthemes.com/legal/support/)
-
-### [Documentation](https://lexingtonthemes.com/documentation/)
-
-### [Get your bundle](https://lexingtonthemes.com)
