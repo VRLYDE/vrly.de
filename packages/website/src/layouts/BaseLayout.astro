@@ -35,12 +35,35 @@ export interface Props {
 }
 
 const { hideNav = false, hideFooter = false, ...seoProps } = Astro.props;
+
+// Critical fonts to preload for optimal LCP performance
+const criticalFonts = [
+  {
+    href: '/fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf',
+    name: 'Nunito Sans (Headings)'
+  },
+  {
+    href: '/fonts/OpenSans-VariableFont_wdth,wght.ttf',
+    name: 'Open Sans (Body)'
+  }
+];
 ---
 <html
   lang="de"
   class="scroll-smooth selection:bg-vrly-blue-500 selection:text-white"
 >
   <head>
+    {/* Preload critical fonts for improved LCP */}
+    {criticalFonts.map(font => (
+      <link
+        rel="preload"
+        href={font.href}
+        as="font"
+        type="font/ttf"
+        crossorigin
+      />
+    ))}
+    
     <BaseHead {...seoProps} />
   </head>
   <body class="relative flex flex-col min-h-screen bg-white">
