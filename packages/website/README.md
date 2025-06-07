@@ -84,7 +84,7 @@ bun install
 
 ## Deployment
 
-Die Website wird automatisch auf Cloudflare Pages deployt. Für manuelle Deployments:
+Die Website wird automatisch auf Cloudflare Workers deployt. Für manuelle Deployments:
 
 ```bash
 bun run deploy

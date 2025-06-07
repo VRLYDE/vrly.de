@@ -36,7 +36,7 @@ This repository uses [Bun workspaces](https://bun.sh/docs/install/workspaces) to
 monorepo/
 ├── packages/
 │   ├── platform/         # Core VRLY platform (Cloudflare Workers)
-│   ├── website/          # Marketing website (Astro + Cloudflare Pages)
+│   ├── website/          # Marketing website (Astro + Cloudflare Workers)
 │   ├── clients/          # Client-specific implementations
 │   ├── integrations/     # Third-party service integrations
 │   ├── shared/           # Shared libraries and design system
