@@ -7,20 +7,20 @@
   "routes": [
     {
       "pattern": "vrly.de",
-      "custom_domain": true,
-    },
+      "custom_domain": true
+    }
   ],
   "assets": {
     "binding": "ASSETS",
-    "directory": "./dist",
+    "directory": "./dist"
   },
   "observability": {
-    "enabled": true,
+    "enabled": true
   },
   "kv_namespaces": [
     {
       "binding": "SESSION",
-      "id": "7974aa3451be4ffd98aba571f384b058",
-    },
-  ],
+      "id": "7974aa3451be4ffd98aba571f384b058"
+    }
+  ]
 }

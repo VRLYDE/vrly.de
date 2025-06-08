@@ -5,6 +5,8 @@ import mdx from "@astrojs/mdx";
 import cloudflare from "@astrojs/cloudflare";
 import webmanifest from "astro-webmanifest";
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
   image: {
@@ -120,5 +122,6 @@ export default defineConfig({
         },
       ],
     }),
+    react(),
   ],
 });
