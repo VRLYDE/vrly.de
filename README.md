@@ -134,29 +134,26 @@ Client-specific implementations and customizations, organized by vertical (e.g.,
 
 ```bash
 # Development
-bun dev                  # Start all development servers
-bun dev:platform         # Start platform API server
-bun dev:website          # Start marketing website server
+bun dev:website          # Start marketing website server with wrangler types and astro dev
 bun dev:email-signature  # Start email signature builder
 
 # Build & Deploy
-bun build                # Build all packages
-bun deploy               # Deploy all packages
-bun preview              # Preview deployment
+bun build:website        # Build website with wrangler types, astro check, and astro build
+bun preview:website      # Preview website deployment with wrangler dev
+bun deploy               # Deploy to staging environment
+bun deploy:production    # Deploy to production environment
 
 # Utilities
-bun client:new           # Create a new client workspace
-bun automation:run       # Run automation workflows
-bun codegen              # Generate TypeScript types
-bun clean                # Clean build artifacts and node_modules
+bun clean                # Clean build artifacts, node_modules, .wrangler, and .astro
+bun format               # Format code with prettier
 ```
 
-## 🧪 Testing & Quality
+## 🧪 Testing & Quality (TODO)
 
 ```bash
-bun test                 # Run all tests
-bun lint                 # Run linting
-bun type-check           # Run type checking
+# bun test                 # Run all tests
+# bun lint                 # Run linting
+# bun type-check           # Run type checking
 ```
 
 ## 🔐 Security
