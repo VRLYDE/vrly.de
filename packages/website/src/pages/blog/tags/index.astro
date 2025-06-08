@@ -9,13 +9,25 @@ import { seoConfig } from "@/config/seo";
 import { getCollection } from "astro:content";
 const allPosts = await getCollection("posts");
 // Tags
-const tags = [...new Set(allPosts.filter(post => !post.data.draft).map((post) => post.data.tags).flat())];
+const tags = [
+  ...new Set(
+    allPosts
+      .filter((post) => !post.data.draft)
+      .map((post) => post.data.tags)
+      .flat(),
+  ),
+];
 
 // Count posts per tag
-const tagCounts = tags.reduce((acc, tag) => {
-  acc[tag] = allPosts.filter(post => post.data.tags.includes(tag) && !post.data.draft).length;
-  return acc;
-}, {} as Record<string, number>);
+const tagCounts = tags.reduce(
+  (acc, tag) => {
+    acc[tag] = allPosts.filter(
+      (post) => post.data.tags.includes(tag) && !post.data.draft,
+    ).length;
+    return acc;
+  },
+  {} as Record<string, number>,
+);
 
 // Sort tags by post count
 const sortedTags = tags.sort((a, b) => tagCounts[b] - tagCounts[a]);
@@ -25,22 +37,23 @@ export const prerender = true;
 // Tags index page SEO
 const tagsPageSEO = {
   title: "Alle Themen - VRLY Blog",
-  description: "Durchsuchen Sie alle Themen unseres Blogs. Finden Sie Artikel zu KI, Automatisierung, DSGVO und Digitalisierung für Psychotherapeut:Innen.",
-  keywords: [...seoConfig.site.keywords, "Blog Themen", "Tags", "Kategorien"]
+  description:
+    "Durchsuchen Sie alle Themen unseres Blogs. Finden Sie Artikel zu KI, Automatisierung, DSGVO und Digitalisierung für Psychotherapeut:Innen.",
+  keywords: [...seoConfig.site.keywords, "Blog Themen", "Tags", "Kategorien"],
 };
 
 // Tags page structured data
 const tagsPageStructuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Blog Themen",
-  "description": tagsPageSEO.description,
-  "url": Astro.url.href,
-  "isPartOf": {
+  name: "Blog Themen",
+  description: tagsPageSEO.description,
+  url: Astro.url.href,
+  isPartOf: {
     "@type": "Blog",
-    "name": "VRLY Blog",
-    "url": `${seoConfig.site.url}/blog`
-  }
+    name: "VRLY Blog",
+    url: `${seoConfig.site.url}/blog`,
+  },
 };
 ---
 
@@ -57,7 +70,7 @@ const tagsPageStructuredData = {
         variant="display2XL"
         data-aos="fade-up"
         data-aos-duration="1000"
-        class="font-semibold tracking-tighter text-vrly-slate-500 lg:text-balance"
+        class="text-vrly-slate-500 font-semibold tracking-tighter lg:text-balance"
       >
         Alle Themen
       </Text>
@@ -66,62 +79,69 @@ const tagsPageStructuredData = {
         variant="textLG"
         data-aos="fade-up"
         data-aos-duration="1500"
-        class="max-w-lg mt-4 font-medium text-vrly-slate-400 md:text-balance"
+        class="text-vrly-slate-400 mt-4 max-w-lg font-medium md:text-balance"
       >
-        Durchstöbern Sie unsere Artikel nach Themen, die für Ihre Praxis relevant sind.
+        Durchstöbern Sie unsere Artikel nach Themen, die für Ihre Praxis
+        relevant sind.
       </Text>
     </Wrapper>
     <section>
-      <Wrapper variant="standard" class="py-4 border-t border-vrly-neutral-200">
+      <Wrapper variant="standard" class="border-vrly-neutral-200 border-t py-4">
         <BlogSearch />
       </Wrapper>
-      <Wrapper variant="standard" class="py-12 border-t border-vrly-neutral-200">
+      <Wrapper
+        variant="standard"
+        class="border-vrly-neutral-200 border-t py-12"
+      >
         <ul
           role="list"
-          class="mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xl:grid-cols-4"
+          class="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
         >
           {
             sortedTags.map((tag) => (
               <li class="group">
-                <a 
-                  href={`/blog/tags/${tag}`} 
-                  class="relative block p-6 bg-white border border-vrly-neutral-200 rounded-xl shadow-sm hover:shadow-md hover:border-vrly-blue-300 transition-all duration-300"
+                <a
+                  href={`/blog/tags/${tag}`}
+                  class="border-vrly-neutral-200 hover:border-vrly-blue-300 relative block rounded-xl border bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md"
                 >
-                  <div class="flex items-center justify-between mb-2">
+                  <div class="mb-2 flex items-center justify-between">
                     <Text
                       tag="h3"
                       variant="textLG"
-                      class="capitalize font-semibold text-vrly-slate-500 group-hover:text-vrly-blue-600"
+                      class="text-vrly-slate-500 group-hover:text-vrly-blue-600 font-semibold capitalize"
                     >
                       {tag}
                     </Text>
-                    <span class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-vrly-neutral-100 text-vrly-slate-400">
+                    <span class="bg-vrly-neutral-100 text-vrly-slate-400 rounded-full px-2.5 py-0.5 text-xs font-medium">
                       {tagCounts[tag]}
                     </span>
                   </div>
-                  <Text
-                    tag="p"
-                    variant="textSM"
-                    class="text-vrly-slate-400"
-                  >
-                    {tagCounts[tag]} {tagCounts[tag] === 1 ? 'Artikel' : 'Artikel'} zu diesem Thema
+                  <Text tag="p" variant="textSM" class="text-vrly-slate-400">
+                    {tagCounts[tag]}{" "}
+                    {tagCounts[tag] === 1 ? "Artikel" : "Artikel"} zu diesem
+                    Thema
                   </Text>
                 </a>
               </li>
             ))
           }
         </ul>
-        
-        {tags.length === 0 && (
-          <div class="text-center py-12">
-            <Text tag="p" variant="textLG" class="text-vrly-slate-400 mb-4">
-              Noch keine Themen verfügbar.
-            </Text>
-            <a href="/blog" class="text-vrly-blue-600 hover:text-vrly-blue-700 font-medium">
-              Zurück zum Blog
-            </a>
-          </div>
-        )}
+
+        {
+          tags.length === 0 && (
+            <div class="py-12 text-center">
+              <Text tag="p" variant="textLG" class="text-vrly-slate-400 mb-4">
+                Noch keine Themen verfügbar.
+              </Text>
+              <a
+                href="/blog"
+                class="text-vrly-blue-600 hover:text-vrly-blue-700 font-medium"
+              >
+                Zurück zum Blog
+              </a>
+            </div>
+          )
+        }
       </Wrapper>
     </section>
   </section>

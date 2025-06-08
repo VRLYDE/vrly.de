@@ -16,7 +16,7 @@ interface Props {
 const {
   title = "Warum VRLY?",
   description = "Wir kombinieren Expertise in KI, Workflow-Automatisierung und Projektmanagement mit tiefem Verständnis für Ihre Praxisabläufe und strengster DSGVO-Compliance.",
-  items = []
+  items = [],
 } = Astro.props;
 
 // Default features if no items are provided
@@ -45,7 +45,7 @@ const defaultItems = [
 ---
 
 <section>
-  <Wrapper variant="standard" class="py-12 lg:py-24 border-t">
+  <Wrapper variant="standard" class="border-t py-12 lg:py-24">
     <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
       <div class="lg:order-last">
         <Text
@@ -53,7 +53,7 @@ const defaultItems = [
           variant="textXL"
           data-aos="fade-up"
           data-aos-duration="1000"
-          class="font-semibold tracking-tight text-vrly-slate-500 md:text-balance"
+          class="text-vrly-slate-500 font-semibold tracking-tight md:text-balance"
         >
           {title}
         </Text>
@@ -62,32 +62,38 @@ const defaultItems = [
           variant="textBase"
           data-aos="fade-up"
           data-aos-duration="1500"
-          class="mt-2 text-base text-vrly-slate-400 md:text-balance"
+          class="text-vrly-slate-400 mt-2 text-base md:text-balance"
         >
           {description}
         </Text>
-        
-        {items && items.length > 0 ? (
-          <div class="mt-8 space-y-6">
-            {items.map((item) => (
-              <div class="bg-white p-5 rounded-lg shadow-sm border border-vrly-neutral-200">
-                <h4 class="text-base font-semibold text-vrly-slate-500 mb-2">{item.title}</h4>
-                <p class="text-sm text-vrly-slate-400">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <dl
-            data-aos="fade-up"
-            data-aos-duration="2000"
-            class="mt-8 grid grid-cols-1 gap-y-8"
-          >
-            {
-              defaultItems.map((section) => (
+
+        {
+          items && items.length > 0 ? (
+            <div class="mt-8 space-y-6">
+              {items.map((item) => (
+                <div class="border-vrly-neutral-200 rounded-lg border bg-white p-5 shadow-sm">
+                  <h4 class="text-vrly-slate-500 mb-2 text-base font-semibold">
+                    {item.title}
+                  </h4>
+                  <p class="text-vrly-slate-400 text-sm">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <dl
+              data-aos="fade-up"
+              data-aos-duration="2000"
+              class="mt-8 grid grid-cols-1 gap-y-8"
+            >
+              {defaultItems.map((section) => (
                 <div>
-                  <dt class="flex items-center gap-2 text-vrly-slate-500">
+                  <dt class="text-vrly-slate-500 flex items-center gap-2">
                     <CircleCheck size="base" class="text-vrly-green-600" />
-                    <Text tag="p" variant="textSM" class="font-medium leading-6">
+                    <Text
+                      tag="p"
+                      variant="textSM"
+                      class="leading-6 font-medium"
+                    >
                       {section.category}
                     </Text>
                   </dt>
@@ -97,77 +103,83 @@ const defaultItems = [
                     </Text>
                   </dd>
                 </div>
-              ))
-            }
-          </dl>
-        )}
+              ))}
+            </dl>
+          )
+        }
       </div>
-      
-      <div class="relative bg-white shadow-lg rounded-xl p-6 border border-vrly-neutral-200">
-        <div class="mb-4 pb-4 border-b border-vrly-neutral-200">
-          <h3 class="text-lg font-semibold text-vrly-slate-500">VRLY vs. generische IT-Dienstleister</h3>
+
+      <div
+        class="border-vrly-neutral-200 relative rounded-xl border bg-white p-6 shadow-lg"
+      >
+        <div class="border-vrly-neutral-200 mb-4 border-b pb-4">
+          <h3 class="text-vrly-slate-500 text-lg font-semibold">
+            VRLY vs. generische IT-Dienstleister
+          </h3>
         </div>
-        
+
         <div class="space-y-4">
           <div class="grid grid-cols-3 gap-2">
             <div class="col-span-1"></div>
-            <div class="col-span-1 text-center bg-vrly-blue-50 p-2 rounded-lg">
-              <p class="text-sm font-medium text-vrly-blue-600">VRLY</p>
+            <div class="bg-vrly-blue-50 col-span-1 rounded-lg p-2 text-center">
+              <p class="text-vrly-blue-600 text-sm font-medium">VRLY</p>
             </div>
-            <div class="col-span-1 text-center bg-vrly-slate-50 p-2 rounded-lg">
-              <p class="text-sm font-medium text-vrly-slate-400">Generisch</p>
-            </div>
-          </div>
-          
-          <div class="grid grid-cols-3 gap-2 items-center">
-            <div class="col-span-1">
-              <p class="text-sm text-vrly-slate-500">Spezialisierung</p>
-            </div>
-            <div class="col-span-1 text-center">
-              <CircleCheck size="base" class="inline text-vrly-green-600" />
-              <span class="text-xs text-vrly-green-600 ml-1">Psychotherapie</span>
-            </div>
-            <div class="col-span-1 text-center">
-              <span class="text-xs text-vrly-slate-400">Alle Branchen</span>
+            <div class="bg-vrly-slate-50 col-span-1 rounded-lg p-2 text-center">
+              <p class="text-vrly-slate-400 text-sm font-medium">Generisch</p>
             </div>
           </div>
-          
-          <div class="grid grid-cols-3 gap-2 items-center">
+
+          <div class="grid grid-cols-3 items-center gap-2">
             <div class="col-span-1">
-              <p class="text-sm text-vrly-slate-500">DSGVO-Expertise</p>
+              <p class="text-vrly-slate-500 text-sm">Spezialisierung</p>
             </div>
             <div class="col-span-1 text-center">
-              <CircleCheck size="base" class="inline text-vrly-green-600" />
-              <span class="text-xs text-vrly-green-600 ml-1">§203 StGB</span>
+              <CircleCheck size="base" class="text-vrly-green-600 inline" />
+              <span class="text-vrly-green-600 ml-1 text-xs"
+                >Psychotherapie</span
+              >
             </div>
             <div class="col-span-1 text-center">
-              <span class="text-xs text-vrly-slate-400">Generisch</span>
+              <span class="text-vrly-slate-400 text-xs">Alle Branchen</span>
             </div>
           </div>
-          
-          <div class="grid grid-cols-3 gap-2 items-center">
+
+          <div class="grid grid-cols-3 items-center gap-2">
             <div class="col-span-1">
-              <p class="text-sm text-vrly-slate-500">Automatisierung</p>
+              <p class="text-vrly-slate-500 text-sm">DSGVO-Expertise</p>
             </div>
             <div class="col-span-1 text-center">
-              <CircleCheck size="base" class="inline text-vrly-green-600" />
-              <span class="text-xs text-vrly-green-600 ml-1">KI-gestützt</span>
+              <CircleCheck size="base" class="text-vrly-green-600 inline" />
+              <span class="text-vrly-green-600 ml-1 text-xs">§203 StGB</span>
             </div>
             <div class="col-span-1 text-center">
-              <span class="text-xs text-vrly-slate-400">Minimal</span>
+              <span class="text-vrly-slate-400 text-xs">Generisch</span>
             </div>
           </div>
-          
-          <div class="grid grid-cols-3 gap-2 items-center">
+
+          <div class="grid grid-cols-3 items-center gap-2">
             <div class="col-span-1">
-              <p class="text-sm text-vrly-slate-500">Praxisverständnis</p>
+              <p class="text-vrly-slate-500 text-sm">Automatisierung</p>
             </div>
             <div class="col-span-1 text-center">
-              <CircleCheck size="base" class="inline text-vrly-green-600" />
-              <span class="text-xs text-vrly-green-600 ml-1">Tiefgreifend</span>
+              <CircleCheck size="base" class="text-vrly-green-600 inline" />
+              <span class="text-vrly-green-600 ml-1 text-xs">KI-gestützt</span>
             </div>
             <div class="col-span-1 text-center">
-              <span class="text-xs text-vrly-slate-400">Oberflächlich</span>
+              <span class="text-vrly-slate-400 text-xs">Minimal</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 items-center gap-2">
+            <div class="col-span-1">
+              <p class="text-vrly-slate-500 text-sm">Praxisverständnis</p>
+            </div>
+            <div class="col-span-1 text-center">
+              <CircleCheck size="base" class="text-vrly-green-600 inline" />
+              <span class="text-vrly-green-600 ml-1 text-xs">Tiefgreifend</span>
+            </div>
+            <div class="col-span-1 text-center">
+              <span class="text-vrly-slate-400 text-xs">Oberflächlich</span>
             </div>
           </div>
         </div>

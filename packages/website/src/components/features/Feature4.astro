@@ -15,7 +15,7 @@ interface Props {
 const {
   title = "Unser Prozess",
   description = "So einfach ist der Weg zu mehr Effizienz in Ihrer Praxis:",
-  steps = []
+  steps = [],
 } = Astro.props;
 
 const defaultSteps = [
@@ -43,7 +43,7 @@ const defaultSteps = [
 ---
 
 <section>
-  <Wrapper variant="standard" class="py-12 border-t">
+  <Wrapper variant="standard" class="border-t py-12">
     <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
       <div>
         <Text
@@ -51,7 +51,7 @@ const defaultSteps = [
           variant="textXS"
           data-aos="fade-down"
           data-aos-duration="1000"
-          class="flex items-center gap-2 font-medium uppercase text-vrly-slate-400"
+          class="text-vrly-slate-400 flex items-center gap-2 font-medium uppercase"
         >
           <ApiApp size="sm" class="text-vrly-blue-600" />
           Schnell & Effizient
@@ -61,7 +61,7 @@ const defaultSteps = [
           variant="displayMD"
           data-aos="fade-up"
           data-aos-duration="1000"
-          class="mt-8 font-semibold tracking-tight text-vrly-slate-500 md:text-balance"
+          class="text-vrly-slate-500 mt-8 font-semibold tracking-tight md:text-balance"
         >
           {title}
         </Text>
@@ -70,46 +70,54 @@ const defaultSteps = [
           variant="textBase"
           data-aos="fade-up"
           data-aos-duration="1500"
-          class="mt-2 text-base text-vrly-slate-400"
+          class="text-vrly-slate-400 mt-2 text-base"
         >
           {description}
         </Text>
       </div>
-      
-      {steps && steps.length > 0 ? (
-        <div class="mt-8 relative">
-          <div class="absolute top-0 bottom-0 left-8 w-0.5 bg-vrly-blue-100"></div>
-          <div class="space-y-8">
-            {steps.map((step, index) => (
-              <div class="relative pl-14">
-                <div class="absolute left-0 flex items-center justify-center w-16 h-16">
-                  <div class="flex items-center justify-center w-8 h-8 bg-vrly-blue-500 rounded-full text-white font-bold text-sm">
-                    {index + 1}
+
+      {
+        steps && steps.length > 0 ? (
+          <div class="relative mt-8">
+            <div class="bg-vrly-blue-100 absolute top-0 bottom-0 left-8 w-0.5" />
+            <div class="space-y-8">
+              {steps.map((step, index) => (
+                <div class="relative pl-14">
+                  <div class="absolute left-0 flex h-16 w-16 items-center justify-center">
+                    <div class="bg-vrly-blue-500 flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold text-white">
+                      {index + 1}
+                    </div>
+                  </div>
+                  <div class="border-vrly-neutral-200 rounded-lg border bg-white p-4 shadow-sm">
+                    <h4 class="text-vrly-slate-500 mb-2 text-base font-semibold">
+                      {step.title}
+                    </h4>
+                    <p class="text-vrly-slate-400 text-sm">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
-                <div class="bg-white p-4 rounded-lg border border-vrly-neutral-200 shadow-sm">
-                  <h4 class="text-base font-semibold text-vrly-slate-500 mb-2">{step.title}</h4>
-                  <p class="text-sm text-vrly-slate-400">{step.description}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      ) : (
-        <dl
-          data-aos="fade-up"
-          data-aos-duration="2000"
-          class="grid grid-cols-1 gap-2 mt-8 gap-y-8"
-        >
-          {
-            defaultSteps.map((section, index) => (
+        ) : (
+          <dl
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            class="mt-8 grid grid-cols-1 gap-2 gap-y-8"
+          >
+            {defaultSteps.map((section, index) => (
               <div class="flex gap-4">
-                <div class="flex-shrink-0 flex items-start justify-center w-8 h-8 bg-vrly-blue-500 rounded-full text-white font-bold text-sm mt-1">
+                <div class="bg-vrly-blue-500 mt-1 flex h-8 w-8 flex-shrink-0 items-start justify-center rounded-full text-sm font-bold text-white">
                   {index + 1}
                 </div>
                 <div>
-                  <dt class="flex items-center gap-2 text-vrly-slate-500">
-                    <Text tag="p" variant="textSM" class="font-semibold leading-6">
+                  <dt class="text-vrly-slate-500 flex items-center gap-2">
+                    <Text
+                      tag="p"
+                      variant="textSM"
+                      class="leading-6 font-semibold"
+                    >
                       {section.category}
                     </Text>
                   </dt>
@@ -120,10 +128,10 @@ const defaultSteps = [
                   </dd>
                 </div>
               </div>
-            ))
-          }
-        </dl>
-      )}
+            ))}
+          </dl>
+        )
+      }
     </div>
   </Wrapper>
 </section>

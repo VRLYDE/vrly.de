@@ -38,9 +38,10 @@ const {
 } = Astro.props;
 
 // Build the full title using the template if not the home page
-const fullTitle = title === seoConfig.site.title 
-  ? title 
-  : seoConfig.site.titleTemplate.replace("%s", title);
+const fullTitle =
+  title === seoConfig.site.title
+    ? title
+    : seoConfig.site.titleTemplate.replace("%s", title);
 
 // Prepare Open Graph data
 const ogData = {
@@ -61,7 +62,7 @@ const ogData = {
   locale: seoConfig.openGraph.locale,
 };
 
-// Prepare Twitter data  
+// Prepare Twitter data
 const twitterData = {
   handle: seoConfig.social.twitter,
   site: seoConfig.social.twitter,
@@ -99,11 +100,21 @@ const structuredData = jsonLd || seoConfig.jsonLd;
 <meta name="theme-color" content="#1D76DB" />
 
 <!-- Structured Data -->
-{structuredData && (
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
-)}
+{
+  structuredData && (
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
+  )
+}
 
 <!-- Additional tags for better SEO -->
 <link rel="sitemap" href="/sitemap-index.xml" />
-<link rel="alternate" type="application/rss+xml" title={`${seoConfig.site.name} RSS Feed`} href="/rss.xml" />
-
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title={`${seoConfig.site.name} RSS Feed`}
+  href="/rss.xml"
+/>

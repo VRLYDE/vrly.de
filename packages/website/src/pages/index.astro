@@ -22,166 +22,186 @@ const homePageStructuredData = [
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "url": "https://vrly.de",
-    "name": "VRLY",
-    "description": pageSEO.home.description,
-    "publisher": {
+    url: "https://vrly.de",
+    name: "VRLY",
+    description: pageSEO.home.description,
+    publisher: {
       "@type": "Organization",
-      "name": "VRLY"
+      name: "VRLY",
     },
-    "potentialAction": {
+    potentialAction: {
       "@type": "SearchAction",
-      "target": "https://vrly.de/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
+      target: "https://vrly.de/search?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+  },
 ];
 ---
 
-<BaseLayout 
+<BaseLayout
   title={pageSEO.home.title}
   description={pageSEO.home.description}
   keywords={pageSEO.home.keywords}
   jsonLd={homePageStructuredData}
 >
-  <Hero 
-    title="Mehr Zeit für Ihre Patienten, weniger Verwaltungsaufwand" 
+  <Hero
+    title="Mehr Zeit für Ihre Patienten, weniger Verwaltungsaufwand"
     subtitle="VRLY automatisiert Effizienz mit Künstlicher Intelligenz."
     description="Ihr spezialisierter Partner für KI-gestützte Workflow-Automatisierung, exklusiv für Psychotherapeut:Innen in Hannover. DSGVO-konform und zukunftssicher."
     primaryButtonText="Kostenloser Workflow-Audit"
     secondaryButtonText="Mehr erfahren"
   />
   <section>
-    <Wrapper class="overflow-hidden border-t border-base-200">
+    <Wrapper class="border-base-200 overflow-hidden border-t">
       <LogoCloud
-        class="py-6 flex flex-col gap-8 lg:-mx-8"
+        class="flex flex-col gap-8 py-6 lg:-mx-8"
         title="Vertraut von Psychotherapeut:Innen in Hannover"
       />
     </Wrapper>
   </section>
-  <Feature1 
+  <Feature1
     title="Praxis-Anfragen-Autopilot"
     description="Unser Praxis-Anfragen-Autopilot automatisiert die Verwaltung von Neupatienten-Anfragen und spart Ihnen sofort Zeit und Nerven."
     items={[
       {
         title: "Zeitersparnis",
-        description: "Mindestens 2-5 Stunden pro Woche weniger für administrative Bearbeitung von Anfragen."
+        description:
+          "Mindestens 2-5 Stunden pro Woche weniger für administrative Bearbeitung von Anfragen.",
       },
       {
         title: "DSGVO-Sicherheit",
-        description: "Der Erstkontakt und die Datenerfassung erfolgen von Beginn an strukturiert und DSGVO-konform."
+        description:
+          "Der Erstkontakt und die Datenerfassung erfolgen von Beginn an strukturiert und DSGVO-konform.",
       },
       {
         title: "Professionalität",
-        description: "Jeder Anfragende erhält eine prompte, professionelle Rückmeldung – das schafft Vertrauen."
-      }
+        description:
+          "Jeder Anfragende erhält eine prompte, professionelle Rückmeldung – das schafft Vertrauen.",
+      },
     ]}
   />
-  <Feature2 
+  <Feature2
     title="Unsere Kernleistungen"
     description="Maßgeschneiderte KI-gestützte Lösungen exklusiv für Psychotherapeut:Innen in Hannover."
     items={[
       {
         title: "Intelligente Anfragen-Verwaltung",
-        description: "Automatisierte Erfassung, Kategorisierung und DSGVO-konforme Beantwortung von Patientenanfragen."
+        description:
+          "Automatisierte Erfassung, Kategorisierung und DSGVO-konforme Beantwortung von Patientenanfragen.",
       },
       {
         title: "Workflow-Automatisierung",
-        description: "Optimierung von Praxisabläufen durch intelligente Automatisierung administrativer Routineaufgaben."
+        description:
+          "Optimierung von Praxisabläufen durch intelligente Automatisierung administrativer Routineaufgaben.",
       },
       {
         title: "Dokumentationsunterstützung",
-        description: "Effiziente und strukturierte Dokumentation mit Hilfe moderner Technologien und optimierter Prozesse."
-      }
+        description:
+          "Effiziente und strukturierte Dokumentation mit Hilfe moderner Technologien und optimierter Prozesse.",
+      },
     ]}
   />
-  <Feature3 
+  <Feature3
     title="Warum VRLY?"
     description="Wir kombinieren Expertise in KI, Workflow-Automatisierung und Projektmanagement mit tiefem Verständnis für Ihre Praxisabläufe und strengster DSGVO-Compliance."
     items={[
       {
         title: "Hyper-Nischenfokus",
-        description: "Exklusiv spezialisiert auf die Bedürfnisse von Psychotherapeut:Innen in Hannover."
+        description:
+          "Exklusiv spezialisiert auf die Bedürfnisse von Psychotherapeut:Innen in Hannover.",
       },
       {
         title: "Nutzenfokus & Pragmatismus",
-        description: "Wir liefern messbaren Mehrwert und finden schlanke, effektive Lösungen, die im Praxisalltag funktionieren."
+        description:
+          "Wir liefern messbaren Mehrwert und finden schlanke, effektive Lösungen, die im Praxisalltag funktionieren.",
       },
       {
         title: "Vertrauen & Compliance",
-        description: "DSGVO und §203 StGB stehen bei uns an erster Stelle. Höchste Sicherheit für sensible Patientendaten."
-      }
+        description:
+          "DSGVO und §203 StGB stehen bei uns an erster Stelle. Höchste Sicherheit für sensible Patientendaten.",
+      },
     ]}
   />
-  <Feature4 
+  <Feature4
     title="Unser Prozess"
     description="So einfach ist der Weg zu mehr Effizienz in Ihrer Praxis:"
     steps={[
       {
         title: "Analyse & Konzeption",
-        description: "Gemeinsame Aufnahme Ihres aktuellen Anfrageprozesses und Identifikation Ihrer spezifischen Bedürfnisse."
+        description:
+          "Gemeinsame Aufnahme Ihres aktuellen Anfrageprozesses und Identifikation Ihrer spezifischen Bedürfnisse.",
       },
       {
         title: "Technische Umsetzung",
-        description: "Einrichtung eines zentralen, sicheren Anfragekanals mit automatisierter Eingangsbestätigung und intelligenter Vorkategorisierung."
+        description:
+          "Einrichtung eines zentralen, sicheren Anfragekanals mit automatisierter Eingangsbestätigung und intelligenter Vorkategorisierung.",
       },
       {
         title: "Einweisung & Übergabe",
-        description: "Kurze, prägnante Schulung in der Nutzung des neuen Workflows und Übergabe einer einfachen Dokumentation."
-      }
+        description:
+          "Kurze, prägnante Schulung in der Nutzung des neuen Workflows und Übergabe einer einfachen Dokumentation.",
+      },
     ]}
   />
-  <Feature5 
+  <Feature5
     title="Ihr sofortiger, greifbarer Nutzen"
     description="Mit dem VRLY Praxis-Anfragen-Autopilot gewinnen Sie wertvolle Zeit für das Wesentliche: Ihre Patienten."
     benefits={[
       {
         title: "Zeitersparnis",
-        description: "2-5 Stunden pro Woche weniger für administrative Tätigkeiten."
+        description:
+          "2-5 Stunden pro Woche weniger für administrative Tätigkeiten.",
       },
       {
         title: "Stressreduktion",
-        description: "Kein ständiges Reagieren auf jede einzelne Anfrage mehr, Reduktion des mentalen Overloads."
+        description:
+          "Kein ständiges Reagieren auf jede einzelne Anfrage mehr, Reduktion des mentalen Overloads.",
       },
       {
         title: "Struktur",
-        description: "Klare Übersicht über neue Anfragen und deren Status."
+        description: "Klare Übersicht über neue Anfragen und deren Status.",
       },
       {
         title: "Fokus",
-        description: "Mehr Zeit und Energie für Ihre Kernkompetenz – die therapeutische Arbeit."
+        description:
+          "Mehr Zeit und Energie für Ihre Kernkompetenz – die therapeutische Arbeit.",
       },
       {
         title: "DSGVO-Sicherheit",
-        description: "Strukturierte und rechtssichere Kommunikation von Anfang an."
+        description:
+          "Strukturierte und rechtssichere Kommunikation von Anfang an.",
       },
       {
         title: "Professionalität",
-        description: "Prompt Patienten auf professionelle Weise begrüßen und informieren."
-      }
+        description:
+          "Prompt Patienten auf professionelle Weise begrüßen und informieren.",
+      },
     ]}
   />
-  <Testimonial1 
+  <Testimonial1
     title="Was unsere Kunden sagen"
     testimonials={[
       {
-        quote: "Mit dem Praxis-Anfragen-Autopilot spare ich jede Woche mehrere Stunden, die ich jetzt in die Betreuung meiner Patienten investieren kann.",
+        quote:
+          "Mit dem Praxis-Anfragen-Autopilot spare ich jede Woche mehrere Stunden, die ich jetzt in die Betreuung meiner Patienten investieren kann.",
         author: "Dr. Anna Müller",
-        role: "Psychotherapeutin in Hannover"
+        role: "Psychotherapeutin in Hannover",
       },
       {
-        quote: "Endlich eine Lösung, die versteht, wie eine Psychotherapie-Praxis funktioniert. Der DSGVO-konforme Workflow gibt mir Sicherheit und spart wertvolle Zeit.",
+        quote:
+          "Endlich eine Lösung, die versteht, wie eine Psychotherapie-Praxis funktioniert. Der DSGVO-konforme Workflow gibt mir Sicherheit und spart wertvolle Zeit.",
         author: "Michael Schmidt",
-        role: "Psychologischer Psychotherapeut"
+        role: "Psychologischer Psychotherapeut",
       },
       {
-        quote: "Die Implementierung war überraschend einfach und schnell. Bereits nach wenigen Tagen konnte ich eine deutliche Entlastung im Praxisalltag spüren.",
+        quote:
+          "Die Implementierung war überraschend einfach und schnell. Bereits nach wenigen Tagen konnte ich eine deutliche Entlastung im Praxisalltag spüren.",
         author: "Sarah Weber",
-        role: "Psychotherapeutin für Verhaltenstherapie"
-      }
+        role: "Psychotherapeutin für Verhaltenstherapie",
+      },
     ]}
   />
-  <Pricing1 
+  <Pricing1
     title="Transparente Preisgestaltung"
     description="Unser VRLY Bootstrap-Pionier Angebot für die ersten 3 Praxen in Hannover"
     plans={[
@@ -196,11 +216,11 @@ const homePageStructuredData = [
           "Implementierter, teilautomatisierter Workflow",
           "DSGVO-konforme E-Mail-Vorlagen",
           "Dokumentation des neuen Workflows",
-          "Keine versteckten Kosten, keine monatlichen Gebühren"
+          "Keine versteckten Kosten, keine monatlichen Gebühren",
         ],
         buttonText: "Jetzt Termin vereinbaren",
-        highlighted: true
-      }
+        highlighted: true,
+      },
     ]}
   />
 </BaseLayout>

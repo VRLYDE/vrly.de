@@ -11,68 +11,68 @@ const { class: className = "", ...rest } = Astro.props;
 ---
 
 <div aria-hidden="true" class={className} {...rest}>
-  <Text tag="p" variant="textXS" class="font-medium text-base-500"
+  <Text tag="p" variant="textXS" class="text-base-500 font-medium"
     >Processed</Text
   >
-  <Text tag="p" variant="textXL" class="mt-4 font-semibold text-base-800"
+  <Text tag="p" variant="textXL" class="text-base-800 mt-4 font-semibold"
     >$275.50</Text
   >
   <div class="relative mt-8">
     <div
-      class="absolute inset-0 top-0 left-0 w-full h-[0.080rem] bg-base-200 rounded-full"
+      class="bg-base-200 absolute inset-0 top-0 left-0 h-[0.080rem] w-full rounded-full"
     >
     </div>
 
     <!-- Left Ball -->
-    <div class="absolute left-0 flex items-center -translate-y-1/2 top-1/2">
-      <div class="rounded-full bg-base-800 size-4"></div>
+    <div class="absolute top-1/2 left-0 flex -translate-y-1/2 items-center">
+      <div class="bg-base-800 size-4 rounded-full"></div>
     </div>
 
     <!-- Right Ball -->
-    <div class="absolute right-0 flex items-center -translate-y-1/2 top-1/2">
-      <div class="bg-blue-600 rounded-full size-4"></div>
+    <div class="absolute top-1/2 right-0 flex -translate-y-1/2 items-center">
+      <div class="size-4 rounded-full bg-blue-600"></div>
     </div>
   </div>
 
   <div class="mt-20 grid grid-cols-2 gap-4">
     <div>
-      <Text tag="p" variant="textXS" class="font-medium text-base-500"
+      <Text tag="p" variant="textXS" class="text-base-500 font-medium"
         >Source</Text
       >
-      <Text tag="h4" variant="textSM" class="font-semibold text-base-800"
+      <Text tag="h4" variant="textSM" class="text-base-800 font-semibold"
         >Business account</Text
       >
-      <Text tag="p" variant="textXS" class="font-medium text-base-500"
+      <Text tag="p" variant="textXS" class="text-base-500 font-medium"
         >Stripe • 785214369</Text
       >
     </div>
     <div>
-      <Text tag="p" variant="textXS" class="font-medium text-base-500"
+      <Text tag="p" variant="textXS" class="text-base-500 font-medium"
         >Destination</Text
       >
-      <Text tag="h4" variant="textSM" class="font-semibold text-base-800"
+      <Text tag="h4" variant="textSM" class="text-base-800 font-semibold"
         >Emma Martinez</Text
       >
-      <Text tag="p" variant="textXS" class="font-medium text-base-500"
+      <Text tag="p" variant="textXS" class="text-base-500 font-medium"
         >Chase Bank • 321654987</Text
       >
     </div>
   </div>
-  <div class="h-px my-6 bg-base-200"></div>
+  <div class="bg-base-200 my-6 h-px"></div>
   <div class="grid grid-cols-2 gap-4">
     <div>
-      <Text tag="h4" variant="textSM" class="font-semibold text-base-800"
+      <Text tag="h4" variant="textSM" class="text-base-800 font-semibold"
         >Description</Text
       >
-      <Text tag="p" variant="textXS" class="font-medium text-base-500"
+      <Text tag="p" variant="textXS" class="text-base-500 font-medium"
         >Project A-78542</Text
       >
     </div>
     <div>
-      <Text tag="h4" variant="textSM" class="font-semibold text-base-800"
+      <Text tag="h4" variant="textSM" class="text-base-800 font-semibold"
         >Company name</Text
       >
-      <Text tag="p" variant="textXS" class="font-medium text-base-500"
+      <Text tag="p" variant="textXS" class="text-base-500 font-medium"
         >Horizon Technologies</Text
       >
     </div>

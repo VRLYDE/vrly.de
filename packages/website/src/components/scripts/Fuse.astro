@@ -1,13 +1,13 @@
 <script>
-  import Fuse from 'fuse.js';
-  
+  import Fuse from "fuse.js";
+
   // Extend Window interface for TypeScript
   declare global {
     interface Window {
       Fuse: typeof Fuse;
     }
   }
-  
+
   // Make Fuse available globally for inline scripts
   window.Fuse = Fuse;
 </script>

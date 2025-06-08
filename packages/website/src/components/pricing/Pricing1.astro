@@ -35,25 +35,25 @@ const {
         "Implementierter, teilautomatisierter Workflow",
         "DSGVO-konforme E-Mail-Vorlagen",
         "Dokumentation des neuen Workflows",
-        "Keine versteckten Kosten, keine monatlichen Gebühren"
+        "Keine versteckten Kosten, keine monatlichen Gebühren",
       ],
       buttonText: "Jetzt Termin vereinbaren",
-      highlighted: true
-    }
-  ]
+      highlighted: true,
+    },
+  ],
 } = Astro.props;
 ---
 
 <section>
-  <Wrapper variant="standard" class="py-12 border-t">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-12">
+  <Wrapper variant="standard" class="border-t py-12">
+    <div class="mx-auto max-w-4xl">
+      <div class="mb-12 text-center">
         <Text
           class="span"
           variant="textXS"
           data-aos="fade-down"
           data-aos-duration="1000"
-          class="inline-flex items-center font-medium uppercase text-vrly-slate-400 gap-2"
+          class="text-vrly-slate-400 inline-flex items-center gap-2 font-medium uppercase"
         >
           <CreditCard size="sm" class="text-vrly-blue-600" />
           Für Psychotherapeut:Innen in Hannover
@@ -63,7 +63,7 @@ const {
           variant="displayMD"
           data-aos="fade-up"
           data-aos-duration="1000"
-          class="mt-6 font-semibold tracking-tight text-vrly-slate-500"
+          class="text-vrly-slate-500 mt-6 font-semibold tracking-tight"
         >
           {title}
         </Text>
@@ -72,62 +72,76 @@ const {
           variant="textBase"
           data-aos="fade-up"
           data-aos-duration="1500"
-          class="mt-2 text-base text-vrly-slate-400 max-w-2xl mx-auto"
+          class="text-vrly-slate-400 mx-auto mt-2 max-w-2xl text-base"
         >
           {description}
         </Text>
       </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {plans.map((plan) => (
-          <div 
-            class={`flex flex-col bg-white rounded-lg shadow-lg overflow-hidden border ${plan.highlighted ? 'border-vrly-blue-300 md:col-span-2 lg:col-span-3' : 'border-vrly-neutral-200'}`}
-            data-aos="fade-up"
-            data-aos-duration="2000"
-          >
-            <div class={`px-6 py-8 ${plan.highlighted ? 'bg-vrly-blue-50' : 'bg-white'}`}>
-              <h3 class="text-xl font-bold text-vrly-slate-500">{plan.name}</h3>
-              <div class="mt-4 flex items-baseline">
-                <span class="text-3xl font-extrabold text-vrly-blue-600">{plan.price}</span>
-                <span class="ml-2 text-sm text-vrly-slate-400">{plan.description}</span>
+
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {
+          plans.map((plan) => (
+            <div
+              class={`flex flex-col overflow-hidden rounded-lg border bg-white shadow-lg ${plan.highlighted ? "border-vrly-blue-300 md:col-span-2 lg:col-span-3" : "border-vrly-neutral-200"}`}
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
+              <div
+                class={`px-6 py-8 ${plan.highlighted ? "bg-vrly-blue-50" : "bg-white"}`}
+              >
+                <h3 class="text-vrly-slate-500 text-xl font-bold">
+                  {plan.name}
+                </h3>
+                <div class="mt-4 flex items-baseline">
+                  <span class="text-vrly-blue-600 text-3xl font-extrabold">
+                    {plan.price}
+                  </span>
+                  <span class="text-vrly-slate-400 ml-2 text-sm">
+                    {plan.description}
+                  </span>
+                </div>
+              </div>
+
+              <div class="flex-1 px-6 pt-6 pb-8">
+                <ul class="space-y-4">
+                  {plan.features.map((feature) => (
+                    <li class="flex items-start">
+                      <div class="flex-shrink-0 pt-1">
+                        <Check size="sm" class="text-vrly-green-600" />
+                      </div>
+                      <span class="text-vrly-slate-500 ml-3 text-sm">
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div class="bg-vrly-slate-50 border-vrly-neutral-200 border-t px-6 py-8">
+                <Link
+                  size="base"
+                  variant={plan.highlighted ? "default" : "muted"}
+                  href={EXTERNAL_LINKS.bookingCalendar}
+                  gap="xs"
+                  class={`group flex w-full justify-center ${plan.highlighted ? "bg-vrly-blue-500 hover:bg-vrly-blue-600 text-white" : "text-vrly-slate-500 hover:text-vrly-blue-600"}`}
+                >
+                  {plan.buttonText}
+                  <ChevronRight
+                    size="sm"
+                    class="easy-out-in duration-300 group-hover:translate-x-2"
+                  />
+                </Link>
               </div>
             </div>
-            
-            <div class="flex-1 px-6 pt-6 pb-8">
-              <ul class="space-y-4">
-                {plan.features.map((feature) => (
-                  <li class="flex items-start">
-                    <div class="flex-shrink-0 pt-1">
-                      <Check size="sm" class="text-vrly-green-600" />
-                    </div>
-                    <span class="ml-3 text-sm text-vrly-slate-500">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <div class="px-6 py-8 bg-vrly-slate-50 border-t border-vrly-neutral-200">
-              <Link
-                size="base"
-                variant={plan.highlighted ? "default" : "muted"}
-                href={EXTERNAL_LINKS.bookingCalendar}
-                gap="xs"
-                class={`group w-full flex justify-center ${plan.highlighted ? 'bg-vrly-blue-500 hover:bg-vrly-blue-600 text-white' : 'text-vrly-slate-500 hover:text-vrly-blue-600'}`}
-              >
-                {plan.buttonText}
-                <ChevronRight
-                  size="sm"
-                  class="duration-300 easy-out-in group-hover:translate-x-2"
-                />
-              </Link>
-            </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
-      
+
       <div class="mt-12 text-center">
-        <p class="text-sm text-vrly-slate-400">
-          Alle Preise verstehen sich zzgl. der gesetzlichen MwSt. Bei Fragen zur Preisgestaltung oder individuellen Anforderungen kontaktieren Sie uns gerne.
+        <p class="text-vrly-slate-400 text-sm">
+          Alle Preise verstehen sich zzgl. der gesetzlichen MwSt. Bei Fragen zur
+          Preisgestaltung oder individuellen Anforderungen kontaktieren Sie uns
+          gerne.
         </p>
       </div>
     </div>

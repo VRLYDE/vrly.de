@@ -1,16 +1,13 @@
 ---
-// VRLY Logo Component 
+// VRLY Logo Component
 // This component renders the VRLY brand logo and accepts props for customization.
-// Props: 
+// Props:
 // - class: A string of additional classes to style the SVG.
 // - variant: 'full' (default) shows "VRLY" text, 'mark' shows just the icon
 // - ...rest: Any other valid attributes for an <svg> element
-import LogoSvg from '@/assets/logo.svg';
+import LogoSvg from "@/assets/logo.svg";
 
 const { class: className = "", variant = "full", ...rest } = Astro.props;
 ---
 
-<LogoSvg
-  class={className}
-  {...rest}
-/>
+<LogoSvg class={className} {...rest} />

@@ -4,11 +4,11 @@
 // - title: A string for the section title
 // - variant: "neutral" | "brand" - Color scheme for the logos
 // - ...rest: Any other valid attributes for an div element (e.g., id, style, role, aria-label, etc.).
-const { 
-  class: className = "", 
+const {
+  class: className = "",
   title = "Vertrauensvolle Technologie-Partner für Ihre Praxis",
   variant = "neutral",
-  ...rest 
+  ...rest
 } = Astro.props;
 // Fundations
 import Text from "@/components/fundations/elements/Text.astro";
@@ -27,8 +27,12 @@ const partners: Partner[] = [
   { name: "Psyprax", description: "PVS Integration", accent: "teal" },
   { name: "Epikur", description: "Praxis-Software", accent: "blue" },
   { name: "Make.com", description: "Workflow Automation", accent: "yellow" },
-  { name: "Cloudflare", description: "Serverless Infrastructure", accent: "blue" },
-  { name: "DSGVO", description: "Compliance Framework", accent: "teal" }
+  {
+    name: "Cloudflare",
+    description: "Serverless Infrastructure",
+    accent: "blue",
+  },
+  { name: "DSGVO", description: "Compliance Framework", accent: "teal" },
 ];
 
 // Define color schemes
@@ -37,54 +41,55 @@ const colorSchemes = {
     bg: "bg-base-50",
     border: "border-base-200",
     text: "text-base-800",
-    subtext: "text-base-500"
+    subtext: "text-base-500",
   },
   brand: {
     blue: {
       bg: "bg-blue-50",
       border: "border-blue-200",
       text: "text-blue-700",
-      subtext: "text-blue-600"
+      subtext: "text-blue-600",
     },
     teal: {
       bg: "bg-teal-50",
       border: "border-teal-200",
       text: "text-teal-700",
-      subtext: "text-teal-600"
+      subtext: "text-teal-600",
     },
     yellow: {
       bg: "bg-yellow-50",
       border: "border-yellow-200",
       text: "text-yellow-700",
-      subtext: "text-yellow-600"
-    }
-  }
+      subtext: "text-yellow-600",
+    },
+  },
 } as const;
 ---
 
 <div class={`overflow-hidden ${className}`} {...rest}>
-  <div class="text-center mb-8">
+  <div class="mb-8 text-center">
     <Text
       tag="p"
       variant="textSM"
-      class="font-medium text-base-600 uppercase tracking-wider"
+      class="text-base-600 font-medium tracking-wider uppercase"
     >
       {title}
     </Text>
   </div>
   <div class="relative">
-    <div
-      class="flex gap-8 animate-marquee"
-    >
+    <div class="animate-marquee flex gap-8">
       {
         partners.map((partner) => {
-          const colors = variant === "brand" && colorSchemes.brand[partner.accent] 
-            ? colorSchemes.brand[partner.accent] 
-            : colorSchemes.neutral;
-          
+          const colors =
+            variant === "brand" && colorSchemes.brand[partner.accent]
+              ? colorSchemes.brand[partner.accent]
+              : colorSchemes.neutral;
+
           return (
-            <div class="flex flex-col items-center min-w-max">
-              <div class={`${colors.bg} border ${colors.border} px-6 py-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5`}>
+            <div class="flex min-w-max flex-col items-center">
+              <div
+                class={`${colors.bg} border ${colors.border} rounded-xl px-6 py-3 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md`}
+              >
                 <div class={`font-semibold ${colors.text} text-base`}>
                   {partner.name}
                 </div>
@@ -103,13 +108,19 @@ const colorSchemes = {
       {/* Duplicate for seamless loop */}
       {
         partners.map((partner) => {
-          const colors = variant === "brand" && colorSchemes.brand[partner.accent] 
-            ? colorSchemes.brand[partner.accent] 
-            : colorSchemes.neutral;
-          
+          const colors =
+            variant === "brand" && colorSchemes.brand[partner.accent]
+              ? colorSchemes.brand[partner.accent]
+              : colorSchemes.neutral;
+
           return (
-            <div aria-hidden="true" class="flex flex-col items-center min-w-max">
-              <div class={`${colors.bg} border ${colors.border} px-6 py-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5`}>
+            <div
+              aria-hidden="true"
+              class="flex min-w-max flex-col items-center"
+            >
+              <div
+                class={`${colors.bg} border ${colors.border} rounded-xl px-6 py-3 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md`}
+              >
                 <div class={`font-semibold ${colors.text} text-base`}>
                   {partner.name}
                 </div>
@@ -163,19 +174,27 @@ const colorSchemes = {
 
   div.relative::before {
     left: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0)
+    );
   }
 
   div.relative::after {
     right: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0)
+    );
   }
 
   /* Adjust gradient for different backgrounds */
   .bg-base-100 div.relative::before {
     background: linear-gradient(to right, var(--color-base-100), transparent);
   }
-  
+
   .bg-base-100 div.relative::after {
     background: linear-gradient(to left, var(--color-base-100), transparent);
   }

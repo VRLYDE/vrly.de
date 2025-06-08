@@ -19,7 +19,7 @@ interface Props {
 const {
   title = "Unsere Kernleistungen",
   description = "Von der intelligenten Patientenanfragen-Verwaltung bis zur DSGVO-konformen Automatisierung – wir entwickeln maßgeschneiderte Lösungen, die Ihnen Zeit zurückgeben und Ihre Praxis zukunftssicher machen.",
-  items = []
+  items = [],
 } = Astro.props;
 
 const defaultFeatures = [
@@ -41,8 +41,9 @@ const defaultFeatures = [
   },
 ];
 ---
+
 <section>
-  <Wrapper variant="standard" class="py-12 lg:py-24 border-t">
+  <Wrapper variant="standard" class="border-t py-12 lg:py-24">
     <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
       <div>
         <Text
@@ -50,7 +51,7 @@ const defaultFeatures = [
           variant="textXS"
           data-aos="fade-down"
           data-aos-duration="1000"
-          class="flex items-center font-medium uppercase text-vrly-slate-400 gap-2"
+          class="text-vrly-slate-400 flex items-center gap-2 font-medium uppercase"
         >
           <ApiApp size="sm" class="text-vrly-teal-600" />
           Exklusiv für Psychotherapeut:Innen
@@ -60,7 +61,7 @@ const defaultFeatures = [
           variant="displayMD"
           data-aos="fade-up"
           data-aos-duration="1000"
-          class="mt-8 font-semibold tracking-tight text-vrly-slate-500 md:text-balance"
+          class="text-vrly-slate-500 mt-8 font-semibold tracking-tight md:text-balance"
         >
           {title}
         </Text>
@@ -69,73 +70,99 @@ const defaultFeatures = [
           variant="textBase"
           data-aos="fade-up"
           data-aos-duration="1500"
-          class="mt-2 text-base text-vrly-slate-400"
+          class="text-vrly-slate-400 mt-2 text-base"
         >
           {description}
         </Text>
-        
-        {items && items.length > 0 ? (
-          <div class="mt-8 space-y-6">
-            {items.map((item) => (
-              <div class="bg-white p-5 rounded-lg shadow-sm border border-vrly-neutral-200">
-                <h4 class="text-base font-semibold text-vrly-slate-500 mb-2">{item.title}</h4>
-                <p class="text-sm text-vrly-slate-400">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <ul
-            data-aos="fade-up"
-            data-aos-duration="2000"
-            role="list"
-            class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2"
-          >
-            {
-              defaultFeatures.map((section) => (
-                <li class="flex items-center gap-2 text-vrly-slate-500">
-                  {section.icon === "Filters" && <Filters size="base" class="text-vrly-blue-600" />}
-                  {section.icon === "WaveSquare" && <WaveSquare size="base" class="text-vrly-green-600" />}
+
+        {
+          items && items.length > 0 ? (
+            <div class="mt-8 space-y-6">
+              {items.map((item) => (
+                <div class="border-vrly-neutral-200 rounded-lg border bg-white p-5 shadow-sm">
+                  <h4 class="text-vrly-slate-500 mb-2 text-base font-semibold">
+                    {item.title}
+                  </h4>
+                  <p class="text-vrly-slate-400 text-sm">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <ul
+              data-aos="fade-up"
+              data-aos-duration="2000"
+              role="list"
+              class="mt-8 grid grid-cols-1 gap-2 sm:grid-cols-2"
+            >
+              {defaultFeatures.map((section) => (
+                <li class="text-vrly-slate-500 flex items-center gap-2">
+                  {section.icon === "Filters" && (
+                    <Filters size="base" class="text-vrly-blue-600" />
+                  )}
+                  {section.icon === "WaveSquare" && (
+                    <WaveSquare size="base" class="text-vrly-green-600" />
+                  )}
                   {section.icon === "ArrowIteration" && (
                     <ArrowIteration size="base" class="text-vrly-teal-600" />
                   )}
-                  {section.icon === "Plus" && <Plus size="base" class="text-vrly-blue-600" />}
-                  <Text tag="p" variant="textSM" class="font-medium leading-6">
+                  {section.icon === "Plus" && (
+                    <Plus size="base" class="text-vrly-blue-600" />
+                  )}
+                  <Text tag="p" variant="textSM" class="leading-6 font-medium">
                     {section.category}
                   </Text>
                 </li>
-              ))
-            }
-          </ul>
-        )}
+              ))}
+            </ul>
+          )
+        }
       </div>
-      <div class="bg-vrly-slate-50 p-6 rounded-lg border border-vrly-neutral-200 shadow-lg">
-        <div class="bg-white rounded-lg p-6 shadow-sm">
-          <h3 class="text-lg font-semibold text-vrly-slate-500 mb-4">VRLY Praxis-Anfragen-Autopilot</h3>
-          
+      <div
+        class="bg-vrly-slate-50 border-vrly-neutral-200 rounded-lg border p-6 shadow-lg"
+      >
+        <div class="rounded-lg bg-white p-6 shadow-sm">
+          <h3 class="text-vrly-slate-500 mb-4 text-lg font-semibold">
+            VRLY Praxis-Anfragen-Autopilot
+          </h3>
+
           <div class="space-y-4">
-            <div class="border-l-4 border-vrly-green-500 pl-3 py-1">
-              <h4 class="text-sm font-medium text-vrly-slate-500">Zeitersparnis</h4>
-              <p class="text-xs text-vrly-slate-400">2-5 Stunden pro Woche weniger für Administration</p>
+            <div class="border-vrly-green-500 border-l-4 py-1 pl-3">
+              <h4 class="text-vrly-slate-500 text-sm font-medium">
+                Zeitersparnis
+              </h4>
+              <p class="text-vrly-slate-400 text-xs">
+                2-5 Stunden pro Woche weniger für Administration
+              </p>
             </div>
-            
-            <div class="border-l-4 border-vrly-blue-500 pl-3 py-1">
-              <h4 class="text-sm font-medium text-vrly-slate-500">DSGVO-Konformität</h4>
-              <p class="text-xs text-vrly-slate-400">Alle Prozesse entsprechen den Datenschutzanforderungen</p>
+
+            <div class="border-vrly-blue-500 border-l-4 py-1 pl-3">
+              <h4 class="text-vrly-slate-500 text-sm font-medium">
+                DSGVO-Konformität
+              </h4>
+              <p class="text-vrly-slate-400 text-xs">
+                Alle Prozesse entsprechen den Datenschutzanforderungen
+              </p>
             </div>
-            
-            <div class="border-l-4 border-vrly-teal-500 pl-3 py-1">
-              <h4 class="text-sm font-medium text-vrly-slate-500">Intelligente Kategorisierung</h4>
-              <p class="text-xs text-vrly-slate-400">Automatische Priorisierung und Zuordnung von Anfragen</p>
+
+            <div class="border-vrly-teal-500 border-l-4 py-1 pl-3">
+              <h4 class="text-vrly-slate-500 text-sm font-medium">
+                Intelligente Kategorisierung
+              </h4>
+              <p class="text-vrly-slate-400 text-xs">
+                Automatische Priorisierung und Zuordnung von Anfragen
+              </p>
             </div>
-            
-            <div class="mt-6 pt-4 border-t border-vrly-neutral-200">
-              <div class="flex justify-between items-center">
-                <div class="text-sm text-vrly-slate-500">
+
+            <div class="border-vrly-neutral-200 mt-6 border-t pt-4">
+              <div class="flex items-center justify-between">
+                <div class="text-vrly-slate-500 text-sm">
                   <span class="font-medium">Einmaliger Preis:</span>
                 </div>
                 <div class="text-vrly-blue-600 font-bold">799€</div>
               </div>
-              <p class="text-xs text-vrly-slate-400 mt-1">zzgl. MwSt. für die ersten 3 Pionier-Praxen</p>
+              <p class="text-vrly-slate-400 mt-1 text-xs">
+                zzgl. MwSt. für die ersten 3 Pionier-Praxen
+              </p>
             </div>
           </div>
         </div>

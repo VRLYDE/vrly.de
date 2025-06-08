@@ -14,7 +14,8 @@ import { getCollection } from "astro:content";
 const allPostsUnsorted = await getCollection("posts");
 // Sort the posts in descending order by publication date (newest to oldest)
 const allPosts = allPostsUnsorted.sort(
-  (a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+  (a, b) =>
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
 );
 // Tags
 const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
@@ -25,23 +26,23 @@ export const prerender = true;
 const blogListingStructuredData = {
   "@context": "https://schema.org",
   "@type": "Blog",
-  "name": "VRLY Blog",
-  "description": pageSEO.blog.description,
-  "url": Astro.url.href,
-  "publisher": {
+  name: "VRLY Blog",
+  description: pageSEO.blog.description,
+  url: Astro.url.href,
+  publisher: {
     "@type": "Organization",
-    "name": "VRLY"
+    name: "VRLY",
   },
-  "blogPost": allPosts.slice(0, 10).map(post => ({
+  blogPost: allPosts.slice(0, 10).map((post) => ({
     "@type": "BlogPosting",
-    "headline": post.data.title,
-    "description": post.data.description,
-    "datePublished": post.data.pubDate,
-    "author": {
+    headline: post.data.title,
+    description: post.data.description,
+    datePublished: post.data.pubDate,
+    author: {
       "@type": "Person",
-      "name": post.data.author
-    }
-  }))
+      name: post.data.author,
+    },
+  })),
 };
 ---
 
@@ -54,7 +55,7 @@ const blogListingStructuredData = {
   <section>
     <Wrapper variant="standard" class="pt-32 pb-12">
       <div
-        class="grid items-end grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+        class="grid grid-cols-1 items-end gap-8 md:grid-cols-2 lg:grid-cols-3"
       >
         <div class="lg:col-span-2">
           <Text
@@ -62,7 +63,7 @@ const blogListingStructuredData = {
             variant="display2XL"
             data-aos="fade-up"
             data-aos-duration="1000"
-            class="font-semibold tracking-tighter text-vrly-slate-500 lg:text-balance"
+            class="text-vrly-slate-500 font-semibold tracking-tighter lg:text-balance"
           >
             Blog & Insights
           </Text>
@@ -71,40 +72,51 @@ const blogListingStructuredData = {
             variant="textLG"
             data-aos="fade-up"
             data-aos-duration="1500"
-            class="max-w-lg mt-4 font-medium text-vrly-slate-400 md:text-balance"
+            class="text-vrly-slate-400 mt-4 max-w-lg font-medium md:text-balance"
           >
-            Aktuelle Artikel zu KI, Automatisierung, DSGVO und Digitalisierung speziell für Psychotherapeut:Innen.
+            Aktuelle Artikel zu KI, Automatisierung, DSGVO und Digitalisierung
+            speziell für Psychotherapeut:Innen.
           </Text>
         </div>
         <form data-aos="fade-up" data-aos-duration="2000">
-          <label for="email" class="text-xs font-medium text-vrly-slate-400">
+          <label for="email" class="text-vrly-slate-400 text-xs font-medium">
             Newsletter abonnieren
           </label>
-          <div class="flex flex-col gap-2 mt-1">
+          <div class="mt-1 flex flex-col gap-2">
             <input
               type="email"
               id="email"
               placeholder="ihre@email.de"
               required
-              class="block w-full h-10 px-4 py-2 text-sm text-vrly-slate-500 duration-300 border border-vrly-neutral-200 rounded-lg appearance-none bg-white placeholder-vrly-slate-300 focus:outline-none focus:ring-vrly-blue-500 focus:ring-offset-2 focus:ring-2 focus:ring-offset-white focus:border-vrly-blue-500"
+              class="text-vrly-slate-500 border-vrly-neutral-200 placeholder-vrly-slate-300 focus:ring-vrly-blue-500 focus:border-vrly-blue-500 block h-10 w-full appearance-none rounded-lg border bg-white px-4 py-2 text-sm duration-300 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:outline-none"
             />
-            <Button size="base" variant="default" type="submit" class="w-full bg-vrly-blue-500 hover:bg-vrly-blue-600 text-white border-0">
+            <Button
+              size="base"
+              variant="default"
+              type="submit"
+              class="bg-vrly-blue-500 hover:bg-vrly-blue-600 w-full border-0 text-white"
+            >
               Jetzt abonnieren
             </Button>
           </div>
-          <Text tag="p" variant="textXS" class="mt-2 font-medium text-vrly-slate-400">
-            Mit dem Abonnement stimmen Sie zu, unsere Updates zu erhalten. Kein Spam, versprochen!
+          <Text
+            tag="p"
+            variant="textXS"
+            class="text-vrly-slate-400 mt-2 font-medium"
+          >
+            Mit dem Abonnement stimmen Sie zu, unsere Updates zu erhalten. Kein
+            Spam, versprochen!
           </Text>
         </form>
       </div>
     </Wrapper>
   </section>
   <section>
-    <Wrapper variant="standard" class="border-t border-vrly-neutral-200">
+    <Wrapper variant="standard" class="border-vrly-neutral-200 border-t">
       <div class="flex items-center gap-2">
         <BlogSearch />
         <div
-          class="relative flex gap-2 h-full px-2 py-2 overflow-x-scroll scrollable-content snap-x snap-proximity scrollbar-hide"
+          class="scrollable-content scrollbar-hide relative flex h-full snap-x snap-proximity gap-2 overflow-x-scroll px-2 py-2"
         >
           <Text
             tag="span"
@@ -121,7 +133,7 @@ const blogListingStructuredData = {
                 title={tag}
                 aria-label={tag}
                 href={`/blog/tags/${tag}`}
-                class="capitalize text-vrly-slate-500 hover:text-vrly-blue-600 transition-colors whitespace-nowrap px-3 py-1 rounded-full bg-vrly-neutral-100 hover:bg-vrly-blue-50"
+                class="text-vrly-slate-500 hover:text-vrly-blue-600 bg-vrly-neutral-100 hover:bg-vrly-blue-50 rounded-full px-3 py-1 whitespace-nowrap capitalize transition-colors"
               >
                 {tag}
               </Text>
@@ -132,9 +144,13 @@ const blogListingStructuredData = {
     </Wrapper>
   </section>
   <section>
-    <Wrapper variant="standard" class="py-12 border-t border-vrly-neutral-200">
+    <Wrapper variant="standard" class="border-vrly-neutral-200 border-t py-12">
       <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {allPosts.filter(post => !post.data.draft).map((post) => <BlogEntries2 post={post} />)}
+        {
+          allPosts
+            .filter((post) => !post.data.draft)
+            .map((post) => <BlogEntries2 post={post} />)
+        }
       </div>
     </Wrapper>
   </section>
