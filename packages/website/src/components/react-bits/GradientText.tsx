@@ -20,10 +20,15 @@ export default function GradientText({
     animationDuration: `${animationSpeed}s`,
   };
 
+  const baseClasses = [
+    "relative mx-auto flex max-w-fit cursor-pointer",
+    "flex-row items-center justify-center overflow-hidden",
+    "rounded-none font-medium backdrop-blur",
+    "transition-shadow duration-500",
+  ].join(" ");
+
   return (
-    <div
-      className={`relative mx-auto flex max-w-fit cursor-pointer flex-row items-center justify-center overflow-hidden rounded-none font-medium backdrop-blur transition-shadow duration-500 ${className}`}
-    >
+    <div className={`${baseClasses} ${className}`}>
       {showBorder && (
         <div
           className="animate-gradient pointer-events-none absolute inset-0 z-0 bg-cover"
