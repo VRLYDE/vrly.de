@@ -1,0 +1,31 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "vrly-website",
+  "main": "./packages/website/dist/_worker.js/index.js",
+  "compatibility_date": "2025-05-30",
+  "account_id": "dea1503d32738013a37782b7671ee4ae",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": true,
+  "routes": [
+    {
+      "pattern": "vrly.de",
+      "custom_domain": true
+    }
+  ],
+  "tsconfig": "./packages/website/tsconfig.json",
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./packages/website/dist"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "kv_namespaces": [
+    {
+      "binding": "SESSION",
+      "id": "7974aa3451be4ffd98aba571f384b058",
+      "preview_id": "3c14a53e4a0f49f4ba67aa9f671e6cea"
+    }
+  ]
+}
