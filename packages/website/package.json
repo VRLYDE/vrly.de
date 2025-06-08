@@ -22,8 +22,6 @@
     "@astrolib/seo": "^1.0.0-beta.8",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.7",
-    "@types/react": "^19.1.6",
-    "@types/react-dom": "^19.1.6",
     "astro": "5.9.1",
     "astro-webmanifest": "^1.0.0",
     "fuse.js": "^7.1.0",
@@ -34,6 +32,8 @@
     "typescript": "^5.8.3"
   },
   "devDependencies": {
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.6",
     "prettier": "3.5.3",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.6.12",
