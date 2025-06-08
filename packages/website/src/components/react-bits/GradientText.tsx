@@ -28,7 +28,11 @@ export default function GradientText({
   ].join(" ");
 
   return (
-    <div className={`${baseClasses} ${className}`}>
+    <div
+      className={`${baseClasses} ${className}`}
+      role="text"
+      aria-label={typeof children === "string" ? children : "Gradient text"}
+    >
       {showBorder && (
         <div
           className="animate-gradient pointer-events-none absolute inset-0 z-0 bg-cover"
