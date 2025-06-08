@@ -1,0 +1,29 @@
+---
+// Import the icon components
+import Filters from "./Filters.astro";
+import WaveSquare from "./WaveSquare.astro";
+import ArrowIteration from "./ArrowIteration.astro";
+import Plus from "./Plus.astro";
+
+// Define the interface for the component props
+interface Props {
+  icon: string;
+  size?: string;
+}
+
+// Get component props with defaults
+const { icon, size = "base" } = Astro.props;
+
+// Define available icon components
+const iconComponents = {
+  Filters,
+  WaveSquare,
+  ArrowIteration,
+  Plus,
+};
+
+// Determine which icon to render
+const IconComponent = iconComponents[icon as keyof typeof iconComponents];
+---
+
+{IconComponent && <IconComponent size={size} />}

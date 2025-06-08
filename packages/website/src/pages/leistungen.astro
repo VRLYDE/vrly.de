@@ -6,12 +6,10 @@ import Text from "@/components/fundations/elements/Text.astro";
 import Link from "@/components/fundations/elements/Link.astro";
 import { pageSEO, serviceStructuredData } from "@/config/seo";
 import { EXTERNAL_LINKS } from "@/config/external-links";
+
 // Icons
 import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
-import Filters from "@/components/fundations/icons/Filters.astro";
-import WaveSquare from "@/components/fundations/icons/WaveSquare.astro";
-import ArrowIteration from "@/components/fundations/icons/ArrowIteration.astro";
-import Plus from "@/components/fundations/icons/Plus.astro";
+import ServiceIcon from "@/components/fundations/icons/ServiceIcon.astro";
 
 const coreServices = [
   {
@@ -140,24 +138,6 @@ const servicesStructuredData = {
       position: index + 1,
     })),
   },
-};
-
-const iconComponents = {
-  Filters: Filters,
-  WaveSquare: WaveSquare,
-  ArrowIteration: ArrowIteration,
-  Plus: Plus,
-} as const;
-
-const ServiceIcon = ({
-  icon,
-  size = "base",
-}: {
-  icon: string;
-  size?: string;
-}) => {
-  const IconComponent = iconComponents[icon as keyof typeof iconComponents];
-  return IconComponent ? <IconComponent size={size} /> : null;
 };
 ---
 
