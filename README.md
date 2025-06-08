@@ -6,7 +6,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-orange?logo=cloudflare&logoColor=white)](https://workers.cloudflare.com/)
 [![Astro](https://img.shields.io/badge/Astro-4.0+-purple?logo=astro&logoColor=white)](https://astro.build/)
-[![License](https://img.shields.io/badge/License-Proprietary-red)](LICENSE)
+[![License: BSL-1.1](https://img.shields.io/badge/License-BSL%201.1-blue)](LICENSE)
 
 **Empowering psychotherapists with intelligent automation, so they can focus on what matters most: their patients.**
 
@@ -171,7 +171,7 @@ For security concerns, please email security@vrly.de
 
 ## 📄 License
 
-This project is proprietary software. All rights reserved by VRLY.
+We use the Business Source License 1.1 (BSL-1.1). See [LICENSE](LICENSE) for details.
 
 ---
 
