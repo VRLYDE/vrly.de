@@ -4,6 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import cloudflare from "@astrojs/cloudflare";
 import webmanifest from "astro-webmanifest";
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
@@ -31,6 +32,11 @@ export default defineConfig({
     plugins: [tailwindcss()],
     ssr: {
       external: ["node:fs/promises", "node:path", "node:url", "node:crypto"],
+    },
+    resolve: {
+      alias: import.meta.env.PROD && {
+        "react-dom/server": "react-dom/server.edge",
+      },
     },
   },
 
@@ -126,5 +132,6 @@ export default defineConfig({
         },
       ],
     }),
+    react(),
   ],
 });
