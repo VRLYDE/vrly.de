@@ -66,7 +66,11 @@ const colorSchemes = {
 } as const;
 ---
 
-<div class={`overflow-hidden ${className}`} {...rest}>
+<section
+  aria-labelledby="logo-cloud-heading"
+  class={`overflow-hidden ${className}`}
+  {...rest}
+>
   <div class="mb-8 text-center">
     <Text
       tag="p"
@@ -138,7 +142,7 @@ const colorSchemes = {
       }
     </div>
   </div>
-</div>
+</section>
 
 <style>
   @keyframes marquee {
