@@ -1,4 +1,3 @@
-SPDX-License-Identifier: BSL-1.1
 Business Source License 1.1
 
 
@@ -13,13 +12,15 @@ Licensed Work:              VRLY monorepo
 
 
 Additional Use Grant:       You may only use the Licensed Work for the 
-                            following conditions
+                            following conditions:
 
                             A non-profit project in both a production and
                             pre-production state.
 
                             A for-profit project in a pre-production state
                             only.
+                            
+                            Research and development of the Licensed Work.
 
 
 Change Date:                2029-06-08
