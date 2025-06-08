@@ -8,7 +8,7 @@
     "preview": "bun run build && wrangler dev",
     "astro": "astro",
     "deploy": "bun run build && bun x wrangler deploy",
-    "cf-typegen": "wrangler types && prettier --write worker-configuration.d.ts",
+    "cf-typegen": "wrangler types",
     "format": "prettier --write .",
     "check": "astro check",
     "cleanup": "rm -rf .astro .wrangler dist node_modules"
