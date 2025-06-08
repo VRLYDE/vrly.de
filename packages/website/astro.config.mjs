@@ -20,7 +20,10 @@ export default defineConfig({
 
   output: "server",
 
-  server: { port: 1312 },
+  server: {
+    host: true,
+    port: 1312,
+  },
 
   site: "https://vrly.de",
 
