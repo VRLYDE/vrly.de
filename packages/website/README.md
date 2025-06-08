@@ -71,15 +71,16 @@ bun install
 
 ### Befehle
 
-| Befehl              | Beschreibung                                     |
-| :------------------ | :----------------------------------------------- |
-| `bun run dev`       | Startet lokalen Entwicklungsserver auf Port 1312 |
-| `bun run build`     | Erstellt Produktionsversion in `./dist/`         |
-| `bun run preview`   | Lokale Vorschau der Produktionsversion           |
-| `bun run deploy`    | Deployment auf Cloudflare Workers                |
-| `bun run format`    | Formatiert Code mit Prettier                     |
-| `bun run check`     | Führt TypeScript-Überprüfung durch               |
-| `bun run astro ...` | Führt Astro CLI-Befehle aus                      |
+| Befehl              | Beschreibung                                                |
+| :------------------ | :---------------------------------------------------------- |
+| `bun run dev`       | Startet lokalen Entwicklungsserver mit Wrangler Types       |
+| `bun run build`     | Erstellt Produktionsversion mit TypeScript-Überprüfung      |
+| `bun run preview`   | Erstellt Build und startet Wrangler Dev-Server zur Vorschau |
+| `bun run deploy`    | Erstellt Build und deployt auf Cloudflare Workers           |
+| `bun run format`    | Formatiert Code mit Prettier                                |
+| `bun run check`     | Führt TypeScript-Überprüfung durch                          |
+| `bun run astro ...` | Führt Astro CLI-Befehle aus                                 |
+| `bun run cleanup`   | Entfernt temporäre Verzeichnisse und Abhängigkeiten         |
 
 ## Deployment
 
