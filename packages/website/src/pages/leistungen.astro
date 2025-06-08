@@ -141,6 +141,24 @@ const servicesStructuredData = {
     })),
   },
 };
+
+const iconComponents = {
+  Filters: Filters,
+  WaveSquare: WaveSquare,
+  ArrowIteration: ArrowIteration,
+  Plus: Plus,
+} as const;
+
+const ServiceIcon = ({
+  icon,
+  size = "base",
+}: {
+  icon: string;
+  size?: string;
+}) => {
+  const IconComponent = iconComponents[icon as keyof typeof iconComponents];
+  return IconComponent ? <IconComponent size={size} /> : null;
+};
 ---
 
 <BaseLayout
@@ -231,12 +249,7 @@ const servicesStructuredData = {
                 <div
                   class={`rounded-lg p-3 ${service.highlight ? "bg-vrly-blue-500" : "bg-vrly-green-500"} text-white`}
                 >
-                  {service.icon === "Filters" && <Filters size="base" />}
-                  {service.icon === "WaveSquare" && <WaveSquare size="base" />}
-                  {service.icon === "ArrowIteration" && (
-                    <ArrowIteration size="base" />
-                  )}
-                  {service.icon === "Plus" && <Plus size="base" />}
+                  <ServiceIcon icon={service.icon} size="base" />
                 </div>
                 <div class="flex-1">
                   <h3 class="text-vrly-slate-500 mb-1 text-xl font-semibold">
