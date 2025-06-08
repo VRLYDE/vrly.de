@@ -1,6 +1,7 @@
 {
   "name": "@vrl-y/website",
   "version": "1.0.1",
+  "license": "Business Source License 1.1",
   "private": true,
   "scripts": {
     "dev": "wrangler types && astro dev",

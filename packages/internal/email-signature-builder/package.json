@@ -1,7 +1,8 @@
 {
   "name": "@vrl-y/email-signature-builder",
-  "private": true,
+  "license": "Business Source License 1.1",
   "version": "1.0.0",
+  "private": true,
   "dependencies": {
     "js-tokens": "^4.0.0",
     "loose-envify": "^1.4.0",
