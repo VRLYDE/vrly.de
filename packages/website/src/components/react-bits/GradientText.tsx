@@ -19,6 +19,7 @@ interface GradientTextProps {
  *
  * @returns A React element displaying the provided content with customizable gradient and animation effects.
  */
+
 export default function GradientText({
   children,
   className = "",
