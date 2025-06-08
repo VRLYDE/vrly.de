@@ -4,6 +4,8 @@ import Link from "@/components/fundations/elements/Link.astro";
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
+import GradientText from "@/components/react-bits/GradientText";
+
 import { EXTERNAL_LINKS } from "@/config/external-links";
 
 interface Props {
@@ -30,15 +32,21 @@ const {
     class="relative z-20 overflow-hidden py-32 lg:pb-80"
   >
     <div class="relative">
-      <Text
-        tag="h1"
-        variant="display2XL"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        class="text-vrly-slate-500 font-semibold tracking-tighter lg:text-balance"
+      <GradientText
+        colors={[
+          "var(--color-vrly-green-500)",
+          "var(--color-vrly-blue-500)",
+          "var(--color-vrly-teal-700)",
+        ]}
+        animationSpeed={3}
+        showBorder={false}
+        className="text-4xl text-balance md:text-6xl"
       >
-        {title}
-      </Text>
+        <h1>
+          {title}
+        </h1>
+      </GradientText>
+
       <Text
         tag="p"
         variant="textLG"
