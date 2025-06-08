@@ -18,7 +18,7 @@ alwaysApply: false
 
 ```typescript
 // Files: kebab-case
-patient - request - handler.ts;
+patient-request-handler.ts;
 
 // Interfaces: PascalCase with "I" prefix for domain models
 interface IPatientRequest {
