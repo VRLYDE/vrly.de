@@ -1,6 +1,6 @@
 {
   "name": "@vrl-y/email-signature-builder",
-  "license": "Business Source License 1.1",
+  "license": "BSL-1.1",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
