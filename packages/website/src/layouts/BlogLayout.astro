@@ -144,6 +144,7 @@ const blogKeywords = [
                   frontmatter.tags.map((tag: string) => (
                     <a
                       href={`/blog/tags/${tag}`}
+                      aria-label={`Alle Artikel zum Thema ${tag} anzeigen`}
                       class="border-vrly-neutral-200 text-vrly-slate-500 hover:bg-vrly-blue-50 hover:text-vrly-blue-600 hover:border-vrly-blue-300 inline-block rounded-full border bg-white px-3 py-1 text-sm capitalize transition-all"
                     >
                       {tag}
