@@ -193,9 +193,15 @@ const ServiceIcon = ({
 
         <!-- Quick stats -->
         <div class="mx-auto grid max-w-2xl grid-cols-1 gap-6 md:grid-cols-3">
-          <div class="text-center">
-            <div class="text-vrly-blue-600 text-3xl font-bold">2-5h</div>
-            <div class="text-vrly-slate-400 text-sm">
+          <div
+            class="text-center"
+            itemscope
+            itemtype="https://schema.org/QuantitativeValue"
+          >
+            <div class="text-vrly-blue-600 text-3xl font-bold" itemprop="value">
+              2-5h
+            </div>
+            <div class="text-vrly-slate-400 text-sm" itemprop="description">
               Zeitersparnis pro Woche
             </div>
           </div>
