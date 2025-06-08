@@ -1,3 +1,4 @@
+// tailwind.config.mjs
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte,md,mdx}"],
   theme: {
@@ -12,13 +13,13 @@ export default {
       },
       keyframes: {
         gradient: {
-          "0%": { backgroundPosition: "0% 50%" },
-          "50%": { backgroundPosition: "100% 50%" },
-          "100%": { backgroundPosition: "0% 50%" },
+          "0%": { transform: "translateX(-100%)" },
+          "50%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
         },
       },
       animation: {
-        gradient: "gradient 4s ease-in-out infinite",
+        gradient: "gradient 6s ease-in-out infinite",
       },
     },
   },
