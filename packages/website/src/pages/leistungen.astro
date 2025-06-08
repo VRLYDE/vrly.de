@@ -6,12 +6,10 @@ import Text from "@/components/fundations/elements/Text.astro";
 import Link from "@/components/fundations/elements/Link.astro";
 import { pageSEO, serviceStructuredData } from "@/config/seo";
 import { EXTERNAL_LINKS } from "@/config/external-links";
+
 // Icons
 import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
-import Filters from "@/components/fundations/icons/Filters.astro";
-import WaveSquare from "@/components/fundations/icons/WaveSquare.astro";
-import ArrowIteration from "@/components/fundations/icons/ArrowIteration.astro";
-import Plus from "@/components/fundations/icons/Plus.astro";
+import ServiceIcon from "@/components/fundations/icons/ServiceIcon.astro";
 
 const coreServices = [
   {
@@ -20,49 +18,52 @@ const coreServices = [
     subtitle: "Unser Flaggschiff-Service",
     price: "799 € einmalig",
     priceNote: "(Bootstrap-Pionier Angebot für die ersten 3 Praxen)",
-    description: "Automatisierte, DSGVO-konforme Verwaltung von Neupatienten-Anfragen mit intelligenter Kategorisierung und sofortiger Antwort.",
+    description:
+      "Automatisierte, DSGVO-konforme Verwaltung von Neupatienten-Anfragen mit intelligenter Kategorisierung und sofortiger Antwort.",
     features: [
       "Automatische Eingangsbestätigung für alle Anfragen",
-      "Intelligente Kategorisierung nach Versicherungsart und Anliegen", 
+      "Intelligente Kategorisierung nach Versicherungsart und Anliegen",
       "DSGVO-konforme Erstinformationen und Datenschutzhinweise",
       "Strukturierte Benachrichtigung mit Zusammenfassung",
       "Integration mit Ihrem bestehenden E-Mail-System",
-      "Zeitersparnis: 2-5 Stunden pro Woche"
+      "Zeitersparnis: 2-5 Stunden pro Woche",
     ],
     timeframe: "Umsetzung in 1-2 Wochen",
-    highlight: true
+    highlight: true,
   },
   {
-    icon: "WaveSquare", 
+    icon: "WaveSquare",
     title: "Terminmanagement-KI",
     subtitle: "Intelligente Terminplanung",
     price: "Auf Anfrage",
     priceNote: "(abhängig von PVS-Integration)",
-    description: "KI-gestützte Optimierung Ihrer Terminplanung mit automatischen Erinnerungen und Wartelisten-Management.",
+    description:
+      "KI-gestützte Optimierung Ihrer Terminplanung mit automatischen Erinnerungen und Wartelisten-Management.",
     features: [
       "Automatische Wartelisten-Verwaltung",
       "Intelligente Terminvorschläge bei Absagen",
       "SMS/E-Mail Erinnerungen (DSGVO-konform)",
       "Integration mit gängigen PVS-Systemen",
-      "Ausfallprognosen und Optimierungsvorschläge"
+      "Ausfallprognosen und Optimierungsvorschläge",
     ],
-    timeframe: "Entwicklungszeit: 2-4 Wochen"
+    timeframe: "Entwicklungszeit: 2-4 Wochen",
   },
   {
     icon: "Plus",
     title: "DSGVO-Compliance-Paket",
-    subtitle: "Rechtssicherheit für Ihre Praxis", 
+    subtitle: "Rechtssicherheit für Ihre Praxis",
     price: "Ab 299 €",
     priceNote: "(einmalige Einrichtung + jährliche Überprüfung)",
-    description: "Umfassende DSGVO-Compliance-Lösung speziell für Psychotherapiepraxen mit automatischen Checks und Dokumentation.",
+    description:
+      "Umfassende DSGVO-Compliance-Lösung speziell für Psychotherapiepraxen mit automatischen Checks und Dokumentation.",
     features: [
       "Erstellung/Überprüfung Verzeichnis von Verarbeitungstätigkeiten (VVT)",
       "Automatisierte TOMs-Dokumentation",
       "DSGVO-konforme E-Mail-Vorlagen",
       "Auftragsverarbeitungsverträge für alle IT-Dienstleister",
-      "Jährliche Compliance-Überprüfung"
+      "Jährliche Compliance-Überprüfung",
     ],
-    timeframe: "Bearbeitung: 1 Woche"
+    timeframe: "Bearbeitung: 1 Woche",
   },
   {
     icon: "ArrowIteration",
@@ -70,34 +71,41 @@ const coreServices = [
     subtitle: "Maßgeschneiderte Prozessoptimierung",
     price: "Ab 1.299 €",
     priceNote: "(projektabhängig)",
-    description: "Entwicklung individueller Automatisierungslösungen für Ihre spezifischen Praxisabläufe und Herausforderungen.",
+    description:
+      "Entwicklung individueller Automatisierungslösungen für Ihre spezifischen Praxisabläufe und Herausforderungen.",
     features: [
       "Analyse bestehender Workflows",
       "Entwicklung maßgeschneiderter Automatisierung",
       "Integration verschiedener Software-Systeme",
       "Dokumentations-Assistenten",
-      "Reporting und Analytics Dashboard"
+      "Reporting und Analytics Dashboard",
     ],
-    timeframe: "Projektdauer: 4-8 Wochen"
-  }
+    timeframe: "Projektdauer: 4-8 Wochen",
+  },
 ];
 
 const supportServices = [
   {
     title: "PVS-Optimierung & Support",
-    description: "Fachkundige Beratung und Optimierung Ihrer Praxisverwaltungssoftware",
-    includes: ["Elefant", "Psyprax", "Epikur", "Andere auf Anfrage"]
+    description:
+      "Fachkundige Beratung und Optimierung Ihrer Praxisverwaltungssoftware",
+    includes: ["Elefant", "Psyprax", "Epikur", "Andere auf Anfrage"],
   },
   {
-    title: "TI-Beratung & ePA-Vorbereitung", 
-    description: "Unterstützung bei Telematikinfrastruktur und Vorbereitung auf die elektronische Patientenakte",
-    includes: ["TI-Troubleshooting", "ePA-Readiness-Check", "DiGA-Beratung"]
+    title: "TI-Beratung & ePA-Vorbereitung",
+    description:
+      "Unterstützung bei Telematikinfrastruktur und Vorbereitung auf die elektronische Patientenakte",
+    includes: ["TI-Troubleshooting", "ePA-Readiness-Check", "DiGA-Beratung"],
   },
   {
     title: "Managed IT-Support",
     description: "Umfassender IT-Support speziell für Psychotherapiepraxen",
-    includes: ["Basis-IT-Support", "DSGVO-konforme Cloud-Lösungen", "Backup-Strategien"]
-  }
+    includes: [
+      "Basis-IT-Support",
+      "DSGVO-konforme Cloud-Lösungen",
+      "Backup-Strategien",
+    ],
+  },
 ];
 
 export const prerender = true;
@@ -106,72 +114,84 @@ export const prerender = true;
 const servicesStructuredData = {
   "@context": "https://schema.org",
   "@type": "ServiceOffer",
-  "name": "VRLY Services für Psychotherapeuten",
-  "provider": {
+  name: "VRLY Services für Psychotherapeuten",
+  provider: {
     "@type": "Organization",
-    "name": "VRLY"
+    name: "VRLY",
   },
-  "areaServed": {
+  areaServed: {
     "@type": "City",
-    "name": "Hannover"
+    name: "Hannover",
   },
-  "hasOfferCatalog": {
+  hasOfferCatalog: {
     "@type": "OfferCatalog",
-    "name": "VRLY Service-Portfolio",
-    "itemListElement": coreServices.map((service, index) => ({
+    name: "VRLY Service-Portfolio",
+    itemListElement: coreServices.map((service, index) => ({
       "@type": "Offer",
-      "itemOffered": {
+      itemOffered: {
         "@type": "Service",
-        "name": service.title,
-        "description": service.description
+        name: service.title,
+        description: service.description,
       },
-      "price": service.price,
-      "priceCurrency": "EUR",
-      "position": index + 1
-    }))
-  }
+      price: service.price,
+      priceCurrency: "EUR",
+      position: index + 1,
+    })),
+  },
 };
 ---
 
-<BaseLayout 
+<BaseLayout
   title={pageSEO.leistungen.title}
   description={pageSEO.leistungen.description}
   keywords={pageSEO.leistungen.keywords}
-  jsonLd={[servicesStructuredData, serviceStructuredData.praxisAnfragenAutopilot]}
+  jsonLd={[
+    servicesStructuredData,
+    serviceStructuredData.praxisAnfragenAutopilot,
+  ]}
 >
   <!-- Hero Section -->
   <section class="relative overflow-hidden py-24 lg:py-32">
     <Wrapper variant="standard" class="relative z-10">
-      <div class="text-center max-w-4xl mx-auto">
+      <div class="mx-auto max-w-4xl text-center">
         <Text
           tag="h1"
           variant="display2XL"
-          class="font-semibold tracking-tighter text-vrly-slate-500 mb-6"
+          class="text-vrly-slate-500 mb-6 font-semibold tracking-tighter"
         >
           Unsere Leistungen für Ihre Praxis
         </Text>
         <Text
           tag="p"
           variant="textLG"
-          class="text-vrly-slate-400 max-w-2xl mx-auto mb-8"
+          class="text-vrly-slate-400 mx-auto mb-8 max-w-2xl"
         >
-          Von der intelligenten Patientenanfragen-Verwaltung bis zur umfassenden Workflow-Automatisierung – 
-          wir bieten spezialisierte Lösungen für Psychotherapeuten in Hannover.
+          Von der intelligenten Patientenanfragen-Verwaltung bis zur umfassenden
+          Workflow-Automatisierung – wir bieten spezialisierte Lösungen für
+          Psychotherapeuten in Hannover.
         </Text>
-        
+
         <!-- Quick stats -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
-          <div class="text-center">
-            <div class="text-3xl font-bold text-vrly-blue-600">2-5h</div>
-            <div class="text-sm text-vrly-slate-400">Zeitersparnis pro Woche</div>
+        <div class="mx-auto grid max-w-2xl grid-cols-1 gap-6 md:grid-cols-3">
+          <div
+            class="text-center"
+            itemscope
+            itemtype="https://schema.org/QuantitativeValue"
+          >
+            <div class="text-vrly-blue-600 text-3xl font-bold" itemprop="value">
+              2-5h
+            </div>
+            <div class="text-vrly-slate-400 text-sm" itemprop="description">
+              Zeitersparnis pro Woche
+            </div>
           </div>
           <div class="text-center">
-            <div class="text-3xl font-bold text-vrly-green-600">100%</div>
-            <div class="text-sm text-vrly-slate-400">DSGVO-konform</div>
+            <div class="text-vrly-green-600 text-3xl font-bold">100%</div>
+            <div class="text-vrly-slate-400 text-sm">DSGVO-konform</div>
           </div>
           <div class="text-center">
-            <div class="text-3xl font-bold text-vrly-teal-600">1-2</div>
-            <div class="text-sm text-vrly-slate-400">Wochen Umsetzung</div>
+            <div class="text-vrly-teal-600 text-3xl font-bold">1-2</div>
+            <div class="text-vrly-slate-400 text-sm">Wochen Umsetzung</div>
           </div>
         </div>
       </div>
@@ -179,69 +199,93 @@ const servicesStructuredData = {
   </section>
 
   <!-- Core Services -->
-  <section class="py-16 bg-vrly-neutral-100">
+  <section class="bg-vrly-neutral-100 py-16">
     <Wrapper variant="standard">
-      <div class="text-center mb-16">
-        <Text tag="h2" variant="displayLG" class="font-semibold text-vrly-slate-500 mb-4">
+      <div class="mb-16 text-center">
+        <Text
+          tag="h2"
+          variant="displayLG"
+          class="text-vrly-slate-500 mb-4 font-semibold"
+        >
           Kern-Services
         </Text>
-        <Text tag="p" variant="textBase" class="text-vrly-slate-400 max-w-2xl mx-auto">
-          Unsere bewährten Automatisierungslösungen, die sofort spürbare Entlastung für Ihren Praxisalltag bringen.
+        <Text
+          tag="p"
+          variant="textBase"
+          class="text-vrly-slate-400 mx-auto max-w-2xl"
+        >
+          Unsere bewährten Automatisierungslösungen, die sofort spürbare
+          Entlastung für Ihren Praxisalltag bringen.
         </Text>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {coreServices.map((service) => (
-          <div class={`p-8 bg-white rounded-xl shadow-lg border-2 transition-all duration-300 hover:shadow-xl ${service.highlight ? 'border-vrly-blue-500 relative' : 'border-vrly-neutral-200 hover:border-vrly-blue-300'}`}>
-            {service.highlight && (
-              <div class="absolute -top-4 left-8 bg-vrly-blue-500 text-white px-4 py-1 rounded-full text-sm font-medium">
-                Empfohlen
-              </div>
-            )}
-            
-            <div class="flex items-start gap-4 mb-6">
-              <div class={`p-3 rounded-lg ${service.highlight ? 'bg-vrly-blue-500' : 'bg-vrly-green-500'} text-white`}>
-                {service.icon === "Filters" && <Filters size="base" />}
-                {service.icon === "WaveSquare" && <WaveSquare size="base" />}
-                {service.icon === "ArrowIteration" && <ArrowIteration size="base" />}
-                {service.icon === "Plus" && <Plus size="base" />}
-              </div>
-              <div class="flex-1">
-                <h3 class="text-xl font-semibold text-vrly-slate-500 mb-1">{service.title}</h3>
-                <p class="text-sm text-vrly-slate-400 mb-2">{service.subtitle}</p>
-                <div class="flex flex-col">
-                  <span class={`text-2xl font-bold ${service.highlight ? 'text-vrly-blue-600' : 'text-vrly-green-600'}`}>
-                    {service.price}
-                  </span>
-                  <span class="text-xs text-vrly-slate-400">{service.priceNote}</span>
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+        {
+          coreServices.map((service) => (
+            <div
+              class={`rounded-xl border-2 bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-xl ${service.highlight ? "border-vrly-blue-500 relative" : "border-vrly-neutral-200 hover:border-vrly-blue-300"}`}
+            >
+              {service.highlight && (
+                <div class="bg-vrly-blue-500 absolute -top-4 left-8 rounded-full px-4 py-1 text-sm font-medium text-white">
+                  Empfohlen
+                </div>
+              )}
+
+              <div class="mb-6 flex items-start gap-4">
+                <div
+                  class={`rounded-lg p-3 ${service.highlight ? "bg-vrly-blue-500" : "bg-vrly-green-500"} text-white`}
+                >
+                  <ServiceIcon icon={service.icon} size="base" />
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-vrly-slate-500 mb-1 text-xl font-semibold">
+                    {service.title}
+                  </h3>
+                  <p class="text-vrly-slate-400 mb-2 text-sm">
+                    {service.subtitle}
+                  </p>
+                  <div class="flex flex-col">
+                    <span
+                      class={`text-2xl font-bold ${service.highlight ? "text-vrly-blue-600" : "text-vrly-green-600"}`}
+                    >
+                      {service.price}
+                    </span>
+                    <span class="text-vrly-slate-400 text-xs">
+                      {service.priceNote}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <p class="text-vrly-slate-400 mb-6">{service.description}</p>
+              <p class="text-vrly-slate-400 mb-6">{service.description}</p>
 
-            <div class="space-y-3 mb-6">
-              {service.features.map((feature) => (
-                <div class="flex items-start gap-2">
-                  <div class={`w-1.5 h-1.5 rounded-full mt-2 ${service.highlight ? 'bg-vrly-blue-500' : 'bg-vrly-green-500'} flex-shrink-0`}></div>
-                  <span class="text-sm text-vrly-slate-500">{feature}</span>
-                </div>
-              ))}
-            </div>
+              <div class="mb-6 space-y-3">
+                {service.features.map((feature) => (
+                  <div class="flex items-start gap-2">
+                    <div
+                      class={`mt-2 h-1.5 w-1.5 rounded-full ${service.highlight ? "bg-vrly-blue-500" : "bg-vrly-green-500"} flex-shrink-0`}
+                    />
+                    <span class="text-vrly-slate-500 text-sm">{feature}</span>
+                  </div>
+                ))}
+              </div>
 
-            <div class="flex items-center justify-between pt-4 border-t border-vrly-neutral-200">
-              <span class="text-sm text-vrly-slate-400">{service.timeframe}</span>
-              <Link
-                href={EXTERNAL_LINKS.workflowAudit}
-                size="sm"
-                variant="default"
-                class={`${service.highlight ? 'bg-vrly-blue-500 hover:bg-vrly-blue-600' : 'bg-vrly-green-500 hover:bg-vrly-green-600'} text-white border-0`}
-              >
-                Anfragen
-              </Link>
+              <div class="border-vrly-neutral-200 flex items-center justify-between border-t pt-4">
+                <span class="text-vrly-slate-400 text-sm">
+                  {service.timeframe}
+                </span>
+                <Link
+                  href={EXTERNAL_LINKS.workflowAudit}
+                  size="sm"
+                  variant="default"
+                  class={`${service.highlight ? "bg-vrly-blue-500 hover:bg-vrly-blue-600" : "bg-vrly-green-500 hover:bg-vrly-green-600"} border-0 text-white`}
+                >
+                  Anfragen
+                </Link>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </Wrapper>
   </section>
@@ -249,70 +293,96 @@ const servicesStructuredData = {
   <!-- Support Services -->
   <section class="py-16">
     <Wrapper variant="standard">
-      <div class="text-center mb-16">
-        <Text tag="h2" variant="displayLG" class="font-semibold text-vrly-slate-500 mb-4">
+      <div class="mb-16 text-center">
+        <Text
+          tag="h2"
+          variant="displayLG"
+          class="text-vrly-slate-500 mb-4 font-semibold"
+        >
           Support & Beratung
         </Text>
-        <Text tag="p" variant="textBase" class="text-vrly-slate-400 max-w-2xl mx-auto">
-          Umfassende Unterstützung für alle Aspekte Ihrer Praxis-IT und Digitalisierung.
+        <Text
+          tag="p"
+          variant="textBase"
+          class="text-vrly-slate-400 mx-auto max-w-2xl"
+        >
+          Umfassende Unterstützung für alle Aspekte Ihrer Praxis-IT und
+          Digitalisierung.
         </Text>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {supportServices.map((service) => (
-          <div class="p-6 bg-white rounded-xl shadow-md border border-vrly-neutral-200 hover:shadow-lg transition-all duration-300">
-            <h3 class="text-lg font-semibold text-vrly-slate-500 mb-3">{service.title}</h3>
-            <p class="text-vrly-slate-400 mb-4 text-sm">{service.description}</p>
-            
-            <div class="space-y-2">
-              {service.includes.map((item) => (
-                <div class="flex items-center gap-2">
-                  <div class="w-1 h-1 rounded-full bg-vrly-teal-500"></div>
-                  <span class="text-sm text-vrly-slate-500">{item}</span>
-                </div>
-              ))}
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+        {
+          supportServices.map((service) => (
+            <div class="border-vrly-neutral-200 rounded-xl border bg-white p-6 shadow-md transition-all duration-300 hover:shadow-lg">
+              <h3 class="text-vrly-slate-500 mb-3 text-lg font-semibold">
+                {service.title}
+              </h3>
+              <p class="text-vrly-slate-400 mb-4 text-sm">
+                {service.description}
+              </p>
+
+              <div class="space-y-2">
+                {service.includes.map((item) => (
+                  <div class="flex items-center gap-2">
+                    <div class="bg-vrly-teal-500 h-1 w-1 rounded-full" />
+                    <span class="text-vrly-slate-500 text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </Wrapper>
   </section>
 
   <!-- CTA Section -->
-  <section class="py-16 bg-vrly-blue-50">
+  <section class="bg-vrly-blue-50 py-16">
     <Wrapper variant="standard">
-      <div class="text-center max-w-3xl mx-auto">
-        <Text tag="h2" variant="displayMD" class="font-semibold text-vrly-slate-500 mb-4">
+      <div class="mx-auto max-w-3xl text-center">
+        <Text
+          tag="h2"
+          variant="displayMD"
+          class="text-vrly-slate-500 mb-4 font-semibold"
+        >
           Bereit für mehr Effizienz in Ihrer Praxis?
         </Text>
         <Text tag="p" variant="textBase" class="text-vrly-slate-400 mb-8">
-          Vereinbaren Sie einen kostenlosen 30-minütigen Workflow-Audit und entdecken Sie, 
-          wie VRLY Ihre Praxis automatisieren und optimieren kann.
+          Vereinbaren Sie einen kostenlosen 30-minütigen Workflow-Audit und
+          entdecken Sie, wie VRLY Ihre Praxis automatisieren und optimieren
+          kann.
         </Text>
-        
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+
+        <div
+          class="flex flex-col items-center justify-center gap-4 sm:flex-row"
+        >
           <Link
             href={EXTERNAL_LINKS.workflowAudit}
             size="base"
             variant="default"
-            class="bg-vrly-blue-500 hover:bg-vrly-blue-600 text-white border-0 px-8 py-3"
+            class="bg-vrly-blue-500 hover:bg-vrly-blue-600 border-0 px-8 py-3 text-white"
             gap="xs"
           >
             Kostenlosen Audit anfordern
-            <ChevronRight size="sm" class="group-hover:translate-x-2 transition-transform duration-300" />
+            <ChevronRight
+              size="sm"
+              class="transition-transform duration-300 group-hover:translate-x-2"
+            />
           </Link>
-          
-          <a 
-            href={EXTERNAL_LINKS.phone.link} 
-            class="flex items-center gap-2 text-vrly-slate-500 hover:text-vrly-blue-600 transition-colors"
+
+          <a
+            href={EXTERNAL_LINKS.phone.link}
+            class="text-vrly-slate-500 hover:text-vrly-blue-600 flex items-center gap-2 transition-colors"
           >
             <span>📞</span>
             <span>{EXTERNAL_LINKS.phone.display}</span>
           </a>
         </div>
-        
-        <p class="text-sm text-vrly-slate-400 mt-6">
-          Speziell für Psychotherapeuten in Hannover • DSGVO-konform • Keine versteckten Kosten
+
+        <p class="text-vrly-slate-400 mt-6 text-sm">
+          Speziell für Psychotherapeuten in Hannover • DSGVO-konform • Keine
+          versteckten Kosten
         </p>
       </div>
     </Wrapper>

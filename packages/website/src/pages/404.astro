@@ -15,23 +15,34 @@ export const prerender = true;
   noindex={true}
   nofollow={true}
 >
-  <section class="relative overflow-hidden bg-gradient-to-br from-vrly-neutral-0 via-vrly-blue-50 to-vrly-teal-50">
+  <section
+    class="from-vrly-neutral-0 via-vrly-blue-50 to-vrly-teal-50 relative overflow-hidden bg-gradient-to-br"
+  >
     <!-- Optimized VRLY 404 Background -->
-    <div class="absolute inset-0 bg-gradient-to-r from-vrly-blue-500/5 via-transparent to-vrly-green-500/5"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--color-vrly-blue-100)_0%,_transparent_50%)] opacity-30"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--color-vrly-teal-100)_0%,_transparent_50%)] opacity-20"></div>
-    
+    <div
+      class="from-vrly-blue-500/5 to-vrly-green-500/5 absolute inset-0 bg-gradient-to-r via-transparent"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--color-vrly-blue-100)_0%,_transparent_50%)] opacity-30"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--color-vrly-teal-100)_0%,_transparent_50%)] opacity-20"
+    >
+    </div>
+
     <Wrapper
       variant="standard"
-      class="relative py-32 overflow-hidden h-dvh flex flex-col items-center justify-center"
+      class="relative flex h-dvh flex-col items-center justify-center overflow-hidden py-32"
     >
-      <div class="relative text-center lg:w-1/2 mx-auto">
+      <div class="relative mx-auto text-center lg:w-1/2">
         <Text
           tag="h1"
           variant="display2XL"
           data-aos="fade-up"
           data-aos-duration="1000"
-          class="font-semibold tracking-tighter text-vrly-slate-500 lg:text-balance"
+          class="text-vrly-slate-500 font-semibold tracking-tighter lg:text-balance"
         >
           Seite nicht gefunden (404)
         </Text>
@@ -40,17 +51,17 @@ export const prerender = true;
           variant="textLG"
           data-aos="fade-up"
           data-aos-duration="1500"
-          class="mt-4 font-medium text-vrly-slate-500 md:text-balance"
+          class="text-vrly-slate-500 mt-4 font-medium md:text-balance"
         >
-          Entschuldigung, aber die gesuchte Seite konnte nicht gefunden werden. 
-          Sie können zu unserer Startseite zurückkehren oder uns kontaktieren, 
-          falls Sie nicht finden, wonach Sie suchen. Wir helfen Ihnen gerne dabei, 
-          die passende Lösung für Ihre Praxis zu finden.
+          Entschuldigung, aber die gesuchte Seite konnte nicht gefunden werden.
+          Sie können zu unserer Startseite zurückkehren oder uns kontaktieren,
+          falls Sie nicht finden, wonach Sie suchen. Wir helfen Ihnen gerne
+          dabei, die passende Lösung für Ihre Praxis zu finden.
         </Text>
         <div
           data-aos="fade-up"
           data-aos-duration="2000"
-          class="flex flex-col items-center mt-12 gap-2 justify-center max-w-xs mx-auto"
+          class="mx-auto mt-12 flex max-w-xs flex-col items-center justify-center gap-2"
         >
           <Link
             size="base"
@@ -61,7 +72,7 @@ export const prerender = true;
           >
             <ChevronLeft
               size="sm"
-              class="duration-300 easy-out-in group-hover:translate-x-2"
+              class="easy-out-in duration-300 group-hover:translate-x-2"
             />
             Zur Startseite
           </Link>

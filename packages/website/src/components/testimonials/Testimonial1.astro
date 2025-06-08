@@ -19,69 +19,80 @@ const {
   title = "Was unsere Kunden sagen",
   testimonials = [
     {
-      quote: "Mit dem Praxis-Anfragen-Autopilot spare ich jede Woche mehrere Stunden, die ich jetzt in die Betreuung meiner Patienten investieren kann.",
+      quote:
+        "Mit dem Praxis-Anfragen-Autopilot spare ich jede Woche mehrere Stunden, die ich jetzt in die Betreuung meiner Patienten investieren kann.",
       author: "Dr. Anna Müller",
-      role: "Psychotherapeutin in Hannover"
+      role: "Psychotherapeutin in Hannover",
     },
     {
-      quote: "Endlich eine Lösung, die versteht, wie eine Psychotherapie-Praxis funktioniert. Der DSGVO-konforme Workflow gibt mir Sicherheit und spart wertvolle Zeit.",
+      quote:
+        "Endlich eine Lösung, die versteht, wie eine Psychotherapie-Praxis funktioniert. Der DSGVO-konforme Workflow gibt mir Sicherheit und spart wertvolle Zeit.",
       author: "Michael Schmidt",
-      role: "Psychologischer Psychotherapeut"
+      role: "Psychologischer Psychotherapeut",
     },
     {
-      quote: "Die Implementierung war überraschend einfach und schnell. Bereits nach wenigen Tagen konnte ich eine deutliche Entlastung im Praxisalltag spüren.",
+      quote:
+        "Die Implementierung war überraschend einfach und schnell. Bereits nach wenigen Tagen konnte ich eine deutliche Entlastung im Praxisalltag spüren.",
       author: "Sarah Weber",
-      role: "Psychotherapeutin für Verhaltenstherapie"
-    }
-  ]
+      role: "Psychotherapeutin für Verhaltenstherapie",
+    },
+  ],
 } = Astro.props;
 ---
 
 <section>
-  <Wrapper variant="standard" class="py-12 border-t">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-12">
+  <Wrapper variant="standard" class="border-t py-12">
+    <div class="mx-auto max-w-4xl">
+      <div class="mb-12 text-center">
         <Text
           tag="h3"
           variant="displayMD"
           data-aos="fade-up"
           data-aos-duration="1000"
-          class="font-semibold tracking-tight text-vrly-slate-500"
+          class="text-vrly-slate-500 font-semibold tracking-tight"
         >
           {title}
         </Text>
       </div>
-      
+
       <div class="space-y-8" data-aos="fade-up" data-aos-duration="1500">
-        {testimonials.map((testimonial) => (
-          <div class="bg-white p-6 rounded-lg shadow-sm border border-vrly-neutral-200">
-            <div class="flex items-start">
-              <div class="flex-shrink-0 text-vrly-blue-500">
-                <Quote size="lg" />
-              </div>
-              <div class="ml-4">
-                <p class="text-lg text-vrly-slate-500 italic">{testimonial.quote}</p>
-                <div class="mt-4 flex items-center">
-                  {testimonial.image && (
-                    <div class="flex-shrink-0 mr-3">
-                      <Image 
-                        src={testimonial.image} 
-                        alt={testimonial.author}
-                        width={40}
-                        height={40}
-                        class="rounded-full"
-                      />
+        {
+          testimonials.map((testimonial) => (
+            <div class="border-vrly-neutral-200 rounded-lg border bg-white p-6 shadow-sm">
+              <div class="flex items-start">
+                <div class="text-vrly-blue-500 flex-shrink-0">
+                  <Quote size="lg" />
+                </div>
+                <div class="ml-4">
+                  <p class="text-vrly-slate-500 text-lg italic">
+                    {testimonial.quote}
+                  </p>
+                  <div class="mt-4 flex items-center">
+                    {testimonial.image && (
+                      <div class="mr-3 flex-shrink-0">
+                        <Image
+                          src={testimonial.image}
+                          alt={testimonial.author}
+                          width={40}
+                          height={40}
+                          class="rounded-full"
+                        />
+                      </div>
+                    )}
+                    <div>
+                      <h4 class="text-vrly-slate-500 text-sm font-semibold">
+                        {testimonial.author}
+                      </h4>
+                      <p class="text-vrly-slate-400 text-xs">
+                        {testimonial.role}
+                      </p>
                     </div>
-                  )}
-                  <div>
-                    <h4 class="text-sm font-semibold text-vrly-slate-500">{testimonial.author}</h4>
-                    <p class="text-xs text-vrly-slate-400">{testimonial.role}</p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </Wrapper>

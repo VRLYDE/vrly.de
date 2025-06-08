@@ -39,42 +39,45 @@ const { hideNav = false, hideFooter = false, ...seoProps } = Astro.props;
 // Critical fonts to preload for optimal LCP performance
 const criticalFonts = [
   {
-    href: '/fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf',
-    name: 'Nunito Sans (Headings)'
+    href: "/fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf",
+    name: "Nunito Sans (Headings)",
   },
   {
-    href: '/fonts/OpenSans-VariableFont_wdth,wght.ttf',
-    name: 'Open Sans (Body)'
-  }
+    href: "/fonts/OpenSans-VariableFont_wdth,wght.ttf",
+    name: "Open Sans (Body)",
+  },
 ];
 ---
+
 <html
   lang="de"
-  class="scroll-smooth selection:bg-vrly-blue-500 selection:text-white"
+  class="selection:bg-vrly-blue-500 scroll-smooth selection:text-white"
 >
   <head>
     {/* Preload critical fonts for improved LCP */}
-    {criticalFonts.map(font => (
-      <link
-        rel="preload"
-        href={font.href}
-        as="font"
-        type="font/ttf"
-        crossorigin
-      />
-    ))}
-    
+    {
+      criticalFonts.map((font) => (
+        <link
+          rel="preload"
+          href={font.href}
+          as="font"
+          type="font/ttf"
+          crossorigin
+        />
+      ))
+    }
+
     <BaseHead {...seoProps} />
   </head>
-  <body class="relative flex flex-col min-h-screen bg-white">
+  <body class="relative flex min-h-screen flex-col bg-white">
     <div
-      class="bg-stripes max-w-7xl mx-auto border-x border-vrly-neutral-200 px-2 md:px-0 w-full lg:overflow-hidden"
+      class="bg-stripes border-vrly-neutral-200 mx-auto w-full max-w-7xl border-x px-2 md:px-0 lg:overflow-hidden"
     >
       {!hideNav && <Navigation />}
       <main class="grow">
         <slot />
       </main>
-    { !hideFooter && <Footer /> }
+      {!hideFooter && <Footer />}
     </div>
     <!-- Scripts -->
     <AOSBody />

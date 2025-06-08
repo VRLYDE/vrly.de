@@ -35,7 +35,8 @@ const { url, title, description, pubDate, image, category, readingTime } = {
   description: post.data.description,
   image: post.data.image.url,
   category: post.data.category,
-  readingTime: post.data.readingTime || Math.ceil(post.body.split(' ').length / 200), // Estimate reading time
+  readingTime:
+    post.data.readingTime || Math.ceil(post.body.split(" ").length / 200), // Estimate reading time
   pubDate: new Date(post.data.pubDate).toLocaleDateString("de-DE", {
     year: "numeric",
     month: "long",
@@ -45,22 +46,26 @@ const { url, title, description, pubDate, image, category, readingTime } = {
 
 // Category colors
 const categoryColors: Record<string, string> = {
-  'KI & Automatisierung': 'bg-vrly-blue-50 text-vrly-blue-600',
-  'DSGVO & Compliance': 'bg-vrly-green-50 text-vrly-green-600',
-  'Praxistipps': 'bg-vrly-teal-50 text-vrly-teal-600',
-  'Technologie': 'bg-purple-50 text-purple-600',
-  'Fallstudien': 'bg-orange-50 text-orange-600',
-  'News': 'bg-vrly-neutral-100 text-vrly-slate-600'
+  "KI & Automatisierung": "bg-vrly-blue-50 text-vrly-blue-600",
+  "DSGVO & Compliance": "bg-vrly-green-50 text-vrly-green-600",
+  Praxistipps: "bg-vrly-teal-50 text-vrly-teal-600",
+  Technologie: "bg-purple-50 text-purple-600",
+  Fallstudien: "bg-orange-50 text-orange-600",
+  News: "bg-vrly-neutral-100 text-vrly-slate-600",
 };
 
-const categoryColor = categoryColors[category] || categoryColors['News'];
+const categoryColor = categoryColors[category] || categoryColors["News"];
 ---
 
 <article
-  class="relative overflow-hidden group flex h-full justify-between flex-col gap-4 bg-white transition-all cursor-pointer hover:shadow-xl shadow-md rounded-2xl group duration-300 border border-vrly-neutral-200 hover:border-vrly-blue-300"
+  class="group group border-vrly-neutral-200 hover:border-vrly-blue-300 relative flex h-full cursor-pointer flex-col justify-between gap-4 overflow-hidden rounded-2xl border bg-white shadow-md transition-all duration-300 hover:shadow-xl"
 >
-  <a href={url} title={title} class="absolute inset-0 z-10" aria-label={`Artikel lesen: ${title}`}></a>
-  
+  <a
+    href={url}
+    title={title}
+    class="absolute inset-0 z-10"
+    aria-label={`Artikel lesen: ${title}`}></a>
+
   <!-- Image -->
   <div class="relative overflow-hidden rounded-t-2xl">
     <Image
@@ -68,53 +73,61 @@ const categoryColor = categoryColors[category] || categoryColors['News'];
       alt={title}
       width="800"
       height="450"
-      class="object-cover object-center aspect-16/9 w-full group-hover:scale-105 transition-transform duration-500"
+      class="aspect-16/9 w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
     />
     <!-- Category Badge -->
     <div class="absolute top-4 left-4">
-      <span class={`px-3 py-1 rounded-full text-xs font-medium ${categoryColor}`}>
+      <span
+        class={`px-3 py-1 rounded-full text-xs font-medium ${categoryColor}`}
+      >
         {category}
       </span>
     </div>
   </div>
-  
+
   <!-- Content -->
   <div class="flex-1 p-6">
-    <div class="flex items-center gap-4 mb-3">
+    <div class="mb-3 flex items-center gap-4">
       <time datetime={post.data.pubDate.toISOString()}>
         <Text tag="span" variant="textXS" class="text-vrly-slate-400">
           {pubDate}
         </Text>
       </time>
-      {readingTime && (
-        <div class="flex items-center gap-1 text-vrly-slate-400">
-          <Clock size="xs" />
-          <Text tag="span" variant="textXS">
-            {readingTime} Min. Lesezeit
-          </Text>
-        </div>
-      )}
+      {
+        readingTime && (
+          <div class="text-vrly-slate-400 flex items-center gap-1">
+            <Clock size="xs" />
+            <Text tag="span" variant="textXS">
+              {readingTime} Min. Lesezeit
+            </Text>
+          </div>
+        )
+      }
     </div>
-    
-    <Text tag="h3" variant="textLG" class="font-semibold text-vrly-slate-500 mb-2 line-clamp-2 group-hover:text-vrly-blue-600 transition-colors">
+
+    <Text
+      tag="h3"
+      variant="textLG"
+      class="text-vrly-slate-500 group-hover:text-vrly-blue-600 mb-2 line-clamp-2 font-semibold transition-colors"
+    >
       {title}
     </Text>
-    
+
     <Text
       tag="p"
       variant="textSM"
-      class="text-vrly-slate-400 line-clamp-3 mb-4"
+      class="text-vrly-slate-400 mb-4 line-clamp-3"
     >
       {description}
     </Text>
   </div>
-  
+
   <!-- Footer -->
   <div class="px-6 pb-6">
     <Text
       tag="span"
       variant="textSM"
-      class="flex items-center font-medium gap-2 text-vrly-blue-600 group-hover:text-vrly-blue-700"
+      class="text-vrly-blue-600 group-hover:text-vrly-blue-700 flex items-center gap-2 font-medium"
     >
       Weiterlesen
       <ChevronRight

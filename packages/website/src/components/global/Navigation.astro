@@ -20,21 +20,24 @@ const navigationLinks = [
 ];
 ---
 
-<div id="nav-wrapper" class="mx-auto fixed top-0 w-full inset-x-0 z-50">
-  <Wrapper id="second-wrapper" class="standard" class="border-b">
+<div id="nav-wrapper" class="fixed inset-x-0 top-0 z-50 mx-auto w-full">
+  <Wrapper id="second-wrapper" class="standard border-b">
     <div
       id="navigation-wrapper"
-      class="relative flex flex-col md:items-center md:justify-between md:flex-row"
+      class="relative flex flex-col md:flex-row md:items-center md:justify-between"
     >
       <div class="flex flex-row items-center justify-between">
-        <a href="/" class="text-vrly-blue-500 hover:text-vrly-blue-600 transition-colors">
+        <a
+          href="/"
+          class="text-vrly-blue-500 hover:text-vrly-blue-600 transition-colors"
+        >
           <span class="sr-only">Zur VRLY Startseite</span>
-          <Logo class="size-12 text-vrly-blue-500" />
+          <Logo class="text-vrly-blue-500 size-12" />
         </a>
 
         <button
           id="menu-toggle"
-          class="inline-flex items-center justify-center p-2 text-vrly-slate-400 hover:text-vrly-slate-500 focus:outline-none focus:text-vrly-slate-600 md:hidden"
+          class="text-vrly-slate-400 hover:text-vrly-slate-500 focus:text-vrly-slate-600 inline-flex items-center justify-center p-2 focus:outline-none md:hidden"
         >
           <svg
             class="size-6"
@@ -61,21 +64,33 @@ const navigationLinks = [
       </div>
       <nav
         id="navigation-menu"
-        class="fixed inset-0 bg-white md:bg-transparent flex flex-col py-24 lg:p-0 h-full justify-between md:p-0 transform transition-all duration-300 ease-in-out opacity-0 -translate-y-4 pointer-events-none md:relative md:inset-auto md:opacity-100 md:pointer-events-auto md:translate-y-0"
+        class="pointer-events-none fixed inset-0 flex h-full -translate-y-4 transform flex-col justify-between bg-white py-24 opacity-0 transition-all duration-300 ease-in-out md:pointer-events-auto md:relative md:inset-auto md:translate-y-0 md:bg-transparent md:p-0 md:opacity-100 lg:p-0"
       >
         <!-- Optimized VRLY Mobile Menu Background (mobile only) -->
-        <div class="absolute inset-0 bg-gradient-to-br from-vrly-neutral-0 via-vrly-blue-50 to-vrly-teal-50 md:hidden"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-vrly-blue-500/5 via-transparent to-vrly-green-500/5 md:hidden"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--color-vrly-blue-100)_0%,_transparent_50%)] opacity-30 md:hidden"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--color-vrly-teal-100)_0%,_transparent_50%)] opacity-20 md:hidden"></div>
-        
         <div
-          class="absolute inset-0 pointer-events-none bg-white/80 backdrop-blur-sm border-x border-vrly-neutral-200 mx-2 md:hidden"
+          class="from-vrly-neutral-0 via-vrly-blue-50 to-vrly-teal-50 absolute inset-0 bg-gradient-to-br md:hidden"
+        >
+        </div>
+        <div
+          class="from-vrly-blue-500/5 to-vrly-green-500/5 absolute inset-0 bg-gradient-to-r via-transparent md:hidden"
+        >
+        </div>
+        <div
+          class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--color-vrly-blue-100)_0%,_transparent_50%)] opacity-30 md:hidden"
+        >
+        </div>
+        <div
+          class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--color-vrly-teal-100)_0%,_transparent_50%)] opacity-20 md:hidden"
+        >
+        </div>
+
+        <div
+          class="border-vrly-neutral-200 pointer-events-none absolute inset-0 mx-2 border-x bg-white/80 backdrop-blur-sm md:hidden"
         >
         </div>
         <button
           id="menu-close"
-          class="absolute top-4 right-4 md:hidden focus:outline-none text-vrly-slate-500"
+          class="text-vrly-slate-500 absolute top-4 right-4 focus:outline-none md:hidden"
           aria-label="Menü schließen"
         >
           <svg
@@ -92,17 +107,17 @@ const navigationLinks = [
           </svg>
         </button>
         <div
-          class="list-none md:ml-auto w-full flex flex-col h-full justify-between items-end px-8 md:px-0 md:flex-row md:items-center md:justify-center md:text-left gap-2 md:gap-6 relative"
+          class="relative flex h-full w-full list-none flex-col items-end justify-between gap-2 px-8 md:ml-auto md:flex-row md:items-center md:justify-center md:gap-6 md:px-0 md:text-left"
         >
           <a href="/" class="md:hidden">
-            <Logo class="size-12 text-vrly-blue-500" />
+            <Logo class="text-vrly-blue-500 size-12" />
           </a>
-          <div class="flex flex-col text-right gap-4 md:flex-row md:gap-6">
+          <div class="flex flex-col gap-4 text-right md:flex-row md:gap-6">
             {
               navigationLinks.map((link) => (
                 <a
                   href={link.href}
-                  class="hover:text-vrly-blue-600 text-vrly-slate-500 tracking-tighter md:tracking-normal font-semibold md:font-medium text-3xl md:text-base transition-colors duration-200"
+                  class="hover:text-vrly-blue-600 text-vrly-slate-500 text-3xl font-semibold tracking-tighter transition-colors duration-200 md:text-base md:font-medium md:tracking-normal"
                 >
                   {link.title}
                 </a>
@@ -113,7 +128,7 @@ const navigationLinks = [
             href={EXTERNAL_LINKS.bookingCalendar}
             size="sm"
             variant="default"
-            class="w-full md:w-auto bg-vrly-blue-500 hover:bg-vrly-blue-600 text-white border-0"
+            class="bg-vrly-blue-500 hover:bg-vrly-blue-600 w-full border-0 text-white md:w-auto"
           >
             Jetzt kostenlos beraten lassen
           </Link>
@@ -129,16 +144,16 @@ const navigationLinks = [
     const menuIcon = document.getElementById("menu-icon");
     const closeIcon = document.getElementById("close-icon");
     const navigationMenu = document.getElementById("navigation-menu");
-    
+
     // Toggle mobile menu
     function toggleMenu(open: boolean): void {
       console.log(`Toggling menu. Open: ${open}`);
-      
+
       if (!navigationMenu || !menuIcon || !closeIcon) {
         console.warn("Required DOM elements not found");
         return;
       }
-      
+
       navigationMenu.classList.toggle("opacity-100", open);
       navigationMenu.classList.toggle("translate-y-0", open);
       navigationMenu.classList.toggle("pointer-events-auto", open);
@@ -153,7 +168,7 @@ const navigationLinks = [
     if (menuToggle) {
       menuToggle.addEventListener("click", () => toggleMenu(true));
     }
-    
+
     if (menuClose) {
       menuClose.addEventListener("click", () => toggleMenu(false));
     }

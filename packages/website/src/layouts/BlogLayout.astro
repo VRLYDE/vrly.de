@@ -13,35 +13,35 @@ const { frontmatter } = Astro.props;
 const blogPostStructuredData = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": frontmatter.title,
-  "description": frontmatter.description,
-  "image": frontmatter.image?.url,
-  "author": {
+  headline: frontmatter.title,
+  description: frontmatter.description,
+  image: frontmatter.image?.url,
+  author: {
     "@type": "Person",
-    "name": frontmatter.author
+    name: frontmatter.author,
   },
-  "publisher": {
+  publisher: {
     "@type": "Organization",
-    "name": "VRLY",
-    "logo": {
+    name: "VRLY",
+    logo: {
       "@type": "ImageObject",
-      "url": seoConfig.site.url + "/logo.svg"
-    }
+      url: seoConfig.site.url + "/logo.svg",
+    },
   },
-  "datePublished": frontmatter.pubDate,
-  "dateModified": frontmatter.updatedDate || frontmatter.pubDate,
-  "mainEntityOfPage": {
+  datePublished: frontmatter.pubDate,
+  dateModified: frontmatter.updatedDate || frontmatter.pubDate,
+  mainEntityOfPage: {
     "@type": "WebPage",
-    "@id": Astro.url.href
-  }
+    "@id": Astro.url.href,
+  },
 };
 
 // Extract keywords from tags and add blog-specific ones
 const blogKeywords = [
   ...seoConfig.site.keywords,
-  ...frontmatter.tags || [],
+  ...(frontmatter.tags || []),
   "Psychotherapie Blog",
-  "KI Insights"
+  "KI Insights",
 ];
 ---
 
@@ -55,7 +55,7 @@ const blogKeywords = [
     type: "article",
     title: frontmatter.title,
     description: frontmatter.description,
-    image: frontmatter.image?.url
+    image: frontmatter.image?.url,
   }}
 >
   <section>
@@ -65,7 +65,7 @@ const blogKeywords = [
         variant="display2XL"
         data-aos="fade-up"
         data-aos-duration="1000"
-        class="font-semibold tracking-tighter text-vrly-slate-500 lg:text-balance"
+        class="text-vrly-slate-500 font-semibold tracking-tighter lg:text-balance"
       >
         {frontmatter.title}
       </Text>
@@ -74,93 +74,110 @@ const blogKeywords = [
         variant="textLG"
         data-aos="fade-up"
         data-aos-duration="1500"
-        class="mt-4 text-vrly-slate-400 max-w-2xl"
+        class="text-vrly-slate-400 mt-4 max-w-2xl"
       >
         {frontmatter.description}
       </Text>
 
-                <Image
-            width={1200}
-            height={630}
-            alt={frontmatter.image.alt}
-            src={frontmatter.image.url}
-            class="w-full object-cover object-center aspect-[1200/630] mt-8 rounded-2xl"
-          />
-          <div class="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-3 items-start">
-            <Wrapper variant="prose" class="lg:col-span-2">
-              <slot />
-            </Wrapper>
-            <div class="lg:sticky lg:top-8">
-              <div class="bg-vrly-neutral-50 rounded-xl p-6">
-                <div class="flex items-center">
-                  <Image
-                    width={200}
-                    height={200}
-                    class="inline-block rounded-full size-12"
-                    src={frontmatter.authorAvatar.url}
-                    alt={frontmatter.authorAvatar.alt}
-                  />
-                  <div class="ml-3">
-                    <Text
-                      tag="p"
-                      variant="textSM"
-                      class="font-medium text-vrly-slate-500"
-                    >
-                      {frontmatter.author}
-                <br />
-                <time
-                  datetime={frontmatter.pubDate.toISOString()}
+      <Image
+        width={1200}
+        height={630}
+        loading="eager"
+        format="webp"
+        alt={frontmatter.image.alt}
+        src={frontmatter.image.url}
+        class="mt-8 aspect-[1200/630] w-full rounded-2xl object-cover object-center"
+      />
+      <div class="mt-12 grid grid-cols-1 items-start gap-8 lg:grid-cols-3">
+        <Wrapper variant="prose" class="lg:col-span-2">
+          <slot />
+        </Wrapper>
+        <div class="lg:sticky lg:top-8">
+          <div class="bg-vrly-neutral-50 rounded-xl p-6">
+            <div class="flex items-center">
+              <Image
+                width={200}
+                height={200}
+                class="inline-block size-12 rounded-full"
+                src={frontmatter.authorAvatar.url}
+                alt={frontmatter.authorAvatar.alt}
+              />
+              <div class="ml-3">
+                <Text
+                  tag="p"
+                  variant="textSM"
+                  class="text-vrly-slate-500 font-medium"
                 >
-                  {
-                    frontmatter.pubDate.toLocaleDateString("de-DE", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric"
-                    })
-                  }</time
-                >
-                                  </Text>
-                  </div>
-                </div>
-                
-                {frontmatter.readingTime && (
-                  <div class="mt-4 pt-4 border-t border-vrly-neutral-200">
-                    <Text tag="p" variant="textXS" class="text-vrly-slate-400">
-                      Lesezeit: {frontmatter.readingTime} Minuten
-                    </Text>
-                  </div>
-                )}
-                
-                <div class="mt-4 pt-4 border-t border-vrly-neutral-200">
-                  <Text tag="p" variant="textSM" class="text-vrly-slate-500 font-medium mb-3">
-                    Themen:
-                  </Text>
-                  <div class="flex flex-wrap gap-2">
+                  {frontmatter.author}
+                  <br />
+                  <time datetime={frontmatter.pubDate.toISOString()}>
                     {
-                      frontmatter.tags.map((tag: string) => (
-                        <a
-                          href={`/blog/tags/${tag}`}
-                          class="inline-block px-3 py-1 rounded-full text-sm bg-white border border-vrly-neutral-200 text-vrly-slate-500 hover:bg-vrly-blue-50 hover:text-vrly-blue-600 hover:border-vrly-blue-300 transition-all capitalize"
-                        >
-                          {tag}
-                        </a>
-                      ))
-                    }
-                  </div>
-                </div>
-                
-                {frontmatter.category && (
-                  <div class="mt-6 p-4 bg-white rounded-lg border border-vrly-neutral-200">
-                    <Text tag="p" variant="textXS" class="text-vrly-slate-400 mb-1">
-                      Kategorie
-                    </Text>
-                    <Text tag="p" variant="textSM" class="text-vrly-slate-500 font-medium">
-                      {frontmatter.category}
-                    </Text>
-                  </div>
-                )}
+                      frontmatter.pubDate.toLocaleDateString("de-DE", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })
+                    }</time
+                  >
+                </Text>
               </div>
             </div>
+
+            {
+              frontmatter.readingTime && (
+                <div class="border-vrly-neutral-200 mt-4 border-t pt-4">
+                  <Text tag="p" variant="textXS" class="text-vrly-slate-400">
+                    Lesezeit: {frontmatter.readingTime} Minuten
+                  </Text>
+                </div>
+              )
+            }
+
+            <div class="border-vrly-neutral-200 mt-4 border-t pt-4">
+              <Text
+                tag="p"
+                variant="textSM"
+                class="text-vrly-slate-500 mb-3 font-medium"
+              >
+                Themen:
+              </Text>
+              <div class="flex flex-wrap gap-2">
+                {
+                  frontmatter.tags.map((tag: string) => (
+                    <a
+                      href={`/blog/tags/${tag}`}
+                      aria-label={`Alle Artikel zum Thema ${tag} anzeigen`}
+                      class="border-vrly-neutral-200 text-vrly-slate-500 hover:bg-vrly-blue-50 hover:text-vrly-blue-600 hover:border-vrly-blue-300 inline-block rounded-full border bg-white px-3 py-1 text-sm capitalize transition-all"
+                    >
+                      {tag}
+                    </a>
+                  ))
+                }
+              </div>
+            </div>
+
+            {
+              frontmatter.category && (
+                <div class="border-vrly-neutral-200 mt-6 rounded-lg border bg-white p-4">
+                  <Text
+                    tag="p"
+                    variant="textXS"
+                    class="text-vrly-slate-400 mb-1"
+                  >
+                    Kategorie
+                  </Text>
+                  <Text
+                    tag="p"
+                    variant="textSM"
+                    class="text-vrly-slate-500 font-medium"
+                  >
+                    {frontmatter.category}
+                  </Text>
+                </div>
+              )
+            }
+          </div>
+        </div>
       </div>
     </Wrapper>
   </section>

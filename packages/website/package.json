@@ -1,16 +1,16 @@
 {
   "name": "vrly-de",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro check && bun run cf-typegen && astro build",
-    "preview": "bun run build && wrangler dev",
+    "dev": "wrangler types && astro dev",
+    "build": "wrangler types && astro check && astro build",
+    "preview": "wrangler types && bun run build && wrangler dev",
     "astro": "astro",
-    "deploy": "bun run build && bun x wrangler deploy",
-    "cf-typegen": "wrangler types && prettier --write worker-configuration.d.ts",
+    "deploy": "bun run build && bunx wrangler deploy",
     "format": "prettier --write .",
-    "check": "astro check"
+    "check": "astro check",
+    "cleanup": "rm -rf .astro .wrangler dist node_modules"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -29,7 +29,9 @@
     "typescript": "^5.8.3"
   },
   "devDependencies": {
-    "prettier": "^3.5.3",
+    "prettier": "3.5.3",
+    "prettier-plugin-astro": "0.14.1",
+    "prettier-plugin-tailwindcss": "0.6.12",
     "wrangler": "^4.19.1"
   }
 }

@@ -16,49 +16,54 @@ interface Props {
 const {
   title = "Ihr sofortiger, greifbarer Nutzen",
   description = "Mit dem VRLY Praxis-Anfragen-Autopilot gewinnen Sie wertvolle Zeit für das Wesentliche: Ihre Patienten.",
-  benefits = []
+  benefits = [],
 } = Astro.props;
 
 const defaultBenefits = [
   {
     title: "Zeitersparnis",
-    description: "2-5 Stunden pro Woche weniger für administrative Tätigkeiten."
+    description:
+      "2-5 Stunden pro Woche weniger für administrative Tätigkeiten.",
   },
   {
     title: "Stressreduktion",
-    description: "Kein ständiges Reagieren auf jede einzelne Anfrage mehr, Reduktion des mentalen Overloads."
+    description:
+      "Kein ständiges Reagieren auf jede einzelne Anfrage mehr, Reduktion des mentalen Overloads.",
   },
   {
     title: "Professionalität",
-    description: "Jeder Anfragende erhält eine prompte, professionelle Rückmeldung – das schafft Vertrauen."
+    description:
+      "Jeder Anfragende erhält eine prompte, professionelle Rückmeldung – das schafft Vertrauen.",
   },
   {
     title: "DSGVO-Sicherheit",
-    description: "Der Erstkontakt und die Datenerfassung erfolgen von Beginn an strukturiert und DSGVO-konform."
+    description:
+      "Der Erstkontakt und die Datenerfassung erfolgen von Beginn an strukturiert und DSGVO-konform.",
   },
   {
     title: "Fokus",
-    description: "Mehr Zeit und Energie für Ihre Kernkompetenz – die therapeutische Arbeit mit Ihren Klienten."
+    description:
+      "Mehr Zeit und Energie für Ihre Kernkompetenz – die therapeutische Arbeit mit Ihren Klienten.",
   },
   {
     title: "Struktur",
-    description: "Klare Übersicht über neue Anfragen und deren Status."
-  }
+    description: "Klare Übersicht über neue Anfragen und deren Status.",
+  },
 ];
 ---
 
 <section>
-  <Wrapper variant="standard" class="py-12 border-t">
+  <Wrapper variant="standard" class="border-t py-12">
     <div
-      class="relative flex p-8 overflow-hidden shadow bg-gradient-to-b from-vrly-blue-50 to-vrly-slate-50 rounded-2xl lg:p-16"
+      class="from-vrly-blue-50 to-vrly-slate-50 relative flex overflow-hidden rounded-2xl bg-gradient-to-b p-8 shadow lg:p-16"
     >
       <div class="relative w-full">
-        <div class="text-center mb-12">
+        <div class="mb-12 text-center">
           <Text
             variant="textXS"
             data-aos="fade-down"
             data-aos-duration="1000"
-            class="inline-flex items-center font-medium uppercase text-vrly-slate-400 gap-2"
+            class="text-vrly-slate-400 inline-flex items-center gap-2 font-medium uppercase"
           >
             <ApiApp size="sm" class="text-vrly-green-600" />
             VRLY Praxis-Anfragen-Autopilot
@@ -68,7 +73,7 @@ const defaultBenefits = [
             variant="displayMD"
             data-aos="fade-up"
             data-aos-duration="1000"
-            class="mt-6 font-semibold tracking-tight text-vrly-slate-500 md:text-balance"
+            class="text-vrly-slate-500 mt-6 font-semibold tracking-tight md:text-balance"
           >
             {title}
           </Text>
@@ -77,36 +82,50 @@ const defaultBenefits = [
             variant="textBase"
             data-aos="fade-up"
             data-aos-duration="1500"
-            class="mt-2 text-base text-vrly-slate-400 max-w-2xl mx-auto"
+            class="text-vrly-slate-400 mx-auto mt-2 max-w-2xl text-base"
           >
             {description}
           </Text>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {(benefits && benefits.length > 0 ? benefits : defaultBenefits).map((benefit) => (
-            <div 
-              data-aos="fade-up"
-              data-aos-duration="2000"
-              class="bg-white p-6 rounded-lg shadow-sm border border-vrly-neutral-200 hover:shadow-md transition-shadow"
-            >
-              <div class="flex items-center mb-3">
-                <div class="flex-shrink-0 flex items-center justify-center w-8 h-8 bg-vrly-green-100 rounded-full text-vrly-green-600">
-                  <Check size="sm" />
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {
+            (benefits && benefits.length > 0 ? benefits : defaultBenefits).map(
+              (benefit) => (
+                <div
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
+                  class="border-vrly-neutral-200 rounded-lg border bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                >
+                  <div class="mb-3 flex items-center">
+                    <div class="bg-vrly-green-100 text-vrly-green-600 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full">
+                      <Check size="sm" />
+                    </div>
+                    <h4 class="text-vrly-slate-500 ml-3 text-base font-semibold">
+                      {benefit.title}
+                    </h4>
+                  </div>
+                  <p class="text-vrly-slate-400 ml-11 text-sm">
+                    {benefit.description}
+                  </p>
                 </div>
-                <h4 class="text-base font-semibold text-vrly-slate-500 ml-3">{benefit.title}</h4>
-              </div>
-              <p class="text-sm text-vrly-slate-400 ml-11">{benefit.description}</p>
-            </div>
-          ))}
+              ),
+            )
+          }
         </div>
-        
+
         <div class="mt-12 text-center">
-          <div class="inline-block bg-vrly-blue-50 px-4 py-2 rounded-lg border border-vrly-blue-200">
-            <p class="text-sm text-vrly-blue-600 font-medium">
-              "Mit dem Praxis-Anfragen-Autopilot spare ich durchschnittlich <span class="font-bold">4,2 Stunden pro Woche</span>."
+          <div
+            class="bg-vrly-blue-50 border-vrly-blue-200 inline-block rounded-lg border px-4 py-2"
+          >
+            <p class="text-vrly-blue-600 text-sm font-medium">
+              "Mit dem Praxis-Anfragen-Autopilot spare ich durchschnittlich <span
+                class="font-bold">4,2 Stunden pro Woche</span
+              >."
             </p>
-            <p class="text-xs text-vrly-slate-400 mt-1">Dr. Anna Müller, Psychotherapeutin in Hannover</p>
+            <p class="text-vrly-slate-400 mt-1 text-xs">
+              Dr. Anna Müller, Psychotherapeutin in Hannover
+            </p>
           </div>
         </div>
       </div>

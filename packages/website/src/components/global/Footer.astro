@@ -44,33 +44,40 @@ const links = [
 ];
 ---
 
-<footer class="overflow-hidden relative bg-vrly-neutral-100">
-  <Wrapper class="py-12 border-t border-vrly-neutral-200">
+<footer class="bg-vrly-neutral-100 relative overflow-hidden">
+  <Wrapper class="border-vrly-neutral-200 border-t py-12">
     <!-- Main Footer Content -->
-    <div class="grid grid-cols-1 gap-y-12 sm:grid-cols-2 lg:grid-cols-6 mb-12">
+    <div class="mb-12 grid grid-cols-1 gap-y-12 sm:grid-cols-2 lg:grid-cols-6">
       <!-- Company Info -->
       <div class="lg:col-span-2 lg:pr-8">
-        <Logo class="size-12 text-vrly-blue-500 mb-4" />
+        <Logo class="text-vrly-blue-500 mb-4 size-12" />
         <Text
           tag="p"
           variant="textSM"
           class="text-vrly-slate-400 mb-4 max-w-sm"
         >
-          VRLY automatisiert Effizienz mit Künstlicher Intelligenz. 
-          Spezialisiert auf KI-gestützte Workflow-Automatisierung für Psychotherapeuten in Hannover.
+          VRLY automatisiert Effizienz mit Künstlicher Intelligenz.
+          Spezialisiert auf KI-gestützte Workflow-Automatisierung für
+          Psychotherapeuten in Hannover.
         </Text>
-        
+
         <!-- Contact Info -->
-        <div class="space-y-2 text-sm text-vrly-slate-500">
+        <div class="text-vrly-slate-500 space-y-2 text-sm">
           <div class="flex items-center gap-2">
             <span>📧</span>
-            <a href={EXTERNAL_LINKS.email.link} class="hover:text-vrly-blue-600 transition-colors">
+            <a
+              href={EXTERNAL_LINKS.email.link}
+              class="hover:text-vrly-blue-600 transition-colors"
+            >
               {EXTERNAL_LINKS.email.address}
             </a>
           </div>
           <div class="flex items-center gap-2">
             <span>📞</span>
-            <a href={EXTERNAL_LINKS.phone.link} class="hover:text-vrly-blue-600 transition-colors">
+            <a
+              href={EXTERNAL_LINKS.phone.link}
+              class="hover:text-vrly-blue-600 transition-colors"
+            >
               {EXTERNAL_LINKS.phone.display}
             </a>
           </div>
@@ -89,7 +96,7 @@ const links = [
               <Text
                 tag="h3"
                 variant="textBase"
-                class="text-vrly-slate-500 font-semibold mb-4"
+                class="text-vrly-slate-500 mb-4 font-semibold"
               >
                 {section.title}
               </Text>
@@ -118,17 +125,23 @@ const links = [
     </div>
 
     <!-- CTA Section -->
-    <div class="bg-vrly-blue-50 rounded-xl p-6 mb-8 border border-vrly-blue-200">
+    <div
+      class="bg-vrly-blue-50 border-vrly-blue-200 mb-8 rounded-xl border p-6"
+    >
       <div class="text-center">
-        <Text tag="h3" variant="textLG" class="font-semibold text-vrly-slate-500 mb-2">
+        <Text
+          tag="h3"
+          variant="textLG"
+          class="text-vrly-slate-500 mb-2 font-semibold"
+        >
           Bereit für mehr Effizienz in Ihrer Praxis?
         </Text>
         <Text tag="p" variant="textSM" class="text-vrly-slate-400 mb-4">
           Vereinbaren Sie einen kostenlosen Workflow-Audit
         </Text>
-        <a 
-          href={EXTERNAL_LINKS.bookingCalendar} 
-          class="inline-flex items-center px-4 py-2 bg-vrly-blue-500 hover:bg-vrly-blue-600 text-white text-sm font-medium rounded-lg transition-colors duration-200"
+        <a
+          href={EXTERNAL_LINKS.bookingCalendar}
+          class="bg-vrly-blue-500 hover:bg-vrly-blue-600 inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium text-white transition-colors duration-200"
         >
           Jetzt Termin vereinbaren
         </a>
@@ -136,8 +149,8 @@ const links = [
     </div>
 
     <!-- Bottom Bar -->
-    <div class="pt-8 border-t border-vrly-neutral-200">
-      <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+    <div class="border-vrly-neutral-200 border-t pt-8">
+      <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
         <Text
           id="year"
           tag="p"
@@ -146,8 +159,8 @@ const links = [
         >
           © 2025 VRLY. Alle Rechte vorbehalten.
         </Text>
-        
-        <div class="flex items-center gap-6 text-xs text-vrly-slate-400">
+
+        <div class="text-vrly-slate-400 flex items-center gap-6 text-xs">
           <span class="flex items-center gap-1">
             <span>🔒</span>
             <span>DSGVO-konform</span>
