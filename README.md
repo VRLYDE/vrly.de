@@ -171,7 +171,7 @@ For security concerns, please email security@vrly.de
 
 ## 📄 License
 
-This project is proprietary software. All rights reserved by VRLY.
+We use a Business Source License 1.1. See [LICENSE](LICENSE) for details.
 
 ---
 
