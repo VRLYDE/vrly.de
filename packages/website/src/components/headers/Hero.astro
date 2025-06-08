@@ -4,6 +4,8 @@ import Link from "@/components/fundations/elements/Link.astro";
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
+import GradientText from "@/components/react-bits/GradientText";
+
 import { EXTERNAL_LINKS } from "@/config/external-links";
 
 interface Props {
@@ -25,34 +27,26 @@ const {
 <section
   class="from-vrly-neutral-0 via-vrly-blue-50 to-vrly-teal-50 relative overflow-hidden bg-gradient-to-br"
 >
-  <!-- Optimized VRLY Hero Background -->
-  <div
-    class="from-vrly-blue-500/5 to-vrly-green-500/5 absolute inset-0 bg-gradient-to-r via-transparent"
-  >
-  </div>
-  <div
-    class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--color-vrly-blue-100)_0%,_transparent_50%)] opacity-30"
-  >
-  </div>
-  <div
-    class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--color-vrly-teal-100)_0%,_transparent_50%)] opacity-20"
-  >
-  </div>
-
   <Wrapper
     variant="standard"
     class="relative z-20 overflow-hidden py-32 lg:pb-80"
   >
     <div class="relative">
-      <Text
-        tag="h1"
-        variant="display2XL"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        class="text-vrly-slate-500 font-semibold tracking-tighter lg:text-balance"
+      <GradientText
+        colors={[
+          "var(--color-vrly-green-500)",
+          "var(--color-vrly-blue-500)",
+          "var(--color-vrly-teal-700)",
+        ]}
+        animationSpeed={3}
+        showBorder={false}
+        className="text-4xl tracking-wide text-balance md:text-6xl"
       >
-        {title}
-      </Text>
+        <h1>
+          {title}
+        </h1>
+      </GradientText>
+
       <Text
         tag="p"
         variant="textLG"
