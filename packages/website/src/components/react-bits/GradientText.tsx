@@ -9,15 +9,17 @@ interface GradientTextProps {
 }
 
 /**
- * Renders text with an animated linear gradient fill and optional animated border.
+ * Displays text with an animated linear gradient fill and an optional animated gradient border.
  *
- * @param children - The content to display with gradient styling.
- * @param className - Additional CSS classes for the container.
- * @param colors - Colors to use in the gradient. Defaults to orange and purple hues.
- * @param animationSpeed - Duration of the gradient animation in seconds. Defaults to 8.
- * @param showBorder - Whether to display an animated gradient border around the text.
+ * The gradient colors, animation speed, and border effect can be customized via props.
  *
- * @returns A React element displaying the provided content with customizable gradient and animation effects.
+ * @param children - The content to render with gradient styling.
+ * @param className - Optional additional CSS classes for the container.
+ * @param colors - Optional array of colors for the gradient. Defaults to orange and purple hues.
+ * @param animationSpeed - Optional animation duration in seconds. Defaults to 8.
+ * @param showBorder - Optional flag to display an animated gradient border.
+ *
+ * @returns A React element rendering the content with animated gradient effects.
  */
 
 export default function GradientText({
