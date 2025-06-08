@@ -1,5 +1,6 @@
 {
   "name": "email-signature-builder",
+  "private": true,
   "version": "1.0.0",
   "dependencies": {
     "js-tokens": "^4.0.0",
