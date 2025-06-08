@@ -31,9 +31,18 @@ export default function GradientText({
     animationDuration: `${animationSpeed}s`,
   };
 
+  const baseClasses = [
+    "relative mx-auto flex max-w-fit cursor-pointer",
+    "flex-row items-center justify-center overflow-hidden",
+    "rounded-none font-medium backdrop-blur",
+    "transition-shadow duration-500",
+  ].join(" ");
+
   return (
     <div
-      className={`relative mx-auto flex max-w-fit cursor-pointer flex-row items-center justify-center overflow-hidden rounded-none font-medium backdrop-blur transition-shadow duration-500 ${className}`}
+      className={`${baseClasses} ${className}`}
+      role="text"
+      aria-label={typeof children === "string" ? children : "Gradient text"}
     >
       {showBorder && (
         <div
@@ -56,7 +65,7 @@ export default function GradientText({
         </div>
       )}
       <div
-        className="animate-gradient relative z-2 inline-block bg-cover text-transparent"
+        className="animate-gradient relative z-10 inline-block bg-cover text-transparent"
         style={{
           ...gradientStyle,
           backgroundClip: "text",
