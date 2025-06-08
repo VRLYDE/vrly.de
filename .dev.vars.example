@@ -24,8 +24,6 @@ EMAIL_REPLY_TO=support@vrly.de
 
 # Monitoring (optional)
 SENTRY_DSN=your_sentry_dsn_if_using_sentry
-POSTHOG_API_KEY=your_posthog_key_if_using_posthog
-POSTHOG_API_HOST=https://eu.i.posthog.com
 
 # Feature Flags
 ENABLE_AI_FEATURES=true
