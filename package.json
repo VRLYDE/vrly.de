@@ -1,12 +1,12 @@
 {
-  "name": "monorepo",
+  "name": "@vrl-y/monorepo",
   "private": true,
   "description": "VRLY - AI-Powered Workflow Automation for Psychotherapists",
   "author": "Phichayut 'Florentin' Sakwiset <florentin.sakwiset@vrly.de>",
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "https://github.com/VRLYDE/monorepo.git"
+    "url": "https://github.com/VRL-y/monorepo.git"
   },
   "workspaces": [
     "packages/*",

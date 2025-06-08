@@ -1,5 +1,5 @@
 {
-  "name": "email-signature-builder",
+  "name": "@vrl-y/email-signature-builder",
   "private": true,
   "version": "1.0.0",
   "dependencies": {
