@@ -3,12 +3,11 @@
   "version": "1.0.1",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro check && bun run cf-typegen && astro build",
-    "preview": "bun run build && wrangler dev",
+    "dev": "wrangler types && astro dev",
+    "build": "wrangler types && astro check && astro build",
+    "preview": "wrangler types && bun run build && wrangler dev",
     "astro": "astro",
     "deploy": "bun run build && bun x wrangler deploy",
-    "cf-typegen": "wrangler types",
     "format": "prettier --write .",
     "check": "astro check",
     "cleanup": "rm -rf .astro .wrangler dist node_modules"
