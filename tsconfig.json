@@ -37,10 +37,5 @@
     "**/build",
     "**/.wrangler",
     "**/.astro"
-  ],
-  "references": [
-    { "path": "./packages/platform" },
-    { "path": "./packages/shared" },
-    { "path": "./packages/internal" }
   ]
 }
