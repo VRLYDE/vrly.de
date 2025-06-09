@@ -17,6 +17,10 @@
     {
       "pattern": "vrly.de",
       "custom_domain": true
+    },
+    {
+      "pattern": "mta-sts.vrly.de",
+      "zone_name": "vrly.de"
     }
   ],
 
