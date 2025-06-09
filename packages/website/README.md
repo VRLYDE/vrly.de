@@ -62,7 +62,7 @@ Diese Website und unsere Services basieren auf folgenden Technologien:
 
 ```bash
 # Repository klonen
-git clone https://github.com/VRL-y/monorepo.git
+git clone https://github.com/VRLY-de/monorepo.git
 cd monorepo/packages/website
 
 # Abhängigkeiten installieren

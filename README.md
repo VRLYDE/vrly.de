@@ -59,7 +59,7 @@ monorepo/
 
 ```bash
 # Clone the repository
-git clone https://github.com/VRL-y/monorepo.git
+git clone https://github.com/VRLY-de/monorepo.git
 cd monorepo
 
 # Install dependencies
@@ -92,19 +92,19 @@ bun lint
 
 ## 📦 Package Overview
 
-### `@vrl-y/platform`
+### `@vrly-de/platform`
 
 Core platform powering all VRLY services. Built on Cloudflare Workers for Platforms, providing multi-tenant infrastructure, AI capabilities, and workflow automation.
 
-### `@vrl-y/website`
+### `@vrly-de/website`
 
 Public-facing marketing website built with Astro. Showcases services, provides documentation, and handles lead generation.
 
-### `@vrl-y/shared`
+### `@vrly-de/shared`
 
 Shared utilities, TypeScript types, and the VRLY Design System. Ensures consistency across all applications.
 
-### `@vrl-y/internal`
+### `@vrly-de/internal`
 
 Internal tools for business operations:
 
@@ -112,11 +112,11 @@ Internal tools for business operations:
 - Billing automation
 - Analytics tools
 
-### `@vrl-y/integrations`
+### `@vrly-de/integrations`
 
 Pre-built integrations with third-party services, including practice management systems, workflow automation, and calendar/email services.
 
-### `@vrl-y/clients`
+### `@vrly-de/clients`
 
 Client-specific implementations and customizations, organized by vertical (e.g., psychotherapists).
 
