@@ -59,7 +59,7 @@ monorepo/
 
 ```bash
 # Clone the repository
-git clone https://github.com/VRLY-de/monorepo.git
+git clone https://github.com/vrly-de/monorepo.git
 cd monorepo
 
 # Install dependencies
