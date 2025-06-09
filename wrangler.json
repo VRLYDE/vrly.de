@@ -19,7 +19,7 @@
       "custom_domain": true
     },
     {
-      "pattern": "mta-sts.vrly.de",
+      "pattern": "mta-sts.vrly.de/.well-known*",
       "zone_name": "vrly.de"
     }
   ],
