@@ -1,12 +1,12 @@
 {
-  "name": "@vrl-y/monorepo",
+  "name": "@vrly-de/monorepo",
   "private": true,
   "description": "VRLY - AI-Powered Workflow Automation for Psychotherapists",
   "author": "Phichayut 'Florentin' Sakwiset <florentin.sakwiset@vrly.de>",
   "license": "BSL-1.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/VRL-y/monorepo.git"
+    "url": "https://github.com/VRLY-de/monorepo.git"
   },
   "workspaces": [
     "packages/*",
@@ -40,23 +40,11 @@
     "eslint": "^8.56.0",
     "husky": "^8.0.0",
     "lint-staged": "^15.2.0",
-    "prettier": "^3.1.1",
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.12",
     "typescript": "^5.3.0",
     "wrangler": "^3.22.0"
-  },
-  "lint-staged": {
-    "*.{ts,tsx,js,jsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{json,md,mdx,css,html,yml,yaml}": [
-      "prettier --write"
-    ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
   },
   "engines": {
     "bun": ">=1.0.0",
