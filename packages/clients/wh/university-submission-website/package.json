@@ -1,7 +1,7 @@
 {
   "name": "@vrly-de/packages/clients/wh/university-submission-website",
   "type": "module",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -14,6 +14,7 @@
   "dependencies": {
     "@astrojs/alpinejs": "0.4.8",
     "@astrojs/cloudflare": "12.5.4",
+    "@astrojs/image": "^0.18.0",
     "@astrojs/markdoc": "0.15.0",
     "@astrojs/react": "4.3.0",
     "@astrojs/rss": "4.0.12",

@@ -22,13 +22,12 @@ const postsCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      pubDate: z.date(),
-      lastUpdateDate: z.date(),
       description: z.string(),
       category: z.string(),
       author: z.string(),
       cover: image(),
       tags: z.array(z.string()),
+      sortOrder: z.optional(z.number()),
       hidden: z.optional(z.boolean()),
     }),
 });

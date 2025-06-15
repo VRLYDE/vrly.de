@@ -21,7 +21,6 @@ export default defineConfig({
     platformProxy: {
       enabled: true,
     },
-    imageService: "cloudflare",
   }),
   compressHTML: true,
   i18n: {
@@ -48,7 +47,9 @@ export default defineConfig({
     sitemap(),
     icon(),
     react(),
-    markdoc(),
+    markdoc({
+      allowHTML: true,
+    }),
     robotsTxt({
       policy: [{ userAgent: "*", allow: "/" }],
     }),

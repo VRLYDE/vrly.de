@@ -7,6 +7,7 @@ const currentLocale = Astro.currentLocale;
 const posts = await getCollection("posts");
 
 const recentPosts = posts
+  .sort((a, b) => (a.data.sortOrder ?? 0) - (b.data.sortOrder ?? 0))
   .map((post) => {
     const [lang, ...slug] = post.slug.split("/");
     return {
@@ -15,11 +16,7 @@ const recentPosts = posts
       slug: post.slug.startsWith("/") ? post.slug : `/${post.slug}`,
     };
   })
-  .filter((post) => post.lang === currentLocale)
-  .sort(
-    (a, b) => a.data.lastUpdateDate.getTime() - b.data.lastUpdateDate.getTime(),
-  )
-  .slice(0, 4) as CollectionEntry<"posts">[];
+  .filter((post) => post.lang === currentLocale) as CollectionEntry<"posts">[];
 
 interface Props {
   title: string;
