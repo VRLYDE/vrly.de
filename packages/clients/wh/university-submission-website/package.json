@@ -8,8 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "wrangler:dev": "wrangler pages dev",
-    "pwa:generate-assets": "pwa-assets-generator --preset minimal public/logo.svg"
+    "wrangler:dev": "wrangler dev",
+    "wrangler:deploy": "wrangler deploy"
   },
   "dependencies": {
     "@astrojs/alpinejs": "0.4.8",
@@ -19,13 +19,9 @@
     "@astrojs/rss": "4.0.12",
     "@astrojs/sitemap": "3.4.1",
     "@astrojs/tailwind": "6.0.2",
-    "@cloudflare/pages-plugin-mailchannels": "^0.1.5",
-    "@keystatic/astro": "^5.0.0",
-    "@keystatic/core": "^0.5.17",
     "alpinejs": "^3.14.0",
     "astro": "5.9.3",
     "gsap": "^3.12.5",
-    "keystatic-components": "^0.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -44,8 +40,6 @@
     "@types/alpinejs": "^3.13.10",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@vite-pwa/assets-generator": "^0.2.4",
-    "@vite-pwa/astro": "^0.4.0",
     "astro-icon": "^1.1.0",
     "astro-robots-txt": "^1.0.0",
     "astro-seo": "^0.8.3",
