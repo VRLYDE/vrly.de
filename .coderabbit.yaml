@@ -56,6 +56,10 @@ reviews:
       instructions: >-
         Updates to project dependencies, libraries, frameworks, or runtime
         versions.
+    - label: Performance
+      instructions: Optimizes performance or reduces resource usage.
+    - label: Refactor
+      instructions: Improves code structure or readability without changing behavior.
   path_filters: []
   path_instructions: []
   abort_on_close: true
