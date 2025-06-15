@@ -27,6 +27,7 @@ const postsCollection = defineCollection({
       author: z.string(),
       cover: image(),
       tags: z.array(z.string()),
+      sortOrder: z.optional(z.number()),
       hidden: z.optional(z.boolean()),
     }),
 });

@@ -7,6 +7,7 @@ const currentLocale = Astro.currentLocale;
 const posts = await getCollection("posts");
 
 const recentPosts = posts
+  .sort((a, b) => (a.data.sortOrder ?? 0) - (b.data.sortOrder ?? 0))
   .map((post) => {
     const [lang, ...slug] = post.slug.split("/");
     return {
