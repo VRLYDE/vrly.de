@@ -21,7 +21,6 @@ export default defineConfig({
     platformProxy: {
       enabled: true,
     },
-    imageService: "cloudflare",
   }),
   compressHTML: true,
   i18n: {
