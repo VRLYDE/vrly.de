@@ -14,7 +14,7 @@ import { defaultLocale, locales, siteTitle, siteUrl } from "./site.config";
 // https://astro.build/config
 export default defineConfig({
   site: siteUrl,
-  output: "static",
+  output: "server",
   server: {
     host: true,
     port: 1312,
