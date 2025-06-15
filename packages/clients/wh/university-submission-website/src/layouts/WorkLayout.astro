@@ -79,7 +79,7 @@ const videoSrc = frontmatter.data?.video
             "cover" in frontmatter.data &&
             frontmatter.data?.cover && (
               <Image
-                class="rounded-4xl lg:rounded-5xl w-full lg:w-auto lg:min-w-[50rem]"
+                class="lg:rounded-5xl w-full rounded-4xl lg:w-auto lg:min-w-[50rem]"
                 src={frontmatter.data?.cover}
                 alt={`Cover image for ${frontmatter.data?.title}`}
               />

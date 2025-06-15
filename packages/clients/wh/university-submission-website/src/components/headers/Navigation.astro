@@ -120,7 +120,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 
 <header class="fixed z-30 w-full">
   <div
-    class="left-0 right-0 top-0 grid auto-cols-fr grid-cols-2 grid-rows-[auto] items-center justify-between gap-4 px-6 py-3.5 lg:grid-cols-2 lg:px-20"
+    class="top-0 right-0 left-0 grid auto-cols-fr grid-cols-2 grid-rows-[auto] items-center justify-between gap-4 px-6 py-3.5 lg:grid-cols-2 lg:px-20"
   >
     <div
       class="relative z-20 flex flex-wrap items-center justify-start text-blue-700"
@@ -245,11 +245,11 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   </div>
   <nav
     id="navigation"
-    class="fixed bottom-0 left-0 right-0 top-0 z-30 flex h-screen items-center justify-center text-sm font-medium"
+    class="fixed top-0 right-0 bottom-0 left-0 z-30 flex h-screen items-center justify-center text-sm font-medium"
   >
     <div
       id="navigation-background"
-      class="absolute left-0 top-0 h-full w-full bg-white opacity-0"
+      class="absolute top-0 left-0 h-full w-full bg-white opacity-0"
     >
     </div>
     <div
@@ -279,7 +279,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
             </a>
           ))
         }
-        <div class="flex gap-8 pl-16 pt-10 md:pl-0">
+        <div class="flex gap-8 pt-10 pl-16 md:pl-0">
           {
             locales.map((locale) => (
               <a

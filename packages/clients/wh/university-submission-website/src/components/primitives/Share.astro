@@ -84,7 +84,7 @@ const availableShare = [
   <template x-teleport="body">
     <div
       x-show="modalOpen"
-      class="fixed left-0 top-0 z-[99] flex h-screen w-screen items-center justify-center"
+      class="fixed top-0 left-0 z-[99] flex h-screen w-screen items-center justify-center"
       x-cloak
     >
       <div
@@ -96,7 +96,7 @@ const availableShare = [
         x-transition:leave-start="opacity-100"
         x-transition:leave-end="opacity-0"
         @click="modalOpen=false"
-        class="absolute inset-0 h-full w-full bg-black bg-opacity-40"
+        class="bg-opacity-40 absolute inset-0 h-full w-full bg-black"
       >
       </div>
       <div
@@ -114,7 +114,7 @@ const availableShare = [
           <h3 class="text-lg font-semibold">Condividi</h3>
           <button
             @click="modalOpen=false"
-            class="absolute right-0 top-0 mr-5 mt-5 flex h-8 w-8 items-center justify-center rounded-full text-gray-600 hover:bg-gray-50 hover:text-gray-800"
+            class="absolute top-0 right-0 mt-5 mr-5 flex h-8 w-8 items-center justify-center rounded-full text-gray-600 hover:bg-gray-50 hover:text-gray-800"
           >
             <svg
               class="h-5 w-5"

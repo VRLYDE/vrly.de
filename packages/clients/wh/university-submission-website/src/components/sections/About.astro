@@ -8,15 +8,15 @@ const { title, subtitle, content } = Astro.props;
 <div class="relative w-full flex-col items-center pb-40 text-sm font-medium">
   <div class="relative h-[50em] w-full overflow-hidden">
     <div
-      class="absolute bottom-0 left-0 top-0 flex h-full w-full items-center justify-center overflow-hidden rounded-3xl"
+      class="absolute top-0 bottom-0 left-0 flex h-full w-full items-center justify-center overflow-hidden rounded-3xl"
     >
       <div
-        class="absolute bottom-0 left-0 top-0 flex w-full flex-col items-center justify-center"
+        class="absolute top-0 bottom-0 left-0 flex w-full flex-col items-center justify-center"
       >
         <Image
           src={about}
           alt="About"
-          class="absolute bottom-0 left-0 top-0 inline-block h-full w-full max-w-full object-cover align-middle"
+          class="absolute top-0 bottom-0 left-0 inline-block h-full w-full max-w-full object-cover align-middle"
         />
       </div>
     </div>
