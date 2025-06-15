@@ -22,7 +22,7 @@ const pathWithSlash = Astro.url.pathname.endsWith("/")
     : `${Astro.url.pathname}/`;
 
 const shareImage = new URL(
-    "og.png",
+    "/og.jpg",
     new URL(pathWithSlash, Astro.site)
 ).toString();
 
@@ -93,8 +93,6 @@ const seo = {
     {pwaAssetsHead.links.map((link) => <link {...link} />)}
     {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
     <script src="/src/utils/pwa.ts"></script>
-
-
 
     <!-- LIBS -->
     <script
