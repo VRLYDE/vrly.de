@@ -12,15 +12,11 @@
       "link": "/about"
     },
     {
-      "title": "Works",
-      "link": "/works"
-    },
-    {
-      "title": "News",
+      "title": "Blog",
       "link": "/news"
     },
     {
-      "title": "Contacts",
+      "title": "Contact",
       "link": "/contact"
     }
   ],

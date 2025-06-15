@@ -1,5 +1,6 @@
-export const siteUrl = "https://mizar.majestico.co";
-export const siteTitle = "Mizar";
+export const siteUrl =
+  "https://https://university-submission-website.vrly.workers.dev/";
+export const siteTitle = "Welcome to my Journey";
 export const defaultLocale = "en";
-export const locales = ["en", "it"];
-export type Locale = "en" | "it";
+export const locales = ["en", "de"];
+export type Locale = "en" | "de";
