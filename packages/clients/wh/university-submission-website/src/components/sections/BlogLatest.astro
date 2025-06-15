@@ -18,8 +18,7 @@ const recentPosts = posts
   .filter((post) => post.lang === currentLocale)
   .sort(
     (a, b) => a.data.lastUpdateDate.getTime() - b.data.lastUpdateDate.getTime(),
-  )
-  .slice(0, 4) as CollectionEntry<"posts">[];
+  ) as CollectionEntry<"posts">[];
 
 interface Props {
   title: string;

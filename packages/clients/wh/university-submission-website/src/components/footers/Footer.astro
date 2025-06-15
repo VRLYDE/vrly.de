@@ -64,22 +64,10 @@ const lastPosts = posts
     <Container>
         <div class="w-full flex-col items-center">
             <div class="flex flex-col items-center justify-center text-white">
-                <h3
-                    class="max-w-4xl text-center text-4xl leading-normal lg:text-6xl"
-                    set:html={footer.title}
-                />
-                <div class="mt-8">
-                    {
-                        footer?.buttons?.map(({ text, url }) => (
-                            <Link
-                                href={url}
-                                style="buttonLight"
-                                icon="iconamoon:arrow-top-right-1-thin">
-                                {text}
-                            </Link>
-                        ))
-                    }
-                </div>
+                <h2
+                    class="max-w-4xl pb-4 text-center text-4xl leading-normal lg:text-6xl">
+                    Wanja Hummel
+                </h2>
             </div>
             <div
                 class="mt-16 grid auto-cols-fr grid-cols-1 grid-rows-[auto] gap-10 lg:grid-cols-[1fr_1fr_1fr]">
