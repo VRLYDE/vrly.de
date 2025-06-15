@@ -52,11 +52,13 @@ const videoSrc = work.data?.video ? await loadVideo(work.data.video) : null;
           <source src={videoSrc} />
         </video>
       ) : (
-        <Image
-          src={work.data.cover}
-          alt={`Cover for ${work.data.title}`}
-          class="inline-block h-96 min-h-full w-full max-w-full object-cover align-middle"
-        />
+        {work.data.cover && (
+          <Image
+            src={work.data.cover}
+            alt={`Cover for ${work.data.title}`}
+            class="inline-block h-96 min-h-full w-full max-w-full object-cover align-middle"
+          />
+        )}
       )
     }
   </a>

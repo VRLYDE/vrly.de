@@ -39,11 +39,13 @@ const localizedPath = translatePath(
         />
       </div>
     </div>
-    <Image
-      src={post.data.cover}
-      alt={post.data.title}
-      class="inline-block h-64 w-full max-w-full cursor-pointer rounded-2xl object-cover align-middle"
-    />
+    {post.data.cover && (
+      <Image
+        src={post.data.cover}
+        alt={post.data.title}
+        class="inline-block h-64 w-full max-w-full cursor-pointer rounded-2xl object-cover align-middle"
+      />
+    )}
   </Link>
   <div class="flex flex-col items-start pt-8">
     <span
