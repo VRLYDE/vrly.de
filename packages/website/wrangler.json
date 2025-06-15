@@ -1,15 +1,27 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "vrly-de",
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "vrly-website",
   "main": "./dist/_worker.js/index.js",
   "compatibility_date": "2025-05-30",
+  "account_id": "dea1503d32738013a37782b7671ee4ae",
   "compatibility_flags": ["nodejs_compat"],
   "routes": [
     {
       "pattern": "vrly.de",
       "custom_domain": true
+    },
+    {
+      "pattern": "mta-sts.vrly.de",
+      "custom_domain": true
+    },
+    {
+      "pattern": "mta-sts.vrly.de/.well-known/mta-sts.txt",
+      "zone_name": "vrly.de"
     }
   ],
+  "workers_dev": false,
+  "preview_urls": false,
+  "tsconfig": "./tsconfig.json",
   "assets": {
     "binding": "ASSETS",
     "directory": "./dist"
@@ -17,10 +29,34 @@
   "observability": {
     "enabled": true
   },
+  "env": {
+    "staging": {
+      "routes": [
+        {
+          "pattern": "staging.vrly.de",
+          "custom_domain": true
+        }
+      ],
+      "workers_dev": true,
+      "preview_urls": true,
+      "assets": {
+        "binding": "ASSETS",
+        "directory": "./dist"
+      },
+      "kv_namespaces": [
+        {
+          "binding": "SESSION",
+          "id": "7974aa3451be4ffd98aba571f384b058",
+          "preview_id": "3c14a53e4a0f49f4ba67aa9f671e6cea"
+        }
+      ]
+    }
+  },
   "kv_namespaces": [
     {
       "binding": "SESSION",
-      "id": "7974aa3451be4ffd98aba571f384b058"
+      "id": "7974aa3451be4ffd98aba571f384b058",
+      "preview_id": "3c14a53e4a0f49f4ba67aa9f671e6cea"
     }
   ]
 }
