@@ -203,7 +203,7 @@ reviews:
     drafts: false
     base_branches:
       - "^main$"
-      - "^dev-[0-9]+-.+$"
+      - "^dev.+$"
   finishing_touches:
     docstrings:
       enabled: true
