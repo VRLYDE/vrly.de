@@ -1,5 +1,5 @@
 {
-  "name": "university-submission-website",
+  "name": "@vrly-de/packages/clients/wh/university-submission-website",
   "type": "module",
   "version": "0.0.2",
   "scripts": {
