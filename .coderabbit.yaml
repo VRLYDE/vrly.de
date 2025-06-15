@@ -11,7 +11,7 @@ reviews:
   profile: chill
   request_changes_workflow: true
   high_level_summary: false
-  high_level_summary_placeholder: ""
+  high_level_summary_placeholder: "@coderabbitai summary"
   high_level_summary_in_walkthrough: true
   auto_title_placeholder: "@coderabbitai"
   auto_title_instructions: ""
