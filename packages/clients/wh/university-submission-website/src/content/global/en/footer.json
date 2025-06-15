@@ -1,10 +1,10 @@
 {
-	"title": "Do You Have Any Questions?<br/> Don't Hesitate to Contact Us!",
-	"copyright": "© 2024 Your Company",
-	"buttons": [
-		{
-			"text": "Contact Us",
-			"url": "/contact"
-		}
-	]
+  "title": "Do You Have Any Questions?<br/> Don't Hesitate to Contact Us!",
+  "copyright": "© 2024 Your Company",
+  "buttons": [
+    {
+      "text": "Contact Us",
+      "url": "/contact"
+    }
+  ]
 }

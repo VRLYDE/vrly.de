@@ -9,72 +9,72 @@ import { defaultLocale } from "site";
 const currentLocale = Astro.currentLocale;
 
 interface Props {
-	post: CollectionEntry<"posts">;
+  post: CollectionEntry<"posts">;
 }
 
 const { post } = Astro.props;
 
 const unlocalizedPath = unlocalizedUrl(post.slug);
 const localizedPath = translatePath(
-	currentLocale ?? defaultLocale,
-	`/post${unlocalizedPath}`,
+  currentLocale ?? defaultLocale,
+  `/post${unlocalizedPath}`,
 );
 ---
 
 <div>
-	<Link
-		href={localizedPath}
-		localized={false}
-		class="blog-item text-blue-700 relative object-cover underline inline-block w-full max-w-full rounded-2xl group"
-	>
-		<div
-			class="play-button text-white items-center justify-center top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 absolute z-10 flex max-w-full opacity-0 group-hover:opacity-100 transition-all duration-300"
-		>
-			<div
-				class="text-black bg-white/[0.75] items-center backdrop-blur-[5px] cursor-pointer justify-center flex w-full h-full rounded-full"
-			>
-				<Icon
-					name="iconamoon:arrow-top-right-1-thin"
-					class="align-middle inline-block w-12 h-12 max-w-full"
-				/>
-			</div>
-		</div>
-		<Image
-			src={post.data.cover}
-			alt={post.data.title}
-			class="cursor-pointer align-middle inline-block w-full max-w-full rounded-2xl object-cover h-64"
-		/>
-	</Link>
-	<div class="items-start flex-col pt-8 flex">
-		<span
-			class="font-semibold pb-1.5 px-6 pt-2 uppercase inline-block border-2 border-black border-solid rounded-3xl"
-		>
-			{post.data.category}
-		</span>
-		<a href={localizedPath} class="text-3xl font-semibold mt-5 mb-3">
-			{post.data.title}
-		</a>
-		<div class="mt-5 text-lg">
-			<p class="mb-3">
-				{
-					post.data.pubDate.toLocaleDateString("en-US", {
-						month: "long", // full month name
-						day: "numeric", // numeric day
-						year: "numeric", // numeric year
-					})
-				}
-			</p>
-		</div>
-	</div>
+  <Link
+    href={localizedPath}
+    localized={false}
+    class="blog-item group relative inline-block w-full max-w-full rounded-2xl object-cover text-blue-700 underline"
+  >
+    <div
+      class="play-button absolute left-1/2 top-1/2 z-10 flex max-w-full -translate-x-1/2 -translate-y-1/2 items-center justify-center text-white opacity-0 transition-all duration-300 group-hover:opacity-100"
+    >
+      <div
+        class="flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-white/[0.75] text-black backdrop-blur-[5px]"
+      >
+        <Icon
+          name="iconamoon:arrow-top-right-1-thin"
+          class="inline-block h-12 w-12 max-w-full align-middle"
+        />
+      </div>
+    </div>
+    <Image
+      src={post.data.cover}
+      alt={post.data.title}
+      class="inline-block h-64 w-full max-w-full cursor-pointer rounded-2xl object-cover align-middle"
+    />
+  </Link>
+  <div class="flex flex-col items-start pt-8">
+    <span
+      class="inline-block rounded-3xl border-2 border-solid border-black px-6 pb-1.5 pt-2 font-semibold uppercase"
+    >
+      {post.data.category}
+    </span>
+    <a href={localizedPath} class="mb-3 mt-5 text-3xl font-semibold">
+      {post.data.title}
+    </a>
+    <div class="mt-5 text-lg">
+      <p class="mb-3">
+        {
+          post.data.pubDate.toLocaleDateString("en-US", {
+            month: "long", // full month name
+            day: "numeric", // numeric day
+            year: "numeric", // numeric year
+          })
+        }
+      </p>
+    </div>
+  </div>
 </div>
 
 <style>
-	.play-button {
-		width: 1rem;
-		height: 1rem;
-	}
-	.blog-item:hover .play-button {
-		width: 6rem;
-		height: 6rem;
-	}
+  .play-button {
+    width: 1rem;
+    height: 1rem;
+  }
+  .blog-item:hover .play-button {
+    width: 6rem;
+    height: 6rem;
+  }
 </style>

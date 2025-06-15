@@ -4,11 +4,11 @@ import PageLayout from "@/layouts/PageLayout.astro";
 import { getCollectionStaticPaths } from "@/lib/collection-helpers";
 
 export interface Props {
-	data: CollectionEntry<"pages">;
+  data: CollectionEntry<"pages">;
 }
 
 export async function getStaticPaths() {
-	return getCollectionStaticPaths("pages");
+  return getCollectionStaticPaths("pages");
 }
 
 const { data: page } = Astro.props;
@@ -16,5 +16,5 @@ const { Content } = await page.render();
 ---
 
 <PageLayout frontmatter={page}>
-	<Content />
+  <Content />
 </PageLayout>

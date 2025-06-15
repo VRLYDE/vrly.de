@@ -1,9 +1,9 @@
 ---
 interface Props {
-	tag?: "section" | "div";
-	id?: string;
-	class?: string;
-	[x: string]: unknown;
+  tag?: "section" | "div";
+  id?: string;
+  class?: string;
+  [x: string]: unknown;
 }
 
 const { class: className, id, tag = "section", ...rest } = Astro.props;
@@ -12,12 +12,12 @@ const Element = tag;
 ---
 
 <Element id={id} class:list={["container-fluid mx-auto", className]} {...rest}>
-	<slot />
+  <slot />
 </Element>
 
 <style>
-	.container-fluid {
-		padding-left: var(--base-padding-x);
-		padding-right: var(--base-padding-x);
-	}
+  .container-fluid {
+    padding-left: var(--base-padding-x);
+    padding-right: var(--base-padding-x);
+  }
 </style>

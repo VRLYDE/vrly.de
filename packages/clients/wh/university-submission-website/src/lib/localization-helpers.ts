@@ -10,46 +10,46 @@ import widget from "@/content/global/widget.json";
 import { defaultLocale, locales } from "site.config";
 
 const settings: Record<string, LocalizedSettings> = {
-	it: {
-		header: headerIt,
-		footer: footerIt,
-		contacts: contacts,
-		seo: seoIt,
-		style: style,
-		widget: widget,
-	},
-	en: {
-		header: headerEn,
-		footer: footerEn,
-		contacts: contacts,
-		seo: seoEn,
-		style: style,
-		widget: widget,
-	},
+  it: {
+    header: headerIt,
+    footer: footerIt,
+    contacts: contacts,
+    seo: seoIt,
+    style: style,
+    widget: widget,
+  },
+  en: {
+    header: headerEn,
+    footer: footerEn,
+    contacts: contacts,
+    seo: seoEn,
+    style: style,
+    widget: widget,
+  },
 };
 
 export function getLocalizedSettings(locale?: string): LocalizedSettings {
-	return settings[locale ?? defaultLocale] ?? settings[defaultLocale];
+  return settings[locale ?? defaultLocale] ?? settings[defaultLocale];
 }
 
 export function isLocalizedUrl(url: string): boolean {
-	const urlParts = url.split("/");
-	const firstPart = urlParts[1];
-	return locales.includes(firstPart);
+  const urlParts = url.split("/");
+  const firstPart = urlParts[1];
+  return locales.includes(firstPart);
 }
 
 export function unlocalizedUrl(url: string): string {
-	if (isLocalizedUrl(url)) {
-		const urlParts = url.split("/").filter((part) => part !== "");
-		// Remove the locale part
-		urlParts.shift();
-		// Rejoin the parts and ensure a leading slash
-		const unlocalizedPath = `/${urlParts.join("/")}`;
-		return unlocalizedPath === "//" ? "/" : unlocalizedPath;
-	}
-	return url;
+  if (isLocalizedUrl(url)) {
+    const urlParts = url.split("/").filter((part) => part !== "");
+    // Remove the locale part
+    urlParts.shift();
+    // Rejoin the parts and ensure a leading slash
+    const unlocalizedPath = `/${urlParts.join("/")}`;
+    return unlocalizedPath === "//" ? "/" : unlocalizedPath;
+  }
+  return url;
 }
 
 export function translatePath(l: string, path: string) {
-	return l === defaultLocale ? path : `/${l}${path}`;
+  return l === defaultLocale ? path : `/${l}${path}`;
 }

@@ -14,22 +14,22 @@ const currentLocale = Astro.currentLocale;
 const { widget } = getLocalizedSettings(currentLocale);
 
 type Props = {
-	seo?: SEOProps | MinimalSeo;
+  seo?: SEOProps | MinimalSeo;
 };
 
 const { seo } = Astro.props;
 ---
 
 <html lang={currentLocale}>
-	<Head seo={seo}>
-		<ViewTransitions />
-	</Head>
-	<body>
-		<LoadingIndicator />
-		<LinesWrapper />
-		<Navigation showTopBar />
-		<slot />
-		{widget.enabled && <Widget />}
-		<Footer />
-	</body>
+  <Head seo={seo}>
+    <ViewTransitions />
+  </Head>
+  <body>
+    <LoadingIndicator />
+    <LinesWrapper />
+    <Navigation showTopBar />
+    <slot />
+    {widget.enabled && <Widget />}
+    <Footer />
+  </body>
 </html>

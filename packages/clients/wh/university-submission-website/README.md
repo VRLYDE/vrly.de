@@ -14,7 +14,6 @@ This project was strongly inspired by a template found on Webflow which I can lo
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/majesticooss/mizar)
 
-
 ### [🧪 Site preview →](https://mizar.majestico.co)
 
 ### [🧑‍🚀 Astro website →](https://astro.build/)
@@ -31,8 +30,8 @@ This project was strongly inspired by a template found on Webflow which I can lo
 
 On the folder run
 
-1. `bun install`  <small>(or `yarn` or `pnpm i`)</small>
-2. `bun run dev`  <small>(or `yarn dev` or `pnpm dev`)</small>
+1. `bun install` <small>(or `yarn` or `pnpm i`)</small>
+2. `bun run dev` <small>(or `yarn dev` or `pnpm dev`)</small>
 
 ## ✅ Features
 
@@ -43,10 +42,9 @@ On the folder run
 
 ## ✍️ Admin dashboard
 
-You can access the admin dashboard for editing blog post at `/keystatic` 
+You can access the admin dashboard for editing blog post at `/keystatic`
 
 For more information follow Keystatic documentation at [https://keystatic.com/docs/introduction](https://keystatic.com/docs/introduction)
-
 
 ---
 
