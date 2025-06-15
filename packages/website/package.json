@@ -8,7 +8,8 @@
     "build": "wrangler types && astro check && astro build",
     "preview": "wrangler types && bun run build && wrangler dev",
     "astro": "astro",
-    "deploy": "bun run build && bunx wrangler deploy",
+    "deploy": "bunx wrangler deploy --env staging",
+    "deploy:production": "bunx wrangler deploy",
     "format": "prettier --write .",
     "check": "astro check",
     "cleanup": "rm -rf .astro .wrangler dist node_modules"
