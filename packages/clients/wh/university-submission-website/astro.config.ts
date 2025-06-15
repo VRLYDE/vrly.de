@@ -20,7 +20,10 @@ export default defineConfig({
     port: 1312,
   },
   adapter: cloudflare({
-    imageService: "compile",
+    platformProxy: {
+      enabled: true,
+    },
+    imageService: "cloudflare",
   }),
   compressHTML: true,
   i18n: {
