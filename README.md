@@ -10,7 +10,7 @@
 
 **Empowering psychotherapists with intelligent automation, so they can focus on what matters most: their patients.**
 
-[Website](https://vrly.de) • [Documentation](docs/) • [Contact](mailto:info@vrly.de)
+[Website](https://vrly.de) • [Documentation](#-documentation) • [Contact](mailto:info@vrly.de)
 
 </div>
 
@@ -27,6 +27,48 @@ VRLY is a specialized technology partner exclusively for psychotherapists in Han
 - ⚡ **Edge-First Architecture** - Powered by Cloudflare Workers for blazing-fast performance
 - 🏥 **Practice Management Integration** - Compatible with leading PVS systems (Elefant, Psyprax, Epikur)
 - 📊 **Multi-Tenant Platform** - Secure isolation and customization for each practice
+
+## 📚 Documentation
+
+This project is documented following our internal standards. Below is an overview of the key documentation files found in the `docs/` directory.
+
+### [Branding (`BRANDING.md`)](docs/BRANDING.md)
+
+Outlines the company's brand identity, including our vision, mission, values, and visual and language guidelines.
+
+### [Code of Conduct (`CODE_OF_CONDUCT.md`)](docs/CODE_OF_CONDUCT.md)
+
+Our commitment to a positive and ethical environment. It details our ethics policy, scope, and reporting guidelines.
+
+### [Development Cycle (`DEVELOPMENT-CYCLE.md`)](docs/DEVELOPMENT-CYCLE.md)
+
+Describes our 2-week sprint cycle, followed by a 1-week cooldown period for planning and system maintenance.
+
+### [Estimates (`ESTIMATES.md`)](docs/ESTIMATES.md)
+
+Details our T-shirt sizing method (S, M, L, XL) for issue estimation, along with time estimates for each size.
+
+### [Labels (`LABELS.md`)](docs/LABELS.md)
+
+Provides a comprehensive list of GitHub labels used for issue tracking, categorized by type, priority, and status.
+
+### [PR Workflow (`PR-WORKFLOW.md`)](docs/PR-WORKFLOW.md)
+
+Explains the pull request process, from creating a PR to the review and merge criteria, including the use of V-Codes for security.
+
+### [Security (`SECURITY.md`)](docs/SECURITY.md)
+
+Covers our security policy, including technical and organizational measures, and the V-Code system for confidential information.
+
+### [Statuses (`STATUSES.md`)](docs/STATUSES.md)
+
+Defines the statuses used in our project management tools to track the progress of tasks and projects.
+
+### [Versioning (`VERSIONING.md`)](docs/VERSIONING.md)
+
+Our versioning strategy, which follows Semantic Versioning (SemVer) standards for all our packages and releases.
+
+---
 
 ## 🏗️ Monorepo Structure
 
@@ -174,8 +216,7 @@ We use the Business Source License 1.1 (BSL-1.1). See [LICENSE](LICENSE) for det
 
 <div align="center">
 
-**Built with ❤️ by [Florentin](https://github.com/florentin) and the VRLY team**
-
+**Built with ❤️ by [heyFlorentin](https://github.com/heyFlorentin) and the VRLY team**  
 _VRLY automatisiert Effizienz mit Künstlicher Intelligenz_
 
 </div>
