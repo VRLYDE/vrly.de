@@ -73,6 +73,12 @@ export default defineMarkdocConfig({
       },
       render: component("./src/components/sections/BlogLatest.astro"),
     },
+    ImageText: {
+      attributes: {
+        items: { type: Array, render: "items", required: true },
+      },
+      render: component("./src/components/sections/ImageText.astro"),
+    },
     LogoCloud: {
       attributes: {
         title: { type: String, render: "title", required: true },
