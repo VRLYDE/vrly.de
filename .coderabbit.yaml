@@ -1,0 +1,190 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: en-US
+tone_instructions: >-
+  Act as a senior developer mentoring an AI-assisted junior. Focus on
+  automation, operational simplicity, and monorepo best practices. Suggest
+  concrete improvements with code examples. Prioritize developer velocity while
+  maintaining quality.
+early_access: true
+enable_free_tier: false
+reviews:
+  profile: chill
+  request_changes_workflow: true
+  high_level_summary: false
+  high_level_summary_placeholder: ""
+  high_level_summary_in_walkthrough: true
+  auto_title_placeholder: "@coderabbitai"
+  auto_title_instructions: ""
+  review_status: false
+  commit_status: true
+  fail_commit_status: false
+  collapse_walkthrough: false
+  changed_files_summary: true
+  sequence_diagrams: true
+  assess_linked_issues: true
+  related_issues: true
+  related_prs: true
+  suggested_labels: true
+  auto_apply_labels: true
+  suggested_reviewers: false
+  auto_assign_reviewers: false
+  poem: false
+  labeling_instructions:
+    - label: Feature
+      instructions: Adds new user-facing functionality or capabilities.
+    - label: Bug Fix
+      instructions: Corrects an error, bug, or unintended behavior in existing code.
+    - label: Improvement
+      instructions: >-
+        Enhances existing code, performance, reliability, or developer
+        experience (non-functional). Includes refactoring.
+    - label: Chore
+      instructions: >-
+        Maintenance tasks, build process updates, dependency bumps, config
+        changes (no production code change).
+    - label: Test
+      instructions: Adds or significantly updates tests (unit, integration, e2e).
+    - label: Docs
+      instructions: >-
+        Changes solely related to documentation (READMEs, guides, code
+        comments).
+    - label: Security
+      instructions: Addresses a security vulnerability or improves security posture.
+    - label: Hotfix
+      instructions: Urgent fix for a critical production issue (often cherry-picked).
+    - label: Dependencies
+      instructions: >-
+        Updates to project dependencies, libraries, frameworks, or runtime
+        versions.
+    - label: Performance
+      instructions: Optimizes performance or reduces resource usage.
+    - label: Refactor
+      instructions: Improves code structure or readability without changing behavior.
+  path_filters: []
+  path_instructions: []
+  abort_on_close: true
+  disable_cache: false
+  auto_review:
+    enabled: true
+    auto_incremental_review: false
+    ignore_title_keywords: []
+    labels: []
+    drafts: false
+    base_branches: []
+  finishing_touches:
+    docstrings:
+      enabled: true
+    unit_tests:
+      enabled: true
+  tools:
+    ast-grep:
+      rule_dirs: []
+      util_dirs: []
+      essential_rules: true
+      packages: []
+    shellcheck:
+      enabled: true
+    ruff:
+      enabled: false
+    markdownlint:
+      enabled: true
+    github-checks:
+      enabled: true
+      timeout_ms: 90000
+    languagetool:
+      enabled: true
+      enabled_rules: []
+      disabled_rules: []
+      enabled_categories: []
+      disabled_categories: []
+      enabled_only: false
+      level: default
+    biome:
+      enabled: true
+    hadolint:
+      enabled: false
+    swiftlint:
+      enabled: false
+    phpstan:
+      enabled: false
+      level: default
+    golangci-lint:
+      enabled: false
+    yamllint:
+      enabled: true
+    gitleaks:
+      enabled: true
+    checkov:
+      enabled: true
+    detekt:
+      enabled: false
+    eslint:
+      enabled: true
+    rubocop:
+      enabled: false
+    buf:
+      enabled: false
+    regal:
+      enabled: false
+    actionlint:
+      enabled: true
+    pmd:
+      enabled: false
+    cppcheck:
+      enabled: false
+    semgrep:
+      enabled: true
+    circleci:
+      enabled: false
+    clippy:
+      enabled: false
+    sqlfluff:
+      enabled: true
+    prismaLint:
+      enabled: true
+    pylint:
+      enabled: false
+    oxc:
+      enabled: true
+    shopifyThemeCheck:
+      enabled: false
+    luacheck:
+      enabled: false
+    brakeman:
+      enabled: false
+    dotenvLint:
+      enabled: false
+    htmlhint:
+      enabled: false
+    checkmake:
+      enabled: false
+chat:
+  auto_reply: true
+  integrations:
+    jira:
+      usage: disabled
+    linear:
+      usage: enabled
+knowledge_base:
+  opt_out: false
+  web_search:
+    enabled: true
+  learnings:
+    scope: local
+  issues:
+    scope: local
+  jira:
+    usage: disabled
+    project_keys: []
+  linear:
+    usage: enabled
+    team_keys:
+      - DEV
+  pull_requests:
+    scope: local
+code_generation:
+  docstrings:
+    language: en-US
+    path_instructions: []
+  unit_tests:
+    path_instructions: []
