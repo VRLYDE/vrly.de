@@ -1,7 +1,5 @@
 # Project Overview: University Submission Website
 
-To rapidly develop and deploy a static one-page website to meet an urgent university assignment deadline for the client. The primary success metric is on-time delivery.
-
 ## 1. Objective
 
 To rapidly develop and deploy a static one-page website to meet an urgent university assignment deadline for the client. The primary success metric is on-time delivery.
