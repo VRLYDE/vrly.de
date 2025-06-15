@@ -24,8 +24,8 @@
     "clean:node_modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
     "clean:.wrangler": "find . -name '.wrangler' -type d -prune -exec rm -rf '{}' +",
     "clean:.astro": "find . -name '.astro' -type d -prune -exec rm -rf '{}' +",
-    "deploy": "bun x wrangler deploy --env staging",
-    "deploy:production": "bun x wrangler deploy",
+    "deploy:website": "bun run --cwd packages/website deploy",
+    "deploy:website:production": "bun run --cwd packages/website deploy:production",
     "prepare": "husky install",
     "postinstall": "bun run prepare",
     "format": "prettier --write ."
