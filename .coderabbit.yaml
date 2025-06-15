@@ -71,8 +71,8 @@ reviews:
     labels: []
     drafts: false
     base_branches:
-      - ^main$
-      - ^DEV-[0-9]+-.+$
+      - "^main$"
+      - "^DEV-[0-9]+-.+$"
   finishing_touches:
     docstrings:
       enabled: true
