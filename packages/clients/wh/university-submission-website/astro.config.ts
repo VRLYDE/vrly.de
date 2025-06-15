@@ -47,7 +47,9 @@ export default defineConfig({
     sitemap(),
     icon(),
     react(),
-    markdoc(),
+    markdoc({
+      allowHTML: true,
+    }),
     robotsTxt({
       policy: [{ userAgent: "*", allow: "/" }],
     }),
