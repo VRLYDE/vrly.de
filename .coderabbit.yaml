@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
-language: en-US
+language: de-DE
 tone_instructions: >-
   Act as a senior developer mentoring an AI-assisted junior. Focus on
   automation, operational simplicity, and monorepo best practices. Suggest
