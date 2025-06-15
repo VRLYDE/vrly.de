@@ -20,9 +20,8 @@ const config: Config = {
         style.theme.colors.secondary,
       ]),
       fontFamily: {
-        sans: ["Inter Tight", ...defaultTheme.fontFamily.sans],
-        mono: ["Space Mono", ...defaultTheme.fontFamily.mono],
-        display: ["Montserrat", ...defaultTheme.fontFamily.sans],
+        sans: ["Libre Franklin", ...defaultTheme.fontFamily.sans],
+        display: ["Libre Baskerville", ...defaultTheme.fontFamily.sans],
       },
     },
   },
