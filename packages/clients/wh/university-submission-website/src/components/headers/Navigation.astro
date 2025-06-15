@@ -17,10 +17,6 @@ function isActiveLocale(locale: string): boolean {
 const { header, contacts } = getLocalizedSettings(currentLocale);
 
 const logoPath = header.logo?.imagePath;
-
-const images = import.meta.glob<{ default: ImageMetadata }>(
-    "/src/assets/global/**/*.{webp,jpeg,jpg,png,gif,svg}"
-);
 ---
 
 <style>
