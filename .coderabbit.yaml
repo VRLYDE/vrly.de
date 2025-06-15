@@ -70,7 +70,9 @@ reviews:
     ignore_title_keywords: []
     labels: []
     drafts: false
-    base_branches: []
+    base_branches:
+      - ^main$
+      - ^DEV-[0-9]+-.+$
   finishing_touches:
     docstrings:
       enabled: true
