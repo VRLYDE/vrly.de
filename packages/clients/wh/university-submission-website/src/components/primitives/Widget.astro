@@ -1,0 +1,50 @@
+---
+import { getLocalizedSettings } from "@/lib/localization-helpers";
+import { Icon } from "astro-icon/components";
+
+const currentLocale = Astro.currentLocale;
+
+const { widget } = getLocalizedSettings(currentLocale);
+---
+
+<a
+	id="whatsapp-widget"
+	transition:persist
+	data-widget-appear
+	href={widget.link}
+	class="group fixed w-14 h-14 bottom-5 lg:bottom-10 opacity-0 right-5 lg:right-10 bg-[#25d366] text-white rounded-full flex items-center justify-center shadow-md hover:shadow-lg z-20"
+	target="_blank"
+>
+	<Icon
+		name={widget.icon}
+		size={30}
+		class="group-hover:scale-105 transition-all"
+	/>
+</a>
+
+<script>
+	import gsap from "gsap";
+
+	let ctx: gsap.Context | null = null;
+
+	const componentVisible = (): boolean => {
+		return document.getElementById("whatsapp-widget") !== null;
+	};
+
+	document.addEventListener(
+		"astro:page-load",
+		() => {
+			if (componentVisible()) {
+				// Initialize all animations and add all to the current gsap context
+				ctx = gsap.context(() => {
+					gsap.to("[data-widget-appear]", {
+						opacity: 1,
+						duration: 1,
+						ease: "none",
+					});
+				});
+			}
+		},
+		{ once: true },
+	);
+</script>

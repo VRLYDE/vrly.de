@@ -1,0 +1,109 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { loadVideo } from "@/lib/asset-helpers";
+import { translatePath, unlocalizedUrl } from "@/lib/localization-helpers";
+import { Icon } from "astro-icon/components";
+import { defaultLocale } from "site";
+
+const currentLocale = Astro.currentLocale;
+
+interface Props {
+	work: CollectionEntry<"works">;
+}
+
+const { work } = Astro.props;
+
+const unlocalizedPath = unlocalizedUrl(work.slug);
+const localizedPath = translatePath(
+	currentLocale ?? defaultLocale,
+	`/work${unlocalizedPath}`,
+);
+
+const videoSrc = work.data?.video ? await loadVideo(work.data.video) : null;
+---
+
+<div class="items-stretch flex-col justify-center relative flex">
+	<a
+		href={localizedPath}
+		class="work-item items-center justify-center flex overflow-hidden rounded-3xl relative group"
+	>
+		<div
+			class="play-button text-white items-center justify-center top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 absolute z-10 flex max-w-full opacity-0 group-hover:opacity-100 transition-all duration-300"
+		>
+			<div
+				class="text-black bg-white/[0.75] items-center backdrop-blur-[5px] cursor-pointer justify-center flex w-full h-full rounded-full"
+			>
+				<Icon
+					name="iconamoon:arrow-top-right-1-thin"
+					class="align-middle inline-block w-12 h-12 max-w-full"
+				/>
+			</div>
+		</div>
+		{
+			videoSrc ? (
+				<video
+					class="object-cover align-middle inline-block w-full h-96 min-h-full max-w-full"
+					autoplay
+					loop
+					muted
+					playsinline
+				>
+					<source src={videoSrc} />
+				</video>
+			) : (
+				<Image
+					src={work.data.cover}
+					alt={`Cover for ${work.data.title}`}
+					class="object-cover align-middle inline-block w-full h-96 min-h-full max-w-full"
+				/>
+			)
+		}
+	</a>
+	<div class="mt-5">
+		<div class="items-center justify-between flex flex-row gap-4">
+			<a
+				href={localizedPath}
+				class="menu-item relative items-start flex-col flex max-w-full"
+			>
+				<h3 class="cursor-pointer text-[1.75rem] leading-8">
+					{work.data.title}
+				</h3>
+				<div class="cursor-pointer w-full overflow-hidden">
+					<div class="w-full h-0.5 mt-1"></div>
+				</div>
+			</a>
+			<p class="text-neutral-400 text-lg">
+				{Array.from(work.data.tags).join(", ")}
+			</p>
+		</div>
+	</div>
+</div>
+
+<style>
+	a.menu-item::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		background-color: #000;
+		bottom: 0;
+		transform-origin: right;
+		transform: scaleX(0);
+		transition: transform 0.3s ease-in-out;
+	}
+
+	a.menu-item:hover::before {
+		transform: scaleX(1);
+		transform-origin: left;
+	}
+
+	.play-button {
+		width: 1rem;
+		height: 1rem;
+	}
+	.work-item:hover .play-button {
+		width: 7rem;
+		height: 7rem;
+	}
+</style>

@@ -1,0 +1,40 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Container from "@/components/primitives/Container.astro";
+import BaseLayout from "./BaseLayout.astro";
+
+type Props = {
+	frontmatter: CollectionEntry<"pages">;
+};
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout seo={frontmatter.data.seo}>
+	<main>
+		{
+			frontmatter.data.hideTitle ? null : (
+				<header class="py-32 lg:pt-40 lg:pb-36">
+					<Container
+						tag="div"
+						class="mx-0 flex justify-center items-center gap-10"
+					>
+						<div class="items-center text-sm font-medium justify-center flex min-h-[auto]">
+							<div class="items-center flex-col w-full m-auto text-6xl lg:text-[7.13rem] leading-none font-semibold">
+								<div class="items-center text-center flex-col justify-start flex gap-2 leading-[1.15]">
+									<h1 class="my-3 mx-0 max-w-screen-sm">
+										{frontmatter.data.title}
+									</h1>
+									<h2 class="text-2xl lg:text-3xl max-w-screen-sm">
+										{frontmatter.data.subtitle}
+									</h2>
+								</div>
+							</div>
+						</div>
+					</Container>
+				</header>
+			)
+		}
+		<slot />
+	</main>
+</BaseLayout>

@@ -1,0 +1,60 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import type { ButtonProps } from "@/components/primitives/Button.astro";
+import Link from "@/components/primitives/Link.astro";
+import WorkPreview from "@/components/sections/WorkPreview.astro";
+
+const currentLocale = Astro.currentLocale;
+
+const works = await getCollection("works");
+
+const recentWorks = works
+	.map((work) => {
+		const [lang, ...slug] = work.slug.split("/");
+		return {
+			...work,
+			lang: lang,
+			slug: work.slug.startsWith("/") ? work.slug : `/${work.slug}`,
+		};
+	})
+	.filter((page) => page.lang === currentLocale)
+	.sort(
+		(a, b) =>
+			a.data.lastUpdateDate.getTime() - b.data.lastUpdateDate.getTime(),
+	)
+	.slice(0, 4) as CollectionEntry<"works">[];
+
+interface Props {
+	title: string;
+	buttons: ButtonProps[];
+}
+
+const { title, buttons } = Astro.props as Props;
+---
+
+<div class="items-center text-sm font-medium justify-center flex pt-20 pb-16">
+	<h2 class="text-[3.13rem] leading-none font-semibold my-1">{title}</h2>
+</div>
+
+<div
+	class="text-sm font-medium auto-cols-fr grid-cols-1 md:grid-cols-2 grid-rows-[auto_auto] grid gap-[3.13rem]"
+>
+	{recentWorks.map((work) => <WorkPreview {work} />)}
+</div>
+<div
+	class="items-center flex-col text-sm font-medium flex text-white pt-16 pb-20"
+>
+	{
+		buttons.map(({ title, href, style, icon }) => (
+			<Link
+				href={href}
+				style={
+					style as "primary" | "button" | "outline" | "buttonLight"
+				}
+				icon={icon}
+			>
+				{title}
+			</Link>
+		))
+	}
+</div>

@@ -1,8 +1,15 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"],
-  "compilerOptions": {
-    "types": ["./worker-configuration.d.ts", "node"]
-  }
+	"extends": "astro/tsconfigs/strict",
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"jsxImportSource": "react",
+		"strictNullChecks": true,
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["src/*"],
+			"site": ["site.config.ts"]
+		},
+		"types": ["astro/client", "vite-plugin-pwa/vanillajs", "vite-plugin-pwa/info", "vite-plugin-pwa/pwa-assets"]
+	},
+	"exclude": ["node_modules", "dist", "public"]
 }

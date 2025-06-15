@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import type { Props as ButtonProps } from "@/components/primitives/Link.astro";
+import Link from "@/components/primitives/Link.astro";
+
+interface Props {
+	title: string;
+	results: {
+		label: string;
+		value: string;
+	}[];
+}
+
+const { title, results } = Astro.props;
+---
+
+<div class="text-sm font-medium py-20">
+	<p
+		class="text-4xl lg:text-[2.13rem] leading-9 font-semibold lg:max-w-[64%] mb-3"
+		set:html={title}
+	/>
+	<div class="mt-16">
+		<div
+			class="auto-cols-fr grid-cols-1 lg:grid-cols-3 grid-rows-[auto] grid gap-[1.88rem]"
+		>
+			{
+				results?.map(({ label, value }) => (
+					<div class="items-center flex-col text-center flex">
+						<h2 class="text-outline text-6xl lg:text-[7.50rem] leading-none font-semibold inline-block">
+							{value}
+						</h2>
+						<div class="text-lg py-5 px-3.5 inline-block w-full -mt-3">
+							{label}
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</div>
+
+<style>
+	.text-outline {
+		color: rgba(0, 0, 0, 0);
+		-webkit-text-stroke-width: 2px;
+		-webkit-text-stroke-color: black;
+	}
+</style>

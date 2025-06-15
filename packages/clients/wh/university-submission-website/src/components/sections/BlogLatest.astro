@@ -1,0 +1,45 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import BlogPreview from "@/components/sections/BlogPreview.astro";
+
+const currentLocale = Astro.currentLocale;
+
+const posts = await getCollection("posts");
+
+const recentPosts = posts
+	.map((post) => {
+		const [lang, ...slug] = post.slug.split("/");
+		return {
+			...post,
+			lang: lang,
+			slug: post.slug.startsWith("/") ? post.slug : `/${post.slug}`,
+		};
+	})
+	.filter((post) => post.lang === currentLocale)
+	.sort(
+		(a, b) =>
+			a.data.lastUpdateDate.getTime() - b.data.lastUpdateDate.getTime(),
+	)
+	.slice(0, 4) as CollectionEntry<"posts">[];
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class="text-sm font-medium pt-20 pb-32">
+	<div
+		class="items-center justify-center flex text-[3.13rem] leading-none font-semibold"
+	>
+		<h2 class="my-1">{title}</h2>
+	</div>
+	<div class="mt-16">
+		<div
+			class="gap-x-[1.88rem] auto-cols-fr grid-cols-1 lg:grid-cols-3 grid-rows-[auto] gap-y-10 grid"
+		>
+			{recentPosts.map((post) => <BlogPreview {post} />)}
+		</div>
+	</div>
+</div>

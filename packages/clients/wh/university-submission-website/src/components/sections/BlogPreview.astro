@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import Link from "@/components/primitives/Link.astro";
+import { translatePath, unlocalizedUrl } from "@/lib/localization-helpers";
+import { Icon } from "astro-icon/components";
+import { defaultLocale } from "site";
+
+const currentLocale = Astro.currentLocale;
+
+interface Props {
+	post: CollectionEntry<"posts">;
+}
+
+const { post } = Astro.props;
+
+const unlocalizedPath = unlocalizedUrl(post.slug);
+const localizedPath = translatePath(
+	currentLocale ?? defaultLocale,
+	`/post${unlocalizedPath}`,
+);
+---
+
+<div>
+	<Link
+		href={localizedPath}
+		localized={false}
+		class="blog-item text-blue-700 relative object-cover underline inline-block w-full max-w-full rounded-2xl group"
+	>
+		<div
+			class="play-button text-white items-center justify-center top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 absolute z-10 flex max-w-full opacity-0 group-hover:opacity-100 transition-all duration-300"
+		>
+			<div
+				class="text-black bg-white/[0.75] items-center backdrop-blur-[5px] cursor-pointer justify-center flex w-full h-full rounded-full"
+			>
+				<Icon
+					name="iconamoon:arrow-top-right-1-thin"
+					class="align-middle inline-block w-12 h-12 max-w-full"
+				/>
+			</div>
+		</div>
+		<Image
+			src={post.data.cover}
+			alt={post.data.title}
+			class="cursor-pointer align-middle inline-block w-full max-w-full rounded-2xl object-cover h-64"
+		/>
+	</Link>
+	<div class="items-start flex-col pt-8 flex">
+		<span
+			class="font-semibold pb-1.5 px-6 pt-2 uppercase inline-block border-2 border-black border-solid rounded-3xl"
+		>
+			{post.data.category}
+		</span>
+		<a href={localizedPath} class="text-3xl font-semibold mt-5 mb-3">
+			{post.data.title}
+		</a>
+		<div class="mt-5 text-lg">
+			<p class="mb-3">
+				{
+					post.data.pubDate.toLocaleDateString("en-US", {
+						month: "long", // full month name
+						day: "numeric", // numeric day
+						year: "numeric", // numeric year
+					})
+				}
+			</p>
+		</div>
+	</div>
+</div>
+
+<style>
+	.play-button {
+		width: 1rem;
+		height: 1rem;
+	}
+	.blog-item:hover .play-button {
+		width: 6rem;
+		height: 6rem;
+	}
+</style>

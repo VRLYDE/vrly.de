@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+import about from "@/assets/pages/about/about.png";
+
+const { title, subtitle, content } = Astro.props;
+---
+
+<div class="items-center flex-col text-sm font-medium relative w-full pb-40">
+	<div class="relative w-full h-[50em] overflow-hidden">
+		<div
+			class="items-center bottom-0 justify-center left-0 absolute top-0 flex w-full h-full overflow-hidden rounded-3xl"
+		>
+			<div
+				class="items-center bottom-0 flex-col justify-center left-0 absolute top-0 flex w-full"
+			>
+				<Image
+					src={about}
+					alt="About"
+					class="bottom-0 left-0 object-cover absolute top-0 align-middle inline-block w-full h-full max-w-full"
+				/>
+			</div>
+		</div>
+	</div>
+	<div class="mt-16 font-semibold">
+		<div
+			class="auto-cols-fr grid-cols-1 lg:grid-cols-[.6fr_1fr] grid-rows-[auto] grid gap-[1.88rem]"
+		>
+			<div class="col-span-1 row-span-1 text-[2.50rem] leading-none">
+				<div class="items-center flex"><div>{title}</div></div>
+			</div>
+			<div class="col-span-1 row-span-1 text-3xl">
+				<p class="mb-3" set:html={subtitle} />
+				<p set:html={content} />
+			</div>
+		</div>
+	</div>
+</div>

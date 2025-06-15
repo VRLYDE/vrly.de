@@ -1,0 +1,38 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+	title: string;
+	logos: string[];
+}
+
+const { title, logos } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/pages/**/*.{webp,jpeg,jpg,png,gif,svg}",
+);
+---
+
+<div class="text-sm font-medium pt-32 pb-8">
+	<div
+		class="items-center auto-cols-fr grid-cols-[.3fr_1fr] grid-rows-[auto] grid gap-7"
+	>
+		<div class="items-center gap-x-[0.63rem] flex">
+			<div class="bg-black w-2.5 h-2.5 rounded-full"></div>
+			<div class="text-lg font-semibold">{title}</div>
+		</div>
+		<div
+			class="gap-x-[2.88rem] flex-wrap justify-between gap-y-2 flex w-full"
+		>
+			{
+				logos.map((logo) => (
+					<Image
+						src={images[logo]()}
+						alt="Logo cloud"
+						class="align-middle inline-block w-28 h-8 max-w-full"
+					/>
+				))
+			}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,143 @@
+---
+import type { ButtonProps } from "@/components/primitives/Button.astro";
+import Container from "@/components/primitives/Container.astro";
+import Link from "@/components/primitives/Link.astro";
+import Blob from "@/components/sections/Blob.astro";
+
+interface Props {
+	title: string;
+	subtitle: string;
+	buttons?: ButtonProps[];
+}
+
+const defaultButtons: ButtonProps[] = [
+	{
+		title: "Contattaci",
+		href: "/contact",
+		style: "button",
+		icon: "iconamoon:arrow-top-right-1-thin",
+	},
+];
+
+const { title, subtitle, buttons = defaultButtons } = Astro.props;
+---
+
+<div
+	id="hero"
+	class="items-center text-sm font-medium justify-center pb-48 lg:px-20 pt-32 lg:pt-44 relative flex min-h-[100svh]"
+>
+	<Container>
+		<div class="items-center flex-col w-full m-auto">
+			<div
+				class="items-center auto-cols-fr grid-cols-1 lg:grid-cols-2 grid-rows-[auto] grid gap-[3.13rem]"
+			>
+				<div
+					class="items-start flex-col justify-start flex gap-2 row-start-1"
+				>
+					<h1
+						data-hero-reveal
+						class="text-4xl md:text-7xl leading-tight my-3 mx-0"
+						set:html={title}
+					/>
+					<div class="lg:mt-20">
+						<div>
+							<p
+								data-hero-reveal
+								class="text-3xl font-semibold mb-3"
+								set:html={subtitle}
+							/>
+							<div class="mt-10 text-white">
+								{
+									buttons.map(
+										({ title, href, style, icon }) => (
+											<Link
+												data-hero-reveal
+												href={href}
+												style={
+													style as
+														| "primary"
+														| "button"
+														| "outline"
+														| "buttonLight"
+												}
+												icon={icon}
+											>
+												{title}
+											</Link>
+										),
+									)
+								}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="justify-self-center col-span-1 row-span-1">
+					<Blob class="xl:pl-32" />
+				</div>
+			</div>
+		</div>
+		<div
+			class="items-center bottom-[3.13rem] justify-center left-0 absolute right-0 z-10 flex max-w-[80%] overflow-hidden m-auto text-blue-700"
+		>
+			<div class="items-center flex">
+				<button
+					id="scroll-down-button"
+					class="scroll-down-button items-start justify-center underline flex w-5 h-7 max-w-full border-2 border-black border-solid rounded-xl m-auto"
+					><div class="bg-black cursor-pointer w-0.5 h-1 mt-1.5">
+					</div>
+				</button>
+			</div>
+		</div>
+	</Container>
+</div>
+
+<style>
+	@keyframes moveDown {
+		0% {
+			transform: translateY(0);
+		}
+		80% {
+			transform: translateY(2px);
+		}
+		100% {
+			transform: translateY(0);
+		}
+	}
+
+	.scroll-down-button:hover div {
+		animation: moveDown 0.7s infinite;
+	}
+	[data-hero-reveal] {
+		opacity: 0;
+		filter: blur(3px);
+	}
+</style>
+
+<script>
+	import { gsap } from "gsap";
+	import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+	import { BlurPlugin } from "@/utils/gsap-blur";
+	import { LifecycleManager } from "@/utils/lifecycle-manager";
+
+	gsap.registerPlugin(ScrollToPlugin, BlurPlugin);
+
+	const lm = new LifecycleManager();
+
+	function scrollDown() {
+		gsap.to(window, { duration: 0.5, scrollTo: "#services" });
+	}
+
+	lm.onElementLoaded("hero", (ctx) => {
+		ctx?.add(() => {
+			const scrollDownButton =
+				document.getElementById("scroll-down-button");
+			scrollDownButton?.addEventListener("click", scrollDown);
+
+			gsap.to("[data-hero-reveal]", {
+				blur: 0,
+				duration: 1,
+				opacity: 1,
+			});
+		});
+	});
+</script>
