@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../node_modules/wrangler/config-schema.json",
+  "name": "university-submission-website",
+  "main": "./dist/_worker.js/index.js",
+  "compatibility_date": "2025-05-30",
+  "account_id": "dea1503d32738013a37782b7671ee4ae",
+  "compatibility_flags": ["nodejs_compat"],
+  "routes": [
+    {
+      "pattern": "wh-submission.vrly.de",
+      "custom_domain": true
+    }
+  ],
+  "workers_dev": false,
+  "tsconfig": "./tsconfig.json",
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
