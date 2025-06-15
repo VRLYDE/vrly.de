@@ -1,6 +1,6 @@
 # Development Cycle
 
-## 1. VRLY’s Development and Delivery Model
+## 1. VRLY's Development and Delivery Model
 
 VRLY is a solo-founded, ultra-lean IT services provider focused on managed AI and workflow automation for psychotherapists in Hannover. The company operates under severe resource constraints, with a strong emphasis on efficiency, rapid iteration, and compliance. Florentin, as the sole developer and founder, is responsible for the entire development, delivery, and operational lifecycle, employing a modern TypeScript monorepo, Cloudflare Workers, and automated DevOps practices. Project management is handled with a structured, status-driven workflow (Backlog → Ready → In Progress → In Review → Testing → Staging → Ready for Deployment → In Production), using t-shirt sizing for effort estimation and automation for status transitions.
 
@@ -8,7 +8,7 @@ VRLY is a solo-founded, ultra-lean IT services provider focused on managed AI an
 
 ### 2.1. Cycle Duration: 2 Weeks
 
-A two-week development cycle (sprint) is widely recognized as the “Goldilocks” duration for solo developers and small teams. It provides enough time to accomplish meaningful, end-to-end increments of work without the loss of focus or drift that can occur in longer cycles. For solo developers, this cadence supports:
+A two-week development cycle (sprint) is widely recognized as the "Goldilocks" duration for solo developers and small teams. It provides enough time to accomplish meaningful, end-to-end increments of work without the loss of focus or drift that can occur in longer cycles. For solo developers, this cadence supports:
 
 - Deep engagement with tasks without excessive context switching
 - Regular opportunities for review, course correction, and delivery of visible value
@@ -16,7 +16,7 @@ A two-week development cycle (sprint) is widely recognized as the “Goldilocks�
 
 ### 2.2. Cooldown Period: 1 Week
 
-Following each 2-week development cycle, a 1-week cooldown (“firebreak” or “buffer” sprint) is scheduled. This week is not for feature delivery but is reserved for:
+Following each 2-week development cycle, a 1-week cooldown ("firebreak" or "buffer" sprint) is scheduled. This week is not for feature delivery but is reserved for:
 
 - Technical debt reduction
 - Refactoring and codebase hygiene
@@ -39,14 +39,14 @@ Six upcoming cycles should be configured in the project management tool. This pr
 ### 3.1. Issue Planning and Estimation
 
 - **Work Intake**: All tasks, features, bugs, and improvements are captured in the Backlog.
-- **Prioritization**: Before each cycle, tasks are reviewed and prioritized. Only tasks with clear definitions and t-shirt size estimates (XS–XL) are moved to “Ready.”
+- **Prioritization**: Before each cycle, tasks are reviewed and prioritized. Only tasks with clear definitions and t-shirt size estimates (XS–XL) are moved to "Ready."
 - **Capacity Planning**: Florentin estimates cycle capacity based on previous cycles, using the t-shirt sizing method. Realistically, a solo developer should not overcommit; 60–80% of the theoretical maximum should be targeted to allow for interruptions and emergent work.
 - **Cycle Assignment**: Issues are assigned to the upcoming cycle based on priority and capacity. Unfinished work from the previous cycle rolls over automatically.
 
 ### 3.2. Development Workflow
 
 - **Statuses**: Issues progress through the statuses defined in the DevOps page: Backlog → Ready → In Progress → In Review → Testing → Staging → Ready for Deployment → In Production.
-- **Automations**: Status transitions are automated based on PR activity (e.g., opening a draft PR moves an issue to “In Progress”; merging a PR moves it to “In Production”).
+- **Automations**: Status transitions are automated based on PR activity (e.g., opening a draft PR moves an issue to "In Progress"; merging a PR moves it to "In Production").
 - **Cooldown Week**: No new feature work is assigned during cooldown. Instead, Florentin focuses on maintenance, technical debt, research, and process improvement.
 
 ### 3.3. Review and Retrospective
@@ -66,7 +66,7 @@ The cooldown week provides space for deeper retrospectives and strategic adjustm
 - **Technical Quality**: Cooldown periods ensure time for technical debt, documentation, and automation, which are critical for solo developers who cannot rely on others to catch issues.
 - **Predictability**: Regular cycle starts on Monday and visible cycle planning (six cycles ahead) make project timelines predictable for both VRLY and its clients.
 - **Continuous Improvement**: Frequent retrospectives and the explicit pause for review foster a culture of learning and adaptation, essential for a solo founder in a dynamic market.
-- **Alignment with VRLY’s Values**: The structure supports VRLY’s focus on efficiency, transparency, and high-quality client outcomes, while enabling the founder to balance delivery with strategic growth activities.
+- **Alignment with VRLY's Values**: The structure supports VRLY's focus on efficiency, transparency, and high-quality client outcomes, while enabling the founder to balance delivery with strategic growth activities.
 
 ## 5. Practical Example: Upcoming Cycle Schedule
 
@@ -90,4 +90,4 @@ This cycle structure directly complements the VRLY DevOps page by:
 - Using the same status and estimation taxonomy
 - Enabling automation-friendly planning and status transitions
 - Providing regular, predictable windows for both delivery and operational excellence
-- Supporting the solo developer’s need for clear boundaries between focused work and maintenance
+- Supporting the solo developer's need for clear boundaries between focused work and maintenance

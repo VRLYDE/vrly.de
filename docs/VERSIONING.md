@@ -2,7 +2,7 @@
 
 ## 1. Principles for VRLY
 
-VRLY’s development is led by a single full stack developer, emphasizing rapid iteration, automation, and clarity for both internal and external stakeholders. Versioning must:
+VRLY's development is led by a single full stack developer, emphasizing rapid iteration, automation, and clarity for both internal and external stakeholders. Versioning must:
 
 - Provide immediate context about release timing and stability.
 - Support both monorepo-wide and package-specific releases.
@@ -18,14 +18,14 @@ Year-based versioning (CalVer) encodes the production year and release sequence 
 
 - **Immediate Temporal Context:** Stakeholders and users can instantly infer the age and update cadence of a release.
 - **Eliminates Arbitrary Majors:** Avoids unnecessary major version bumps; breaking changes are contextualized by the year.
-- **Encourages Regular, Iterative Updates:** Supports a sustainable, predictable cadence that matches VRLY’s 2-week cycle and 1-week cooldown model.
+- **Encourages Regular, Iterative Updates:** Supports a sustainable, predictable cadence that matches VRLY's 2-week cycle and 1-week cooldown model.
 - **Industry Adoption:** Used by major projects (e.g., Ubuntu, NixOS, Windows, Event Store) for clarity and regularity.
 
 ### 2.2. Format
 
 - **Monorepo/Project Version:** `YY.M[.patch]` or `YYYY.M[.patch]`
   - Example: `25.5.0` or `2025.5.0` for the 5th release in 2025.
-- **Named Release:** Human-friendly codename and year, e.g., “VRLY Convergence 25.5”.
+- **Named Release:** Human-friendly codename and year, e.g., "VRLY Convergence 25.5".
 - **Patch Number:** Incremented for hotfixes or minor updates within the same cycle.
 
 ### 2.3. Alignment with Development Cycle
@@ -39,7 +39,7 @@ Year-based versioning (CalVer) encodes the production year and release sequence 
 While the monorepo follows CalVer, individual packages within the repo may require more granular semantic versioning (SemVer) for external consumers or dependency management.
 
 - **Format:** `MAJOR.MINOR.PATCH` (e.g., `1.2.3`).
-- **Trigger:** Bumped when a package’s public API changes, following SemVer rules.
+- **Trigger:** Bumped when a package's public API changes, following SemVer rules.
 - **Tagging:** Each package release is tagged as `{package-name}@{version}` (e.g., `core-utils@1.2.3`).
 
 This hybrid model allows VRLY to balance overall product cadence with precise dependency management for internal/external packages.
@@ -49,7 +49,7 @@ This hybrid model allows VRLY to balance overall product cadence with precise de
 ### 4.1. Monorepo Releases
 
 - **Tag:** `vYY.M[.patch]` (e.g., `v25.5.0`)
-- **Release Name:** “VRLY Convergence 25.5”
+- **Release Name:** "VRLY Convergence 25.5"
 - **Release Notes:** Auto-generated from PRs and commit messages, following Conventional Commits for clarity.
 - **Scope:** Represents a coordinated, production-ready state of the entire platform.
 
@@ -99,14 +99,14 @@ This hybrid model allows VRLY to balance overall product cadence with precise de
 | Aspect | CalVer (Year-Based) | SemVer (Per Package) |
 | | | - |
 | Clarity | Immediate context, easy to correlate with cycles | Less direct, but precise for API changes |
-| Predictability | Matches VRLY’s sprint/cycle model | Good for library consumers |
+| Predictability | Matches VRLY's sprint/cycle model | Good for library consumers |
 | Automation | Well supported with modern tools | Standard in JS/TS ecosystem |
 | Breaking Changes | Encoded in year/minor bump | Encoded in major version |
 | External Dependencies | May require SemVer for package publishing | N/A |
 
 ## 8. Integration with VRLY Development Cycle & DevOps
 
-- **Status-driven Workflow:** Each release is tied to the “Ready for Deployment” and “In Production” statuses in the DevOps workflow, ensuring traceability and auditability.
+- **Status-driven Workflow:** Each release is tied to the "Ready for Deployment" and "In Production" statuses in the DevOps workflow, ensuring traceability and auditability.
 - **T-Shirt Estimation and Rollovers:** Planned releases are aligned with realistic capacity planning, and uncompleted work is rolled into the next cycle.
 - **Automated Status Transitions:** Release automation triggers status updates in project management tools, maintaining a single source of truth for delivery state.
 
