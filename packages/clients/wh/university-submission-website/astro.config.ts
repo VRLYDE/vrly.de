@@ -17,9 +17,6 @@ export default defineConfig({
   output: "hybrid",
   adapter: cloudflare({
     imageService: "compile",
-    experimental: {
-      manualChunks: ["sharp"],
-    },
   }),
   compressHTML: true,
   i18n: {
