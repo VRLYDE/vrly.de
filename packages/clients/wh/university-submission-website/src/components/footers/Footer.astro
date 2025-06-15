@@ -51,11 +51,7 @@ const lastPosts = posts
         };
     })
     .filter((page) => page.lang === currentLocale)
-    .sort(
-        (a, b) =>
-            new Date(b.data.lastUpdateDate).getTime() -
-            new Date(a.data.lastUpdateDate).getTime()
-    )
+
     .slice(0, 6);
 ---
 

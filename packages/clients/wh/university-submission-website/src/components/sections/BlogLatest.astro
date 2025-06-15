@@ -15,10 +15,7 @@ const recentPosts = posts
       slug: post.slug.startsWith("/") ? post.slug : `/${post.slug}`,
     };
   })
-  .filter((post) => post.lang === currentLocale)
-  .sort(
-    (a, b) => a.data.lastUpdateDate.getTime() - b.data.lastUpdateDate.getTime(),
-  ) as CollectionEntry<"posts">[];
+  .filter((post) => post.lang === currentLocale) as CollectionEntry<"posts">[];
 
 interface Props {
   title: string;

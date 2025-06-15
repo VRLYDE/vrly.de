@@ -54,17 +54,7 @@ const localizedPath = translatePath(
     <a href={localizedPath} class="mt-5 mb-3 text-3xl font-semibold">
       {post.data.title}
     </a>
-    <div class="mt-5 text-lg">
-      <p class="mb-3">
-        {
-          post.data.pubDate.toLocaleDateString("en-US", {
-            month: "long", // full month name
-            day: "numeric", // numeric day
-            year: "numeric", // numeric year
-          })
-        }
-      </p>
-    </div>
+
   </div>
 </div>
 

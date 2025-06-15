@@ -55,7 +55,6 @@ const { frontmatter } = Astro.props;
                     {l.writtenBy} {frontmatter.data?.author}
                     {l.writtenAt}
                   </span>
-                  {frontmatter.data?.pubDate?.toString().slice(0, 10)}
                 </span>
               </div>
             )
